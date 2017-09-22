@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
  * @author lingjun.jlj
  * @create 2017-09-22
  **/
+
 public interface CityMapper {
 
     /**

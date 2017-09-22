@@ -15,6 +15,8 @@ public class ApplicationTests {
 
 	@Resource
 	private CityService cityService;
+
+
 	@Test
 	public void contextLoads() {
 		City city = cityService.getCityByName("杭州");

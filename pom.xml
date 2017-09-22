@@ -24,6 +24,7 @@
 		<java.version>1.8</java.version>
 		<mybatis-version>1.2.0</mybatis-version>
 		<mysql-connector>5.1.39</mysql-connector>
+		<druid>1.0.18</druid>
 	</properties>
 
 	<dependencies>
@@ -55,6 +56,12 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql-connector}</version>
+		</dependency>
+		<!-- Druid 数据连接池依赖 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>${druid}</version>
 		</dependency>
 
 		<!-- Junit -->
