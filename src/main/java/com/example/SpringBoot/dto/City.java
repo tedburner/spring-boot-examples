@@ -1,10 +1,14 @@
 package com.example.SpringBoot.dto;
 
+import java.io.Serializable;
+
 /**
  * @author lingjun.jlj
  * @create 2017-09-22
  **/
-public class City {
+public class City implements Serializable{
+
+    private static final long serialVersionUID = -1L;
 
     /**
      * 城市编号

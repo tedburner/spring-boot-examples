@@ -12,4 +12,11 @@
         from city
         where cityName = #{cityName}
     </select>
+
+    <select id="findById" resultType="com.example.SpringBoot.dto.City">
+        select
+        <include refid="Base_Column_List" />
+        from city
+        where id = #{id}
+    </select>
 </mapper>

@@ -16,4 +16,11 @@ public interface CityMapper {
      * @param cityName 城市名
      */
     City findByName(@Param("cityName") String cityName);
+
+    /**
+     * 根据城市id，查询城市信息
+     *
+     * @param id 城市名
+     */
+    City findById(@Param("id") Long id);
 }

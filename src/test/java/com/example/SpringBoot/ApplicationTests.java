@@ -24,4 +24,11 @@ public class ApplicationTests {
 
 	}
 
+	@Test
+	public void redisTest(){
+
+		City city = cityService.getCityById(1L);
+		System.out.println(city);
+	}
+
 }

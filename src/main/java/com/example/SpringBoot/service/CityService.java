@@ -9,4 +9,6 @@ import com.example.SpringBoot.dto.City;
 public interface CityService {
 
     City getCityByName(String name);
+
+    City getCityById(Long Id);
 }
