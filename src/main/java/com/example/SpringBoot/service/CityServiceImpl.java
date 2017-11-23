@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
@@ -27,6 +28,9 @@ public class CityServiceImpl implements CityService{
 
     @Autowired
     private RedisTemplate redisTemplate;
+
+    @Resource
+    private TransactionTemplate transactionTemplate;
 
     @Override
     public City getCityByName(String name) {
