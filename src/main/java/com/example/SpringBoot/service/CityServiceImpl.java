@@ -35,17 +35,10 @@ public class CityServiceImpl implements CityService{
         return cityMapper.findByName(name);
     }
 
-    /**
-     * 获取城市逻辑：
-     * 如果缓存存在，从缓存中获取城市信息
-     * 如果缓存不存在，从 DB 中获取城市信息，然后插入缓存
-     */
     @Override
     public City getCityById(Long id) {
-        // 从 DB 中获取城市信息
-        City city = cityMapper.findById(id);
 
-        return city;
+        return cityMapper.findById(id);
     }
 
 }
