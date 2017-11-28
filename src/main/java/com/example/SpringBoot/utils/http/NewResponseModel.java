@@ -11,6 +11,7 @@ import java.io.Serializable;
  **/
 public class NewResponseModel<T> implements Serializable {
     private static final long serialVersionUID = -4688208407174044501L;
+
     private int status;
     private String info;
     private T data;
