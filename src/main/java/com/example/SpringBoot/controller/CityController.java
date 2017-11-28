@@ -26,8 +26,10 @@ public class CityController {
     private RedisUtils redisUtils;
 
     @RequestMapping(value = "/city/{name}")
-    public City getCityByName(@PathVariable("name")String name){
-        return cityService.getCityByName(name);
+    public NewResponseModel getCityByName(@PathVariable("name")String name){
+        NewResponseModel responseModel = NewResponseModel.Success();
+        responseModel.setData(cityService.getCityByName(name));
+        return responseModel;
     }
     @GetMapping(value = "/caches/{key}")
     public String getCaches(@PathVariable("key")String key){
