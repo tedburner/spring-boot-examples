@@ -2,6 +2,11 @@ package com.example.SpringBoot.controller;
 
 import com.example.SpringBoot.dto.City;
 import com.example.SpringBoot.service.CityService;
+import com.example.SpringBoot.utils.http.NewResponseModel;
+import com.example.SpringBoot.utils.redis.RedisUtils;
+import com.sun.org.apache.bcel.internal.generic.NEW;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,9 +22,19 @@ public class CityController {
 
     @Resource
     private CityService cityService;
+    @Autowired
+    private RedisUtils redisUtils;
 
     @RequestMapping(value = "/city/{name}")
     public City getCityByName(@PathVariable("name")String name){
         return cityService.getCityByName(name);
+    }
+    @GetMapping(value = "/caches/{key}")
+    public String getCaches(@PathVariable("key")String key){
+        //redisUtils.set("123", "hello world");
+        //System.out.println("进入了方法");
+        redisUtils.remove(key);
+        //String string= redisUtils.get(key).toString();
+        return "remove 成功";
     }
 }
