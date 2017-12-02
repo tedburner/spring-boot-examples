@@ -16,7 +16,7 @@
         select
         <include refid="Base_Column_List" />
         from city
-        where cityName = #{cityName}
+        where name = #{cityName}
     </select>
 
     <select id="findById" resultType="com.example.SpringBoot.dto.City">
