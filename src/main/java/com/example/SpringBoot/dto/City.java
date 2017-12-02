@@ -23,7 +23,7 @@ public class City implements Serializable{
     /**
      * 城市名称
      */
-    private String cityName;
+    private String name;
 
     /**
      * 描述
@@ -46,12 +46,12 @@ public class City implements Serializable{
         this.provinceId = provinceId;
     }
 
-    public String getCityName() {
-        return cityName;
+    public String getName() {
+        return name;
     }
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -67,7 +67,7 @@ public class City implements Serializable{
         return "City{" +
                 "id=" + id +
                 ", provinceId=" + provinceId +
-                ", cityName='" + cityName + '\'' +
+                ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }

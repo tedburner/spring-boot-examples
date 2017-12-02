@@ -35,7 +35,7 @@ public class CityController {
     public String getCaches(@PathVariable("key")String key){
         //redisUtils.set("123", "hello world");
         //System.out.println("进入了方法");
-        redisUtils.remove(key);
+        //redisUtils.remove(key);
         //String string= redisUtils.get(key).toString();
         return "remove 成功";
     }

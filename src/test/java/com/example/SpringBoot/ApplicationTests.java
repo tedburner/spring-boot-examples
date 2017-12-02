@@ -31,4 +31,9 @@ public class ApplicationTests {
 		System.out.println(city);
 	}
 
+	@Test
+	public void addAddressTest(){
+		cityService.addAddress();
+	}
+
 }

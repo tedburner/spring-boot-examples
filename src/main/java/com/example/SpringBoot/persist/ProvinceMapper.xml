@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.SpringBoot.persist.ProvinceMapper">
+
+    <sql id="columns">
+        id, name, createTime, updateTime
+    </sql>
+
+    <insert id="addProvince" parameterType="com.example.SpringBoot.dto.ProvinceDO"
+    keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO province (id,name,createTime,updateTime)
+        VALUE (#{id},#{name},now(),now())
+    </insert>
+
+</mapper>

@@ -3,8 +3,14 @@
 <mapper namespace="com.example.SpringBoot.persist.CityMapper">
 
     <sql id="Base_Column_List">
-        id, provinceId, cityName, description
+        id, provinceId, name, description
     </sql>
+
+    <insert id="addCity" parameterType="com.example.SpringBoot.dto.City"
+    useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO  city (id,provinceId,name,description)
+        VALUE (#{id},#{provinceId},#{name},#{description})
+    </insert>
 
     <select id="findByName" resultType="com.example.SpringBoot.dto.City">
         select

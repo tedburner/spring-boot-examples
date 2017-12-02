@@ -11,4 +11,6 @@ public interface CityService {
     City getCityByName(String name);
 
     City getCityById(Long Id);
+
+    void addAddress();
 }

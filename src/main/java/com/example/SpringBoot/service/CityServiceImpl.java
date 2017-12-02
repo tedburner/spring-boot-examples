@@ -1,12 +1,15 @@
 package com.example.SpringBoot.service;
 
 import com.example.SpringBoot.dto.City;
+import com.example.SpringBoot.dto.ProvinceDO;
 import com.example.SpringBoot.persist.CityMapper;
+import com.example.SpringBoot.persist.ProvinceMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
@@ -28,7 +31,10 @@ public class CityServiceImpl implements CityService{
     private RedisTemplate redisTemplate;
 
     @Resource
-    private TransactionTemplate transactionTemplate;
+    private ProvinceMapper provinceMapper;
+
+    @Resource
+    private TransactionTemplate transactionTemplate;//也可以使用@Transactional
 
     @Override
     public City getCityByName(String name) {
@@ -39,6 +45,30 @@ public class CityServiceImpl implements CityService{
     public City getCityById(Long id) {
 
         return cityMapper.findById(id);
+    }
+
+    @Override
+    public void addAddress() {
+        //对于多个插入，使用事务回滚，防止插入报错，插入错误数据
+        transactionTemplate.execute(status->{
+            try {
+                ProvinceDO province = new ProvinceDO();
+                province.setName("浙江省");
+                provinceMapper.addProvince(province);
+
+                City city = new City();
+                city.setProvinceId(province.getId());
+                city.setName("金华市");
+                city.setDescription("金华火腿");
+                cityMapper.addCity(city);
+
+            }catch (Exception e){
+                status.setRollbackOnly();
+                log.info("添加地址出现错误"+e);
+                throw e;
+            }
+            return null;
+        });
     }
 
 }

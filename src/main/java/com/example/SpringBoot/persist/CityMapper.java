@@ -10,6 +10,8 @@ import org.apache.ibatis.annotations.Param;
 
 public interface CityMapper {
 
+    Long addCity(City city);
+
     /**
      * 根据城市名称，查询城市信息
      *
