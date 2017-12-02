@@ -22,7 +22,7 @@ public class DateFormatUtils {
      * @param patter  时间格式
      * @return String
      * */
-    public String DateToString(Date date, String patter){
+    public static String DateToString(Date date, String patter){
         SimpleDateFormat sdf=new SimpleDateFormat(patter);
         return sdf.format(date);
     }
@@ -33,7 +33,7 @@ public class DateFormatUtils {
      * @param patter  时间格式
      * @return date
      * */
-    public Date DateToString(String obj, String patter){
+    public static Date StringToDate(String obj, String patter){
         SimpleDateFormat sdf=new SimpleDateFormat(patter);
         Date date = null;
         try {
@@ -48,7 +48,7 @@ public class DateFormatUtils {
      * Date转LocalDateTime
      * @param date
      * */
-    public LocalDateTime DateToLocalDateTime(Date date){
+    public static LocalDateTime DateToLocalDateTime(Date date){
         Instant instant = date.toInstant();
         ZoneId zone = ZoneId.systemDefault();
         LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, zone);
@@ -59,15 +59,15 @@ public class DateFormatUtils {
      * Date转LocalDate
      * @param date
      * */
-    public LocalDate DateToLocalDate(Date date){
-        return this.DateToLocalDateTime(date).toLocalDate();
+    public static LocalDate DateToLocalDate(Date date){
+        return DateToLocalDateTime(date).toLocalDate();
     }
 
     /**
      * LocalDateTime转Date
      * @param time
      * */
-    public Date LocalDateTimeToDate(LocalDateTime time){
+    public static Date LocalDateTimeToDate(LocalDateTime time){
         ZoneId zone = ZoneId.systemDefault();
         Instant instant = time.atZone(zone).toInstant();
         Date date = Date.from(instant);
@@ -78,7 +78,7 @@ public class DateFormatUtils {
      LocalDateTime转Date
      * @param time
      * */
-    public Date LocalDateToDate(LocalDate time){
+    public static Date LocalDateToDate(LocalDate time){
         ZoneId zone = ZoneId.systemDefault();
         Instant instant = time.atStartOfDay().atZone(zone).toInstant();
         Date date = Date.from(instant);
@@ -90,7 +90,7 @@ public class DateFormatUtils {
      * @param localDateTime
      *@param patter
      * */
-    public String LocalDateTimeToString(LocalDateTime localDateTime,String patter){
+    public static String LocalDateTimeToString(LocalDateTime localDateTime,String patter){
         DateTimeFormatter df = DateTimeFormatter.ofPattern(patter);
         LocalDateTime time = LocalDateTime.now();
         return df.format(localDateTime);
@@ -100,7 +100,7 @@ public class DateFormatUtils {
      * String转LocaDateTime
      * @param obj
      * */
-    public LocalDateTime StringToLocalDateTime(String obj){
+    public static LocalDateTime StringToLocalDateTime(String obj){
         DateTimeFormatter DATEFORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         LocalDateTime localDateTime = LocalDateTime.parse(obj,DATEFORMATTER);
         return localDateTime;
@@ -109,9 +109,15 @@ public class DateFormatUtils {
      * String转LocaDate
      * @param obj
      * */
-    public LocalDate StringToLocalDate(String obj){
+    public static LocalDate StringToLocalDate(String obj){
         DateTimeFormatter DATEFORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate localDate = LocalDate.parse(obj,DATEFORMATTER);
         return localDate;
     }
+
+//    public static void main(String[] args){
+//        Date time = new Date();
+//        String str = DateToString(time,"yyyy-MM-dd");
+//        System.out.println(str);
+//    }
 }
