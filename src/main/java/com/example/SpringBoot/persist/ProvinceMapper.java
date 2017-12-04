@@ -9,4 +9,6 @@ import com.example.SpringBoot.dto.ProvinceDO;
 public interface ProvinceMapper {
 
     Long addProvince(ProvinceDO province);
+
+    ProvinceDO getProvince(Long id);
 }

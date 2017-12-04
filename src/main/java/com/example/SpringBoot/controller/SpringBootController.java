@@ -1,20 +1,25 @@
 package com.example.SpringBoot.controller;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author lingjun.jlj
  * @create 2017-09-01
  **/
-@Controller
+@RestController
 public class SpringBootController {
 
 
-    @RequestMapping("/")
-    @ResponseBody
+    @GetMapping("/")
     String springboot() {
         return "Hello Spring Boot!";
+    }
+
+    @GetMapping("/hello/{name}")
+    public String hello(@PathVariable String name){
+        return "Hello "+name;
     }
 }

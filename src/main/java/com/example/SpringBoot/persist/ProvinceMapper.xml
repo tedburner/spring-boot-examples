@@ -3,7 +3,7 @@
 <mapper namespace="com.example.SpringBoot.persist.ProvinceMapper">
 
     <sql id="columns">
-        id, name, createTime, updateTime
+        id,name,createTime,updateTime
     </sql>
 
     <insert id="addProvince" parameterType="com.example.SpringBoot.dto.ProvinceDO"
@@ -11,5 +11,11 @@
         INSERT INTO province (id,name,createTime,updateTime)
         VALUE (#{id},#{name},now(),now())
     </insert>
+
+    <select id="getProvince" resultType="com.example.SpringBoot.dto.ProvinceDO">
+        SELECT <include refid="columns"/>
+        FROM province
+        WHERE id = #{id}
+    </select>
 
 </mapper>
