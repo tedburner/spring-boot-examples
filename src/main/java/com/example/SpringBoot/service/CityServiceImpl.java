@@ -43,7 +43,8 @@ public class CityServiceImpl implements CityService{
         return cityMapper.findByName(name);
     }
 
-    @Override
+    @Override   //spring注解类缓存，value必填，key为Redis的key
+    @Cacheable(value = "redis",key = "'cityId_'+#id")
     public City getCityById(Long id) {
         return cityMapper.findById(id);
     }
