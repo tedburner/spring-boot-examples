@@ -32,11 +32,13 @@ public class CityController {
         return responseModel;
     }
     @GetMapping(value = "/caches/{key}")
-    public String getCaches(@PathVariable("key")String key){
+    public NewResponseModel getCaches(@PathVariable("key")String key){
+        NewResponseModel responseModel = NewResponseModel.Success();
         //redisUtils.set("123", "hello world");
         //System.out.println("进入了方法");
-        //redisUtils.remove(key);
+        City city = (City) redisUtils.get("cityId_1");
+        responseModel.setData(city);
         //String string= redisUtils.get(key).toString();
-        return "remove 成功";
+        return responseModel;
     }
 }

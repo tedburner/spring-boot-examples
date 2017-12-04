@@ -2,7 +2,6 @@ package com.example.SpringBoot.controller;
 
 import com.example.SpringBoot.service.ProvinceService;
 import com.example.SpringBoot.utils.http.NewResponseModel;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

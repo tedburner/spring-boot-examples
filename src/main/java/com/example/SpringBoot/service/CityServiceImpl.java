@@ -7,6 +7,8 @@ import com.example.SpringBoot.persist.ProvinceMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,7 +45,6 @@ public class CityServiceImpl implements CityService{
 
     @Override
     public City getCityById(Long id) {
-
         return cityMapper.findById(id);
     }
 
