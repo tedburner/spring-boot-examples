@@ -35,8 +35,8 @@ public class CityServiceImpl implements CityService{
     @Resource
     private ProvinceMapper provinceMapper;
 
-    @Resource
-    private TransactionTemplate transactionTemplate;//也可以使用@Transactional
+    @Resource  //也可以使用@Transactional
+    private TransactionTemplate transactionTemplate;
 
     @Override
     public City getCityByName(String name) {
