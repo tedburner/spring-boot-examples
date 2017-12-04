@@ -28,7 +28,7 @@ public class ProvinceServiceImpl implements ProvinceService{
     public ProvinceDO getProvince(Long id) {
         String key = "provinceId_"+id;
         if (redisUtils.exists(key)){
-            //todo redis对Java8的LocalDateTime的序列化有问题，需要看看
+            //todo redis对Java8的LocalDateTime的序列化有问题，获取时会报错，1、重写序列化；2、。。。
             ProvinceDO province = (ProvinceDO)redisUtils.get(key);
             log.info("从缓存中获取省份>>"+province.toString());
             return province;
