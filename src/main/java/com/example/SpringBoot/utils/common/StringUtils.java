@@ -10,7 +10,7 @@ public class StringUtils {
      * 判断String不存在
      * @param obj
      * */
-    public boolean isEmpty(String obj){
+    public static boolean isEmpty(String obj){
 
         return obj == null || obj.isEmpty();
     }
@@ -19,7 +19,7 @@ public class StringUtils {
      * 判断String存在
      * @param obj
      * */
-    public boolean isNotEmpty(String obj){
+    public static boolean isNotEmpty(String obj){
 
         return !isEmpty(obj);
     }
