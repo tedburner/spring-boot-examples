@@ -10,5 +10,5 @@ public interface ProvinceMapper {
 
     Long addProvince(ProvinceDO province);
 
-    ProvinceDO getProvince(Long id);
+    ProvinceDO selectProvinceById(Long id);
 }

@@ -12,14 +12,14 @@
         VALUE (#{id},#{provinceId},#{name},#{description})
     </insert>
 
-    <select id="findByName" resultType="com.example.SpringBoot.dto.City">
+    <select id="selectByName" resultType="com.example.SpringBoot.dto.City">
         select
         <include refid="Base_Column_List" />
         from city
         where name = #{cityName}
     </select>
 
-    <select id="findById" resultType="com.example.SpringBoot.dto.City">
+    <select id="selectById" resultType="com.example.SpringBoot.dto.City">
         select
         <include refid="Base_Column_List" />
         from city

@@ -33,7 +33,7 @@ public class ProvinceServiceImpl implements ProvinceService{
             log.info("从缓存中获取省份>>"+province.toString());
             return province;
         }
-        ProvinceDO province = provinceMapper.getProvince(id);
+        ProvinceDO province = provinceMapper.selectProvinceById(id);
 
         //插入缓存
         redisUtils.set(key,province);
