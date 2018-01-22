@@ -25,4 +25,11 @@
         from city
         where id = #{id}
     </select>
+
+    <select id="selectCityByProvinceId" resultType="com.example.SpringBoot.dto.City">
+        select
+        <include refid="Base_Column_List" />
+        from city
+        where provinceId = #{provinceId}
+    </select>
 </mapper>

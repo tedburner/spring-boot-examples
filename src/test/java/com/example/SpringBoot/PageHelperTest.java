@@ -22,7 +22,8 @@ public class PageHelperTest {
 
     @Test
     public  void selectCityByProvinceIdTest(){
-        Page<City> cityPage = PageHelper.offsetPage(10,20)
+        Page<City> cityPage = PageHelper.offsetPage(0,20)
                 .doSelectPage(()-> cityMapper.selectCityByProvinceId(1L));
+        System.out.println(cityPage.getTotal());
     }
 }
