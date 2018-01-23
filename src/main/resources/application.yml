@@ -1,0 +1,2 @@
+#mybatis:
+#  type-aliases-package: com.example.SpringBoot.dto
