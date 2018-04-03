@@ -1,17 +1,16 @@
-package com.example.SpringBoot.service;
+package com.example.SpringBoot.service.impl;
 
 import com.example.SpringBoot.dto.City;
 import com.example.SpringBoot.dto.ProvinceDO;
 import com.example.SpringBoot.persist.CityMapper;
 import com.example.SpringBoot.persist.ProvinceMapper;
+import com.example.SpringBoot.service.CityService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
@@ -22,7 +21,7 @@ import javax.annotation.Resource;
  **/
 
 @Service
-public class CityServiceImpl implements CityService{
+public class CityServiceImpl implements CityService {
 
     private static final Logger log = LoggerFactory.getLogger(CityServiceImpl.class);
 
