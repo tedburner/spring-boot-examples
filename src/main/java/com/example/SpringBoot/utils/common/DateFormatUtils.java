@@ -114,9 +114,4 @@ public class DateFormatUtils {
         return localDate;
     }
 
-//    public static void main(String[] args){
-//        Date time = new Date();
-//        String str = DateToString(time,"yyyy-MM-dd");
-//        System.out.println(str);
-//    }
 }

@@ -75,6 +75,10 @@ public class FastThreadPool {
 
     private ListeningExecutorService service;
 
+    /**
+     * @PostConstruct
+     * 在spring容器初始化时执行该方法
+     * */
     @PostConstruct
     public void initialize() {
         workQueue = new ArrayBlockingQueue(queueSize);
