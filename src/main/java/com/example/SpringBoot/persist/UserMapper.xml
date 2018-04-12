@@ -8,7 +8,7 @@
 
     <insert id="addUser" parameterType="com.example.SpringBoot.dto.DO.UserDO"
     useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO  city (name,age)
+        INSERT INTO  cityDO (name,age)
         VALUE (#{name},#{age})
     </insert>
 

@@ -1,6 +1,6 @@
 package com.example.SpringBoot;
 
-import com.example.SpringBoot.dto.Good;
+import com.example.SpringBoot.dto.DO.GoodDO;
 
 import java.time.LocalDateTime;
 
@@ -11,11 +11,11 @@ import java.time.LocalDateTime;
 public class LombokTest {
 
     public static void main(String [] args){
-        Good good = new Good();
-        good.setId(1L);
-        good.setName("衣服");
-        good.setCreateTime(LocalDateTime.now());
-        good.setUpdateTime(LocalDateTime.now());
-        System.out.println(good);
+        GoodDO goodDO = new GoodDO();
+        goodDO.setId(1L);
+        goodDO.setName("衣服");
+        goodDO.setCreateTime(LocalDateTime.now());
+        goodDO.setUpdateTime(LocalDateTime.now());
+        System.out.println(goodDO);
     }
 }

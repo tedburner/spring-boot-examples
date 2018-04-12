@@ -6,13 +6,13 @@
         id,name,createTime,updateTime
     </sql>
 
-    <insert id="addProvince" parameterType="com.example.SpringBoot.dto.ProvinceDO"
+    <insert id="addProvince" parameterType="com.example.SpringBoot.dto.DO.ProvinceDO"
     keyProperty="id" useGeneratedKeys="true">
         INSERT INTO province (id,name,createTime,updateTime)
         VALUE (#{id},#{name},now(),now())
     </insert>
 
-    <select id="getProvince" resultType="com.example.SpringBoot.dto.ProvinceDO">
+    <select id="getProvince" resultType="com.example.SpringBoot.dto.DO.ProvinceDO">
         SELECT <include refid="columns"/>
         FROM province
         WHERE id = #{id}

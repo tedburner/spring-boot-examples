@@ -1,6 +1,6 @@
 package com.example.SpringBoot;
 
-import com.example.SpringBoot.dto.City;
+import com.example.SpringBoot.dto.DO.CityDO;
 import com.example.SpringBoot.persist.CityMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -22,8 +22,8 @@ public class PageHelperTest {
 
     @Test
     public  void selectCityByProvinceIdTest(){
-        Page<City> cityPage = PageHelper.offsetPage(0,2)
+        Page<CityDO> cityDOPage = PageHelper.offsetPage(0,2)
                 .doSelectPage(()-> cityMapper.selectCityByProvinceId(1L));
-        System.out.println(cityPage.getTotal());
+        System.out.println(cityDOPage.getTotal());
     }
 }

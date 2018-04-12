@@ -1,5 +1,6 @@
 package com.example.SpringBoot;
 
+import com.example.SpringBoot.dto.DO.CityDO;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -16,21 +17,11 @@ public class MainTest {
     }
 
     public static void main(String[] args) {
-        MainTest mainTest = new MainTest();
-        System.out.println(mainTest.forTest());
-    }
-
-    private int forTest() {
-        int i = 8;
-
-        while(true) {
-            ++i;
-            if (i > 20) {
-                System.out.println("end");
-                return i;
-            }
-
-            System.out.println(i);
-        }
+        CityDO builder = CityDO.CityBuilder.aCity()
+                .withProvinceId(1L)
+                .withName("金华市")
+                .withDescription("金华火腿")
+                .build();
+        System.out.println(builder);
     }
 }

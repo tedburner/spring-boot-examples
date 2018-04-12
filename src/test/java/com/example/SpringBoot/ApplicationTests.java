@@ -1,6 +1,6 @@
 package com.example.SpringBoot;
 
-import com.example.SpringBoot.dto.City;
+import com.example.SpringBoot.dto.DO.CityDO;
 import com.example.SpringBoot.service.CityService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,16 +19,16 @@ public class ApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		City city = cityService.getCityByName("杭州");
-		System.out.println(city);
+		CityDO cityDO = cityService.getCityByName("杭州");
+		System.out.println(cityDO);
 
 	}
 
 	@Test
 	public void redisTest(){
 
-		City city = cityService.getCityById(1L);
-		System.out.println(city);
+		CityDO cityDO = cityService.getCityById(1L);
+		System.out.println(cityDO);
 	}
 
 	@Test

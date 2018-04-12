@@ -1,8 +1,6 @@
 package com.example.SpringBoot.service;
 
-import com.example.SpringBoot.dto.ProvinceDO;
-
-import javax.annotation.Resource;
+import com.example.SpringBoot.dto.DO.ProvinceDO;
 
 /**
  * @author lingjun.jlj

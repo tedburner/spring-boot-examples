@@ -1,7 +1,7 @@
 package com.example.SpringBoot.service.impl;
 
-import com.example.SpringBoot.dto.City;
-import com.example.SpringBoot.dto.ProvinceDO;
+import com.example.SpringBoot.dto.DO.CityDO;
+import com.example.SpringBoot.dto.DO.ProvinceDO;
 import com.example.SpringBoot.persist.CityMapper;
 import com.example.SpringBoot.persist.ProvinceMapper;
 import com.example.SpringBoot.service.CityService;
@@ -38,13 +38,13 @@ public class CityServiceImpl implements CityService {
     private TransactionTemplate transactionTemplate;
 
     @Override
-    public City getCityByName(String name) {
+    public CityDO getCityByName(String name) {
         return cityMapper.selectByName(name);
     }
 
     @Override   //spring注解类缓存，value必填，key为Redis的key
     @Cacheable(value = "redis",key = "'cityId_'+#id")
-    public City getCityById(Long id) {
+    public CityDO getCityById(Long id) {
         return cityMapper.selectById(id);
     }
 
@@ -57,11 +57,12 @@ public class CityServiceImpl implements CityService {
                 province.setName("浙江省");
                 provinceMapper.addProvince(province);
 
-                City city = new City();
-                city.setProvinceId(province.getId());
-                city.setName("金华市");
-                city.setDescription("金华火腿");
-                cityMapper.addCity(city);
+                CityDO builder = CityDO.CityBuilder.aCity()
+                        .withProvinceId(province.getId())
+                        .withName("金华市")
+                        .withDescription("金华火腿")
+                        .build();
+                cityMapper.addCity(builder);
 
             }catch (Exception e){
                 status.setRollbackOnly();

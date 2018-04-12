@@ -6,30 +6,30 @@
         id, provinceId, name, description
     </sql>
 
-    <insert id="addCity" parameterType="com.example.SpringBoot.dto.City"
+    <insert id="addCity" parameterType="com.example.SpringBoot.dto.DO.CityDO"
     useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO  city (id,provinceId,name,description)
+        INSERT INTO  cityDO (id,provinceId,name,description)
         VALUE (#{id},#{provinceId},#{name},#{description})
     </insert>
 
-    <select id="selectByName" resultType="com.example.SpringBoot.dto.City">
+    <select id="selectByName" resultType="com.example.SpringBoot.dto.DO.CityDO">
         select
         <include refid="Base_Column_List" />
-        from city
+        from cityDO
         where name = #{cityName}
     </select>
 
-    <select id="selectById" resultType="com.example.SpringBoot.dto.City">
+    <select id="selectById" resultType="com.example.SpringBoot.dto.DO.CityDO">
         select
         <include refid="Base_Column_List" />
-        from city
+        from cityDO
         where id = #{id}
     </select>
 
-    <select id="selectCityByProvinceId" resultType="com.example.SpringBoot.dto.City">
+    <select id="selectCityByProvinceId" resultType="com.example.SpringBoot.dto.DO.CityDO">
         select
         <include refid="Base_Column_List" />
-        from city
+        from cityDO
         where provinceId = #{provinceId}
     </select>
 </mapper>

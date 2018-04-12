@@ -1,6 +1,6 @@
 package com.example.SpringBoot.service;
 
-import com.example.SpringBoot.dto.City;
+import com.example.SpringBoot.dto.DO.CityDO;
 
 /**
  * @author lingjun.jlj
@@ -8,9 +8,9 @@ import com.example.SpringBoot.dto.City;
  **/
 public interface CityService {
 
-    City getCityByName(String name);
+    CityDO getCityByName(String name);
 
-    City getCityById(Long Id);
+    CityDO getCityById(Long Id);
 
     void addAddress();
 }
