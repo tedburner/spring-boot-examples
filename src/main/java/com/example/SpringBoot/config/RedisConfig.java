@@ -64,14 +64,15 @@ public class RedisConfig extends CachingConfigurerSupport {
         //设置缓存过期时间
         // rcm.setDefaultExpiration(60);//秒
         //设置value的过期时间
-        Map<String,Long> map=new HashMap<String, Long>();
-        map.put("test",60L);
+        Map<String, Long> map = new HashMap<String, Long>();
+        map.put("test", 60L);
         rcm.setExpires(map);
         return rcm;
     }
 
     /**
      * RedisTemplate配置
+     *
      * @param factory
      * @return
      */
