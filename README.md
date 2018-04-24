@@ -12,3 +12,13 @@ mvn clean package  -Dmaven.test.skip=true
 ```bash
 java -jar  target/项目名称-版本号.jar
 ```
+
+## docker
+### 服务器上面打包
+```bash
+mvn package
+```
+### docker镜像
+```bash
+mvn package docker:build
+```
