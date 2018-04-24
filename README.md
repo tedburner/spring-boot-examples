@@ -18,6 +18,7 @@ java -jar  target/项目名称-版本号.jar
 ```bash
 mvn package
 ```
+查看项目是否可运行
 ### docker镜像
 ```bash
 mvn package docker:build
