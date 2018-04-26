@@ -9,8 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
-
-import javax.xml.ws.soap.MTOM;
+import org.springframework.context.annotation.ImportResource;
 
 
 /**
@@ -19,6 +18,7 @@ import javax.xml.ws.soap.MTOM;
 @ServletComponentScan
 @SpringBootApplication
 @MapperScan("com.example.SpringBoot.persist")
+@ImportResource({"classpath:mybatis-config.xml"})
 public class Application extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
