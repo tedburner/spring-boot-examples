@@ -23,7 +23,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<skipTests>true</skipTests>
-		<docker.image.prefix>springboot</docker.image.prefix>
+		<docker.image.prefix>SpringBoot</docker.image.prefix>
 	</properties>
 
 	<dependencies>
