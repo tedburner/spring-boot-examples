@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>SpringBoot</artifactId>
+	<artifactId>springboot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>SpringBoot</name>
+	<name>springboot</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -23,7 +23,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<skipTests>true</skipTests>
-		<docker.image.prefix>SpringBoot</docker.image.prefix>
+		<docker.image.prefix>springboot</docker.image.prefix>
 	</properties>
 
 	<dependencies>
