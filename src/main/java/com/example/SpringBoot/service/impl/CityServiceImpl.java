@@ -38,9 +38,6 @@ public class CityServiceImpl implements CityService {
     @Resource  //也可以使用@Transactional
     private TransactionTemplate transactionTemplate;
 
-    @Autowired
-    private RedisUtils redisUtils;
-
     @Override
     public CityDO getCityByName(String name) {
         return cityMapper.selectByName(name);
