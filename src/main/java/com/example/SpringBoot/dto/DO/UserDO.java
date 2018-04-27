@@ -2,11 +2,14 @@ package com.example.SpringBoot.dto.DO;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author lingjun.jlj
  * @data 2018/4/2
  */
-public class UserDO {
+@Data
+public class UserDO implements Serializable {
     private Integer id;
     private String name;
     private Integer age;
@@ -48,36 +51,4 @@ public class UserDO {
         }
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "UserDO{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
 }

@@ -5,6 +5,7 @@ import com.example.SpringBoot.dto.DO.ProvinceDO;
 import com.example.SpringBoot.persist.CityMapper;
 import com.example.SpringBoot.persist.ProvinceMapper;
 import com.example.SpringBoot.service.CityService;
+import com.example.SpringBoot.utils.redis.RedisUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,14 +38,18 @@ public class CityServiceImpl implements CityService {
     @Resource  //也可以使用@Transactional
     private TransactionTemplate transactionTemplate;
 
+    @Autowired
+    private RedisUtils redisUtils;
+
     @Override
     public CityDO getCityByName(String name) {
         return cityMapper.selectByName(name);
     }
 
-    @Override   //spring注解类缓存，value必填，key为Redis的key
-    @Cacheable(value = "redis",key = "'cityId_'+#id")
+    @Override   //如果第一次就会把缓存存储到Redis，之后如果有相对于key的缓存就会直接冲Redis中获取
+    @Cacheable(value = "city",key = "'cityId_'+#id")
     public CityDO getCityById(Long id) {
+        //CityDO cityDO = new CityDO();
         return cityMapper.selectById(id);
     }
 

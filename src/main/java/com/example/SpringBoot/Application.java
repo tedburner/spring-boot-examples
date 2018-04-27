@@ -15,7 +15,7 @@ import org.springframework.context.annotation.ImportResource;
 @SpringBootApplication
 @MapperScan("com.example.SpringBoot.persist")
 @ImportResource("classpath:mybatis-config.xml")
-public class Application {
+public class Application extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);

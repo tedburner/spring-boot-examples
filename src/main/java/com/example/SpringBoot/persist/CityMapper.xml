@@ -15,21 +15,21 @@
     <select id="selectByName" resultType="com.example.SpringBoot.dto.DO.CityDO">
         select
         <include refid="Base_Column_List" />
-        from cityDO
+        from city
         where name = #{cityName}
     </select>
 
     <select id="selectById" resultType="com.example.SpringBoot.dto.DO.CityDO">
         select
         <include refid="Base_Column_List" />
-        from cityDO
+        from city
         where id = #{id}
     </select>
 
     <select id="selectCityByProvinceId" resultType="com.example.SpringBoot.dto.DO.CityDO">
         select
         <include refid="Base_Column_List" />
-        from cityDO
+        from city
         where provinceId = #{provinceId}
     </select>
 </mapper>

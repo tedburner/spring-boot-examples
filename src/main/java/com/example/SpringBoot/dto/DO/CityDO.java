@@ -8,6 +8,7 @@ import java.io.Serializable;
  * @author lingjun.jlj
  * @create 2017-09-22
  **/
+@Data
 public class CityDO implements Serializable{
 
     private static final long serialVersionUID = -1L;
@@ -74,51 +75,5 @@ public class CityDO implements Serializable{
             cityDO.id = this.id;
             return cityDO;
         }
-    }
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getProvinceId() {
-        return provinceId;
-    }
-
-    public void setProvinceId(Long provinceId) {
-        this.provinceId = provinceId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "CityDO{" +
-                "id=" + id +
-                ", provinceId=" + provinceId +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
     }
 }
