@@ -6,8 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
-import javax.xml.ws.soap.MTOM;
-
 
 /**
  * * Spring Boot 应用启动类
