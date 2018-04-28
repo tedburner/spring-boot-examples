@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  **/
 @Aspect
 @Component
-public class SpringBootAop {
+public class ServiceAop {
 
     @Before("execution(* com.example.SpringBoot.service..*.*(..))")
     public void before(){
