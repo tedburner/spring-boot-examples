@@ -1,6 +1,6 @@
 package com.example.SpringBoot.controller;
 
-import com.example.SpringBoot.dto.DO.CityDO;
+import com.example.SpringBoot.model.DO.CityDO;
 import com.example.SpringBoot.service.CityService;
 import com.example.SpringBoot.utils.http.NewResponseModel;
 import com.example.SpringBoot.utils.redis.RedisUtils;

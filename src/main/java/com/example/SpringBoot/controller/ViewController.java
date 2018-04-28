@@ -1,6 +1,6 @@
 package com.example.SpringBoot.controller;
 
-import com.example.SpringBoot.dto.DO.UserDO;
+import com.example.SpringBoot.model.DO.UserDO;
 import com.example.SpringBoot.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

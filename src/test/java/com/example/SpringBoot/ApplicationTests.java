@@ -1,6 +1,6 @@
 package com.example.SpringBoot;
 
-import com.example.SpringBoot.dto.DO.CityDO;
+import com.example.SpringBoot.model.DO.CityDO;
 import com.example.SpringBoot.service.CityService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

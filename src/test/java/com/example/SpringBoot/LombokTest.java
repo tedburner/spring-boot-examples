@@ -1,6 +1,6 @@
 package com.example.SpringBoot;
 
-import com.example.SpringBoot.dto.DO.GoodDO;
+import com.example.SpringBoot.model.DO.GoodDO;
 
 import java.time.LocalDateTime;
 

@@ -1,6 +1,6 @@
 package com.example.SpringBoot.service.impl;
 
-import com.example.SpringBoot.dto.DO.UserDO;
+import com.example.SpringBoot.model.DO.UserDO;
 import com.example.SpringBoot.persist.UserMapper;
 import com.example.SpringBoot.service.UserService;
 import org.springframework.stereotype.Service;

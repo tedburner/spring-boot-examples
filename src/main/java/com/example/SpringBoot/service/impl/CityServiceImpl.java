@@ -1,7 +1,7 @@
 package com.example.SpringBoot.service.impl;
 
-import com.example.SpringBoot.dto.DO.CityDO;
-import com.example.SpringBoot.dto.DO.ProvinceDO;
+import com.example.SpringBoot.model.DO.CityDO;
+import com.example.SpringBoot.model.DO.ProvinceDO;
 import com.example.SpringBoot.persist.CityMapper;
 import com.example.SpringBoot.persist.ProvinceMapper;
 import com.example.SpringBoot.service.CityService;

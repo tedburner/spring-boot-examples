@@ -1,6 +1,6 @@
 package com.example.SpringBoot.persist;
 
-import com.example.SpringBoot.dto.DO.UserDO;
+import com.example.SpringBoot.model.DO.UserDO;
 
 import java.util.List;
 

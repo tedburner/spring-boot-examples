@@ -1,6 +1,6 @@
 package com.example.SpringBoot.service;
 
-import com.example.SpringBoot.dto.DO.CityDO;
+import com.example.SpringBoot.model.DO.CityDO;
 
 /**
  * @author lingjun.jlj

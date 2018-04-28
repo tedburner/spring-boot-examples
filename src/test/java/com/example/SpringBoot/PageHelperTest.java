@@ -1,6 +1,6 @@
 package com.example.SpringBoot;
 
-import com.example.SpringBoot.dto.DO.CityDO;
+import com.example.SpringBoot.model.DO.CityDO;
 import com.example.SpringBoot.persist.CityMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;

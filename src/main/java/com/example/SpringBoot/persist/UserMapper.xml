@@ -6,13 +6,13 @@
         id, name, age
     </sql>
 
-    <insert id="addUser" parameterType="com.example.SpringBoot.dto.DO.UserDO"
+    <insert id="addUser" parameterType="com.example.SpringBoot.model.DO.UserDO"
     useGeneratedKeys="true" keyProperty="id">
         INSERT INTO  cityDO (name,age)
         VALUE (#{name},#{age})
     </insert>
 
-    <select id="selectUser" resultType="com.example.SpringBoot.dto.DO.UserDO">
+    <select id="selectUser" resultType="com.example.SpringBoot.model.DO.UserDO">
         select
         <include refid="Base_Column_List" />
         from user

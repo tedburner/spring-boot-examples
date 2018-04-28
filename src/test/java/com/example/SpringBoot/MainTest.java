@@ -1,6 +1,6 @@
 package com.example.SpringBoot;
 
-import com.example.SpringBoot.dto.DTO.SimpleDTO;
+import com.example.SpringBoot.model.DTO.SimpleDTO;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;

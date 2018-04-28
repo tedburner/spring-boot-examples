@@ -1,6 +1,6 @@
 package com.example.SpringBoot.service.impl;
 
-import com.example.SpringBoot.dto.DO.ProvinceDO;
+import com.example.SpringBoot.model.DO.ProvinceDO;
 import com.example.SpringBoot.persist.ProvinceMapper;
 import com.example.SpringBoot.service.ProvinceService;
 import com.example.SpringBoot.utils.redis.RedisUtils;

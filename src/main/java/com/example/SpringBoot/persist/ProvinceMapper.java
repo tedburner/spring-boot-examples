@@ -1,6 +1,6 @@
 package com.example.SpringBoot.persist;
 
-import com.example.SpringBoot.dto.DO.ProvinceDO;
+import com.example.SpringBoot.model.DO.ProvinceDO;
 
 /**
  * @author lingjun.jlj

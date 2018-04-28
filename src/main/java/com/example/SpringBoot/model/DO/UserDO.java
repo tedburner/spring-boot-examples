@@ -1,4 +1,4 @@
-package com.example.SpringBoot.dto.DO;
+package com.example.SpringBoot.model.DO;
 
 import lombok.Data;
 
@@ -6,6 +6,7 @@ import lombok.Data;
  * @author lingjun.jlj
  * @data 2018/4/2
  */
+@Data
 public class UserDO {
     private Integer id;
     private String name;
@@ -46,38 +47,5 @@ public class UserDO {
             userDO.age = this.age;
             return userDO;
         }
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "UserDO{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
     }
 }

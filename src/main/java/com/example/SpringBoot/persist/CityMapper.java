@@ -1,6 +1,6 @@
 package com.example.SpringBoot.persist;
 
-import com.example.SpringBoot.dto.DO.CityDO;
+import com.example.SpringBoot.model.DO.CityDO;
 import org.apache.ibatis.annotations.Param;
 
 
