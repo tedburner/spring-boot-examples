@@ -14,6 +14,6 @@ public class ServiceAop {
 
     @Before("execution(* com.example.SpringBoot.service..*.*(..))")
     public void before(){
-        System.out.println("Spring AOP");
+        //System.out.println("Spring AOP");
     }
 }
