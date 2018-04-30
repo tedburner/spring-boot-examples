@@ -95,6 +95,7 @@ public class RedisUtils {
      * 写入缓存
      * @param key
      * @param value
+     * @param expireTime 有效时间  单位秒
      * @return
      */
     public boolean set(final String key, Object value, Long expireTime) {
