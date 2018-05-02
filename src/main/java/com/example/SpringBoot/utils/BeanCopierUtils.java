@@ -25,7 +25,7 @@ public class BeanCopierUtils {
          if (!beanCopierMap.containsKey(beanKey)) {
              copier = BeanCopier.create(source.getClass(), target.getClass(), false);
              beanCopierMap.put(beanKey, copier);
-         }else {
+         }else {//判断之前是否已经存在了
              copier = beanCopierMap.get(beanKey);
          }
          copier.copy(source, target, null);
