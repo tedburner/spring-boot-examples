@@ -1,10 +1,8 @@
-package com.example.SpringBoot.utils;
+package com.example.SpringBoot.utils.common;
 
 import com.example.SpringBoot.model.DO.UserDO;
 import org.springframework.cglib.beans.BeanCopier;
-import org.springframework.data.domain.jaxb.SpringDataJaxb;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
