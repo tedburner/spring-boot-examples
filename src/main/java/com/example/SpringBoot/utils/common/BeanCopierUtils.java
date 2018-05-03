@@ -1,10 +1,14 @@
 package com.example.SpringBoot.utils.common;
 
-import com.example.SpringBoot.model.DO.UserDO;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.cglib.beans.BeanCopier;
+import org.springframework.cglib.core.Converter;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * @author lingjun.jlj
@@ -12,36 +16,60 @@ import java.util.concurrent.ConcurrentHashMap;
  * @Description:
  */
 public class BeanCopierUtils {
+    private static final ConcurrentMap<String, BeanCopier> cacheCopierMap = Maps.newConcurrentMap();
 
-    public static Map<String, BeanCopier> beanCopierMap = new ConcurrentHashMap<>();
-
-
-    public static void copyProperties(Object source,
-                                        Object target){
-         String beanKey = generateKey(source.getClass(),target.getClass());
-         BeanCopier copier = null;
-         if (!beanCopierMap.containsKey(beanKey)) {
-             copier = BeanCopier.create(source.getClass(), target.getClass(), false);
-             beanCopierMap.put(beanKey, copier);
-         }else {//判断之前是否已经存在了
-             copier = beanCopierMap.get(beanKey);
-         }
-         copier.copy(source, target, null);
-     }
-
-    private static String generateKey(Class<?>class1,Class<?>class2){
-        return class1.toString() + class2.toString();
+    public BeanCopierUtils() {
     }
 
-    public static void main(String[] args) {
-        UserDO object = UserDO.UserDOBuilder
-                .anUserDO()
-                .withId(1)
-                .withAge(20)
-                .withName("蒋")
-                .build();
-        UserDO userDO = new UserDO();
-        copyProperties(object,userDO);
-        System.out.println(userDO.getAge());
+    public static <T> List<T> copyList(List<Object> sourceList, Class<T> targetClass) {
+        if (CollectionUtils.isEmpty(sourceList)) {
+            return Lists.newArrayList();
+        } else {
+            List<T> resultList = Lists.newArrayListWithCapacity(sourceList.size());
+            Iterator iterator = sourceList.iterator();
+
+            while (iterator.hasNext()) {
+                Object source = iterator.next();
+
+                try {
+                    T target = targetClass.newInstance();
+                    copy(source, target);
+                    resultList.add(target);
+                } catch (Exception var6) {
+                    throw new RuntimeException(var6);
+                }
+            }
+
+            return resultList;
+        }
+    }
+
+    public static <T> T copy(Object source, Class<T> targetClass) {
+        T target;
+        try {
+            target = targetClass.newInstance();
+        } catch (IllegalAccessException | InstantiationException e) {
+            throw new RuntimeException(e);
+        }
+
+        copy(source, target);
+
+        return target;
+    }
+
+    public static void copy(Object source, Object target) {
+        BeanCopier copier = getBeanCopier(source.getClass(), target.getClass());
+        copier.copy(source, target, (Converter) null);
+    }
+
+    private static BeanCopier getBeanCopier(Class<?> sourceClass, Class<?> targetClass) {
+        String copierKey = sourceClass.toString() + "#" + targetClass.toString();
+        if (cacheCopierMap.containsKey(copierKey)) {
+            return (BeanCopier) cacheCopierMap.get(copierKey);
+        } else {
+            BeanCopier beanCopier = BeanCopier.create(sourceClass, targetClass, false);
+            cacheCopierMap.put(copierKey, beanCopier);
+            return beanCopier;
+        }
     }
 }
