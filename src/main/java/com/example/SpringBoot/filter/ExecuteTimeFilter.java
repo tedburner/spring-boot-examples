@@ -16,6 +16,7 @@ import java.util.Map;
 /**
  * @author lingjun.jlj
  * @create 2017-11-30
+ * @descrip 过滤器
  **/
 @WebFilter(filterName="ExecuteTimeFilter",urlPatterns={"/*"})
 public class ExecuteTimeFilter implements Filter {
