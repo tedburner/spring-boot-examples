@@ -101,7 +101,10 @@ public class Qiniu {
     }
 
     /**
-     * 拼接获取图片公共URL
+     * @param imageDomain 域名
+     * @param imageKey    图片key
+     * @param pac         后缀比如：mini
+     * @deprecated 拼接图片公共URL
      */
     public static String getPublicImgUrl(String imageDomain, String imageKey, String pac) {
         String imageUrl = "https://" + imageDomain + "/" + imageKey;

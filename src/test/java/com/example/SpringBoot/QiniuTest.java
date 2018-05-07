@@ -24,9 +24,10 @@ public class QiniuTest {
     private ImageUploadService imageUploadService;
 
     @Test
-    public void QiniuTest(){
+    public void QiniuTest() {
         String imgKey = "201805071755475l6EjG.png";
-        String imgUrl = Qiniu.downloadHttps(QiniuDomain, imgKey);
+        //String imgUrl = Qiniu.downloadHttps(QiniuDomain, imgKey);
+        String imgUrl = Qiniu.getPublicImgUrl(QiniuDomain,imgKey,null);
         System.out.println(imgUrl);
 
 
