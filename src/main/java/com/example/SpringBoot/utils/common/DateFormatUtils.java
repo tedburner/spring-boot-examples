@@ -92,7 +92,6 @@ public class DateFormatUtils {
      * */
     public static String LocalDateTimeToString(LocalDateTime localDateTime,String patter){
         DateTimeFormatter df = DateTimeFormatter.ofPattern(patter);
-        LocalDateTime time = LocalDateTime.now();
         return df.format(localDateTime);
     }
 
@@ -115,9 +114,4 @@ public class DateFormatUtils {
         return localDate;
     }
 
-//    public static void main(String[] args){
-//        Date time = new Date();
-//        String str = DateToString(time,"yyyy-MM-dd");
-//        System.out.println(str);
-//    }
 }

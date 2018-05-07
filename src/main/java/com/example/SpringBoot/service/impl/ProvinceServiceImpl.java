@@ -1,7 +1,8 @@
-package com.example.SpringBoot.service;
+package com.example.SpringBoot.service.impl;
 
-import com.example.SpringBoot.dto.ProvinceDO;
+import com.example.SpringBoot.model.DO.ProvinceDO;
 import com.example.SpringBoot.persist.ProvinceMapper;
+import com.example.SpringBoot.service.ProvinceService;
 import com.example.SpringBoot.utils.redis.RedisUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +16,7 @@ import javax.annotation.Resource;
  * @create 2017-12-04
  **/
 @Service
-public class ProvinceServiceImpl implements ProvinceService{
+public class ProvinceServiceImpl implements ProvinceService {
 
     private static final Logger log = LoggerFactory.getLogger(ProvinceServiceImpl.class);
 
@@ -33,7 +34,7 @@ public class ProvinceServiceImpl implements ProvinceService{
             log.info("从缓存中获取省份>>"+province.toString());
             return province;
         }
-        ProvinceDO province = provinceMapper.getProvince(id);
+        ProvinceDO province = provinceMapper.selectProvinceById(id);
 
         //插入缓存
         redisUtils.set(key,province);

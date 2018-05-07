@@ -1,6 +1,6 @@
 package com.example.SpringBoot.persist;
 
-import com.example.SpringBoot.dto.ProvinceDO;
+import com.example.SpringBoot.model.DO.ProvinceDO;
 
 /**
  * @author lingjun.jlj
@@ -10,5 +10,5 @@ public interface ProvinceMapper {
 
     Long addProvince(ProvinceDO province);
 
-    ProvinceDO getProvince(Long id);
+    ProvinceDO selectProvinceById(Long id);
 }
