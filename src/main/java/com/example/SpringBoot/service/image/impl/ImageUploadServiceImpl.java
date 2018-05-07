@@ -42,7 +42,7 @@ public class ImageUploadServiceImpl implements ImageUploadService {
         Map<String, Object> result = new HashMap<>();
         byte[] data = new BASE64Decoder().decodeBuffer(base64Code);
         if (data.length > Constants.IMAGE_UPLOAD_SIZE_LIMIT / 8) {
-            log.error("ybBrokerApp uploadBase64Img error, length > sizeLimit");
+            log.error("uploadBase64Img error, length > sizeLimit");
             throw new RuntimeException("");
         }
         String postfix = "";
@@ -56,7 +56,7 @@ public class ImageUploadServiceImpl implements ImageUploadService {
 
         Response uploadResponse = Qiniu.upload(Bucket, imgKey, data);
         if (uploadResponse == null || !uploadResponse.isOK()) {
-            log.error("ybBrokerApp uploadBase64Img error, uploadResponse == null || !uploadResponse.isOK())");
+            log.error("uploadBase64Img error, uploadResponse == null || !uploadResponse.isOK())");
             throw new RuntimeException("");
         }
         //生成七牛url
@@ -82,6 +82,11 @@ public class ImageUploadServiceImpl implements ImageUploadService {
         File tmpFile = File.createTempFile("im_broker", imgKey);
         img.transferTo(tmpFile);
         Qiniu.upload(Bucket,imgKey,tmpFile);
+        //生成七牛url
+        String imgUrl = Qiniu.downloadHttps(QiniuDomain, imgKey);
+
+        result.put("imgKey", imgKey);
+        result.put("imgUrl", imgUrl);
         return result;
     }
 }
