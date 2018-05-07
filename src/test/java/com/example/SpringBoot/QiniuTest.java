@@ -1,6 +1,6 @@
 package com.example.SpringBoot;
 
-import com.example.SpringBoot.config.DataBaseConfig;
+import com.example.SpringBoot.service.image.ImageUploadService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +15,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class QiniuTest {
     @Autowired
-    private DataBaseConfig dataBaseConfig;
+    private ImageUploadService imageUploadService;
+
     @Test
     public void QiniuTest(){
-        System.out.println(dataBaseConfig.getQiniuBucket());
+
+        String base64Code = "";
+
+        //imageUploadService.
+
+
     }
 }
