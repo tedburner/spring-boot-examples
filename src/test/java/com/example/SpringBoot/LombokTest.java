@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
  **/
 public class LombokTest {
 
-    public static void main(String [] args){
+    public static void main(String[] args) {
         GoodDO goodDO = new GoodDO();
         goodDO.setId(1L);
         goodDO.setName("衣服");

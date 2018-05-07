@@ -2,6 +2,7 @@ package com.example.SpringBoot.model.DO;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
  * @create 2017-10-11
  **/
 @Data
-public class GoodDO {
+public class GoodDO implements Serializable {
 
     private Long id;
     private String name;

@@ -2,6 +2,9 @@ package com.example.SpringBoot.model.DO;
 
 import lombok.Data;
 
+import lombok.Data;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -14,7 +17,6 @@ public class ProvinceDO {
     private String name;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
-
 
     public static final class ProvinceDOBuilder {
         private Long id;
