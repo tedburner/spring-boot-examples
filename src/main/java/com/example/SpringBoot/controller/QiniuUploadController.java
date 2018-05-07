@@ -22,9 +22,9 @@ public class QiniuUploadController {
     private ImageUploadService imageUploadService;
 
     @RequestMapping("image")
-    public NewResponseModel UploadImage(MultipartFile file) throws Exception{
+    public NewResponseModel UploadImage(MultipartFile file) throws Exception {
         NewResponseModel responseModel = NewResponseModel.Success();
-        imageUploadService.uploadImg(file);
+        responseModel.setData(imageUploadService.uploadImg(file));
         return responseModel;
     }
 }

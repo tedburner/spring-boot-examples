@@ -38,7 +38,7 @@ public class ImageUploadServiceImpl implements ImageUploadService {
     private String QiniuDomain;
 
     @Override
-    public Map<String, Object> uploadBase64Img(String base64Code, String fileName) throws Exception{
+    public Map<String, Object> uploadBase64Img(String base64Code, String fileName) throws Exception {
         Map<String, Object> result = new HashMap<>();
         byte[] data = new BASE64Decoder().decodeBuffer(base64Code);
         if (data.length > Constants.IMAGE_UPLOAD_SIZE_LIMIT / 8) {
@@ -69,7 +69,7 @@ public class ImageUploadServiceImpl implements ImageUploadService {
     }
 
     @Override
-    public Map<String, Object> uploadImg(MultipartFile img) throws Exception{
+    public Map<String, Object> uploadImg(MultipartFile img) throws Exception {
         Map<String, Object> result = new HashMap<>();
         String postfix = "";
         if (!img.getName().isEmpty() && img.getName().lastIndexOf(".") != -1) {
@@ -79,9 +79,10 @@ public class ImageUploadServiceImpl implements ImageUploadService {
             postfix = "png";
         }
         String imgKey = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()) + MD5Utils.selectRandom(6) + "." + postfix;
-        File tmpFile = File.createTempFile("im_broker", imgKey);
+        System.out.println("imgKey" + imgKey);
+        File tmpFile = File.createTempFile("image", imgKey);
         img.transferTo(tmpFile);
-        Qiniu.upload(Bucket,imgKey,tmpFile);
+        Qiniu.upload(Bucket, imgKey, tmpFile);
         //生成七牛url
         String imgUrl = Qiniu.downloadHttps(QiniuDomain, imgKey);
 
