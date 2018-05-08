@@ -1,4 +1,4 @@
-package com.example.SpringBoot.aop;
+package com.example.SpringBoot.base.aop;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
