@@ -1,0 +1,8 @@
+project:
+  name: production
+spring:
+  datasource:
+    url: jdbc:mysql://106.14.140.103:3306/production?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: mysql123456
+    driver-class-name: com.mysql.cj.jdbc.Driver

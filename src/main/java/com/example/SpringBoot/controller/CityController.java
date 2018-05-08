@@ -36,7 +36,6 @@ public class CityController {
         NewResponseModel responseModel = NewResponseModel.Success();
         CityDO cityDO = cityService.getCityById(id);
         responseModel.setData(cityDO);
-        //String string= redisUtils.get(key).toString();
         return responseModel;
     }
 }

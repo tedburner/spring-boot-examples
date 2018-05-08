@@ -3,3 +3,6 @@ spring:
     prefix: classpath:/templates/
 server:
   port: 8081
+spring:
+  profiles:
+    active: production
