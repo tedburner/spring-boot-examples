@@ -20,3 +20,5 @@ java -jar  target/项目名称-版本号.jar
 docker部署代码在docker分支上面。
 ## 七牛云
 图片上传整合了七牛云
+## 测试环境/正式环境
+使用profiles实现了环境分开
