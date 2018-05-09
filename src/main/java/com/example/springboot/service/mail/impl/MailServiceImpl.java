@@ -20,7 +20,7 @@ public class MailServiceImpl implements MailService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private JavaMailSender mailSender;
+    private JavaMailSender javaMailSender;
 
     @Value("${spring.mail.username}")
     private String from;
@@ -34,7 +34,7 @@ public class MailServiceImpl implements MailService {
         message.setText(content);
 
         try {
-            mailSender.send(message);
+            javaMailSender.send(message);
             logger.info("简单邮件已经发送。");
         } catch (Exception e) {
             logger.error("发送简单邮件时发生异常！", e);
