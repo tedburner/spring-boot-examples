@@ -1,10 +1,10 @@
-package com.example.springboot.service.impl;
+package com.example.springboot.service.common.impl;
 
 import com.example.springboot.model.DO.CityDO;
 import com.example.springboot.model.DO.ProvinceDO;
 import com.example.springboot.persist.CityMapper;
 import com.example.springboot.persist.ProvinceMapper;
-import com.example.springboot.service.CityService;
+import com.example.springboot.service.common.CityService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

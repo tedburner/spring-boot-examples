@@ -1,8 +1,8 @@
-package com.example.springboot.service.impl;
+package com.example.springboot.service.common.impl;
 
 import com.example.springboot.model.DO.ProvinceDO;
 import com.example.springboot.persist.ProvinceMapper;
-import com.example.springboot.service.ProvinceService;
+import com.example.springboot.service.common.ProvinceService;
 import com.example.springboot.utils.redis.RedisUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

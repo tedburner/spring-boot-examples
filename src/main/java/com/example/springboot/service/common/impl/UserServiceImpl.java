@@ -1,8 +1,8 @@
-package com.example.springboot.service.impl;
+package com.example.springboot.service.common.impl;
 
 import com.example.springboot.model.DO.UserDO;
 import com.example.springboot.persist.UserMapper;
-import com.example.springboot.service.UserService;
+import com.example.springboot.service.common.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -13,7 +13,7 @@ import java.util.List;
  * @data 2018/4/2
  */
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Resource
     private UserMapper userMapper;

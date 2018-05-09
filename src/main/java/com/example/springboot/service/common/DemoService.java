@@ -1,4 +1,4 @@
-package com.example.springboot.service;
+package com.example.springboot.service.common;
 
 /**
  * @author lingjun.jlj
