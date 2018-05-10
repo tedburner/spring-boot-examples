@@ -29,7 +29,7 @@ public class OkHttpServiceImpl implements OkHttpService {
     public final MediaType MEDIA_JSON = MediaType.parse("application/json; charset=utf-8");
 
     @Autowired
-    private OkHttpClient okHttpClient;
+    private OkHttpClient httpClient;
 
     @Override
     public OkHttpClient CreateClient() {
@@ -95,6 +95,6 @@ public class OkHttpServiceImpl implements OkHttpService {
      */
     @Override
     public Call ReqExecuteCall(Request request) {
-        return okHttpClient.newCall(request);
+        return httpClient.newCall(request);
     }
 }
