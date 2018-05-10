@@ -81,9 +81,9 @@ public class FastThreadPool {
      * */
     @PostConstruct
     public void initialize() {
-        workQueue = new ArrayBlockingQueue(queueSize);
-        threadFactory = new NamedThreadFactory("Parallel-Processor", null, true);
-        handler = new ThreadPoolExecutor.CallerRunsPolicy();
+        workQueue = new ArrayBlockingQueue(queueSize); //基于数组结构的有界阻塞队列，按FIFO排序任务
+        threadFactory = new NamedThreadFactory("Parallel-Processor", null, true);//创建线程的工厂，通过自定义的线程工厂可以给每个新建的线程设置一个具有识别度的线程名
+        handler = new ThreadPoolExecutor.CallerRunsPolicy(); //用调用者所在的线程来执行任务
         threadPoolExecutor = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, TimeUnit.SECONDS, workQueue, threadFactory, handler);
         service = MoreExecutors.listeningDecorator(threadPoolExecutor);
     }
