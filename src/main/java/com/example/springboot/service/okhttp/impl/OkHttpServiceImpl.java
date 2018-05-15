@@ -22,14 +22,13 @@ import java.util.concurrent.TimeUnit;
  * @data 2018/5/10
  * @Description:
  */
-@Service
-@Slf4j
+
 public class OkHttpServiceImpl implements OkHttpService {
 
     public final MediaType MEDIA_JSON = MediaType.parse("application/json; charset=utf-8");
 
     @Autowired
-    private OkHttpClient httpClient;
+    private OkHttpClient okHttpClient;
 
     @Override
     public OkHttpClient CreateClient() {
@@ -95,6 +94,6 @@ public class OkHttpServiceImpl implements OkHttpService {
      */
     @Override
     public Call ReqExecuteCall(Request request) {
-        return httpClient.newCall(request);
+        return okHttpClient.newCall(request);
     }
 }
