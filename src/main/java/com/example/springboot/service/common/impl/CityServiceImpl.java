@@ -25,7 +25,7 @@ public class CityServiceImpl implements CityService {
 
     private static final Logger log = LoggerFactory.getLogger(CityServiceImpl.class);
 
-    @Autowired
+    @Resource
     private CityMapper cityMapper;
 
     @Autowired
