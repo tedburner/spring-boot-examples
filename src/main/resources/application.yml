@@ -1,3 +1,9 @@
 spring:
   thymeleaf:
     prefix: classpath:/templates/
+server:
+  port: 8081
+## 配置正式和测试库，分别是production/test
+spring:
+  profiles:
+    active: test

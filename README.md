@@ -12,3 +12,13 @@ mvn clean package  -Dmaven.test.skip=true
 ```bash
 java -jar  target/项目名称-版本号.jar
 ```
+## RabbitMq
+项目整合了RabbitMq。代码在rabbitmq分支上面
+## redis
+项目整合了Redis，其中version分支上是springboot2.0.1的Redis配置。springboot2.0之后Redis配置和之前的有点区别。
+## docker
+docker部署代码在docker分支上面。
+## 七牛云
+图片上传整合了七牛云
+## 测试环境/正式环境
+使用profiles实现了环境分开
