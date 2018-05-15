@@ -14,6 +14,8 @@ java -jar  target/项目名称-版本号.jar
 ```
 ## RabbitMq
 项目整合了RabbitMq。代码在rabbitmq分支上面
+## kafka
+代码在kafka分支上，正在整合中。。。。。
 ## redis
 项目整合了Redis，其中version分支上是springboot2.0.1的Redis配置。springboot2.0之后Redis配置和之前的有点区别。
 ## docker
