@@ -1,8 +1,12 @@
-package com.example.SpringBoot.kafka;
+package com.example.springboot.kafka;
 
-import com.example.SpringBoot.dto.DTO.message.SampleMessageDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * @author lingjun.jlj
@@ -12,13 +16,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class Producer {
 
-    private final KafkaTemplate<Object, SampleMessageDTO> kafkaTemplate;
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
 
-    Producer(KafkaTemplate<Object, SampleMessageDTO> kafkaTemplate) {
-        this.kafkaTemplate = kafkaTemplate;
-    }
+    private final CountDownLatch latch = new CountDownLatch(3);
 
-    public void send(SampleMessageDTO message) {
+    public  void send() {
+        String message = "hello,kafka  " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS"));
         this.kafkaTemplate.send("testTopic", message);
         System.out.println("Sent sample message [" + message + "]");
     }

@@ -1,6 +1,6 @@
-package com.example.SpringBoot.kafka;
+package com.example.springboot.kafka;
 
-import com.example.SpringBoot.dto.DTO.message.SampleMessageDTO;
+import com.example.springboot.dto.DTO.message.SampleMessageDTO;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
