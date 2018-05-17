@@ -1,5 +1,7 @@
 package com.example.springboot;
 
+import com.example.springboot.model.DO.CityDO;
+import com.example.springboot.service.common.CityService;
 import com.example.springboot.utils.redis.RedisUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,12 +20,14 @@ public class RedisTest {
 
     @Autowired
     private RedisUtils redisUtils;
+    @Autowired
+    private CityService cityService;
 
     @Test
     public void redisTest(){
-        //redisUtils.set("key","Hello world");
-        //redisUtils.set("key1","2分钟失效",120L);
-        String redisValue =(String) redisUtils.get("key1");
+        CityDO cityDO = cityService.getCityById(1L);
+        redisUtils.set("city_1",cityDO);
+        CityDO redisValue =(CityDO) redisUtils.get("city_1");
         System.out.println(redisValue);
     }
 }

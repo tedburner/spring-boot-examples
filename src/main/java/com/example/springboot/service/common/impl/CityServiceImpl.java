@@ -8,6 +8,7 @@ import com.example.springboot.service.common.CityService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -52,7 +53,6 @@ public class CityServiceImpl implements CityService {
     @Override
     @Cacheable(value = "city",key = "'cityId_'+#id")
     public CityDO getCityById(Long id) {
-        //CityDO cityDO = new CityDO();
         return cityMapper.selectById(id);
     }
 
@@ -65,7 +65,7 @@ public class CityServiceImpl implements CityService {
                 province.setName("浙江省");
                 provinceMapper.addProvince(province);
 
-                CityDO builder = CityDO.CityBuilder.aCity()
+                CityDO builder = CityDO.CityDOBuilder.aCityDO()
                         .withProvinceId(province.getId())
                         .withName("金华市")
                         .withDescription("金华火腿")

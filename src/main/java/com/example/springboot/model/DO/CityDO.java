@@ -3,13 +3,15 @@ package com.example.springboot.model.DO;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 /**
  * @author lingjun.jlj
  * @create 2017-09-22
  **/
 @Data
-public class CityDO implements Serializable{
+public class CityDO implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
@@ -33,49 +35,74 @@ public class CityDO implements Serializable{
      */
     private String description;
 
+    private Integer status;
 
-    public static final class CityBuilder {
+    private LocalDateTime createTime;
+
+    private LocalDateTime updateTime;
+
+
+    public static final class CityDOBuilder {
         private Long id;
         private Long provinceId;
         private String name;
         private String description;
+        private Integer status;
+        private LocalDateTime createTime;
+        private LocalDateTime updateTime;
 
-        private CityBuilder() {
+        private CityDOBuilder() {
         }
 
-        public static CityBuilder aCity() {
-            return new CityBuilder();
+        public static CityDOBuilder aCityDO() {
+            return new CityDOBuilder();
         }
 
-        public CityBuilder withId(Long id) {
+        public CityDOBuilder withId(Long id) {
             this.id = id;
             return this;
         }
 
-        public CityBuilder withProvinceId(Long provinceId) {
+        public CityDOBuilder withProvinceId(Long provinceId) {
             this.provinceId = provinceId;
             return this;
         }
 
-        public CityBuilder withName(String name) {
+        public CityDOBuilder withName(String name) {
             this.name = name;
             return this;
         }
 
-        public CityBuilder withDescription(String description) {
+        public CityDOBuilder withDescription(String description) {
             this.description = description;
+            return this;
+        }
+
+        public CityDOBuilder withStatus(Integer status) {
+            this.status = status;
+            return this;
+        }
+
+        public CityDOBuilder withCreateTime(LocalDateTime createTime) {
+            this.createTime = createTime;
+            return this;
+        }
+
+        public CityDOBuilder withUpdateTime(LocalDateTime updateTime) {
+            this.updateTime = updateTime;
             return this;
         }
 
         public CityDO build() {
             CityDO cityDO = new CityDO();
-            cityDO.name = this.name;
-            cityDO.provinceId = this.provinceId;
-            cityDO.description = this.description;
-            cityDO.id = this.id;
+            cityDO.setId(id);
+            cityDO.setProvinceId(provinceId);
+            cityDO.setName(name);
+            cityDO.setDescription(description);
+            cityDO.setStatus(status);
+            cityDO.setCreateTime(createTime);
+            cityDO.setUpdateTime(updateTime);
             return cityDO;
         }
     }
-
-
 }

@@ -7,6 +7,7 @@ import com.example.springboot.utils.redis.RedisUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -22,23 +23,10 @@ public class ProvinceServiceImpl implements ProvinceService {
 
     @Resource
     private ProvinceMapper provinceMapper;
-    @Autowired
-    private RedisUtils redisUtils;
 
     @Override
+    @Cacheable(key = "'provinceById'+#id")
     public ProvinceDO getProvince(Long id) {
-        String key = "provinceId_"+id;
-        if (redisUtils.exists(key)){
-            //todo redis对Java8的LocalDateTime的序列化有问题，获取时会报错，1、重写序列化；2、。。。
-            ProvinceDO province = (ProvinceDO)redisUtils.get(key);
-            log.info("从缓存中获取省份>>"+province.toString());
-            return province;
-        }
-        ProvinceDO province = provinceMapper.selectProvinceById(id);
-
-        //插入缓存
-        redisUtils.set(key,province);
-        log.info("存入缓存中>>"+province.toString());
-        return province;
+        return provinceMapper.selectProvinceById(id);
     }
 }
