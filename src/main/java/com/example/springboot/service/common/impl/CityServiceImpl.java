@@ -5,6 +5,7 @@ import com.example.springboot.model.DO.ProvinceDO;
 import com.example.springboot.persist.CityMapper;
 import com.example.springboot.persist.ProvinceMapper;
 import com.example.springboot.service.common.CityService;
+import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author lingjun.jlj
@@ -53,6 +55,7 @@ public class CityServiceImpl implements CityService {
     @Override
     @Cacheable(value = "city",key = "'cityId_'+#id")
     public CityDO getCityById(Long id) {
+        List<CityDO> list = Lists.newArrayList();
         return cityMapper.selectById(id);
     }
 

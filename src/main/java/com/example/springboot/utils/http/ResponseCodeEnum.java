@@ -43,15 +43,11 @@ public enum ResponseCodeEnum {
     SERVER_ERROR(5001, "服务端错误"),
     API_EXPIRED(5002, "api过期"),
     NO_DATA(5003, "查无数据"),
-    DOT_SUBMIT_REPEAT(5004, "dot submit repeat"),
     BAD_DATA(5005, "无效数据"),
     DUPLICATE(5007, "数据重复"),
     FREQUENT_REQUEST(5008, "请求过于频繁"),
     PARAM_ERROR(5009, "参数错误"),
-
-    APPVERSION_LOWER_ERROR(7001, "APP版本过低"),
-
-    UPLOAD_FAIL(8001, "文件上传失败");
+;
 
 
     private int code;
