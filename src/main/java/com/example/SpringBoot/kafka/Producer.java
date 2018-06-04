@@ -19,8 +19,6 @@ public class Producer {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    private final CountDownLatch latch = new CountDownLatch(3);
-
     public  void send() {
         String message = "hello,kafka  " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS"));
         this.kafkaTemplate.send("testTopic", message);

@@ -3,7 +3,7 @@ package com.example.springboot.constants;
 /**
  * @author lingjun.jlj
  * @data 2018/5/4
- * @Description: 常量
+ * @Description: 常量池
  */
 public interface Constants {
     /**
