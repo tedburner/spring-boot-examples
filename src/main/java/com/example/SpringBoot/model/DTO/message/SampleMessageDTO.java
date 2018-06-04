@@ -1,4 +1,4 @@
-package com.example.springboot.dto.DTO.message;
+package com.example.springboot.model.DTO.message;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
