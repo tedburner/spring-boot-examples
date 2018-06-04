@@ -15,8 +15,8 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @MapperScan("com.example.springboot.persist")
 public class Application extends SpringBootServletInitializer {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
 }

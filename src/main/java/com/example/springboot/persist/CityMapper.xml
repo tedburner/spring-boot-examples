@@ -3,32 +3,32 @@
 <mapper namespace="com.example.springboot.persist.CityMapper">
 
     <sql id="Base_Column_List">
-        id, provinceId, name, description
+        id, provinceId, name, description,status,createTime,updateTime
     </sql>
 
     <insert id="addCity" parameterType="com.example.springboot.model.DO.CityDO"
-    useGeneratedKeys="true" keyProperty="id">
+            useGeneratedKeys="true" keyProperty="id">
         INSERT INTO  city (id,provinceId,name,description)
         VALUE (#{id},#{provinceId},#{name},#{description})
     </insert>
 
     <select id="selectByName" resultType="com.example.springboot.model.DO.CityDO">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from city
         where name = #{cityName}
     </select>
 
     <select id="selectById" resultType="com.example.springboot.model.DO.CityDO">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from city
         where id = #{id}
     </select>
 
     <select id="selectCityByProvinceId" resultType="com.example.springboot.model.DO.CityDO">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from city
         where provinceId = #{provinceId}
     </select>

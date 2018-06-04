@@ -5,15 +5,18 @@ import com.example.springboot.model.DO.ProvinceDO;
 import com.example.springboot.persist.CityMapper;
 import com.example.springboot.persist.ProvinceMapper;
 import com.example.springboot.service.common.CityService;
+import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author lingjun.jlj
@@ -25,7 +28,7 @@ public class CityServiceImpl implements CityService {
 
     private static final Logger log = LoggerFactory.getLogger(CityServiceImpl.class);
 
-    @Autowired
+    @Resource
     private CityMapper cityMapper;
 
     @Autowired
@@ -52,7 +55,7 @@ public class CityServiceImpl implements CityService {
     @Override
     //@Cacheable(value = "city",key = "'cityId_'+#id")
     public CityDO getCityById(Long id) {
-        //CityDO cityDO = new CityDO();
+        List<CityDO> list = Lists.newArrayList();
         return cityMapper.selectById(id);
     }
 
@@ -65,7 +68,7 @@ public class CityServiceImpl implements CityService {
                 province.setName("浙江省");
                 provinceMapper.addProvince(province);
 
-                CityDO builder = CityDO.CityBuilder.aCity()
+                CityDO builder = CityDO.CityDOBuilder.aCityDO()
                         .withProvinceId(province.getId())
                         .withName("金华市")
                         .withDescription("金华火腿")
