@@ -9,6 +9,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 
 /**
  * * Spring Boot 应用启动类
+ * @ServletComponentScan 控制的过滤器和监听器
  * */
 @ServletComponentScan
 @SpringBootApplication
