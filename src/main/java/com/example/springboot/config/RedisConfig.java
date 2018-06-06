@@ -17,7 +17,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * @create 2017-11-28
  **/
 @Configuration
-@PropertySource(value = "classpath:redis.properties")
+@PropertySource(value = "classpath:redis/redis.properties")
 @EnableCaching // 启用缓存，这个注解很重要
 public class RedisConfig extends CachingConfigurerSupport {
 

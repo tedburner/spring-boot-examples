@@ -5,18 +5,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-
-
 /**
- * * Spring Boot 应用启动类
- * */
+ * @author 蒋灵俊
+ * @data 2018/6/6
+ * @Description:
+ */
 @ServletComponentScan
 @SpringBootApplication
 @MapperScan("com.example.springboot.persist")
-public class Application extends SpringBootServletInitializer {
+public class ApplicationStartup extends SpringBootServletInitializer{
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(ApplicationStartup.class, args);
     }
-
 }
