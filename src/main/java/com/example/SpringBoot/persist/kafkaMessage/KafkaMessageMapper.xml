@@ -6,9 +6,9 @@
         id, topic, messageBody, messageByte,version,status,createTime,updateTime
     </sql>
 
-    <insert id="insert" parameterType="com.example.springboot.model.DO.kafkaMessage.KafkaMessageDO"
+    <insert id="insertKafkaMessage" parameterType="com.example.springboot.model.DO.kafkaMessage.KafkaMessageDO"
             useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO  city (id,provinceId,name,description)
-        VALUE (#{id},#{provinceId},#{name},#{description})
+        INSERT INTO  kafka_message (topic,messageBody,messageByte,version,status)
+        VALUE (#{topic},#{messageBody},#{messageByte},#{version},${status})
     </insert>
 </mapper>

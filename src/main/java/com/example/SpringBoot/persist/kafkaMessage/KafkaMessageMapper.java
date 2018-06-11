@@ -1,9 +1,6 @@
 package com.example.springboot.persist.kafkaMessage;
 
-import com.example.springboot.model.DO.CityDO;
-import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
+import com.example.springboot.model.DO.kafkaMessage.KafkaMessageDO;
 
 /**
  * @author lingjun.jlj
@@ -12,5 +9,5 @@ import java.util.List;
 
 public interface KafkaMessageMapper {
 
-    Long insert(CityDO cityDO);
+    int insertKafkaMessage(KafkaMessageDO kafkaMessageDO);
 }

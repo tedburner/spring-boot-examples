@@ -17,7 +17,7 @@ import java.util.Map;
 /**
  * @author 蒋灵俊
  * @data 2018/6/6
- * @Description:
+ * @Description: kafka config类
  */
 //@Configuration
 //@PropertySource(value = "classpath:kafka/kafka.properties")
