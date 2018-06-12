@@ -1,7 +1,9 @@
 package com.example.springboot.base.aop.kafka;
 
+import com.example.springboot.interceptor.kafka.KafkaMessageAroundAdvice;
 import org.aopalliance.aop.Advice;
 import org.springframework.aop.Advisor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author: 蒋灵俊
@@ -10,9 +12,16 @@ import org.springframework.aop.Advisor;
  */
 public class KafkaMessageAdvisor implements Advisor {
 
+    @Autowired
+    private KafkaMessageAroundAdvice advice;
+
+    public KafkaMessageAdvisor() {
+        this.advice = new KafkaMessageAroundAdvice();
+    }
+
     @Override
     public Advice getAdvice() {
-        return null;
+        return advice;
     }
 
     @Override
