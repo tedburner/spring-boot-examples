@@ -1,5 +1,7 @@
 package com.example.springboot.utils.common;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
@@ -112,6 +114,31 @@ public class DateFormatUtils {
         DateTimeFormatter DATEFORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate localDate = LocalDate.parse(obj,DATEFORMATTER);
         return localDate;
+    }
+
+    public static Long localDateTimeToTimeStamp(LocalDateTime localDateTime) {
+        if (localDateTime == null) {
+            throw new IllegalArgumentException("localDateTime must not be null");
+        } else {
+            return localDateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
+        }
+    }
+
+    public static Long stringToTimeStamp(String dateString, String dateFormat) {
+        if (StringUtils.isEmpty(dateString)) {
+            throw new IllegalArgumentException("dateString must not be empty");
+        } else {
+            try {
+                if (StringUtils.isEmpty(dateFormat)) {
+                    return localDateTimeToTimeStamp(LocalDateTime.parse(dateString));
+                } else {
+                    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(dateFormat);
+                    return localDateTimeToTimeStamp(LocalDateTime.parse(dateString, dateTimeFormatter));
+                }
+            } catch (Exception var3) {
+                throw new IllegalArgumentException("dateString parse error");
+            }
+        }
     }
 
 }
