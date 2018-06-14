@@ -66,6 +66,7 @@
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
 
+
         <!--session-->
         <!--<dependency>-->
         <!--<groupId>org.springframework.session</groupId>-->
@@ -230,6 +231,18 @@
             <version>3.10.0</version>
         </dependency>
 
+        <!--logback-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baidu.disconf</groupId>
+            <artifactId>disconf-client</artifactId>
+            <version>2.6.36</version>
+        </dependency>
     </dependencies>
     <profiles>
         <profile>

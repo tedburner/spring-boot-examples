@@ -1,0 +1,24 @@
+
+1038 [2018-06-13 17:21:56 ] -   
+  INFO  c.e.springboot.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 9317 (/Users/jianglingjun/Document/JavaProjects/springboot/target/classes started by jianglingjun in /Users/jianglingjun/Document/JavaProjects/springboot)
+
+1039 [2018-06-13 17:21:56 ] -   
+  DEBUG c.e.springboot.ApplicationStartup - Running with Spring Boot v2.0.1.RELEASE, Spring v5.0.5.RELEASE
+
+1040 [2018-06-13 17:21:56 ] -   
+  INFO  c.e.springboot.ApplicationStartup - The following profiles are active: test
+
+5778 [2018-06-13 17:22:01 ] -   
+  INFO  c.e.springboot.ApplicationStartup - Started ApplicationStartup in 5.638 seconds (JVM running for 6.485)
+
+1168 [2018-06-13 18:08:16 ] -   
+  INFO  c.e.springboot.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 9559 (/Users/jianglingjun/Document/JavaProjects/springboot/target/classes started by jianglingjun in /Users/jianglingjun/Document/JavaProjects/springboot)
+
+1168 [2018-06-13 18:08:16 ] -   
+  DEBUG c.e.springboot.ApplicationStartup - Running with Spring Boot v2.0.1.RELEASE, Spring v5.0.5.RELEASE
+
+1170 [2018-06-13 18:08:16 ] -   
+  INFO  c.e.springboot.ApplicationStartup - The following profiles are active: test
+
+7774 [2018-06-13 18:08:22 ] -   
+  INFO  c.e.springboot.ApplicationStartup - Started ApplicationStartup in 7.637 seconds (JVM running for 8.606)

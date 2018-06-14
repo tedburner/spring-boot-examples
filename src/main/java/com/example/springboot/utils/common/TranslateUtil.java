@@ -93,17 +93,4 @@ public class TranslateUtil {
             return false;
         }
     }
-
-    /**
-     * 校验手机号是否合法
-     * @param phone
-     * @return
-     */
-    public static boolean validatePhoneLegal(String phone) {
-        if (StringUtils.isEmpty(phone)) {
-            return false;
-        }
-
-        return phone.matches("^1\\d{10}$");
-    }
 }

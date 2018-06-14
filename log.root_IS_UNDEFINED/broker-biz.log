@@ -1,0 +1,9 @@
+
+942  [2018-06-14 10:01:18 ] -   
+  INFO  c.e.springboot.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 5806 (/Users/jianglingjun/Document/ProgramProject/JavaProjects/springboot/target/classes started by jianglingjun in /Users/jianglingjun/Document/ProgramProject/JavaProjects/springboot)
+
+944  [2018-06-14 10:01:18 ] -   
+  DEBUG c.e.springboot.ApplicationStartup - Running with Spring Boot v2.0.1.RELEASE, Spring v5.0.5.RELEASE
+
+946  [2018-06-14 10:01:18 ] -   
+  INFO  c.e.springboot.ApplicationStartup - The following profiles are active: test
