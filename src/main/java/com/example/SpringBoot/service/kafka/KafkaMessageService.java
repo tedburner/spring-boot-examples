@@ -6,4 +6,6 @@ package com.example.springboot.service.kafka;
  * @Description:
  */
 public interface KafkaMessageService {
+
+    void  sendMessage(String message);
 }
