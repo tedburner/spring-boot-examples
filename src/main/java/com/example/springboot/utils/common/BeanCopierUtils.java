@@ -13,14 +13,21 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * @author lingjun.jlj
  * @data 2018/5/2
- * @Description:
+ * @Description: bean拷贝工具类
  */
 public class BeanCopierUtils {
+
     private static final ConcurrentMap<String, BeanCopier> cacheCopierMap = Maps.newConcurrentMap();
 
     public BeanCopierUtils() {
     }
 
+    /**
+     * 批量copy
+     *
+     * @param sourceList  源类
+     * @param targetClass 目标类
+     */
     public static <T> List<T> copyList(List<Object> sourceList, Class<T> targetClass) {
         if (CollectionUtils.isEmpty(sourceList)) {
             return Lists.newArrayList();
@@ -44,6 +51,10 @@ public class BeanCopierUtils {
         }
     }
 
+    /**
+     * @param source      源数据类
+     * @param targetClass 目标类
+     */
     public static <T> T copy(Object source, Class<T> targetClass) {
         T target;
         try {
@@ -57,6 +68,10 @@ public class BeanCopierUtils {
         return target;
     }
 
+    /**
+     * @param source 源数据类
+     * @param target 目标类
+     */
     public static void copy(Object source, Object target) {
         BeanCopier copier = getBeanCopier(source.getClass(), target.getClass());
         copier.copy(source, target, (Converter) null);
