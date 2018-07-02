@@ -258,7 +258,7 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <useReleaseProfile>false</useReleaseProfile>
                     <arguments>-DskipTests</arguments>
-                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <tagNameFormat>@{profileActive}</tagNameFormat>
                     <username>admin</username>
                     <password>yibao0415</password>
                 </configuration>
@@ -287,6 +287,9 @@
                 </excludes>
             </resource>
         </resources>
+        <filters><!--获得过滤使用的源文件，即有实际数据的地方-->
+            <filter>src/main/resources/env/${filters.env}/disconf.properties</filter>
+        </filters>
     </build>
 
 
