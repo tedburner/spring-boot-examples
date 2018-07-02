@@ -1,5 +1,5 @@
-project:
-  name: test
+#project:
+#  name: test
 ## 数据源配置
 spring:
   datasource:

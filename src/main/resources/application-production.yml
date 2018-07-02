@@ -1,5 +1,5 @@
-project:
-  name: production
+#project:
+#  name: production
 ## 数据源配置
 spring:
   datasource:
