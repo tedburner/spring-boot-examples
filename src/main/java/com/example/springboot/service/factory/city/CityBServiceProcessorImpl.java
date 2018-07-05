@@ -1,6 +1,6 @@
 package com.example.springboot.service.factory.city;
 
-import com.example.springboot.enums.SimpleEnum;
+import com.example.springboot.common.enums.SimpleEnum;
 import com.example.springboot.model.DO.CityDO;
 import com.example.springboot.persist.CityMapper;
 import org.springframework.beans.factory.annotation.Autowired;

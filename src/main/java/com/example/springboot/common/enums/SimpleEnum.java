@@ -1,4 +1,4 @@
-package com.example.springboot.enums;
+package com.example.springboot.common.enums;
 
 /**
  * @author lingjun.jlj

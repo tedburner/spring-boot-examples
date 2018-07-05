@@ -1,6 +1,6 @@
 package com.example.springboot.service.image.Qiniu;
 
-import com.example.springboot.constants.Constants;
+import com.example.springboot.common.constants.Constants;
 import com.example.springboot.utils.common.MD5Utils;
 import com.qiniu.http.Response;
 import com.qiniu.storage.UploadManager;
