@@ -1,5 +1,8 @@
 # SpringBoot
-Spring Boot项目。配置了druid+mybatis+redis。同时项目中使用了pagehelper的分页插件
+Spring Boot项目。配置了druid+mybatis+redis。
+- 使用了pagehelper的分页插件
+- 日志使用logback。
+- 使用maven实现开发/测试环境多环境
 ## 打成jar包
 ```bash
 cd 项目跟目录（和pom.xml同级）
