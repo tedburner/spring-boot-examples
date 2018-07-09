@@ -3,7 +3,9 @@
 
     <!--导入配置信息-->
     <springProperty scope="context" name="log.level" source="log.level"/>
-    <springProperty scope="context" name="log.root" source="log.root"/>
+    <!--<springProperty scope="context" name="log.root" source="log.root"/>-->
+    <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
+    <property name="LOG_PATH" value="${user.dir}/logs"/>
 
         <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
             <encoder>
@@ -14,9 +16,9 @@
         <!-- 按照每天生成日志文件 -->
         <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
             <!--<Encoding>GBK</Encoding>-->
-            <File>${log.root}/spring-boot.log</File>
+            <File>${LOG_PATH}/spring-boot.log</File>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <FileNamePattern>${log.root}/spring-boot.%d{yyyy-MM-dd}.log</FileNamePattern>
+                <FileNamePattern>${LOG_PATH}/spring-boot.%d{yyyy-MM-dd}.log</FileNamePattern>
                 <MaxHistory>30</MaxHistory>
             </rollingPolicy>
             <layout class="ch.qos.logback.classic.PatternLayout">
@@ -27,9 +29,9 @@
         <!-- 按照每天生成日志文件 -->
         <appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
             <!--<Encoding>GBK</Encoding>-->
-            <File>${log.root}/spring-boot-log.log</File>
+            <File>${LOG_PATH}/spring-boot-log.log</File>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <FileNamePattern>${log.root}/spring-boot-log.%d{yyyy-MM-dd}.log</FileNamePattern>
+                <FileNamePattern>${LOG_PATH}/spring-boot-log.%d{yyyy-MM-dd}.log</FileNamePattern>
                 <MaxHistory>30</MaxHistory>
             </rollingPolicy>
             <layout class="ch.qos.logback.classic.PatternLayout">
@@ -45,9 +47,9 @@
         <!-- 按照每天生成日志文件 -->
         <appender name="PROJECT" class="ch.qos.logback.core.rolling.RollingFileAppender">
             <!--<Encoding>GBK</Encoding>-->
-            <File>${log.root}/spring-boot-biz.log</File>
+            <File>${LOG_PATH}/spring-boot-biz.log</File>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <FileNamePattern>${log.root}/spring-boot-biz.%d{yyyy-MM-dd}.log</FileNamePattern>
+                <FileNamePattern>${LOG_PATH}/spring-boot-biz.%d{yyyy-MM-dd}.log</FileNamePattern>
                 <MaxHistory>30</MaxHistory>
             </rollingPolicy>
             <layout class="ch.qos.logback.classic.PatternLayout">
