@@ -1,12 +1,11 @@
 package com.example.springboot;
 
-import com.example.springboot.mongo.entity.UserEntity;
+import com.example.springboot.mongo.entity.User;
 import com.example.springboot.mongo.repository.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -23,7 +22,7 @@ public class MongoDBTest {
 
     @Test
     public void test(){
-        UserEntity userEntity = new UserEntity();
+        User userEntity = new User();
         userEntity.setId(1L);
         userEntity.setName("username");
         userEntity.setPassword("1234");

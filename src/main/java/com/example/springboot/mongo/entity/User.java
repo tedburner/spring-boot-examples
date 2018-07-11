@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @Description:
  */
 @Data
-public class UserEntity implements Serializable {
+public class User implements Serializable {
 
     @Id
     private Long id;

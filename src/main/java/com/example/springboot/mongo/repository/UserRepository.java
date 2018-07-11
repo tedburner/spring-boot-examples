@@ -1,6 +1,6 @@
 package com.example.springboot.mongo.repository;
 
-import com.example.springboot.mongo.entity.UserEntity;
+import com.example.springboot.mongo.entity.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -8,5 +8,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @Date: 2018/7/11 11:24
  * @Description:
  */
-public interface UserRepository extends MongoRepository<UserEntity,Long> {
+public interface UserRepository extends MongoRepository<User,Long> {
 }
