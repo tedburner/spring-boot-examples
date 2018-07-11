@@ -3,12 +3,7 @@ spring:
     prefix: classpath:/templates/
 #  data:
 #    mongodb:
-##      uri: mongodb://mongouser:mongopwd@106.14.140.103:27017/admin
-#      host: 106.14.140.103
-#      port: 27017
-#      username: mongouser
-#      password: mongopwd
-#      database: admin
+##      uri: mongodb://user:password@ip:27017/admin
   jpa:
     show-sql: true
 server:
