@@ -29,3 +29,5 @@ docker部署代码在docker分支上面。
 使用profiles实现了环境分开
 ## MongoDB
 在分支mongo上
+## elasticsearch
+在分支elasticsearch上
