@@ -31,3 +31,7 @@ docker部署代码在docker分支上面。
 在分支mongo上
 ## elasticsearch
 在分支elasticsearch上
+## jib
+在分支jib上面
+jib是谷歌的一个容器工具，在构建容器镜像的时候，不需要写dockerfile，直接使用jib工具就可以直接构建了
+- [官网GitHub](https://github.com/GoogleContainerTools/jib)
