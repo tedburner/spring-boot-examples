@@ -33,5 +33,5 @@ docker部署代码在docker分支上面。
 在分支elasticsearch上
 ## jib
 在分支jib上面
-jib是谷歌的一个容器工具，在构建容器镜像的时候，不需要写dockerfile，直接使用jib工具就可以直接构建了
+Jib 是 Google 开发的可以直接构建 Java 应用的 Docker 和 OCI 镜像的类库，以 Maven 和 Gradle 插件形式提供。
 - [官网GitHub](https://github.com/GoogleContainerTools/jib)
