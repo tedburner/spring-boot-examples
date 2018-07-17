@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 /**
- * @author 蒋灵俊
+ * @author lingjun.jlj
  * @data 2018/6/6
  * @Description:
  */
