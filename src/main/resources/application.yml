@@ -1,6 +1,11 @@
 spring:
   thymeleaf:
     prefix: classpath:/templates/
+#  data:
+#    mongodb:
+##      uri: mongodb://user:password@ip:27017/admin
+  jpa:
+    show-sql: true
 server:
   port: 8081
 ## 配置正式和测试库，分别是production/test

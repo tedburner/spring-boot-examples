@@ -35,15 +35,6 @@ public enum SimpleEnum {
         this.text = text;
     }
 
-    public static String getTextByCode(Integer code) {
-        if (code == null) return "";
-        for (SimpleEnum simpleEnum : SimpleEnum.values()) {
-            if (simpleEnum.getCode().equals(code)) {
-                return simpleEnum.getText();
-            }
-        }
-        return "";
-    }
 
     public static String getText(Integer code) {
         if (code == null) return "";
