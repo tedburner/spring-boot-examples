@@ -16,7 +16,6 @@ import java.net.UnknownHostException;
  * @Description:
  */
 @Configuration
-
 public class MongoDBConfig {
 
     @Value("${mongo.database}")
