@@ -10,13 +10,20 @@ import java.util.List;
  * @Date: 2018/7/11 11:24
  * @Description:
  */
-public interface UserRepository extends MongoRepository<User,String> {
+public interface UserRepository extends MongoRepository<User, String> {
 
     /**
-     * 根据ID查询
+     * 根据name查询
      *
-     * @param id
+     * @param name
      * @return
      */
-    List<User> findAllById(String id);
+    List<User> findByName(String name);
+    /**
+     * 根据name查询
+     *
+     * @param name
+     * @return
+     */
+    List<User> findByNameLike(String name);
 }
