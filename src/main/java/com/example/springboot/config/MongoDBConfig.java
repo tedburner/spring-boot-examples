@@ -34,9 +34,9 @@ public class MongoDBConfig {
     private String port;
 
     @Bean
-    public MongoDbFactory mongoDbFactory() throws UnknownHostException {
+    public MongoDbFactory mongoDbFactory() {
         String uriStr = "mongodb://" + userName + ":" + password + "@" + uri + ":" + port + "/" + databaseName;
-        System.out.println(uriStr);
+
         MongoClientURI mongoClientURI = new MongoClientURI(uriStr);
         MongoDbFactory mongoDbFactory = new SimpleMongoDbFactory(mongoClientURI);
         return mongoDbFactory;
