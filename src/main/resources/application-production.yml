@@ -3,7 +3,7 @@
 ## 数据源配置
 spring:
   datasource:
-    url: jdbc:mysql://106.14.140.103:3306/production?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://118.25.108.65:3306/production?useUnicode=true&characterEncoding=utf8
     username: root
-    password: mysql123456
+    password: Mysql@123456
     driver-class-name: com.mysql.cj.jdbc.Driver
