@@ -91,7 +91,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>6.0.6</version>
+            <version>8.0.11</version>
         </dependency>
 
         <!-- Druid 数据连接池依赖 -->
@@ -243,6 +243,7 @@
             <version>2.6.36</version>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -257,9 +258,7 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <useReleaseProfile>false</useReleaseProfile>
                     <arguments>-DskipTests</arguments>
-                    <tagNameFormat>@{profileActive}</tagNameFormat>
-                    <username>admin</username>
-                    <password>yibao0415</password>
+                    <tagNameFormat>@{filters.env}</tagNameFormat>
                 </configuration>
             </plugin>
         </plugins>
