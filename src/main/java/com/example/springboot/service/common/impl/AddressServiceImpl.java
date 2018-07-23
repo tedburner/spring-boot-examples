@@ -22,11 +22,16 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public void addAddress() {
+
         ProvinceDO provinceDO = ProvinceDO.ProvinceDOBuilder
                 .aProvinceDO()
-                .withName("浙江省")
+                .withName("江苏省")
                 .build();
         provinceService.addProvince(provinceDO);
+
+        ProvinceDO provinceDO1 = provinceDO;
+        provinceDO.setName("北京市");
+        provinceService.addProvince(provinceDO1);
 
     }
 }
