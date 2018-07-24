@@ -3,6 +3,7 @@ package com.example.springboot.config;
 import com.whalin.MemCached.MemCachedClient;
 import com.whalin.MemCached.SockIOPool;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
@@ -52,6 +53,7 @@ public class MemcachedConfig {
     }
 
     @Bean
+    @ConditionalOnBean
     public MemCachedClient memCachedClient(){
         return new MemCachedClient();
     }
