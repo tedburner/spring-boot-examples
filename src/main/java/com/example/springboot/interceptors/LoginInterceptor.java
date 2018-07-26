@@ -1,4 +1,4 @@
-package com.example.springboot.interceptor;
+package com.example.springboot.interceptors;
 
 import com.alibaba.fastjson.JSON;
 import com.example.springboot.base.annotation.Anonymous;
