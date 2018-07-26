@@ -1,5 +1,8 @@
 # SpringBoot
-Spring Boot项目。配置了druid+mybatis+redis。同时项目中使用了pagehelper的分页插件
+Spring Boot项目。配置了druid+mybatis+redis。
+- 使用了pagehelper的分页插件
+- 日志使用logback。
+- 使用maven实现开发/测试环境多环境
 ## 打成jar包
 ```bash
 cd 项目跟目录（和pom.xml同级）
@@ -24,3 +27,11 @@ docker部署代码在docker分支上面。
 图片上传整合了七牛云
 ## 测试环境/正式环境
 使用profiles实现了环境分开
+## MongoDB
+在分支mongo上
+## elasticsearch
+在分支elasticsearch上
+## jib
+在分支jib上面
+jib是谷歌的一个容器工具，在构建容器镜像的时候，不需要写dockerfile，直接使用jib工具就可以直接构建了
+- [官网GitHub](https://github.com/GoogleContainerTools/jib)

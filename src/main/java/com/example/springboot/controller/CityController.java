@@ -17,6 +17,7 @@ import javax.annotation.Resource;
  * @create 2017-09-22
  **/
 @RestController
+@RequestMapping("/city/")
 public class CityController {
 
     @Resource
@@ -24,18 +25,25 @@ public class CityController {
     @Autowired
     private RedisUtils redisUtils;
 
-    @RequestMapping(value = "/city/{name}")
+    @RequestMapping(value = "{name}")
     public NewResponseModel getCityByName(@PathVariable("name") String name) {
         NewResponseModel responseModel = NewResponseModel.Success();
         responseModel.setData(cityService.getCityByName(name));
         return responseModel;
     }
 
-    @GetMapping(value = "/city/{id}")
+    @GetMapping(value = "{id}")
     public NewResponseModel getCaches(@PathVariable("id") Long id) {
         NewResponseModel responseModel = NewResponseModel.Success();
         CityDO cityDO = cityService.getCityById(id);
         responseModel.setData(cityDO);
+        return responseModel;
+    }
+
+    @RequestMapping(value = "addCity")
+    public NewResponseModel addCity() {
+        NewResponseModel responseModel = NewResponseModel.Success();
+        cityService.addAddress();
         return responseModel;
     }
 }

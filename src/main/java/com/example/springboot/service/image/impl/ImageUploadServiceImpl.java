@@ -1,6 +1,6 @@
 package com.example.springboot.service.image.impl;
 
-import com.example.springboot.constants.Constants;
+import com.example.springboot.common.constants.Constants;
 import com.example.springboot.service.image.ImageUploadService;
 import com.example.springboot.service.image.Qiniu.Qiniu;
 import com.example.springboot.utils.common.MD5Utils;

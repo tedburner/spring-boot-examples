@@ -8,8 +8,8 @@
 
     <insert id="addProvince" parameterType="com.example.springboot.model.DO.ProvinceDO"
     keyProperty="id" useGeneratedKeys="true">
-        INSERT INTO province (id,name,createTime,updateTime)
-        VALUE (#{id},#{name},now(),now())
+        INSERT INTO province (name,createTime,updateTime)
+        VALUE (#{name},now(),now())
     </insert>
 
     <select id="getProvince" resultType="com.example.springboot.model.DO.ProvinceDO">

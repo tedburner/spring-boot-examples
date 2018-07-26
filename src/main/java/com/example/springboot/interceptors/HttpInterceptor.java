@@ -1,5 +1,6 @@
-package com.example.springboot.interceptor;
+package com.example.springboot.interceptors;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -9,8 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @author lingjun.jlj
  * @data 2018/5/4
- * @Description: 拦截器
+ * @Description: http 拦截器
  */
+@Component
 public class HttpInterceptor implements HandlerInterceptor {
 
     /**
@@ -25,7 +27,7 @@ public class HttpInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request,
                              HttpServletResponse response,
-                             Object handler) throws Exception {
+                             Object handler) {
 
         return false;
     }
@@ -40,7 +42,10 @@ public class HttpInterceptor implements HandlerInterceptor {
      * @throws Exception
      */
     @Override
-    public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
+    public void postHandle(HttpServletRequest httpServletRequest,
+                           HttpServletResponse httpServletResponse,
+                           Object o,
+                           ModelAndView modelAndView) {
 
     }
 
@@ -54,7 +59,9 @@ public class HttpInterceptor implements HandlerInterceptor {
      * @throws Exception
      */
     @Override
-    public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
+    public void afterCompletion(HttpServletRequest httpServletRequest,
+                                HttpServletResponse httpServletResponse,
+                                Object o, Exception e) {
 
     }
 }

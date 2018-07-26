@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!--导入配置信息-->
+    <springProperty scope="context" name="log.level" source="log.level"/>
+    <!--<springProperty scope="context" name="log.root" source="log.root"/>-->
+    <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
+    <property name="LOG_PATH" value="${user.dir}/logs"/>
+
+        <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern><![CDATA[%n%-4r [%d{yyyy-MM-dd HH:mm:ss.SSS} %X{productionMode}] - %X{method} %X{requestURIWithQueryString} %n  %-5level %logger{35} - %m%n]]></pattern>
+            </encoder>
+        </appender>
+
+        <!-- 按照每天生成日志文件 -->
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <!--<Encoding>GBK</Encoding>-->
+            <File>${LOG_PATH}/spring-boot.log</File>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>${LOG_PATH}/spring-boot.%d{yyyy-MM-dd}.log</FileNamePattern>
+                <MaxHistory>30</MaxHistory>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern><![CDATA[%n%-4r [%d{yyyy-MM-dd HH:mm:ss} %X{productionMode}] - %X{method} %X{requestURIWithQueryString} %n  %-5level %logger{35} - %m%n]]></pattern>
+            </layout>
+        </appender>
+
+        <!-- 按照每天生成日志文件 -->
+        <appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <!--<Encoding>GBK</Encoding>-->
+            <File>${LOG_PATH}/spring-boot-log.log</File>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>${LOG_PATH}/spring-boot-log.%d{yyyy-MM-dd}.log</FileNamePattern>
+                <MaxHistory>30</MaxHistory>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern><![CDATA[%n%-4r [%d{yyyy-MM-dd HH:mm:ss} %X{productionMode}] - %X{method} %X{requestURIWithQueryString} %n  %-5level %logger{35} - %m%n]]></pattern>
+            </layout>
+        </appender>
+
+        <!-- 用来设置某一个包或者具体的某一个类的日志打印级别，包名要与实际项目一致 -->
+        <logger name="fileInfoLog" level="${log.level}">
+            <appender-ref ref="fileInfoLog" />
+        </logger>
+
+        <!-- 按照每天生成日志文件 -->
+        <appender name="PROJECT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <!--<Encoding>GBK</Encoding>-->
+            <File>${LOG_PATH}/spring-boot-biz.log</File>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>${LOG_PATH}/spring-boot-biz.%d{yyyy-MM-dd}.log</FileNamePattern>
+                <MaxHistory>30</MaxHistory>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern><![CDATA[%n%-4r [%d{yyyy-MM-dd HH:mm:ss} %X{productionMode}] - %X{method} %X{requestURIWithQueryString} %n  %-5level %logger{35} - %m%n]]></pattern>
+            </layout>
+        </appender>
+
+        <!-- 用来设置某一个包或者具体的某一个类的日志打印级别，包名要与实际项目一致 -->
+        <logger name="com.example.springboot" level="${log.level}" >
+            <appender-ref ref="PROJECT" />
+        </logger>
+
+        <root level="${log.level}">
+            <appender-ref ref="Console" />
+            <appender-ref ref="FILE" />
+        </root>
+</configuration>
+
