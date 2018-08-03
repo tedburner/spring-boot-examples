@@ -22,18 +22,16 @@ public class CityController {
 
     @Resource
     private CityService cityService;
-    @Autowired
-    private RedisUtils redisUtils;
 
-    @RequestMapping(value = "{name}")
-    public NewResponseModel getCityByName(@PathVariable("name") String name) {
+    @RequestMapping(value = "findCityByName")
+    public NewResponseModel getCityByName(String name) {
         NewResponseModel responseModel = NewResponseModel.Success();
         responseModel.setData(cityService.getCityByName(name));
         return responseModel;
     }
 
-    @GetMapping(value = "{id}")
-    public NewResponseModel getCaches(@PathVariable("id") Long id) {
+    @GetMapping(value = "findCityById")
+    public NewResponseModel getCaches(Long id) {
         NewResponseModel responseModel = NewResponseModel.Success();
         CityDO cityDO = cityService.getCityById(id);
         responseModel.setData(cityDO);

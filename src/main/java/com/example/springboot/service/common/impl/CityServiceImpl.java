@@ -31,9 +31,6 @@ public class CityServiceImpl implements CityService {
     @Resource
     private CityMapper cityMapper;
 
-    @Autowired
-    private RedisTemplate redisTemplate;
-
     @Resource
     private ProvinceMapper provinceMapper;
 
@@ -53,9 +50,8 @@ public class CityServiceImpl implements CityService {
      * 参数： value缓存名、 key缓存键值、 condition满足缓存条件、 unless否决缓存条件、 allEntries是否移除所有数据（设置为true时会移除所有缓存）
      * */
     @Override
-    @Cacheable(value = "city",key = "'cityId_'+#id")
+    //@Cacheable(value = "city",key = "'cityId_'+#id")
     public CityDO getCityById(Long id) {
-        List<CityDO> list = Lists.newArrayList();
         return cityMapper.selectById(id);
     }
 
@@ -65,13 +61,13 @@ public class CityServiceImpl implements CityService {
         transactionTemplate.execute(status->{
             try {
                 ProvinceDO province = new ProvinceDO();
-                province.setName("浙江省");
+                province.setName("福建省");
                 provinceMapper.addProvince(province);
 
                 CityDO builder = CityDO.CityDOBuilder.aCityDO()
                         .withProvinceId(province.getId())
-                        .withName("金华市")
-                        .withDescription("金华火腿")
+                        .withName("厦门市")
+                        .withDescription("？？？")
                         .build();
                 cityMapper.addCity(builder);
 
