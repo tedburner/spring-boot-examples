@@ -3,10 +3,7 @@ package com.example.springboot.controller;
 import com.example.springboot.model.DO.CityDO;
 import com.example.springboot.service.common.CityService;
 import com.example.springboot.utils.http.NewResponseModel;
-import com.example.springboot.utils.redis.RedisUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
