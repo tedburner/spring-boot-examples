@@ -1,7 +1,7 @@
 package com.example.springboot.service.mongo;
 
 import com.example.springboot.model.DTO.PageDTO;
-import com.example.springboot.mongo.entity.User;
+import com.example.springboot.model.DO.mongo.User;
 
 import java.util.List;
 

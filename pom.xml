@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.1.RELEASE</version>
+        <version>2.0.3.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -293,17 +293,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
-                <configuration>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <useReleaseProfile>false</useReleaseProfile>
-                    <arguments>-DskipTests</arguments>
-                    <tagNameFormat>@{filters.env}</tagNameFormat>
-                </configuration>
-            </plugin>
         </plugins>
         <!--添加配置，为了找到Java下面的mapper的xml文件-->
         <resources>
@@ -320,38 +309,8 @@
                 <includes>
                     <include>**/*</include>
                 </includes>
-                <excludes>
-                    <exclude>VERSION</exclude>
-                    <exclude>**/*.java</exclude>
-                    <exclude>env/test/*</exclude>
-                    <exclude>env/production/*</exclude>
-                </excludes>
             </resource>
         </resources>
-        <filters><!--获得过滤使用的源文件，即有实际数据的地方-->
-            <filter>src/main/resources/env/${filters.env}/disconf.properties</filter>
-        </filters>
     </build>
-
-
-    <profiles>
-        <profile>
-            <id>production</id>
-            <properties>
-                <filters.env>production</filters.env>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>test</id>
-            <!--此处将dev设置为默认环境-->
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <filters.env>test</filters.env>
-            </properties>
-        </profile>
-    </profiles>
 
 </project>

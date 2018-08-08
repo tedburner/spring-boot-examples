@@ -1,14 +1,24 @@
 spring:
-  thymeleaf:
-    prefix: classpath:/templates/
-#  data:
-#    mongodb:
-##      uri: mongodb://user:password@ip:27017/admin
+  datasource:
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionProperties=druid.stat.mergeSql: true;druid.stat.slowSqlMillis=500
   jpa:
     show-sql: true
+  activemq:
+    broker-url:
+  profiles:
+    active: test
 server:
   port: 8081
-## 配置正式和测试库，分别是production/test
-spring:
-  profiles:
-    active: @filters.env@
