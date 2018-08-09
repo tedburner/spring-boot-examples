@@ -118,8 +118,9 @@ public class KafkaMessageAroundAdvice implements Advice,
                 }
                 return 0;
             });
-            boolean succ = taskMessages.offer(taskMessage);
-            if (succ) {
+            //把消息放入延迟队列
+            boolean success = taskMessages.offer(taskMessage);
+            if (success) {
                 return new Object();
             } else {
                 log.warn("delayQueue filled");
