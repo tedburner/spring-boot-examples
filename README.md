@@ -28,7 +28,8 @@ docker部署代码在docker分支上面。
 ## 测试环境/正式环境
 使用profiles实现了环境分开
 ## MongoDB
-在分支mongo上
+整合了MongoDB，使用spring的jpa进行数据库的操作，基本满足正常
+项目需求。
 ## elasticsearch
 在分支elasticsearch上
 ## jib
