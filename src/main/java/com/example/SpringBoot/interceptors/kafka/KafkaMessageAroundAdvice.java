@@ -1,11 +1,11 @@
-package com.example.springboot.interceptor.kafka;
+package com.example.springboot.interceptors.kafka;
 
 import com.dyuproject.protostuff.LinkedBuffer;
 import com.dyuproject.protostuff.ProtostuffIOUtil;
 import com.dyuproject.protostuff.Schema;
 import com.dyuproject.protostuff.runtime.RuntimeSchema;
 import com.example.springboot.base.annotation.KafkaMessageAnnotation;
-import com.example.springboot.enums.kafka.KafkaMessageStatusEnum;
+import com.example.springboot.common.enums.kafka.KafkaMessageStatusEnum;
 import com.example.springboot.model.DO.kafkaMessage.KafkaMessageDO;
 import com.example.springboot.persist.kafkaMessage.KafkaMessageMapper;
 import com.example.springboot.utils.common.TranslateUtil;

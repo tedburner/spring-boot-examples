@@ -1,6 +1,6 @@
 package com.example.springboot.base.aop.kafka;
 
-import com.example.springboot.interceptor.kafka.KafkaMessageAroundAdvice;
+import com.example.springboot.interceptors.kafka.KafkaMessageAroundAdvice;
 import org.aopalliance.aop.Advice;
 import org.springframework.aop.Advisor;
 import org.springframework.beans.factory.annotation.Autowired;

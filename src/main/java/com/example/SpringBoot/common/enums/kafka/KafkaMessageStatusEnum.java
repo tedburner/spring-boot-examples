@@ -1,11 +1,11 @@
-package com.example.springboot.enums.kafka;
+package com.example.springboot.common.enums.kafka;
 
 /**
  * @author: 蒋灵俊
  * @Date: 2018/6/11 15:05
  * @Description: kafka message表状态值
  */
-public enum  KafkaMessageStatusEnum {
+public enum KafkaMessageStatusEnum {
 
     NOT_COMPLETE(0, "未完成"),
     COMPLETE(1, "已完成"),
