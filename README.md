@@ -18,13 +18,13 @@ java -jar  target/项目名称-版本号.jar
 ## RabbitMq
 项目整合了RabbitMq。代码在rabbitmq分支上面
 ## kafka
-代码在kafka分支上，正在整合中。。。。。
+代码在kafka分支上，完成基本功能
 ## redis
-项目整合了Redis，其中version分支上是springboot2.0.1的Redis配置。springboot2.0之后Redis配置和之前的有点区别。
+项目整合了Redis，使用spring boot2.0。springboot2.0之后Redis配置和之前的有点区别。
 ## docker
 docker部署代码在docker分支上面。
 ## 七牛云
-图片上传整合了七牛云
+整合了七牛云，使用七牛云的OSS，存储图片文件等功能。
 ## 测试环境/正式环境
 使用profiles实现了环境分开
 ## MongoDB
