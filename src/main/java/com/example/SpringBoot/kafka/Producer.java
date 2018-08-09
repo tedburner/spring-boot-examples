@@ -1,13 +1,11 @@
 package com.example.springboot.kafka;
 
-import com.example.springboot.base.annotation.KafkaMessageAnnotation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.concurrent.CountDownLatch;
 
 /**
  * @author lingjun.jlj

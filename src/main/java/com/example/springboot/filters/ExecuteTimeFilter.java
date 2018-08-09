@@ -27,7 +27,7 @@ public class ExecuteTimeFilter implements Filter {
     FilterConfig filterConfig = null;
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig){
         this.filterConfig = filterConfig;
     }
 

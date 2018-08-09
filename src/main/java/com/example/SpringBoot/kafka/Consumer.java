@@ -1,6 +1,5 @@
 package com.example.springboot.kafka;
 
-import com.example.springboot.model.DTO.message.SampleMessageDTO;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
