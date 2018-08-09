@@ -1,4 +1,4 @@
-package com.example.springboot.interceptors.kafka;
+package com.example.springboot.base.aop.kafka;
 
 import com.dyuproject.protostuff.LinkedBuffer;
 import com.dyuproject.protostuff.ProtostuffIOUtil;
@@ -29,7 +29,7 @@ import java.util.concurrent.DelayQueue;
 /**
  * @author: 蒋灵俊
  * @Date: 2018/6/11 16:05
- * @Description: annotation方法拦截器
+ * @Description: annotation方法
  */
 public class KafkaMessageAroundAdvice implements Advice,
         MethodInterceptor, ApplicationContextAware {
