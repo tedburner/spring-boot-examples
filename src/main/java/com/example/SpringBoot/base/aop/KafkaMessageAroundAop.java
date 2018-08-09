@@ -1,4 +1,5 @@
-package com.example.springboot.base.aop.kafka;
+package com.example.springboot.base.aop;
+
 
 import com.dyuproject.protostuff.LinkedBuffer;
 import com.dyuproject.protostuff.ProtostuffIOUtil;
@@ -14,11 +15,14 @@ import com.example.springboot.utils.thread.task.TaskRequest;
 import com.example.springboot.utils.thread.threadpool.FastThreadPool;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.aop.support.AopUtils;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Field;
@@ -26,13 +30,15 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 /**
- * @author: lingjun.jlj
- * @date: 2018/8/9 16:45
- * @description:
- */
+ * @author lingjun.jlj
+ * @create 2017-11-30
+ * @Description: kafka message切面
+ **/
 @Aspect
+@Component
 @Slf4j
 public class KafkaMessageAroundAop {
+
 
     @Resource
     private FastThreadPool fastThreadPool;
@@ -41,17 +47,26 @@ public class KafkaMessageAroundAop {
     @Resource
     private KafkaMessageMapper kafkaMessageMapper;
 
+    /**
+     * 在service执行前打印log
+     */
+    @Before("execution(* com.example.springboot.service..*.*(..))")
+    public void before(JoinPoint point) {
+        log.info("@Before 准备执行: " + point.getSignature().getDeclaringTypeName()
+                + " 的 " + point.getSignature().getName() + "方法");
+    }
 
     @Pointcut("@annotation(com.example.springboot.base.annotation.KafkaMessageAnnotation)")
-    public void messageSend(){
-        System.out.println("vaild pointcut");
+    public void messageSend() {
+        System.out.println("Pointcut");
     }
 
     @Around("messageSend()")
-    public Object doAroundMessageSend(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object Around(ProceedingJoinPoint joinPoint) throws Throwable {
         Object[] args = joinPoint.getArgs();
         Object target = joinPoint.getTarget();
 
+        //获取class中topic的值
         Class targetClass = AopUtils.getTargetClass(joinPoint.getTarget());
         Field fieldTopic = targetClass.getField("topic");
         String topic = TranslateUtil.getStrOfObj(fieldTopic.get(target));
@@ -60,7 +75,7 @@ public class KafkaMessageAroundAop {
 
         messageDO.setTopic(topic);
 
-        Object messageBody = args[0];
+        Object messageBody = args[1];
 
         messageDO.setMessageBody(FormatUtils.obj2str(messageBody));
         messageDO.setStatus(KafkaMessageStatusEnum.NOT_COMPLETE.getCode());
@@ -74,7 +89,7 @@ public class KafkaMessageAroundAop {
             log.info("KafkaMessageAroundAdvice message=" + messageDO.toString());
         }
 
-        List<TaskFunction> functionList= Lists.newArrayList();
+        List<TaskFunction> functionList = Lists.newArrayList();
         functionList.add(() -> {
             int res = kafkaMessageMapper.insertKafkaMessage(messageDO);
             if (res <= 0) {
@@ -84,18 +99,20 @@ public class KafkaMessageAroundAop {
             return res;
         });
 
-        fastThreadPool.execute(new TaskRequest(functionList,false));
+        fastThreadPool.execute(new TaskRequest(functionList, false));
 
-        Class messageClass = messageBody.getClass();
-        String methodName = "setKafkaMessageId";
-
-        Class[] argsClass = new Class[1];
-        Object[] methodArgs = new Object[1];
-        methodArgs[0] = messageDO.getId();
-        argsClass[0] = methodArgs[0].getClass();
-
-        Method messageMethod = messageClass.getMethod(methodName, argsClass);
-        messageMethod.invoke(messageBody, methodArgs);
+        //kafkaMessage模板插入？？？
+//        Class messageClass = messageBody.getClass();
+//        String methodName = "setKafkaMessageId";
+//
+//        Class[] argsClass = new Class[1];
+//        Object[] methodArgs = new Object[1];
+//        methodArgs[0] = messageDO.getId();
+//        argsClass[0] = methodArgs[0].getClass();
+//
+//        Method messageMethod = messageClass.getMethod(methodName, argsClass);
+//        messageMethod.invoke(messageBody, methodArgs);
         return joinPoint.proceed();
     }
+
 }

@@ -2,6 +2,7 @@ package com.example.springboot.service.kafka.impl;
 
 import com.example.springboot.base.annotation.KafkaMessageAnnotation;
 import com.example.springboot.service.kafka.KafkaMessageService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,9 @@ import javax.annotation.Resource;
  */
 @Service
 public class KafkaMessageServiceImpl implements KafkaMessageService {
+
+    @Value("kafka.topic")
+    public String topic;
 
     @Resource
     private KafkaTemplate<String, String> kafkaTemplate;

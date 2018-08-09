@@ -19,7 +19,7 @@ public class SampleController {
     private KafkaMessageService kafkaMessageService;
 
     @RequestMapping("send")
-    public void sendMessage(String message){
-        kafkaMessageService.sendMessage(message);
+    public void sendMessage(String topic, String message) {
+        kafkaMessageService.sendMessage(topic, message);
     }
 }
