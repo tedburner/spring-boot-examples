@@ -31,6 +31,7 @@ import java.util.concurrent.DelayQueue;
  * @Date: 2018/6/11 16:05
  * @Description: annotation方法
  */
+@Deprecated
 public class KafkaMessageAroundAdvice implements Advice,
         MethodInterceptor, ApplicationContextAware {
 

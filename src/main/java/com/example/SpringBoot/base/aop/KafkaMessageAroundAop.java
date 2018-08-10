@@ -50,11 +50,11 @@ public class KafkaMessageAroundAop {
     /**
      * 在service执行前打印log
      */
-    @Before("execution(* com.example.springboot.service..*.*(..))")
-    public void before(JoinPoint point) {
-        log.info("@Before 准备执行: " + point.getSignature().getDeclaringTypeName()
-                + " 的 " + point.getSignature().getName() + "方法");
-    }
+//    @Before("execution(* com.example.springboot.service..*.*(..))")
+//    public void before(JoinPoint point) {
+//        log.info("@Before 准备执行: " + point.getSignature().getDeclaringTypeName()
+//                + " 的 " + point.getSignature().getName() + "方法");
+//    }
 
     @Pointcut("@annotation(com.example.springboot.base.annotation.KafkaMessageAnnotation)")
     public void messageSend() {

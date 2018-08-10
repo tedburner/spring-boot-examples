@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @Date: 2018/6/11 16:04
  * @Description: kafka message aop切面
  */
+@Deprecated
 public class KafkaMessageAdvisor implements Advisor {
 
     @Autowired
