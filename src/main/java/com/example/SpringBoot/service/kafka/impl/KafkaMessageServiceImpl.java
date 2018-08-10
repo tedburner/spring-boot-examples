@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 @Service
 public class KafkaMessageServiceImpl implements KafkaMessageService {
 
-    @Value("kafka.topic")
+    @Value("${kafka.topic}")
     public String topic;
 
     @Resource
