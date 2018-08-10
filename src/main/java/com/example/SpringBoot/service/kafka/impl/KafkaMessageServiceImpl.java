@@ -25,7 +25,7 @@ public class KafkaMessageServiceImpl implements KafkaMessageService {
     @Override
     @KafkaMessageAnnotation
     public void sendMessage(String message) {
-        kafkaTemplate.send("testTopic", message);
+        kafkaTemplate.send(topic, message);
     }
 
     @Override
