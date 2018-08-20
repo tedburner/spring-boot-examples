@@ -78,6 +78,11 @@
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+        </dependency>
+
         <!--Mybatis 依赖 -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
