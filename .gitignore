@@ -15,7 +15,7 @@
 *.iws
 *.iml
 *.ipr
-log.root_IS_UNDEFINED
+logs
 
 ### NetBeans ###
 /nbproject/private/

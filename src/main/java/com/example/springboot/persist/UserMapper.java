@@ -11,7 +11,9 @@ import java.util.List;
 
 public interface UserMapper {
 
-    Long addUser(UserDO user);
+    void addUser(UserDO user);
+
+    void update(UserDO userDO);
 
     List<UserDO> selectUser();
 

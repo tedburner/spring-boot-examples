@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.concurrent.ConcurrentMap;
 
 /**
- * @author lingjun.jlj
- * @data 2018/5/2
- * @Description: bean拷贝工具类
+ * @author: lingjun.jlj
+ * @date: 2018/8/20 10:05
+ * @description:
  */
 public class BeanCopierUtils {
 

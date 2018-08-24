@@ -1,4 +1,4 @@
-package com.example.springboot.constants;
+package com.example.springboot.common.constants;
 
 /**
  * @author lingjun.jlj

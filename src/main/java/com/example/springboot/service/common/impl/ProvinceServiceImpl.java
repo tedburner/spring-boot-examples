@@ -29,4 +29,9 @@ public class ProvinceServiceImpl implements ProvinceService {
     public ProvinceDO getProvince(Long id) {
         return provinceMapper.selectProvinceById(id);
     }
+
+    @Override
+    public void addProvince(ProvinceDO provinceDO) {
+        provinceMapper.addProvince(provinceDO);
+    }
 }

@@ -1,7 +1,7 @@
 package com.example.springboot.service.factory.test;
 
 
-import com.example.springboot.enums.SimpleEnum;
+import com.example.springboot.common.enums.SimpleEnum;
 import org.springframework.stereotype.Service;
 
 /**
