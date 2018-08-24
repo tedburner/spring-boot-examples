@@ -1,0 +1,2 @@
+[2018-08-24 10:44:49] INFO  com.example.springboot.ApplicationStartup - Starting ApplicationStartup v0.0.1-SNAPSHOT on jianglingjundeMacBook-Pro.local with PID 3691 (/Users/jianglingjun/Document/Projects/JavaProjects/springboot/target/springboot-0.0.1-SNAPSHOT.jar started by jianglingjun in /Users/jianglingjun/Document/Projects/JavaProjects/springboot)
+[2018-08-24 10:44:49] INFO  com.example.springboot.ApplicationStartup - The following profiles are active: production
