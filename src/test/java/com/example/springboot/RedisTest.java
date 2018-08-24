@@ -30,4 +30,11 @@ public class RedisTest {
         CityDO redisValue =(CityDO) redisUtils.get("city_1");
         System.out.println(redisValue);
     }
+
+    @Test
+    public void test(){
+        redisUtils.set("a","abc_name");
+        String redisValue =(String) redisUtils.get("a");
+        System.out.println(redisValue);
+    }
 }

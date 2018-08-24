@@ -7,6 +7,9 @@ import com.example.springboot.model.DO.ProvinceDO;
  * @create 2017-12-04
  **/
 public interface ProvinceService {
+
     ProvinceDO getProvince(Long id);
+
+    void addProvince(ProvinceDO provinceDO);
 
 }

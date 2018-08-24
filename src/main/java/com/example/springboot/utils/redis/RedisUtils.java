@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
  * @create 2017-11-28
  * redis 工具类
  **/
-@SuppressWarnings("unchecked")
 @Component
 public class RedisUtils {
 

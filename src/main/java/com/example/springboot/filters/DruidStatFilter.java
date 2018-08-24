@@ -1,4 +1,4 @@
-package com.example.springboot.filter;
+package com.example.springboot.filters;
 
 import com.alibaba.druid.support.http.WebStatFilter;
 

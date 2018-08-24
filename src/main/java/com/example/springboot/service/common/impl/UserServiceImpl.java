@@ -37,4 +37,14 @@ public class UserServiceImpl implements UserService {
         return (List<UserDO>) result.get(0);
 
     }
+
+    @Override
+    public void addUser(UserDO userDO) {
+        userMapper.addUser(userDO);
+    }
+
+    @Override
+    public void update(UserDO userDO) {
+        userMapper.update(userDO);
+    }
 }
