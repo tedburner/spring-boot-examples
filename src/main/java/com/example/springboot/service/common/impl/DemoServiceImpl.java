@@ -25,7 +25,7 @@ public class DemoServiceImpl implements DemoService {
     public void show() {
         try {
             testFactory.process(0);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -35,6 +35,11 @@ public class DemoServiceImpl implements DemoService {
         CityProcessor processor = cityFactory.getCityProcessor(0);
         CityDO cityDO = processor.process();
         System.out.println(cityDO);
+    }
+
+    @Override
+    public int getNumer() {
+        return 1 / 0;
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.springboot.controller;
 
 import com.example.springboot.model.DO.UserDO;
+import com.example.springboot.service.common.DemoService;
 import com.example.springboot.service.common.UserService;
 import com.example.springboot.utils.http.NewResponseModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +25,12 @@ public class ViewController {
     @Resource
     private UserService userService;
     @Autowired
+    private DemoService demoService;
+    @Autowired
     private Environment env;
 
     @GetMapping(value = "getView")
-    public NewResponseModel view() {
+    public NewResponseModel getView() {
         NewResponseModel responseModel = NewResponseModel.Success();
         List<UserDO> users = userService.findUser();
         System.out.println(users);
@@ -39,5 +42,12 @@ public class ViewController {
     public String sample() {
         return "spring boot success ! and profile is ==>" +
                 env.getProperty("spring.profiles.active") + "=====>" + env.getProperty("ftp");
+    }
+
+    @RequestMapping("view")
+    public NewResponseModel view(){
+        NewResponseModel responseModel = NewResponseModel.Success();
+        responseModel.setData(demoService.getNumer());
+        return responseModel;
     }
 }
