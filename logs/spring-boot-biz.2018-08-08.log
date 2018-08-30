@@ -1,0 +1,3 @@
+[2018-08-08 14:45:13] INFO  com.example.springboot.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 3024 (/Users/jianglingjun/Document/Projects/JavaProjects/springboot/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/JavaProjects/springboot)
+[2018-08-08 14:45:13] INFO  com.example.springboot.ApplicationStartup - The following profiles are active: test
+[2018-08-08 14:45:18] INFO  com.example.springboot.ApplicationStartup - Started ApplicationStartup in 5.32 seconds (JVM running for 6.164)

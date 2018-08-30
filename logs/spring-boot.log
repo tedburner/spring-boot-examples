@@ -1,0 +1,188 @@
+[2018-08-26 00:27:43] INFO  com.example.springboot.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 5325 (/Users/jianglingjun/Document/Projects/JavaProjects/springboot/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/JavaProjects/springboot)
+[2018-08-26 00:27:43] INFO  com.example.springboot.ApplicationStartup - The following profiles are active: test
+[2018-08-26 00:27:43] INFO  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@236e3f4e: startup date [Sun Aug 26 00:27:43 CST 2018]; root of context hierarchy
+[2018-08-26 00:27:44] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-08-26 00:27:44] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-08-26 00:27:44] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.springboot.repository.mongo.UserRepository.
+[2018-08-26 00:27:44] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b1359d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-08-26 00:27:44] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.example.springboot.config.RedisConfig$$EnhancerBySpringCGLIB$$95c24751] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-08-26 00:27:45] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2018-08-26 00:27:45] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2018-08-26 00:27:45] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[2018-08-26 00:27:45] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.32
+[2018-08-26 00:27:45] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/jianglingjun/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2018-08-26 00:27:45] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[2018-08-26 00:27:45] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2018-08-26 00:27:45] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2178 ms
+[2018-08-26 00:27:46] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[192.168.33.120:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2018-08-26 00:27:47] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-08-26 00:27:47] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+[2018-08-26 00:27:47] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'CORSFilter' to: [/*]
+[2018-08-26 00:27:47] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+[2018-08-26 00:27:47] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'com.example.springboot.filters.CORSFilter' to urls: [/*]
+[2018-08-26 00:27:47] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidStatFilter' to urls: [/*]
+[2018-08-26 00:27:47] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'ExecuteTimeFilter' to urls: [/*]
+[2018-08-26 00:27:47] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/city/findCityById],methods=[GET]}" onto public com.example.springboot.utils.http.NewResponseModel com.example.springboot.controller.CityController.getCaches(java.lang.Long)
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/city/findCityByName]}" onto public com.example.springboot.utils.http.NewResponseModel com.example.springboot.controller.CityController.getCityByName(java.lang.String)
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/city/addCity]}" onto public com.example.springboot.utils.http.NewResponseModel com.example.springboot.controller.CityController.addCity()
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/login]}" onto public java.lang.String com.example.springboot.controller.LoginController.login(javax.servlet.http.HttpSession)
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/province/getProvince],methods=[GET]}" onto public com.example.springboot.utils.http.NewResponseModel com.example.springboot.controller.ProvinceController.getProvince(java.lang.Long)
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/upload/image]}" onto public com.example.springboot.utils.http.NewResponseModel com.example.springboot.controller.QiniuUploadController.UploadImage(org.springframework.web.multipart.MultipartFile) throws java.lang.Exception
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/api/test],methods=[POST]}" onto public java.lang.String com.example.springboot.controller.SpringBootController.test(java.lang.Long)
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/api/login],methods=[GET]}" onto java.lang.String com.example.springboot.controller.SpringBootController.login()
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/api/spring/index],methods=[GET]}" onto java.lang.String com.example.springboot.controller.SpringBootController.springboot()
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/api/hello/{name}],methods=[GET]}" onto public java.lang.String com.example.springboot.controller.SpringBootController.hello(java.lang.String)
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/templates/main],methods=[GET]}" onto public java.lang.String com.example.springboot.controller.ThymeleafController.index()
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/view/view]}" onto public com.example.springboot.utils.http.NewResponseModel com.example.springboot.controller.ViewController.view()
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/view/sample]}" onto public java.lang.String com.example.springboot.controller.ViewController.sample()
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/view/getView],methods=[GET]}" onto public com.example.springboot.utils.http.NewResponseModel com.example.springboot.controller.ViewController.getView()
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@236e3f4e: startup date [Sun Aug 26 00:27:43 CST 2018]; root of context hierarchy
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Detected @InitBinder methods in errorException
+[2018-08-26 00:27:47] INFO  org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in errorException
+[2018-08-26 00:27:48] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+[2018-08-26 00:27:48] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[2018-08-26 00:27:48] INFO  org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping - Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+[2018-08-26 00:27:48] INFO  org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping - Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+[2018-08-26 00:27:48] INFO  org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping - Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2018-08-26 00:27:48] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[2018-08-26 00:27:48] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+[2018-08-26 00:27:48] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+[2018-08-26 00:27:48] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2018-08-26 00:27:48] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[2018-08-26 00:27:48] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2018-08-26 00:27:48] INFO  com.example.springboot.ApplicationStartup - Started ApplicationStartup in 5.971 seconds (JVM running for 7.174)
+[2018-08-26 00:27:49] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[2018-08-26 00:27:49] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[2018-08-26 00:27:49] INFO  org.mongodb.driver.cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+[2018-08-26 00:27:49] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+[2018-08-26 00:27:55] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1534328293,1535093773] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+[2018-08-26 00:27:56] WARN  org.springframework.web.servlet.PageNotFound - No mapping found for HTTP request with URI [/] in DispatcherServlet with name 'dispatcherServlet'
+[2018-08-26 00:27:56] INFO  com.example.springboot.filters.ExecuteTimeFilter - request uri =/, executeTime = 8ms,paramMap ={},headerMap={"accept-language":"zh-CN,zh;q\u003d0.9","cookie":"_ga\u003dGA1.1.1588482597.1504075410; Pycharm-a9562a04\u003d8ebc590b-0f17-4932-8d4c-5675a6c1c16d; Idea-46d43588\u003d6d76dc82-dd94-44d4-b9a5-fe0e6560dbfd; Hm_lvt_9277f2eb3b52fade687b154751182245\u003d1533020593,1534328293,1535093773","host":"localhost:8080","upgrade-insecure-requests":"1","connection":"keep-alive","accept-encoding":"gzip, deflate, br","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36","accept":"text/html,application/xhtml+xml,application/xml;q\u003d0.9,image/webp,image/apng,*/*;q\u003d0.8"}
+[2018-08-26 00:27:56] WARN  org.springframework.web.servlet.PageNotFound - No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'dispatcherServlet'
+[2018-08-26 00:27:56] INFO  com.example.springboot.filters.ExecuteTimeFilter - request uri =/favicon.ico, executeTime = 1ms,paramMap ={},headerMap={"referer":"http://localhost:8080/","accept-language":"zh-CN,zh;q\u003d0.9","cookie":"_ga\u003dGA1.1.1588482597.1504075410; Pycharm-a9562a04\u003d8ebc590b-0f17-4932-8d4c-5675a6c1c16d; Idea-46d43588\u003d6d76dc82-dd94-44d4-b9a5-fe0e6560dbfd; Hm_lvt_9277f2eb3b52fade687b154751182245\u003d1533020593,1534328293,1535093773","host":"localhost:8080","connection":"keep-alive","accept-encoding":"gzip, deflate, br","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36","accept":"image/webp,image/apng,image/*,*/*;q\u003d0.8"}
+[2018-08-26 00:28:06] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 192.168.33.120:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:62)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:114)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:59)
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:57)
+	... 3 common frames omitted
+[2018-08-26 00:28:19] WARN  org.springframework.boot.actuate.mongo.MongoHealthIndicator - MongoDB health check failed
+org.springframework.dao.DataAccessResourceFailureException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=192.168.33.120:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.SocketTimeoutException: connect timed out}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=192.168.33.120:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.SocketTimeoutException: connect timed out}}]
+	at org.springframework.data.mongodb.core.MongoExceptionTranslator.translateExceptionIfPossible(MongoExceptionTranslator.java:87)
+	at org.springframework.data.mongodb.core.MongoTemplate.potentiallyConvertRuntimeException(MongoTemplate.java:2592)
+	at org.springframework.data.mongodb.core.MongoTemplate.execute(MongoTemplate.java:499)
+	at org.springframework.data.mongodb.core.MongoTemplate.executeCommand(MongoTemplate.java:403)
+	at org.springframework.boot.actuate.mongo.MongoHealthIndicator.doHealthCheck(MongoHealthIndicator.java:46)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:84)
+	at org.springframework.boot.actuate.health.CompositeHealthIndicator.health(CompositeHealthIndicator.java:68)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:223)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:76)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:61)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:126)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:99)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at sun.reflect.GeneratedMethodAccessor81.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:357)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:573)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:834)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:687)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=192.168.33.120:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.SocketTimeoutException: connect timed out}}]
+	at com.mongodb.connection.BaseCluster.getDescription(BaseCluster.java:167)
+	at com.mongodb.Mongo.getConnectedClusterDescription(Mongo.java:885)
+	at com.mongodb.Mongo.createClientSession(Mongo.java:877)
+	at com.mongodb.Mongo$3.getClientSession(Mongo.java:866)
+	at com.mongodb.Mongo$3.execute(Mongo.java:823)
+	at com.mongodb.MongoDatabaseImpl.executeCommand(MongoDatabaseImpl.java:166)
+	at com.mongodb.MongoDatabaseImpl.runCommand(MongoDatabaseImpl.java:138)
+	at com.mongodb.MongoDatabaseImpl.runCommand(MongoDatabaseImpl.java:133)
+	at org.springframework.data.mongodb.core.MongoTemplate$2.doInDB(MongoTemplate.java:405)
+	at org.springframework.data.mongodb.core.MongoTemplate$2.doInDB(MongoTemplate.java:403)
+	at org.springframework.data.mongodb.core.MongoTemplate.execute(MongoTemplate.java:497)
+	... 37 common frames omitted
+[2018-08-26 00:28:20] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+[2018-08-26 00:28:21] WARN  org.springframework.boot.actuate.mail.MailHealthIndicator - Mail health check failed
+javax.mail.AuthenticationFailedException: 535 Error: authentication failed
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:965)
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:876)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:780)
+	at javax.mail.Service.connect(Service.java:366)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:515)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.testConnection(JavaMailSenderImpl.java:396)
+	at org.springframework.boot.actuate.mail.MailHealthIndicator.doHealthCheck(MailHealthIndicator.java:43)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:84)
+	at org.springframework.boot.actuate.health.CompositeHealthIndicator.health(CompositeHealthIndicator.java:68)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:223)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:76)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:61)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:126)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:99)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at sun.reflect.GeneratedMethodAccessor81.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:357)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:573)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:834)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:687)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-08-26 00:28:21] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+[2018-08-26 00:28:21] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+[2018-08-26 00:28:31] INFO  com.example.springboot.filters.ExecuteTimeFilter - request uri =/view/getView, executeTime = 119ms,paramMap ={},headerMap={"accept-language":"zh-CN,zh;q\u003d0.9","cookie":"_ga\u003dGA1.1.1588482597.1504075410; Pycharm-a9562a04\u003d8ebc590b-0f17-4932-8d4c-5675a6c1c16d; Idea-46d43588\u003d6d76dc82-dd94-44d4-b9a5-fe0e6560dbfd; Hm_lvt_9277f2eb3b52fade687b154751182245\u003d1533020593,1534328293,1535093773","host":"localhost:8080","upgrade-insecure-requests":"1","connection":"keep-alive","accept-encoding":"gzip, deflate, br","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36","accept":"text/html,application/xhtml+xml,application/xml;q\u003d0.9,image/webp,image/apng,*/*;q\u003d0.8"}
+[2018-08-26 00:29:29] INFO  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@236e3f4e: startup date [Sun Aug 26 00:27:43 CST 2018]; root of context hierarchy
+[2018-08-26 00:29:29] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[2018-08-26 00:29:29] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
