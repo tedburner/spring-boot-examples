@@ -262,8 +262,7 @@
                 <version>1.1.1</version>
                 <configuration>
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-                    <baseImage>java:8</baseImage>
-                    <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+                    <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
@@ -273,6 +272,8 @@
                     </resources>
                 </configuration>
             </plugin>
+            <!-- Docker maven plugin -->
+
             <!-- Docker maven plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
