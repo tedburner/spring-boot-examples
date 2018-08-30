@@ -9,18 +9,19 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @author lingjun.jlj
- * @data 2018/4/2
+ * @author: lingjun.jlj
+ * @date: 2018/8/30 11:52
+ * @description:
  */
 @RestController
 @RequestMapping(value = "/view/")
-public class ViewController {
+public class TestController {
+
 
     @Resource
     private UserService userService;
@@ -45,9 +46,11 @@ public class ViewController {
     }
 
     @RequestMapping("view")
-    public NewResponseModel view(){
+    public NewResponseModel view() {
         NewResponseModel responseModel = NewResponseModel.Success();
         responseModel.setData(demoService.getNumer());
         return responseModel;
     }
+
+
 }
