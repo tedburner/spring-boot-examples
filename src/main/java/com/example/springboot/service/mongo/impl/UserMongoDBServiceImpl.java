@@ -1,14 +1,13 @@
 package com.example.springboot.service.mongo.impl;
 
 import com.example.springboot.model.DTO.PageDTO;
-import com.example.springboot.mongo.entity.User;
-import com.example.springboot.mongo.repository.UserRepository;
+import com.example.springboot.model.DO.mongo.User;
+import com.example.springboot.repository.mongo.UserRepository;
 import com.example.springboot.service.mongo.UserMongoDBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;

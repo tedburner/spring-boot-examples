@@ -1,10 +1,11 @@
-package com.example.springboot.filter;
+package com.example.springboot.filters;
 
 import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 import net.logstash.logback.encoder.org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -18,6 +19,7 @@ import java.util.Map;
  * @create 2017-11-30
  * @descrip 过滤器
  **/
+
 @WebFilter(filterName="ExecuteTimeFilter",urlPatterns={"/*"})
 public class ExecuteTimeFilter implements Filter {
     private static Logger log = LoggerFactory.getLogger(ExecuteTimeFilter.class);

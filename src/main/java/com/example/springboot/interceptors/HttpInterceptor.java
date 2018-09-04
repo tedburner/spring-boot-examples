@@ -1,5 +1,6 @@
-package com.example.springboot.interceptor;
+package com.example.springboot.interceptors;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  * @data 2018/5/4
  * @Description: http 拦截器
  */
+@Component
 public class HttpInterceptor implements HandlerInterceptor {
 
     /**

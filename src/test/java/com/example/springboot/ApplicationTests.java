@@ -23,7 +23,7 @@ public class ApplicationTests {
 
     @Test
     public void contextLoads() {
-        CityDO cityDO = cityService.getCityByName("杭州");
+        CityDO cityDO = cityService.getCityByName("杭州市");
         System.out.println(cityDO);
 
     }
@@ -38,7 +38,6 @@ public class ApplicationTests {
     @Test
     public void redisUtilsTest() {
         CityDO cityDO = (CityDO) redisUtils.get("city_1");
-
         System.out.println(cityDO);
     }
 

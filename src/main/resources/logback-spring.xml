@@ -3,13 +3,12 @@
 
     <!--导入配置信息-->
     <springProperty scope="context" name="log.level" source="log.level"/>
-    <!--<springProperty scope="context" name="log.root" source="log.root"/>-->
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
     <property name="LOG_PATH" value="${user.dir}/logs"/>
 
         <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
             <encoder>
-                <pattern><![CDATA[%n%-4r [%d{yyyy-MM-dd HH:mm:ss.SSS} %X{productionMode}] - %X{method} %X{requestURIWithQueryString} %n  %-5level %logger{35} - %m%n]]></pattern>
+                <pattern><![CDATA[[%d{yyyy-MM-dd HH:mm:ss}] %-5level %logger - %msg%n]]></pattern>
             </encoder>
         </appender>
 
@@ -22,7 +21,7 @@
                 <MaxHistory>30</MaxHistory>
             </rollingPolicy>
             <layout class="ch.qos.logback.classic.PatternLayout">
-                <pattern><![CDATA[%n%-4r [%d{yyyy-MM-dd HH:mm:ss} %X{productionMode}] - %X{method} %X{requestURIWithQueryString} %n  %-5level %logger{35} - %m%n]]></pattern>
+                <pattern><![CDATA[[%d{yyyy-MM-dd HH:mm:ss}] %-5level %logger - %msg%n]]></pattern>
             </layout>
         </appender>
 
@@ -35,7 +34,7 @@
                 <MaxHistory>30</MaxHistory>
             </rollingPolicy>
             <layout class="ch.qos.logback.classic.PatternLayout">
-                <pattern><![CDATA[%n%-4r [%d{yyyy-MM-dd HH:mm:ss} %X{productionMode}] - %X{method} %X{requestURIWithQueryString} %n  %-5level %logger{35} - %m%n]]></pattern>
+                <pattern><![CDATA[[%d{yyyy-MM-dd HH:mm:ss}] %-5level %logger - %msg%n]]></pattern>
             </layout>
         </appender>
 
@@ -53,7 +52,7 @@
                 <MaxHistory>30</MaxHistory>
             </rollingPolicy>
             <layout class="ch.qos.logback.classic.PatternLayout">
-                <pattern><![CDATA[%n%-4r [%d{yyyy-MM-dd HH:mm:ss} %X{productionMode}] - %X{method} %X{requestURIWithQueryString} %n  %-5level %logger{35} - %m%n]]></pattern>
+                <pattern><![CDATA[[%d{yyyy-MM-dd HH:mm:ss}] %-5level %logger - %msg%n]]></pattern>
             </layout>
         </appender>
 

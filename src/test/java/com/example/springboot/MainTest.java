@@ -1,13 +1,12 @@
 package com.example.springboot;
 
-import com.example.springboot.model.DTO.SimpleDTO;
+
 import com.example.springboot.service.common.AddressService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import sun.jvm.hotspot.debugger.Address;
 
 /**
  * @author lingjun.jlj

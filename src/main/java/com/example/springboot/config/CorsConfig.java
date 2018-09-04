@@ -3,12 +3,12 @@ package com.example.springboot.config;
 /**
  * @author lingjun.jlj
  * @data 2018/5/7
- * @Description:
+ * @Description: 跨域问题
  */
 
 //@Configuration
 public class CorsConfig {
-        //extends WebMvcConfigurerAdapter {
+    //extends WebMvcConfigurerAdapter {
 
 //    @Override
 //    public void addCorsMappings(CorsRegistry registry) {
