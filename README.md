@@ -4,6 +4,9 @@ Spring Boot项目。配置了druid+mybatis+redis。
 - 日志使用logback。
 - 使用maven实现开发/测试环境多环境
 
+在idea中使用mybatis，推荐一个插件—— Free Mybatis plugin，
+感觉挺好用的（声明：不是本人开发的插件，只是使用中感觉不错）。
+
 ## 打成jar包
 ```bash
 cd 项目跟目录（和pom.xml同级）
