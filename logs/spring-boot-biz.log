@@ -10,3 +10,17 @@
 [2018-09-01 11:04:18] INFO  com.example.springboot.ApplicationStartup - The following profiles are active: test
 [2018-09-01 11:04:25] INFO  com.example.springboot.ApplicationStartup - Started ApplicationStartup in 7.965 seconds (JVM running for 8.886)
 [2018-09-01 11:04:28] INFO  com.example.springboot.filters.ExecuteTimeFilter - request uri =/view/notnull, executeTime = 114ms,paramMap ={},headerMap={"content-length":"13","postman-token":"38c8f9c6-131e-4c2e-a6d4-622cab10b95a","host":"localhost:8080","content-type":"application/json","connection":"keep-alive","cache-control":"no-cache","accept-encoding":"gzip, deflate","user-agent":"PostmanRuntime/7.2.0","accept":"*/*"}
+[2018-09-04 19:30:35] INFO  com.example.springboot.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 12792 (/Users/jianglingjun/Document/Projects/Java/springboot/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/springboot)
+[2018-09-04 19:30:35] INFO  com.example.springboot.ApplicationStartup - The following profiles are active: test
+[2018-09-04 19:31:45] INFO  com.example.springboot.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 12818 (/Users/jianglingjun/Document/Projects/Java/springboot/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/springboot)
+[2018-09-04 19:31:45] INFO  com.example.springboot.ApplicationStartup - The following profiles are active: test
+[2018-09-04 19:31:51] INFO  com.example.springboot.ApplicationStartup - Started ApplicationStartup in 6.98 seconds (JVM running for 7.838)
+[2018-09-04 19:33:10] INFO  com.example.springboot.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 12837 (/Users/jianglingjun/Document/Projects/Java/springboot/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/springboot)
+[2018-09-04 19:33:10] INFO  com.example.springboot.ApplicationStartup - The following profiles are active: test
+[2018-09-04 19:34:00] INFO  com.example.springboot.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 12853 (/Users/jianglingjun/Document/Projects/Java/springboot/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/springboot)
+[2018-09-04 19:34:00] INFO  com.example.springboot.ApplicationStartup - The following profiles are active: test
+[2018-09-04 19:34:42] INFO  com.example.springboot.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 12866 (/Users/jianglingjun/Document/Projects/Java/springboot/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/springboot)
+[2018-09-04 19:34:42] INFO  com.example.springboot.ApplicationStartup - The following profiles are active: test
+[2018-09-04 19:36:17] INFO  com.example.springboot.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 12888 (/Users/jianglingjun/Document/Projects/Java/springboot/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/springboot)
+[2018-09-04 19:36:17] INFO  com.example.springboot.ApplicationStartup - The following profiles are active: test
+[2018-09-04 19:36:29] INFO  com.example.springboot.ApplicationStartup - Started ApplicationStartup in 13.121 seconds (JVM running for 14.755)
