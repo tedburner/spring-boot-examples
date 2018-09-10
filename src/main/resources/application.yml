@@ -21,9 +21,21 @@ spring:
   ## 配置正式和测试库，分别是production/test
   profiles:
     active: @filters.env@
+  # 邮件
+  mail:
+    host: smtp.163.com
+    username: jlj_vip98@163.com
+    password:
+    default-encoding: UTF-8
 server:
   port: 8080
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
+# pagehelper 分页插件配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: ount=countSql
