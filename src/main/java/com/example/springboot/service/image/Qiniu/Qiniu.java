@@ -25,6 +25,9 @@ public class Qiniu {
 
     /**
      * base64图片上传图片
+     * @param bucket
+     * @param key
+     * @param data
      */
     public static Response upload(String bucket, String key, byte[] data) throws Exception {
         Auth auth = Auth.create(Constants.ACCESS_KEY, Constants.SECRET_KEY);
@@ -35,6 +38,8 @@ public class Qiniu {
     }
 
     /**
+     * 文件上传七牛云
+     *
      * @param bucket 空间名
      * @param key    文件名
      * @param file   文件内容
