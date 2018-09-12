@@ -59,7 +59,7 @@ docker部署代码在docker分支上面。master 分支支持插件直接构建�
 
 ## 七牛云
 
-整合了七牛云，使用七牛云的OSS，存储图片文件等功能。
+整合了七牛云，使用七牛云的 OSS，存储图片文件等功能。
 
 ## 测试环境/正式环境
 
@@ -67,12 +67,12 @@ docker部署代码在docker分支上面。master 分支支持插件直接构建�
 
 ## MongoDB
 
-整合了MongoDB，使用spring的jpa进行数据库的操作，基本满足正常
+整合了 MongoDB，使用 Spring 的jpa进行数据库的操作，基本满足正常
 项目需求。
 
 ## elasticsearch
 
-在分支elasticsearch上，整合中。。。。
+在分支 elasticsearch 上，整合中。。。。
 
 ## jib
 
