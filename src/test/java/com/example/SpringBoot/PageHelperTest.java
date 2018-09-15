@@ -2,6 +2,7 @@ package com.example.springboot;
 
 import com.example.springboot.model.DO.CityDO;
 import com.example.springboot.persist.CityMapper;
+import com.example.springboot.persist.UserMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.junit.Test;
@@ -22,11 +23,13 @@ public class PageHelperTest {
 
     @Resource
     private CityMapper cityMapper;
+    @Resource
+    private UserMapper userMapper;
 
     @Test
-    public  void selectCityByProvinceIdTest(){
-        Page<CityDO> cityDOPage = PageHelper.offsetPage(0,2)
-                .doSelectPage(()-> cityMapper.selectCityByProvinceId(1L));
+    public void selectCityByProvinceIdTest() {
+        Page<CityDO> cityDOPage = PageHelper.offsetPage(0, 2)
+                .doSelectPage(() -> userMapper.selectUser());
         System.out.println(cityDOPage.getTotal());
     }
 }

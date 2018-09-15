@@ -10,4 +10,6 @@ public interface DemoService {
     void show();
 
     void showCity();
+
+    int getNumer();
 }

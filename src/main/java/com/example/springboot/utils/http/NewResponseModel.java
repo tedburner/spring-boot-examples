@@ -49,6 +49,9 @@ public class NewResponseModel<T> implements Serializable {
         return new NewResponseModel<T>(ResponseCodeEnum.LOGIN_FAIL.getCode(), ResponseCodeEnum.LOGIN_FAIL.getMessage());
     }
 
+    public NewResponseModel() {
+
+    }
 
     public NewResponseModel(int status) {
         this.status = status;

@@ -29,5 +29,9 @@ public interface CityMapper {
      */
     CityDO selectById(@Param("id") Long id);
 
+
+    /**
+     * 根据省份ID查询城市
+     */
     List<CityDO> selectCityByProvinceId(Long provinceId);
 }

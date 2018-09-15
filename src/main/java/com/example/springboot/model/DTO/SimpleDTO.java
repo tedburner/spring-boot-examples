@@ -2,6 +2,9 @@ package com.example.springboot.model.DTO;
 
 import lombok.Data;
 
+import javax.validation.constraints.NotNull;
+
+
 /**
  * @author lingjun.jlj
  * @data 2018/4/14
@@ -9,6 +12,7 @@ import lombok.Data;
 @Data
 public class SimpleDTO {
     private Integer id;
+    @NotNull(message = "name 不能为null")
     private String name;
 
     public static final class SimpleDTOBuilder {

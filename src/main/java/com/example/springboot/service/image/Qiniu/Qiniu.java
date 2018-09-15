@@ -2,7 +2,9 @@ package com.example.springboot.service.image.Qiniu;
 
 import com.example.springboot.common.constants.Constants;
 import com.example.springboot.utils.common.MD5Utils;
+import com.qiniu.common.Zone;
 import com.qiniu.http.Response;
+import com.qiniu.storage.Configuration;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import lombok.extern.slf4j.Slf4j;
@@ -23,15 +25,21 @@ public class Qiniu {
 
     /**
      * base64图片上传图片
+     * @param bucket
+     * @param key
+     * @param data
      */
     public static Response upload(String bucket, String key, byte[] data) throws Exception {
         Auth auth = Auth.create(Constants.ACCESS_KEY, Constants.SECRET_KEY);
         String token = auth.uploadToken(bucket, key);
-        UploadManager uploadManager = new UploadManager();
+        Configuration configuration = new Configuration(Zone.autoZone());
+        UploadManager uploadManager = new UploadManager(configuration);
         return uploadManager.put(data, key, token);
     }
 
     /**
+     * 文件上传七牛云
+     *
      * @param bucket 空间名
      * @param key    文件名
      * @param file   文件内容
@@ -41,7 +49,8 @@ public class Qiniu {
     public static Response upload(String bucket, String key, File file) throws Exception {
         Auth auth = Auth.create(Constants.ACCESS_KEY, Constants.SECRET_KEY);
         String token = auth.uploadToken(bucket, key);
-        UploadManager uploadManager = new UploadManager();
+        Configuration configuration = new Configuration(Zone.autoZone());
+        UploadManager uploadManager = new UploadManager(configuration);
         return uploadManager.put(file, key, token);
     }
 
@@ -77,13 +86,13 @@ public class Qiniu {
         file.transferTo(tmpFile);
 
         Response uploadResponse = Qiniu.upload(bucket, fileKey, tmpFile);
-
+        // 上传失败
         if (!uploadResponse.isOK()) {
-            throw new Exception("upload attachment failed!"); // 上传失败
+            throw new Exception("upload attachment failed!");
         }
-
+        // 删除临时文件失败
         if (!tmpFile.delete()) {
-            throw new Exception("delete tmpFile fail!");    // 删除临时文件失败
+            throw new Exception("delete tmpFile fail!");
         }
 
         return fileKey;

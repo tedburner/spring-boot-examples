@@ -13,10 +13,10 @@ import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * @author lingjun.jlj
- * @create 2017-11-28
- * @EnableCaching // 启用缓存，这个注解很重要
- **/
+ * @author: lingjun.jlj
+ * @date: 2018/8/20 10:05
+ * @description:
+ */
 @Configuration
 @PropertySource(value = "classpath:redis/redis.properties")
 @EnableCaching
