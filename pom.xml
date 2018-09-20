@@ -30,16 +30,17 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
 
         <dependency>
@@ -97,6 +98,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
+
+        <!--日志-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-logging</artifactId>-->
+        <!--</dependency>-->
 
         <!--Mybatis 依赖 -->
         <dependency>
@@ -182,13 +194,6 @@
             <version>3.4.0</version>
         </dependency>
 
-
-        <dependency>
-            <groupId>net.logstash.logback</groupId>
-            <artifactId>logstash-logback-encoder</artifactId>
-            <version>4.11</version>
-        </dependency>
-
         <!--使用注解来使用set/get-->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -239,12 +244,6 @@
             <artifactId>jstl</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
-
         <!--七牛云存储-->
         <dependency>
             <groupId>com.qiniu</groupId>
@@ -259,13 +258,7 @@
             <version>3.10.0</version>
         </dependency>
 
-        <!--logback-->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-
+        <!--百度disconf-->
         <dependency>
             <groupId>com.baidu.disconf</groupId>
             <artifactId>disconf-client</artifactId>
@@ -361,7 +354,6 @@
                 <filters.env>production</filters.env>
             </properties>
         </profile>
-
         <profile>
             <id>test</id>
             <!--此处将dev设置为默认环境-->
