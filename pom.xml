@@ -99,6 +99,17 @@
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
+        <!--kafka-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <!--Mybatis 依赖 -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
@@ -170,7 +181,6 @@
             <artifactId>guava</artifactId>
             <version>22.0</version>
         </dependency>
-
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -209,7 +219,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.0</version>
         </dependency>
 
         <!-- 分页插件 -->
@@ -231,35 +240,23 @@
             <version>4.1.6</version>
         </dependency>
 
-        <!--对jsp的支持-->
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-jasper</artifactId>
-        </dependency>
+        <!--对jsp的支持 -->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.tomcat.embed</groupId>-->
+            <!--<artifactId>tomcat-embed-jasper</artifactId>-->
+        <!--</dependency>-->
+        <!--jstl库，有很多实用的标签-->
+        <!--<dependency>-->
+            <!--<groupId>javax.servlet</groupId>-->
+            <!--<artifactId>jstl</artifactId>-->
+        <!--</dependency>-->
+        <!-- servlet 依赖-->
+        <!--<dependency>-->
+            <!--<groupId>javax.servlet</groupId>-->
+            <!--<artifactId>javax.servlet-api</artifactId>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-        </dependency>
-
-        <!--jsp支持-->
-        <!-- servlet 依赖. -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
 
         <!--七牛云存储-->
         <dependency>
@@ -275,32 +272,12 @@
             <version>3.10.0</version>
         </dependency>
 
-        <!--logback-->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-
+        <!--百度disconf-->
         <dependency>
             <groupId>com.baidu.disconf</groupId>
             <artifactId>disconf-client</artifactId>
             <version>2.6.36</version>
         </dependency>
-
-        <!--kafka-->
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
-            <version>2.1.6.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
     <build>
         <finalName>springboot</finalName>
