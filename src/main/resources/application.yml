@@ -59,9 +59,9 @@ log:
   level: INFO
 
 # mybatis
-mybatis:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#mybatis:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # pagehelper 分页插件配置
 pagehelper:

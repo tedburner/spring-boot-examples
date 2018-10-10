@@ -21,6 +21,8 @@ import java.io.IOException;
 @WebFilter("/*")
 public class CORSFilter implements Filter {
 
+    FilterConfig filterConfig = null;
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
@@ -41,6 +43,6 @@ public class CORSFilter implements Filter {
 
     @Override
     public void destroy() {
-
+        filterConfig = null;
     }
 }

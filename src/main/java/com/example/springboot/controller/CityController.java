@@ -20,6 +20,13 @@ public class CityController {
     @Resource
     private CityService cityService;
 
+    @GetMapping(value = "getCity")
+    public NewResponseModel getCity(Long provinceId) {
+        NewResponseModel responseModel = NewResponseModel.Success();
+        responseModel.setData(cityService.findCityByProvinceId(provinceId));
+        return responseModel;
+    }
+
     @RequestMapping(value = "findCityByName")
     public NewResponseModel getCityByName(String name) {
         NewResponseModel responseModel = NewResponseModel.Success();
