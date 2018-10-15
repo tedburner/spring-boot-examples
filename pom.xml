@@ -95,8 +95,8 @@
 
         <!--日志-->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-log4j2</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-log4j2</artifactId>-->
         <!--</dependency>-->
 
         <dependency>
@@ -218,19 +218,19 @@
 
         <!--对jsp的支持 -->
         <!--<dependency>-->
-            <!--<groupId>org.apache.tomcat.embed</groupId>-->
-            <!--<artifactId>tomcat-embed-jasper</artifactId>-->
+        <!--<groupId>org.apache.tomcat.embed</groupId>-->
+        <!--<artifactId>tomcat-embed-jasper</artifactId>-->
         <!--</dependency>-->
         <!--jstl库，有很多实用的标签-->
         <!--<dependency>-->
-            <!--<groupId>javax.servlet</groupId>-->
-            <!--<artifactId>jstl</artifactId>-->
+        <!--<groupId>javax.servlet</groupId>-->
+        <!--<artifactId>jstl</artifactId>-->
         <!--</dependency>-->
         <!-- servlet 依赖-->
         <!--<dependency>-->
-            <!--<groupId>javax.servlet</groupId>-->
-            <!--<artifactId>javax.servlet-api</artifactId>-->
-            <!--<scope>provided</scope>-->
+        <!--<groupId>javax.servlet</groupId>-->
+        <!--<artifactId>javax.servlet-api</artifactId>-->
+        <!--<scope>provided</scope>-->
         <!--</dependency>-->
 
 
@@ -262,20 +262,23 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <jvmArguments>
-                        -server -Xmx2048m -Xms2048m -XX:MaxPermSize=512m
-                        -Xdebug
-                        -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8080
-                    </jvmArguments>
-                    <mainClass>com.example.springboot.ApplicationStartup</mainClass>
                     <fork>true</fork>
                 </configuration>
             </plugin>
+            <!--<plugin>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--<configuration>-->
+            <!--<jvmArguments>-->
+            <!-- -server -Xmx2048m -Xms2048m -XX:MaxPermSize=512m-->
+            <!-- -Xdebug-->
+            <!-- -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8080-->
+            <!--</jvmArguments>-->
+            <!--<mainClass>com.example.springboot.ApplicationStartup</mainClass>-->
+            <!--<fork>true</fork>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
             <!-- Docker maven plugin -->
             <plugin>
                 <groupId>com.spotify</groupId>
