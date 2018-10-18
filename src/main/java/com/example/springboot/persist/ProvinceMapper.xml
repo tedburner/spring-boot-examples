@@ -7,13 +7,14 @@
     </sql>
 
     <insert id="addProvince" parameterType="com.example.springboot.model.DO.ProvinceDO"
-    keyProperty="id" useGeneratedKeys="true">
+            keyProperty="id" useGeneratedKeys="true">
         INSERT INTO province (name,createTime,updateTime)
         VALUE (#{name},now(),now())
     </insert>
 
-    <select id="getProvince" resultType="com.example.springboot.model.DO.ProvinceDO">
-        SELECT <include refid="columns"/>
+    <select id="selectProvinceById" resultType="com.example.springboot.model.DO.ProvinceDO">
+        SELECT
+        <include refid="columns"/>
         FROM province
         WHERE id = #{id}
     </select>
