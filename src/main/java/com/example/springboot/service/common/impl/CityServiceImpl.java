@@ -5,6 +5,7 @@ import com.example.springboot.model.DO.ProvinceDO;
 import com.example.springboot.persist.CityMapper;
 import com.example.springboot.persist.ProvinceMapper;
 import com.example.springboot.service.common.CityService;
+import com.example.springboot.utils.common.ListUtils;
 import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,12 +46,12 @@ public class CityServiceImpl implements CityService {
     /**
      * @Cacheable 如果第一次就会把缓存存储到Redis，之后如果有相对于key的缓存就会直接冲Redis中获取
      * 参数： value缓存名、 key缓存键值、 condition满足缓存条件、unless否决缓存条件
-     * @CachePut   但会把方法的返回值放入缓存中, 主要用于数据新增和修改方法。
+     * @CachePut 但会把方法的返回值放入缓存中, 主要用于数据新增和修改方法。
      * @CacheEvict 方法执行成功后会从缓存中移除相应数据。
      * 参数： value缓存名、 key缓存键值、 condition满足缓存条件、 unless否决缓存条件、 allEntries是否移除所有数据（设置为true时会移除所有缓存）
-     * */
+     */
     @Override
-    @Cacheable(value = "city",key = "'cityId_'+#id")
+    @Cacheable(value = "city", key = "'cityId_'+#id")
     public CityDO getCityById(Long id) {
         return cityMapper.selectById(id);
     }
@@ -58,7 +59,7 @@ public class CityServiceImpl implements CityService {
     @Override
     public void addAddress() {
         //对于多个插入，使用事务回滚，防止插入报错，插入错误数据
-        transactionTemplate.execute(status->{
+        transactionTemplate.execute(status -> {
             try {
                 ProvinceDO province = new ProvinceDO();
                 province.setName("福建省");
@@ -71,13 +72,14 @@ public class CityServiceImpl implements CityService {
                         .build();
                 cityMapper.addCity(builder);
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 status.setRollbackOnly();
-                log.info("添加地址出现错误"+e);
+                log.info("添加地址出现错误" + e);
                 throw e;
             }
             return null;
         });
+
     }
 
 }
