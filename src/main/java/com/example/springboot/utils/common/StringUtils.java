@@ -8,7 +8,7 @@ package com.example.springboot.utils.common;
 public class StringUtils {
 
     /**
-     * 判断String不存在，空字符串返回为false
+     * 判断String不存在，空字符串返回为true
      *
      * @param obj
      */
@@ -28,7 +28,7 @@ public class StringUtils {
     }
 
     /**
-     * 判断cs是否存在,空字符返回true
+     * 判断cs是否存在,空字符返回false
      *
      * @param cs
      */
@@ -49,6 +49,14 @@ public class StringUtils {
 
     public static boolean isNotBlank(CharSequence cs) {
         return !isBlank(cs);
+    }
+
+
+    public static void main(String[] args) {
+        String str = "  ";
+
+        System.out.println(isBlank(str));
+        System.out.println(isEmpty(str));
     }
 
 }
