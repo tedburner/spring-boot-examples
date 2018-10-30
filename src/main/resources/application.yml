@@ -59,4 +59,4 @@ pagehelper:
 qiniu:
   public:
     bucket: test-web
-    domain: #key
+    domain: p1gixpzpk.bkt.clouddn.com
