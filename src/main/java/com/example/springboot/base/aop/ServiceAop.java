@@ -13,8 +13,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServiceAop {
 
-    @Before("execution(* com.example.springboot.service..*.*(..))")
-    public void before(){
-        //System.out.println("Spring AOP");
+    //@Before("execution(* com.example.springboot.service..*.*(..))")
+    public void before() {
+        System.out.println("Spring AOP");
     }
 }

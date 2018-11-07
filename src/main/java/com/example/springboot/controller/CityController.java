@@ -22,8 +22,8 @@ public class CityController {
     @Resource
     private CityService cityService;
 
-    @GetMapping(value = "findCityByName/{name}")
-    public NewResponseModel getCityByName(@RequestParam("name") String name) {
+    @GetMapping(value = "findCityByName")
+    public NewResponseModel getCityByName(String name) {
         NewResponseModel responseModel = NewResponseModel.Success();
         responseModel.setData(cityService.getCityByName(name));
         return responseModel;
