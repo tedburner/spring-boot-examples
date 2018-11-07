@@ -1,7 +1,7 @@
 package com.example.springboot.common.enums;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @data 2018/4/9
  */
 public enum SimpleEnum {

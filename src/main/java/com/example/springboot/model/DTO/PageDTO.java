@@ -3,7 +3,7 @@ package com.example.springboot.model.DTO;
 import lombok.Data;
 
 /**
- * @author: lingjun.jlj
+ * @author: Lucifer
  * @Date: 2018/7/17 10:19
  * @Description:
  */

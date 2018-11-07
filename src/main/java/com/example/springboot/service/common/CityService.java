@@ -3,7 +3,7 @@ package com.example.springboot.service.common;
 import com.example.springboot.model.DO.CityDO;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @create 2017-09-22
  **/
 public interface CityService {

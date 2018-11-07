@@ -150,18 +150,16 @@
             <version>4.12</version>
         </dependency>
 
+        <!--工具-->
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.2</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.7</version>
         </dependency>
-
         <dependency>
             <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
@@ -177,14 +175,13 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>22.0</version>
+            <version>23.5-jre</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.8.5</version>
         </dependency>
-
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
@@ -216,22 +213,17 @@
             <version>4.1.6</version>
         </dependency>
 
-        <!--对jsp的支持 -->
-        <!--<dependency>-->
-        <!--<groupId>org.apache.tomcat.embed</groupId>-->
-        <!--<artifactId>tomcat-embed-jasper</artifactId>-->
-        <!--</dependency>-->
         <!--jstl库，有很多实用的标签-->
-        <!--<dependency>-->
-        <!--<groupId>javax.servlet</groupId>-->
-        <!--<artifactId>jstl</artifactId>-->
-        <!--</dependency>-->
-        <!-- servlet 依赖-->
-        <!--<dependency>-->
-        <!--<groupId>javax.servlet</groupId>-->
-        <!--<artifactId>javax.servlet-api</artifactId>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <!--servlet 依赖-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
 
 
         <!--七牛云存储-->
@@ -248,13 +240,6 @@
             <version>3.10.0</version>
         </dependency>
 
-        <!--百度disconf-->
-        <dependency>
-            <groupId>com.baidu.disconf</groupId>
-            <artifactId>disconf-client</artifactId>
-            <version>2.6.36</version>
-        </dependency>
-
     </dependencies>
     <build>
         <finalName>springboot</finalName>
@@ -266,19 +251,6 @@
                     <fork>true</fork>
                 </configuration>
             </plugin>
-            <!--<plugin>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-            <!--<configuration>-->
-            <!--<jvmArguments>-->
-            <!-- -server -Xmx2048m -Xms2048m -XX:MaxPermSize=512m-->
-            <!-- -Xdebug-->
-            <!-- -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8080-->
-            <!--</jvmArguments>-->
-            <!--<mainClass>com.example.springboot.ApplicationStartup</mainClass>-->
-            <!--<fork>true</fork>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
             <!-- Docker maven plugin -->
             <plugin>
                 <groupId>com.spotify</groupId>

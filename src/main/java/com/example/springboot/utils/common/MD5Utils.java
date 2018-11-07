@@ -6,7 +6,7 @@ import java.security.MessageDigest;
 import java.util.Random;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @data 2018/5/7
  * @Description:
  */

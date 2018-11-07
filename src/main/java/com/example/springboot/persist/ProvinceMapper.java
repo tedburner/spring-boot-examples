@@ -3,7 +3,7 @@ package com.example.springboot.persist;
 import com.example.springboot.model.DO.ProvinceDO;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @date 2017/12/2
  */
 public interface ProvinceMapper {

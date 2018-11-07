@@ -4,7 +4,7 @@ package com.example.springboot.utils;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @data 2018/5/4
  * @Description: token生成工具类
  */

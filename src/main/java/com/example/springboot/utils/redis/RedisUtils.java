@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @create 2017-11-28
  * redis 工具类
  **/

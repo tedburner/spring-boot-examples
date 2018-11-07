@@ -7,7 +7,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @data 2018/5/3
  * @Description:
  */

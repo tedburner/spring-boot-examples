@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @create 2017-10-11
  **/
 @Data

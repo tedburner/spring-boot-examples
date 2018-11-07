@@ -3,7 +3,7 @@ package com.example.springboot.utils.common;
 import java.math.BigDecimal;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @date 2017-12-15
  **/
 public class TranslateUtil {

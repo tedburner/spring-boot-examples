@@ -1,7 +1,7 @@
 package com.example.springboot.service.mail;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @data 2018/5/9
  * @Description: 邮件接口
  */

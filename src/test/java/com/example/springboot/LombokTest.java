@@ -5,7 +5,7 @@ import com.example.springboot.model.DO.GoodDO;
 import java.time.LocalDateTime;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @date 2018-01-04
  **/
 public class LombokTest {

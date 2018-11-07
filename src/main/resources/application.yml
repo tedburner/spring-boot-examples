@@ -55,8 +55,8 @@ pagehelper:
   support-methods-arguments: true
   params: ount=countSql
 
-# 七牛
-qiniu:
-  public:
-    bucket: test-web
-    domain: p1gixpzpk.bkt.clouddn.com
+# 七牛 域名过期
+#qiniu:
+#  public:
+#    bucket: test-web
+#    domain: p1gixpzpk.bkt.clouddn.com

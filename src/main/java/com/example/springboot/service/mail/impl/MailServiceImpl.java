@@ -10,7 +10,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @data 2018/5/9
  * @Description:
  */

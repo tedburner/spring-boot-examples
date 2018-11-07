@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.concurrent.*;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @create 2017-10-23
  **/
 @Service("fastThreadPool")
