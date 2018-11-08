@@ -13,7 +13,7 @@ import java.lang.reflect.Type;
 import java.math.BigDecimal;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @data 2018/5/3
  * @Description:
  */

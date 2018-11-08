@@ -3,7 +3,7 @@ package com.example.springboot.utils.common;
 import sun.misc.BASE64Decoder;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @data 2018/5/7
  * @Description: 图片base64工具类
  */
@@ -12,7 +12,7 @@ public class ImageBase64Utils {
     /**
      * @param imgStr
      * @return
-     * @author lingjun.jlj
+     * @author Lucifer
      * @Description: base64转图片
      * @date 2018/5/7 上午10:37
      */

@@ -5,6 +5,7 @@ import com.example.springboot.model.DO.ProvinceDO;
 import com.example.springboot.persist.CityMapper;
 import com.example.springboot.persist.ProvinceMapper;
 import com.example.springboot.service.common.CityService;
+import com.example.springboot.utils.common.ListUtils;
 import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +20,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @create 2017-09-22
  **/
 
@@ -30,11 +31,9 @@ public class CityServiceImpl implements CityService {
 
     @Resource
     private CityMapper cityMapper;
-
     @Resource
     private ProvinceMapper provinceMapper;
-
-    @Resource  //也可以使用@Transactional
+    @Autowired
     private TransactionTemplate transactionTemplate;
 
     @Override
@@ -78,6 +77,7 @@ public class CityServiceImpl implements CityService {
             }
             return null;
         });
+
     }
 
     @Override

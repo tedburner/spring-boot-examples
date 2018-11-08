@@ -1,7 +1,7 @@
 package com.example.springboot.utils.http;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @create 2017-11-23
  **/
 public enum ResponseCodeEnum {

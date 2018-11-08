@@ -1,7 +1,7 @@
 package com.example.springboot.config;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @data 2018/5/7
  * @Description: 跨域问题
  */

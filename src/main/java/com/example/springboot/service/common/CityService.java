@@ -5,7 +5,7 @@ import com.example.springboot.model.DO.CityDO;
 import java.util.List;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @create 2017-09-22
  **/
 public interface CityService {

@@ -1,7 +1,7 @@
 package com.example.springboot.utils.Qiniu;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @data 2018/5/7
  * @Description: 七牛云
  */

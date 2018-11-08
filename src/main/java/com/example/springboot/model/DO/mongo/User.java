@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 import java.io.Serializable;
 
 /**
- * @author: lingjun.jlj
+ * @author: Lucifer
  * @Date: 2018/7/11 11:18
  * @Description:
  */

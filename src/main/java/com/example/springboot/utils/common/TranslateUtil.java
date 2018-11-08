@@ -3,7 +3,7 @@ package com.example.springboot.utils.common;
 import java.math.BigDecimal;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @date 2017-12-15
  **/
 public class TranslateUtil {
@@ -46,12 +46,12 @@ public class TranslateUtil {
             return 0L;
         }
         String str = obj.toString();
-        if(isNumber(str)){
+        if (isNumber(str)) {
             return Long.parseLong(str.split("\\.")[0]);
-        }else if(isScientificNumber(str)){
+        } else if (isScientificNumber(str)) {
             BigDecimal bd = new BigDecimal(obj.toString());
             return Long.parseLong(bd.toPlainString());
-        }else{
+        } else {
             return 0L;
         }
 
@@ -78,18 +78,20 @@ public class TranslateUtil {
 
     /**
      * 判断某字符串是不是科学计数法的数字,如“1.646E10”
+     *
      * @param string
      * @return
      */
-    public static boolean isScientificNumber(Object string){
-        String regex = "^((-?\\d+.?\\d*)[Ee]{1}(-?\\d+))$";//科学计数法正则表达式
+    public static boolean isScientificNumber(Object string) {
+        //科学计数法正则表达式
+        String regex = "^((-?\\d+.?\\d*)[Ee]{1}(-?\\d+))$";
         String str = String.valueOf(string);
-        if(str.endsWith(".")){
+        if (str.endsWith(".")) {
             return false;
         }
-        if(str.matches(regex)){
+        if (str.matches(regex)) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }

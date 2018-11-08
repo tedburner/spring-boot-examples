@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author: lingjun.jlj
+ * @author: Lucifer
  * @date: 2018/8/25 14:19
  * @description: 全局捕获异常，只要是RequestMapping注解上的异常都可以捕获
  */

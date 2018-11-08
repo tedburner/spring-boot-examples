@@ -5,7 +5,7 @@ import com.example.springboot.utils.exception.domain.Error;
 import static com.example.springboot.utils.http.ResponseCodeEnum.PARAM_ERROR;
 
 /**
- * @author: lingjun.jlj
+ * @author: Lucifer
  * @date: 2018/8/15 15:21
  * @description: 参数错误异常
  */

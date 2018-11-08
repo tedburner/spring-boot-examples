@@ -2,7 +2,7 @@ package com.example.springboot.utils.redis.serialization;
 
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @data 2018/4/27
  * @Description:
  */

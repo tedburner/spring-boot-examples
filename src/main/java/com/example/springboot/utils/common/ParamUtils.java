@@ -1,7 +1,7 @@
 package com.example.springboot.utils.common;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @date 2018-01-03
  **/
 public class ParamUtils {

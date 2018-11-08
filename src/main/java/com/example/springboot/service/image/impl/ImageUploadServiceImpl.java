@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @data 2018/5/7
  * @Description:
  */
@@ -28,9 +28,9 @@ public class ImageUploadServiceImpl implements ImageUploadService {
 
     private static Logger log = LoggerFactory.getLogger(ImageUploadServiceImpl.class);
 
-    @Value("${qiniu.public.bucket}")
+    //@Value("${qiniu.public.bucket}")
     private String Bucket;
-    @Value("${qiniu.public.domain}")
+    //@Value("${qiniu.public.domain}")
     private String QiniuDomain;
 
     @Override

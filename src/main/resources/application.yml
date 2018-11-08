@@ -59,9 +59,9 @@ log:
   level: INFO
 
 # mybatis
-#mybatis:
-#  configuration:
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # pagehelper 分页插件配置
 pagehelper:
@@ -70,9 +70,9 @@ pagehelper:
   support-methods-arguments: true
   params: ount=countSql
 
-# 七牛
-qiniu:
-  public:
-    bucket: test-web
-    domain: p1gixpzpk.bkt.clouddn.com
+# 七牛 域名过期
+#qiniu:
+#  public:
+#    bucket: test-web
+#    domain: p1gixpzpk.bkt.clouddn.com
 

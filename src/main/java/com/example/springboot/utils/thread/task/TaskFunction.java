@@ -1,7 +1,7 @@
 package com.example.springboot.utils.thread.task;
 
 /**
- * @author lingjun.jlj
+ * @author Lucifer
  * @create 2017-10-23
  **/
 public interface TaskFunction<T>  {
