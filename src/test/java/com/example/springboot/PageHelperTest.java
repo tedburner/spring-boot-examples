@@ -30,6 +30,6 @@ public class PageHelperTest {
     public void selectCityByProvinceIdTest() {
         Page<CityDO> cityDOPage = PageHelper.offsetPage(0, 2)
                 .doSelectPage(() -> userMapper.selectUser());
-        System.out.println(cityDOPage.getTotal());
+        System.out.println("total:" + cityDOPage.getTotal());
     }
 }

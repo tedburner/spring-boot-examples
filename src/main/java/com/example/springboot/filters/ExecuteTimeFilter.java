@@ -24,14 +24,14 @@ import java.util.Map;
  * @descrip 过滤器
  **/
 
-@WebFilter(filterName="ExecuteTimeFilter",urlPatterns={"/*"})
+@WebFilter(filterName = "ExecuteTimeFilter", urlPatterns = {"/*"})
 public class ExecuteTimeFilter implements Filter {
     private static Logger log = LoggerFactory.getLogger(ExecuteTimeFilter.class);
 
     FilterConfig filterConfig = null;
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig) {
         this.filterConfig = filterConfig;
     }
 
@@ -43,19 +43,19 @@ public class ExecuteTimeFilter implements Filter {
             uri = uri + "?" + httpServletRequest.getQueryString();
         }
 
-        Long time1 = System.currentTimeMillis();
-
+        Long startTime = System.currentTimeMillis();
+        //转发个下一个过滤器
         chain.doFilter(request, response);
 
-        Long time2 = System.currentTimeMillis();
+        Long endTime = System.currentTimeMillis();
 
-        Long executeTime = time2 - time1;
+        Long executeTime = endTime - startTime;
 
         Gson gson = new Gson();
 
-        if(uri.contains("upload")||uri.contains("addCustomerLog")||uri.contains("performance/metric")) {
+        if (uri.contains("upload") || uri.contains("addCustomerLog") || uri.contains("performance/metric")) {
             log.info("request uri =" + uri + ", executeTime = " + executeTime + "ms");
-        }else {
+        } else {
             Map<String, String[]> paramMap = httpServletRequest.getParameterMap();
             Enumeration<String> headerNames = httpServletRequest.getHeaderNames();
             Map<String, Object> headerMap = Maps.newHashMap();
@@ -64,7 +64,7 @@ public class ExecuteTimeFilter implements Filter {
                 String value = httpServletRequest.getHeader(name);
                 headerMap.put(name, value);
             }
-            log.info("request uri =" + uri + ", executeTime = " + executeTime + "ms,paramMap =" + gson.toJson(paramMap)+ ",headerMap="+gson.toJson(headerMap));
+            log.info("request uri =" + uri + ", executeTime = " + executeTime + "ms,paramMap =" + gson.toJson(paramMap) + ",headerMap=" + gson.toJson(headerMap));
         }
     }
 

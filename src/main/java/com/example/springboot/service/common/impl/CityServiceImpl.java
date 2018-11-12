@@ -49,7 +49,7 @@ public class CityServiceImpl implements CityService {
      * 参数： value缓存名、 key缓存键值、 condition满足缓存条件、 unless否决缓存条件、 allEntries是否移除所有数据（设置为true时会移除所有缓存）
      */
     @Override
-    //@Cacheable(value = "city", key = "'cityId_'+#id")
+    @Cacheable(value = "city", key = "'cityId_'+#id")
     public CityDO getCityById(Long id) {
         return cityMapper.selectById(id);
     }
@@ -78,6 +78,11 @@ public class CityServiceImpl implements CityService {
             return null;
         });
 
+    }
+
+    @Override
+    public List<CityDO> findCityByProvinceId(Long provinceId) {
+        return cityMapper.selectCityByProvinceId(provinceId);
     }
 
 }
