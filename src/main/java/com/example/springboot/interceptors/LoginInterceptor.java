@@ -1,7 +1,7 @@
 package com.example.springboot.interceptors;
 
 import com.alibaba.fastjson.JSON;
-import com.example.springboot.base.annotation.Anonymous;
+import com.example.springboot.common.annotation.Anonymous;
 import com.example.springboot.utils.http.NewResponseModel;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.HandlerMethod;

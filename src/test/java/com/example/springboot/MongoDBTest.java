@@ -1,7 +1,7 @@
 package com.example.springboot;
 
-import com.example.springboot.model.DTO.PageDTO;
-import com.example.springboot.model.DO.mongo.User;
+import com.example.springboot.domain.DTO.PageDTO;
+import com.example.springboot.domain.DO.mongo.User;
 import com.example.springboot.service.mongo.UserMongoDBService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

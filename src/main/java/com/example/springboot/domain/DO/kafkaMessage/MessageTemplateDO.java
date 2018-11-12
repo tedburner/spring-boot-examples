@@ -1,4 +1,4 @@
-package com.example.springboot.model.DO.kafkaMessage;
+package com.example.springboot.domain.DO.kafkaMessage;
 
 import lombok.Data;
 

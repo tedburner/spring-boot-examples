@@ -1,18 +1,14 @@
 package com.example.springboot.service.common.impl;
 
-import com.example.springboot.model.DO.CityDO;
-import com.example.springboot.model.DO.ProvinceDO;
+import com.example.springboot.domain.DO.CityDO;
+import com.example.springboot.domain.DO.ProvinceDO;
 import com.example.springboot.persist.CityMapper;
 import com.example.springboot.persist.ProvinceMapper;
 import com.example.springboot.service.common.CityService;
-import com.example.springboot.utils.common.ListUtils;
-import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionTemplate;
 

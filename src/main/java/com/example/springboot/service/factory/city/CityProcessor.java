@@ -1,6 +1,6 @@
 package com.example.springboot.service.factory.city;
 
-import com.example.springboot.model.DO.CityDO;
+import com.example.springboot.domain.DO.CityDO;
 
 /**
  * @author Lucifer

@@ -1,6 +1,6 @@
 package com.example.springboot.persist;
 
-import com.example.springboot.model.DO.CityDO;
+import com.example.springboot.domain.DO.CityDO;
 import org.apache.ibatis.annotations.Param;
 
 

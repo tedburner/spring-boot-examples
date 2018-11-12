@@ -1,6 +1,6 @@
 package com.example.springboot.service.common;
 
-import com.example.springboot.model.DO.CityDO;
+import com.example.springboot.domain.DO.CityDO;
 
 import java.util.List;
 

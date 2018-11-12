@@ -1,6 +1,6 @@
 package com.example.springboot;
 
-import com.example.springboot.model.DO.GoodDO;
+import com.example.springboot.domain.DO.GoodDO;
 
 import java.time.LocalDateTime;
 

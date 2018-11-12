@@ -1,12 +1,10 @@
 package com.example.springboot.controller;
 
-import com.example.springboot.model.DO.CityDO;
+import com.example.springboot.domain.DO.CityDO;
 import com.example.springboot.service.common.CityService;
 import com.example.springboot.utils.http.NewResponseModel;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;

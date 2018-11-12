@@ -1,6 +1,6 @@
 package com.example.springboot.service.common.impl;
 
-import com.example.springboot.model.DO.ProvinceDO;
+import com.example.springboot.domain.DO.ProvinceDO;
 import com.example.springboot.service.common.AddressService;
 import com.example.springboot.service.common.CityService;
 import com.example.springboot.service.common.ProvinceService;

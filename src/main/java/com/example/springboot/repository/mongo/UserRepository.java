@@ -1,6 +1,6 @@
 package com.example.springboot.repository.mongo;
 
-import com.example.springboot.model.DO.mongo.User;
+import com.example.springboot.domain.DO.mongo.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;

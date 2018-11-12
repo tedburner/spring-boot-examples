@@ -1,4 +1,4 @@
-package com.example.springboot.base.aop;
+package com.example.springboot.common.aop;
 
 
 import com.dyuproject.protostuff.LinkedBuffer;
@@ -6,7 +6,7 @@ import com.dyuproject.protostuff.ProtostuffIOUtil;
 import com.dyuproject.protostuff.Schema;
 import com.dyuproject.protostuff.runtime.RuntimeSchema;
 import com.example.springboot.common.enums.kafka.KafkaMessageStatusEnum;
-import com.example.springboot.model.DO.kafkaMessage.KafkaMessageDO;
+import com.example.springboot.domain.DO.kafkaMessage.KafkaMessageDO;
 import com.example.springboot.persist.kafkaMessage.KafkaMessageMapper;
 import com.example.springboot.utils.common.TranslateUtil;
 import com.example.springboot.utils.common.gson.FormatUtils;
@@ -15,18 +15,15 @@ import com.example.springboot.utils.thread.task.TaskRequest;
 import com.example.springboot.utils.thread.threadpool.FastThreadPool;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.List;
 
 /**
@@ -56,7 +53,7 @@ public class KafkaMessageAroundAop {
 //                + " 的 " + point.getSignature().getName() + "方法");
 //    }
 
-    @Pointcut("@annotation(com.example.springboot.base.annotation.KafkaMessageAnnotation)")
+    @Pointcut("@annotation(com.example.springboot.common.annotation.KafkaMessageAnnotation)")
     public void messageSend() {
         System.out.println("Pointcut");
     }

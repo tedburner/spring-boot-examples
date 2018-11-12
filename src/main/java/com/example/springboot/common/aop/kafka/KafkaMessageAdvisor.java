@@ -1,4 +1,4 @@
-package com.example.springboot.base.aop.kafka;
+package com.example.springboot.common.aop.kafka;
 
 import org.aopalliance.aop.Advice;
 import org.springframework.aop.Advisor;

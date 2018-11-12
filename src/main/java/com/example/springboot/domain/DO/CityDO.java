@@ -1,10 +1,9 @@
-package com.example.springboot.model.DO;
+package com.example.springboot.domain.DO;
 
 import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 /**
  * @author Lucifer

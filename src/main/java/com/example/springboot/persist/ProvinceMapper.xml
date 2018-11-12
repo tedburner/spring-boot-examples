@@ -6,13 +6,13 @@
         id,name,createTime,updateTime
     </sql>
 
-    <insert id="addProvince" parameterType="com.example.springboot.model.DO.ProvinceDO"
+    <insert id="addProvince" parameterType="com.example.springboot.domain.DO.ProvinceDO"
             keyProperty="id" useGeneratedKeys="true">
         INSERT INTO province (name,createTime,updateTime)
         VALUE (#{name},now(),now())
     </insert>
 
-    <select id="selectProvinceById" resultType="com.example.springboot.model.DO.ProvinceDO">
+    <select id="selectProvinceById" resultType="com.example.springboot.domain.DO.ProvinceDO">
         SELECT
         <include refid="columns"/>
         FROM province

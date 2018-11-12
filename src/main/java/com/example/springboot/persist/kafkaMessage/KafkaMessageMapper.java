@@ -1,6 +1,6 @@
 package com.example.springboot.persist.kafkaMessage;
 
-import com.example.springboot.model.DO.kafkaMessage.KafkaMessageDO;
+import com.example.springboot.domain.DO.kafkaMessage.KafkaMessageDO;
 
 /**
  * @author lingjun.jlj

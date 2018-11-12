@@ -1,6 +1,6 @@
 package com.example.springboot.service.kafka.impl;
 
-import com.example.springboot.base.annotation.KafkaMessageAnnotation;
+import com.example.springboot.common.annotation.KafkaMessageAnnotation;
 import com.example.springboot.service.kafka.KafkaMessageService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -32,5 +32,10 @@ public class KafkaMessageServiceImpl implements KafkaMessageService {
     @KafkaMessageAnnotation
     public void sendMessage(String topic, String message) {
         kafkaTemplate.send(topic, message);
+    }
+
+    @Override
+    public void updateKafkaMessage() {
+
     }
 }

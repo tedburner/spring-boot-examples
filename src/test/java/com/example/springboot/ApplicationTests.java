@@ -1,6 +1,6 @@
 package com.example.springboot;
 
-import com.example.springboot.model.DO.CityDO;
+import com.example.springboot.domain.DO.CityDO;
 import com.example.springboot.service.common.CityService;
 import com.example.springboot.utils.redis.RedisUtils;
 import org.junit.Test;

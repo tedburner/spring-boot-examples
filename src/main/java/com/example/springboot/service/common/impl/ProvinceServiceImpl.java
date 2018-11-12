@@ -1,12 +1,10 @@
 package com.example.springboot.service.common.impl;
 
-import com.example.springboot.model.DO.ProvinceDO;
+import com.example.springboot.domain.DO.ProvinceDO;
 import com.example.springboot.persist.ProvinceMapper;
 import com.example.springboot.service.common.ProvinceService;
-import com.example.springboot.utils.redis.RedisUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package com.example.springboot.persist;
 
-import com.example.springboot.model.DO.ProvinceDO;
+import com.example.springboot.domain.DO.ProvinceDO;
 
 /**
  * @author Lucifer

@@ -21,4 +21,10 @@ public interface KafkaMessageService {
      * @param message 消息内容
      */
     void sendMessage(String topic, String message);
+
+
+    /**
+     * 更新数据库kafka消息状态
+     */
+    void updateKafkaMessage();
 }

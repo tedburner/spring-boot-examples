@@ -6,7 +6,7 @@
         id, name,password,card, age,phone, status, createTime, updateTime
     </sql>
 
-    <insert id="addUser" parameterType="com.example.springboot.model.DO.UserDO"
+    <insert id="addUser" parameterType="com.example.springboot.domain.DO.UserDO"
             useGeneratedKeys="true" keyProperty="id">
         INSERT INTO  user
          (name,password,card,age,phone)
@@ -14,7 +14,7 @@
         (#{name},#{password},#{card},#{age},#{phone})
     </insert>
 
-    <select id="selectUser" resultType="com.example.springboot.model.DO.UserDO">
+    <select id="selectUser" resultType="com.example.springboot.domain.DO.UserDO">
         select
         <include refid="Base_Column_List"/>
         from user

@@ -1,6 +1,6 @@
 package com.example.springboot.service.common.impl;
 
-import com.example.springboot.model.DO.UserDO;
+import com.example.springboot.domain.DO.UserDO;
 import com.example.springboot.persist.UserMapper;
 import com.example.springboot.service.common.UserService;
 import com.example.springboot.utils.thread.task.TaskFunction;

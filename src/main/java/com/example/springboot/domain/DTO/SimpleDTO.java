@@ -1,4 +1,4 @@
-package com.example.springboot.model.DTO;
+package com.example.springboot.domain.DTO;
 
 import lombok.Data;
 

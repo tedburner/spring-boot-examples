@@ -1,7 +1,7 @@
 package com.example.springboot.controller;
 
-import com.example.springboot.model.DO.UserDO;
-import com.example.springboot.model.DTO.SimpleDTO;
+import com.example.springboot.domain.DO.UserDO;
+import com.example.springboot.domain.DTO.SimpleDTO;
 import com.example.springboot.service.common.DemoService;
 import com.example.springboot.service.common.UserService;
 import com.example.springboot.utils.http.NewResponseModel;

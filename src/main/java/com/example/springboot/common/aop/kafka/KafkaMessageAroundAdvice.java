@@ -1,12 +1,12 @@
-package com.example.springboot.base.aop.kafka;
+package com.example.springboot.common.aop.kafka;
 
 import com.dyuproject.protostuff.LinkedBuffer;
 import com.dyuproject.protostuff.ProtostuffIOUtil;
 import com.dyuproject.protostuff.Schema;
 import com.dyuproject.protostuff.runtime.RuntimeSchema;
-import com.example.springboot.base.annotation.KafkaMessageAnnotation;
+import com.example.springboot.common.annotation.KafkaMessageAnnotation;
 import com.example.springboot.common.enums.kafka.KafkaMessageStatusEnum;
-import com.example.springboot.model.DO.kafkaMessage.KafkaMessageDO;
+import com.example.springboot.domain.DO.kafkaMessage.KafkaMessageDO;
 import com.example.springboot.persist.kafkaMessage.KafkaMessageMapper;
 import com.example.springboot.utils.common.TranslateUtil;
 import com.example.springboot.utils.common.gson.FormatUtils;

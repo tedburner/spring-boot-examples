@@ -1,6 +1,6 @@
 package com.example.springboot.service.common.impl;
 
-import com.example.springboot.model.DO.CityDO;
+import com.example.springboot.domain.DO.CityDO;
 import com.example.springboot.service.common.DemoService;
 import com.example.springboot.service.factory.city.CityFactory;
 import com.example.springboot.service.factory.city.CityProcessor;
