@@ -9,5 +9,8 @@ import com.example.springboot.domain.DO.kafkaMessage.KafkaMessageDO;
 
 public interface KafkaMessageMapper {
 
+    /**
+     * 插入kafka 消息信息
+     */
     int insertKafkaMessage(KafkaMessageDO kafkaMessageDO);
 }
