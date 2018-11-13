@@ -18,5 +18,10 @@ public class MessageDTO implements Serializable {
 
     private String message;
 
+    /**
+     * 模板code
+     */
+    private String templateCode;
+
     private Long kafkaMessageId;
 }

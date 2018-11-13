@@ -10,6 +10,7 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
@@ -21,6 +22,7 @@ import java.util.Date;
  * @description:
  */
 @Component
+@PropertySource("conf.properties")
 public class SMSUtils {
 
     //产品名称:云通信短信API产品,开发者无需替换
@@ -32,6 +34,8 @@ public class SMSUtils {
     static String accessKeyId;
     @Value("${aliyun.AccessKeySecret}")
     static String accessKeySecret;
+    @Value("${aliyun.SiginName}")
+    static String signName;
 
     public static SendSmsResponse sendSms() throws ClientException {
 
@@ -49,7 +53,7 @@ public class SMSUtils {
         //必填:待发送手机号
         request.setPhoneNumbers("15000000000");
         //必填:短信签名-可在短信控制台中找到
-        request.setSignName("云通信");
+        request.setSignName(signName);
         //必填:短信模板-可在短信控制台中找到
         request.setTemplateCode("SMS_1000000");
         //可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为

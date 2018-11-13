@@ -1,5 +1,6 @@
 package com.example.springboot.common.kafka;
 
+import com.example.springboot.utils.sms.SMSUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -11,6 +12,9 @@ import org.springframework.kafka.core.KafkaTemplate;
  * @description:
  */
 public class SMSPushClient {
+
+    @Autowired
+    private SMSUtils smsUtils;
 
 
     @Autowired
