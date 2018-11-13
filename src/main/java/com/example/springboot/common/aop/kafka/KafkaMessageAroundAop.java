@@ -1,4 +1,4 @@
-package com.example.springboot.common.aop;
+package com.example.springboot.common.aop.kafka;
 
 
 import com.dyuproject.protostuff.LinkedBuffer;
@@ -24,6 +24,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.List;
 
 /**
@@ -44,14 +45,6 @@ public class KafkaMessageAroundAop {
     @Resource
     private KafkaMessageMapper kafkaMessageMapper;
 
-    /**
-     * 在service执行前打印log
-     */
-//    @Before("execution(* com.example.springboot.service..*.*(..))")
-//    public void before(JoinPoint point) {
-//        log.info("@Before 准备执行: " + point.getSignature().getDeclaringTypeName()
-//                + " 的 " + point.getSignature().getName() + "方法");
-//    }
 
     @Pointcut("@annotation(com.example.springboot.common.annotation.KafkaMessageAnnotation)")
     public void messageSend() {
@@ -72,7 +65,7 @@ public class KafkaMessageAroundAop {
 
         messageDO.setTopic(topic);
 
-        Object messageBody = args[1];
+        Object messageBody = args[0];
 
         messageDO.setMessageBody(FormatUtils.obj2str(messageBody));
         messageDO.setStatus(KafkaMessageStatusEnum.NOT_COMPLETE.getCode());
@@ -85,7 +78,6 @@ public class KafkaMessageAroundAop {
         if (log.isDebugEnabled()) {
             log.info("KafkaMessageAroundAdvice message=" + messageDO.toString());
         }
-
         List<TaskFunction> functionList = Lists.newArrayList();
         functionList.add(() -> {
             int res = kafkaMessageMapper.insertKafkaMessage(messageDO);
@@ -98,17 +90,17 @@ public class KafkaMessageAroundAop {
 
         fastThreadPool.execute(new TaskRequest(functionList, false));
 
-        //kafkaMessage模板插入？？？
-//        Class messageClass = messageBody.getClass();
-//        String methodName = "setKafkaMessageId";
-//
-//        Class[] argsClass = new Class[1];
-//        Object[] methodArgs = new Object[1];
-//        methodArgs[0] = messageDO.getId();
-//        argsClass[0] = methodArgs[0].getClass();
-//
-//        Method messageMethod = messageClass.getMethod(methodName, argsClass);
-//        messageMethod.invoke(messageBody, methodArgs);
+        //把数据库中的kafkaMessageId 回写到参数
+        Class messageClass = messageBody.getClass();
+        String methodName = "setKafkaMessageId";
+
+        Class[] argsClass = new Class[1];
+        Object[] methodArgs = new Object[1];
+        methodArgs[0] = messageDO.getId();
+        argsClass[0] = methodArgs[0].getClass();
+
+        Method messageMethod = messageClass.getMethod(methodName, argsClass);
+        messageMethod.invoke(messageBody, methodArgs);
         return joinPoint.proceed();
     }
 

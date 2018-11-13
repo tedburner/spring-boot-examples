@@ -1,7 +1,9 @@
 package com.example.springboot.controller;
 
 
+import com.example.springboot.service.common.DemoService;
 import com.example.springboot.service.kafka.KafkaMessageService;
+import com.example.springboot.utils.http.NewResponseModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,10 +18,12 @@ public class SampleController {
 
 
     @Autowired
-    private KafkaMessageService kafkaMessageService;
+    private DemoService demoService;
 
     @RequestMapping("send")
-    public void sendMessage(String topic, String message) {
-        kafkaMessageService.sendMessage(topic, message);
+    public NewResponseModel sendMessage() {
+        NewResponseModel responseModel = NewResponseModel.Success();
+        demoService.sendMessage();
+        return responseModel;
     }
 }

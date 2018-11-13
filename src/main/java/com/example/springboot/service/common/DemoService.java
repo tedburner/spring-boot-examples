@@ -12,4 +12,9 @@ public interface DemoService {
     void showCity();
 
     int getNumer();
+
+    /**
+     * 发送短信
+     */
+    void sendMessage();
 }

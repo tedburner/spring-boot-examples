@@ -1,9 +1,7 @@
 package com.example.springboot.service.kafka.impl;
 
-import com.example.springboot.common.annotation.KafkaMessageAnnotation;
+import com.example.springboot.persist.kafkaMessage.KafkaMessageMapper;
 import com.example.springboot.service.kafka.KafkaMessageService;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,26 +14,12 @@ import javax.annotation.Resource;
 @Service
 public class KafkaMessageServiceImpl implements KafkaMessageService {
 
-    @Value("${kafka.topic}")
-    public String topic;
-
     @Resource
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaMessageMapper kafkaMessageMapper;
+
 
     @Override
-    @KafkaMessageAnnotation
-    public void sendMessage(String message) {
-        kafkaTemplate.send(topic, message);
-    }
-
-    @Override
-    @KafkaMessageAnnotation
-    public void sendMessage(String topic, String message) {
-        kafkaTemplate.send(topic, message);
-    }
-
-    @Override
-    public void updateKafkaMessage() {
+    public void updateKafkaMessage(Integer status, Long kafkaMessageId) {
 
     }
 }

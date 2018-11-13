@@ -7,24 +7,13 @@ package com.example.springboot.service.kafka;
  */
 public interface KafkaMessageService {
 
+
     /**
-     * 固定topic发送消息
+     * 消费者消息后修改kafkaMessage消息状态
      *
-     * @param message 消息内容
+     * @param status
+     * @param kafkaMessageId
      */
-    void sendMessage(String message);
+    void updateKafkaMessage(Integer status, Long kafkaMessageId);
 
-    /**
-     * 指定topic发送消息
-     *
-     * @param topic   主题
-     * @param message 消息内容
-     */
-    void sendMessage(String topic, String message);
-
-
-    /**
-     * 更新数据库kafka消息状态
-     */
-    void updateKafkaMessage();
 }

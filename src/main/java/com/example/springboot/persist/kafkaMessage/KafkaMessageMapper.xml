@@ -11,4 +11,14 @@
         INSERT INTO  kafka_message (topic,messageBody,messageByte,status)
         VALUE (#{topic},#{messageBody},#{messageByte},${status})
     </insert>
+
+    <update id="update">
+        update kafka_message
+        <set>
+            status = #{status}
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
 </mapper>
