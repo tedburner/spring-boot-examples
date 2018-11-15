@@ -37,7 +37,7 @@ public class KafkaTest {
         String parma = "{\"phone\":\"17826852173\",\"templateCode\":\"SMS_150743936\",\"templateParam\":\"{\\\"code\\\":\\\"1234\\\"}\"}";
         SMSMessageDTO messageDTO = FormatUtils.str2obj(parma, new TypeToken<SMSMessageDTO>() {
         }.getType());
-        smsUtils.sendSms(messageDTO);
+        smsUtils.sendSMS(messageDTO);
     }
 
 

@@ -27,7 +27,7 @@ public class SampleController {
         return responseModel;
     }
 
-    @RequestMapping("send")
+    @RequestMapping("sendTest")
     public NewResponseModel sendMessageTest() {
         NewResponseModel responseModel = NewResponseModel.Success();
         demoService.sendTestMessage("今天天气是阴天！！！");

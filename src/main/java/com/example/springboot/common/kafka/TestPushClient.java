@@ -1,10 +1,13 @@
 package com.example.springboot.common.kafka;
 
-import com.example.springboot.service.kafka.KafkaMessageService;
-import com.example.springboot.utils.sms.SMSUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.support.KafkaHeaders;
+import org.springframework.messaging.handler.annotation.Header;
+import org.springframework.stereotype.Component;
+
+import java.util.Optional;
 
 /**
  * @author: Lucifer
@@ -12,16 +15,21 @@ import org.springframework.kafka.annotation.KafkaListener;
  * @description:
  */
 @Slf4j
+@Component
 public class TestPushClient {
 
-    @Autowired
-    private SMSUtils smsUtils;
-    @Autowired
-    private KafkaMessageService kafkaMessageService;
 
-    @KafkaListener(topics = "test")
-    public void SMSPushClient(String msgBody) {
-        log.info("start consumer topic test");
-        log.info("kafka msg is " + msgBody);
+    @KafkaListener(topics = "${kafka.topic}")
+    public void SMSPushClient(ConsumerRecord<?, ?> record) {
+        //判断是否NULL
+        Optional<?> kafkaMessage = Optional.ofNullable(record.value());
+        if (kafkaMessage.isPresent()) {
+            log.info("start consumer topic test");
+            //获取消息
+            Object message = kafkaMessage.get();
+
+            log.info("Receive： +++++++++++++++ Record:" + record);
+            log.info("Receive： +++++++++++++++ Message:" + message);
+        }
     }
 }

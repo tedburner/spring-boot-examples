@@ -29,7 +29,7 @@ spring:
     bootstrap-servers: 127.0.0.1:9092
     consumer:
       group-id: springboot-group
-      auto-commit-interval:
+      enable-auto-commit: true
     producer:
       batch-size: 65536
       buffer-memory: 524288

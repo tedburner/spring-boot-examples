@@ -25,7 +25,7 @@ public class ProducerServiceImpl implements ProducerService {
 
     @Override
     public void sendMessage(String topic, Object msgBody) {
-        log.info("");
+        log.info("kafka produce a message, topic = " + topic + " message =  " + msgBody);
         String jsonString = JSON.toJSONString(msgBody);
         kafkaTemplate.send(topic, jsonString);
     }
