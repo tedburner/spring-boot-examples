@@ -343,12 +343,6 @@
 
     <profiles>
         <profile>
-            <id>production</id>
-            <properties>
-                <filters.env>production</filters.env>
-            </properties>
-        </profile>
-        <profile>
             <id>test</id>
             <!--此处将dev设置为默认环境-->
             <activation>
@@ -358,6 +352,24 @@
                 <filters.env>test</filters.env>
             </properties>
         </profile>
+        <profile>
+            <id>production</id>
+            <properties>
+                <filters.env>production</filters.env>
+            </properties>
+        </profile>
     </profiles>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>nexus-snapshots</id>-->
+            <!--<url>http://122.224.124.250:9091/repository/maven-group/</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
+    <!--<distributionManagement>-->
+        <!--<repository>-->
+            <!--<id>nexus-snapshots</id>-->
+            <!--<url>http://122.224.124.250:9091/repository/maven-group/</url>-->
+        <!--</repository>-->
+    <!--</distributionManagement>-->
 
 </project>
