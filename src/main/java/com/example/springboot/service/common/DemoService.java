@@ -17,4 +17,11 @@ public interface DemoService {
      * 发送短信
      */
     void sendMessage();
+
+    /**
+     * kafka 测试
+     *
+     * @param message 消息内容
+     */
+    void sendTestMessage(String message);
 }

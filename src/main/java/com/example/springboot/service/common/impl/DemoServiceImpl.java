@@ -6,6 +6,7 @@ import com.example.springboot.service.common.DemoService;
 import com.example.springboot.service.factory.city.CityFactory;
 import com.example.springboot.service.factory.city.CityProcessor;
 import com.example.springboot.service.factory.test.TestFactory;
+import com.example.springboot.service.kafka.ProducerService;
 import com.example.springboot.service.kafka.SMSService;
 import com.example.springboot.utils.common.gson.FormatUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,8 @@ public class DemoServiceImpl implements DemoService {
     private CityFactory cityFactory;
     @Autowired
     private SMSService smsService;
+    @Autowired
+    private ProducerService producerService;
 
     @Override
     public void show() {
@@ -59,6 +62,11 @@ public class DemoServiceImpl implements DemoService {
         param.put("code", "1234");
         messageDTO.setTemplateParam(FormatUtils.obj2str(param));
         smsService.sendSMS(messageDTO);
+    }
+
+    @Override
+    public void sendTestMessage(String message) {
+        producerService.sendMessage("test", message);
     }
 
 }
