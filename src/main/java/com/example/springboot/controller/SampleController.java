@@ -26,4 +26,11 @@ public class SampleController {
         demoService.sendMessage();
         return responseModel;
     }
+
+    @RequestMapping("sendTest")
+    public NewResponseModel sendMessageTest() {
+        NewResponseModel responseModel = NewResponseModel.Success();
+        demoService.sendTestMessage("今天天气是阴天！！！");
+        return responseModel;
+    }
 }

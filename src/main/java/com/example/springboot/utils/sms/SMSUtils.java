@@ -31,13 +31,14 @@ public class SMSUtils {
     static final String domain = "dysmsapi.aliyuncs.com";
 
     @Value("${aliyun.AccessKeyID}")
-    static String accessKeyId;
+    private String accessKeyId;
     @Value("${aliyun.AccessKeySecret}")
-    static String accessKeySecret;
+    private String accessKeySecret;
     @Value("${aliyun.SignName}")
-    static String signName;
+    private String signName;
 
-    public SendSmsResponse sendSms(SMSMessageDTO messageDTO) throws ClientException {
+    public SendSmsResponse sendSMS(SMSMessageDTO messageDTO) throws ClientException {
+
 
         //可自助调整超时时间
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");

@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.kafka.annotation.EnableKafka;
 
 /**
  * @author: Lucifer
@@ -12,6 +13,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * @description: 启动器
  * 使用@ServletComponentScan + @WebServlet + @WebFilter + @WebListener
  */
+@EnableKafka
 @ServletComponentScan
 @SpringBootApplication
 @MapperScan("com.example.springboot.persist")

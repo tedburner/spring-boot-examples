@@ -1,5 +1,6 @@
 package com.example.springboot.common.kafka;
 
+import com.aliyuncs.exceptions.ClientException;
 import com.example.springboot.common.enums.kafka.KafkaMessageStatusEnum;
 import com.example.springboot.domain.DTO.message.SMSMessageDTO;
 import com.example.springboot.service.kafka.KafkaMessageService;
@@ -7,8 +8,13 @@ import com.example.springboot.utils.common.gson.FormatUtils;
 import com.example.springboot.utils.sms.SMSUtils;
 import com.google.gson.reflect.TypeToken;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Component;
+
+import java.io.IOException;
+import java.util.Optional;
 
 /**
  * @author: Lucifer
@@ -16,6 +22,7 @@ import org.springframework.kafka.annotation.KafkaListener;
  * @description:
  */
 @Slf4j
+@Component
 public class SMSPushClient {
 
     @Autowired
@@ -23,23 +30,29 @@ public class SMSPushClient {
     @Autowired
     private KafkaMessageService kafkaMessageService;
 
-    @KafkaListener(topics = "SMS-Topic")
-    public void SMSPushClient(String msgBody) {
-        log.info("start consumer sms");
-        SMSMessageDTO messageDTO = FormatUtils.str2obj(msgBody, new TypeToken<SMSMessageDTO>() {
-        }.getType());
-        try {
-            //发送短信
-            smsUtils.sendSms(messageDTO);
+    @KafkaListener(topics = "${kafka.SMS-Topic}")
+    public void SMSPushClient(ConsumerRecord<?, ?> record) {
+        log.info("start consumer sms message");
+        //判断是否NULL
+        Optional<?> kafkaMessage = Optional.ofNullable(record.value());
+        if (kafkaMessage.isPresent()) {
+            log.info("start consumer topic SMS-Topic");
+            SMSMessageDTO messageDTO = FormatUtils.str2obj((String) kafkaMessage.get(), new TypeToken<SMSMessageDTO>() {
+            }.getType());
+            try {
+                //发送短信
+                smsUtils.sendSMS(messageDTO);
 
-            //修改数据库状态
-            kafkaMessageService.updateKafkaMessage(KafkaMessageStatusEnum.COMPLETE.getCode(), messageDTO.getKafkaMessageId());
+                //修改数据库状态
+                kafkaMessageService.updateKafkaMessage(KafkaMessageStatusEnum.COMPLETE.getCode(), messageDTO.getKafkaMessageId());
 
-            log.info("kafka consumer success");
-        } catch (Exception e) {
-            log.error("kafka consumer error");
-            //发送失败，修改状态
-            kafkaMessageService.updateKafkaMessage(KafkaMessageStatusEnum.FAIL.getCode(), messageDTO.getKafkaMessageId());
+                log.info("kafka consumer success");
+            } catch (Exception e) {
+                e.printStackTrace();
+                log.error("kafka consumer error : " + e);
+                //发送失败，修改状态
+                kafkaMessageService.updateKafkaMessage(KafkaMessageStatusEnum.FAIL.getCode(), messageDTO.getKafkaMessageId());
+            }
         }
     }
 }
