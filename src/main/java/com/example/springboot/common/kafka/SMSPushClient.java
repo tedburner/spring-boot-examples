@@ -40,7 +40,7 @@ public class SMSPushClient {
             log.info("message : " + messageDTO);
             try {
                 //发送短信
-                //smsUtils.sendSMS(messageDTO);
+                smsUtils.sendSMS(messageDTO);
 
                 //修改数据库状态
                 kafkaMessageService.updateKafkaMessage(KafkaMessageStatusEnum.COMPLETE.getCode(), messageDTO.getKafkaMessageId());
