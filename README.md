@@ -25,12 +25,10 @@ java -jar  target/项目名称-版本号.jar --spring.profiles.active=test/produ
 ```
 
 ## RabbitMq
-
 项目整合了RabbitMq。代码在rabbitmq分支上面
 
 ## kafka
-
-代码在kafka分支上，完成基本功能
+代码已经整合到 master 上面
 
 ## Redis
 
