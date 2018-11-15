@@ -1,6 +1,5 @@
 package com.example.springboot.common.kafka;
 
-import com.aliyuncs.exceptions.ClientException;
 import com.example.springboot.common.enums.kafka.KafkaMessageStatusEnum;
 import com.example.springboot.domain.DTO.message.SMSMessageDTO;
 import com.example.springboot.service.kafka.KafkaMessageService;
@@ -13,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.util.Optional;
 
 /**
@@ -39,9 +37,10 @@ public class SMSPushClient {
             log.info("start consumer topic SMS-Topic");
             SMSMessageDTO messageDTO = FormatUtils.str2obj((String) kafkaMessage.get(), new TypeToken<SMSMessageDTO>() {
             }.getType());
+            log.info("message : " + messageDTO);
             try {
                 //发送短信
-                smsUtils.sendSMS(messageDTO);
+                //smsUtils.sendSMS(messageDTO);
 
                 //修改数据库状态
                 kafkaMessageService.updateKafkaMessage(KafkaMessageStatusEnum.COMPLETE.getCode(), messageDTO.getKafkaMessageId());

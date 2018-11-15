@@ -98,7 +98,7 @@ public class KafkaMessageAroundAop {
         Object[] methodArgs = new Object[1];
         methodArgs[0] = messageDO.getId();
         argsClass[0] = methodArgs[0].getClass();
-
+        //修改内部信息,setKafkaMessageId
         Method messageMethod = messageClass.getMethod(methodName, argsClass);
         messageMethod.invoke(messageBody, methodArgs);
         return joinPoint.proceed();

@@ -20,6 +20,6 @@ public class KafkaMessageServiceImpl implements KafkaMessageService {
 
     @Override
     public void updateKafkaMessage(Integer status, Long kafkaMessageId) {
-
+        kafkaMessageMapper.update(kafkaMessageId, status);
     }
 }

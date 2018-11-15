@@ -12,10 +12,6 @@ import java.io.Serializable;
  * @date: 2018/11/12 19:34
  * @description:
  */
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 public class SMSMessageDTO implements Serializable {
 
     /**
@@ -34,4 +30,47 @@ public class SMSMessageDTO implements Serializable {
      * 模板参数
      */
     private String templateParam;
+
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getTemplateCode() {
+        return templateCode;
+    }
+
+    public void setTemplateCode(String templateCode) {
+        this.templateCode = templateCode;
+    }
+
+    public Long getKafkaMessageId() {
+        return kafkaMessageId;
+    }
+
+    public void setKafkaMessageId(Long kafkaMessageId) {
+        this.kafkaMessageId = kafkaMessageId;
+    }
+
+    public String getTemplateParam() {
+        return templateParam;
+    }
+
+    public void setTemplateParam(String templateParam) {
+        this.templateParam = templateParam;
+    }
+
+    @Override
+    public String toString() {
+        return "SMSMessageDTO{" +
+                "phone='" + phone + '\'' +
+                ", templateCode='" + templateCode + '\'' +
+                ", kafkaMessageId=" + kafkaMessageId +
+                ", templateParam='" + templateParam + '\'' +
+                '}';
+    }
 }
