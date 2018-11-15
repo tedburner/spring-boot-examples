@@ -51,12 +51,31 @@ public class StringUtils {
         return !isBlank(cs);
     }
 
+    /**
+     * ===================== isBank ====================
+     * true
+     * true
+     * true
+     * false
+     * ===================== isEmpty ====================
+     * true
+     * true
+     * false
+     * false
+     */
 
     public static void main(String[] args) {
-        String str = "  ";
+        System.out.println(" ===================== isBank ==================== ");
+        System.out.println(isBlank(null));
+        System.out.println(isBlank(""));
+        System.out.println(isBlank("     "));//true
+        System.out.println(isBlank("abc"));
 
-        System.out.println(isBlank(str));
-        System.out.println(isEmpty(str));
+        System.out.println(" ===================== isEmpty ==================== ");
+        System.out.println(isEmpty(null));
+        System.out.println(isEmpty(""));
+        System.out.println(isEmpty("    "));//false
+        System.out.println(isEmpty("abc"));
     }
 
 }

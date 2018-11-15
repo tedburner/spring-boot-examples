@@ -25,4 +25,4 @@ logs
 /nbdist/
 /.nb-gradle/
 
-src/main/resources/conf.yml
+src/main/resources/config.properties

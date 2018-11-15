@@ -34,7 +34,7 @@ public class SMSUtils {
     static String accessKeyId;
     @Value("${aliyun.AccessKeySecret}")
     static String accessKeySecret;
-    @Value("${aliyun.SiginName}")
+    @Value("${aliyun.SignName}")
     static String signName;
 
     public SendSmsResponse sendSms(SMSMessageDTO messageDTO) throws ClientException {

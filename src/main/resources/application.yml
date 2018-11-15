@@ -18,16 +18,6 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20
     filters: stat,wall,log4j
     connectionProperties=druid.stat.mergeSql: true;druid.stat.slowSqlMillis=500
-  #    druid:
-  #      filter:
-  #        slf4j:
-  #          enabled: true
-  #          statement-create-after-log-enabled: false
-  #          statement-close-after-log-enabled: false
-  #          result-set-open-after-log-enabled: false
-  #          result-set-close-after-log-enabled: false
-
-
   jpa:
     show-sql: true
   activemq:
@@ -53,6 +43,7 @@ spring:
 ## kafka主题
 kafka:
   topic: test
+  SMS-Topic: SMS-Topic
 
 # 日志
 log:
