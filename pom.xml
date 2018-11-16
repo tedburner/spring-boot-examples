@@ -5,7 +5,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>springboot</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>springboot</name>
@@ -123,9 +123,9 @@
 
         <!-- MySQL 连接驱动依赖 -->
         <!--<dependency>-->
-            <!--<groupId>mysql</groupId>-->
-            <!--<artifactId>mysql-connector-java</artifactId>-->
-            <!--<version>8.0.11</version>-->
+        <!--<groupId>mysql</groupId>-->
+        <!--<artifactId>mysql-connector-java</artifactId>-->
+        <!--<version>8.0.11</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>mysql</groupId>
@@ -359,17 +359,19 @@
             </properties>
         </profile>
     </profiles>
-    <!--<repositories>-->
-        <!--<repository>-->
-            <!--<id>nexus-snapshots</id>-->
-            <!--<url>http://122.224.124.250:9091/repository/maven-group/</url>-->
-        <!--</repository>-->
-    <!--</repositories>-->
+
+    <!--nexus 配置私服-->
     <!--<distributionManagement>-->
         <!--<repository>-->
-            <!--<id>nexus-snapshots</id>-->
-            <!--<url>http://122.224.124.250:9091/repository/maven-group/</url>-->
+            <!--<id>nexus</id>-->
+            <!--<name>Releases</name>-->
+            <!--<url>http://192.168.33.120:8081/repository/lucifer-releases/</url>-->
         <!--</repository>-->
+        <!--<snapshotRepository>-->
+            <!--<id>nexus</id>-->
+            <!--<name>Snapshots</name>-->
+            <!--<url>http://192.168.33.120:8081/repository/lucifer-snapshots/</url>-->
+        <!--</snapshotRepository>-->
     <!--</distributionManagement>-->
 
 </project>
