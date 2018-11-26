@@ -160,7 +160,6 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
         </dependency>
 
         <!--工具-->
@@ -280,10 +279,18 @@
             <version>1.1.0</version>
         </dependency>
 
+        <!--redisson redis 分布式锁-->
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
             <version>3.9.1</version>
+        </dependency>
+
+        <!--当当网 sharding-sphere-->
+        <dependency>
+            <groupId>io.shardingsphere</groupId>
+            <artifactId>sharding-core</artifactId>
+            <version>3.0.0</version>
         </dependency>
 
     </dependencies>
@@ -377,16 +384,16 @@
 
     <!--nexus 配置私服-->
     <!--<distributionManagement>-->
-        <!--<repository>-->
-            <!--<id>nexus</id>-->
-            <!--<name>Releases</name>-->
-            <!--<url>http://192.168.33.120:8081/repository/lucifer-releases/</url>-->
-        <!--</repository>-->
-        <!--<snapshotRepository>-->
-            <!--<id>nexus</id>-->
-            <!--<name>Snapshots</name>-->
-            <!--<url>http://192.168.33.120:8081/repository/lucifer-snapshots/</url>-->
-        <!--</snapshotRepository>-->
+    <!--<repository>-->
+    <!--<id>nexus</id>-->
+    <!--<name>Releases</name>-->
+    <!--<url>http://192.168.33.120:8081/repository/lucifer-releases/</url>-->
+    <!--</repository>-->
+    <!--<snapshotRepository>-->
+    <!--<id>nexus</id>-->
+    <!--<name>Snapshots</name>-->
+    <!--<url>http://192.168.33.120:8081/repository/lucifer-snapshots/</url>-->
+    <!--</snapshotRepository>-->
     <!--</distributionManagement>-->
 
 </project>

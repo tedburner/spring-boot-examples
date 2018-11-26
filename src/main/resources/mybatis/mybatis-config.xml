@@ -8,10 +8,7 @@
     <!-- 配置mybatis的分页插件PageHelper -->
     <plugins>
         <!-- com.github.pagehelper为PageHelper类所在包名 -->
-        <plugin interceptor="com.github.pagehelper.PageInterceptor">
-            <!-- 设置数据库类型Oracle,Mysql,MariaDB,SQLite,Hsqldb,PostgreSQL六种数据库 -->
-            <!--<property name="dialect" value="mysql"/>-->
-        </plugin>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
     </plugins>
 
 </configuration>
