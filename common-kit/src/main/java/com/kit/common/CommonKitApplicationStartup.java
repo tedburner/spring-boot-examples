@@ -1,12 +1,12 @@
-package com.springboot.common;
+package com.kit.common;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootCommonApplication {
+public class CommonKitApplicationStartup {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootCommonApplication.class, args);
+        SpringApplication.run(CommonKitApplicationStartup.class, args);
     }
 }
