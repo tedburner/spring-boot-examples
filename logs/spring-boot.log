@@ -1,0 +1,616 @@
+[2018-11-29 14:23:32] INFO  com.samples.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 3712 (/Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-samples/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples)
+[2018-11-29 14:23:32] INFO  com.samples.ApplicationStartup - The following profiles are active: test
+[2018-11-29 14:23:32] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2018-11-29 14:23:32] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2018-11-29 14:23:33] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.example.springboot.persist]' package. Please check your configuration.
+[2018-11-29 14:23:33] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.samples]' package. Please check your configuration.
+[2018-11-29 14:23:33] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:23:33] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:23:33] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73ms. Found 1 repository interfaces.
+[2018-11-29 14:23:33] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:23:33] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:23:33] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.samples.repository.mongo.UserRepository.
+[2018-11-29 14:23:33] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
+[2018-11-29 14:23:33] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$c9106a29] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:23:34] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f55e58a6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:23:34] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.samples.config.RedisConfig$$EnhancerBySpringCGLIB$$b768cbce] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:23:34] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2018-11-29 14:23:34] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2018-11-29 14:23:34] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[2018-11-29 14:23:34] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+[2018-11-29 14:23:34] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/jianglingjun/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2018-11-29 14:23:34] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2018-11-29 14:23:34] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1907 ms
+[2018-11-29 14:23:35] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-11-29 14:23:35] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+[2018-11-29 14:23:35] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+[2018-11-29 14:23:35] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'CORSFilter' to: [/*]
+[2018-11-29 14:23:35] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+[2018-11-29 14:23:35] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'com.samples.filters.CORSFilter' to urls: [/*]
+[2018-11-29 14:23:35] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidStatFilter' to urls: [/*]
+[2018-11-29 14:23:35] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'ExecuteTimeFilter' to urls: [/*]
+[2018-11-29 14:23:35] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+[2018-11-29 14:23:35] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kafkaMessageAroundAop': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.samples.persist.kafkaMessage.KafkaMessageMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+[2018-11-29 14:23:35] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+[2018-11-29 14:23:35] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[2018-11-29 14:23:35] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kafkaMessageAroundAop': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.samples.persist.kafkaMessage.KafkaMessageMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:324)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1378)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:575)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:846)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:863)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.samples.ApplicationStartup.main(ApplicationStartup.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.samples.persist.kafkaMessage.KafkaMessageMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1646)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1166)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:518)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:496)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:630)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:180)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:321)
+	... 22 common frames omitted
+[2018-11-29 14:24:09] INFO  com.samples.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 3723 (/Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-samples/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples)
+[2018-11-29 14:24:09] INFO  com.samples.ApplicationStartup - The following profiles are active: test
+[2018-11-29 14:24:10] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2018-11-29 14:24:10] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2018-11-29 14:24:10] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.example.springboot.persist]' package. Please check your configuration.
+[2018-11-29 14:24:11] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.samples]' package. Please check your configuration.
+[2018-11-29 14:24:11] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:24:11] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:24:11] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68ms. Found 1 repository interfaces.
+[2018-11-29 14:24:11] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:24:11] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:24:11] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.samples.repository.mongo.UserRepository.
+[2018-11-29 14:24:11] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+[2018-11-29 14:24:11] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$f43e6fe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:24:11] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3b91d57b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:24:11] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.samples.config.RedisConfig$$EnhancerBySpringCGLIB$$fd9c48a3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:24:12] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2018-11-29 14:24:12] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2018-11-29 14:24:12] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[2018-11-29 14:24:12] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+[2018-11-29 14:24:12] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/jianglingjun/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2018-11-29 14:24:12] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2018-11-29 14:24:12] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2009 ms
+[2018-11-29 14:24:12] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-11-29 14:24:12] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+[2018-11-29 14:24:12] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+[2018-11-29 14:24:12] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'CORSFilter' to: [/*]
+[2018-11-29 14:24:12] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+[2018-11-29 14:24:12] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'com.samples.filters.CORSFilter' to urls: [/*]
+[2018-11-29 14:24:12] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidStatFilter' to urls: [/*]
+[2018-11-29 14:24:12] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'ExecuteTimeFilter' to urls: [/*]
+[2018-11-29 14:24:12] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+[2018-11-29 14:24:12] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kafkaMessageAroundAop': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.samples.persist.kafkaMessage.KafkaMessageMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+[2018-11-29 14:24:12] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+[2018-11-29 14:24:12] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[2018-11-29 14:24:13] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kafkaMessageAroundAop': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.samples.persist.kafkaMessage.KafkaMessageMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:324)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1378)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:575)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:846)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:863)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.samples.ApplicationStartup.main(ApplicationStartup.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.samples.persist.kafkaMessage.KafkaMessageMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1646)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1166)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:518)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:496)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:630)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:180)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:321)
+	... 22 common frames omitted
+[2018-11-29 14:25:19] INFO  com.samples.ApplicationStartup - Starting ApplicationStartup on jianglingjundeMacBook-Pro.local with PID 3763 (/Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-samples/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples)
+[2018-11-29 14:25:19] INFO  com.samples.ApplicationStartup - The following profiles are active: test
+[2018-11-29 14:25:19] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2018-11-29 14:25:19] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2018-11-29 14:25:20] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:25:20] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:25:20] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70ms. Found 1 repository interfaces.
+[2018-11-29 14:25:20] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:25:20] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:25:20] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.samples.repository.mongo.UserRepository.
+[2018-11-29 14:25:20] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+[2018-11-29 14:25:21] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$4baa0788] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:25:21] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$77f7f605] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:25:21] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.samples.config.RedisConfig$$EnhancerBySpringCGLIB$$3a02692d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:25:21] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2018-11-29 14:25:21] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2018-11-29 14:25:21] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[2018-11-29 14:25:21] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+[2018-11-29 14:25:21] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/jianglingjun/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2018-11-29 14:25:21] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2018-11-29 14:25:21] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1925 ms
+[2018-11-29 14:25:22] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-11-29 14:25:22] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+[2018-11-29 14:25:22] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+[2018-11-29 14:25:22] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'CORSFilter' to: [/*]
+[2018-11-29 14:25:22] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+[2018-11-29 14:25:22] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'com.samples.filters.CORSFilter' to urls: [/*]
+[2018-11-29 14:25:22] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidStatFilter' to urls: [/*]
+[2018-11-29 14:25:22] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'ExecuteTimeFilter' to urls: [/*]
+[2018-11-29 14:25:22] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+[2018-11-29 14:25:22] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMongoDBServiceImpl': Unsatisfied dependency expressed through field 'userRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository': Cannot resolve reference to bean 'mongoTemplate' while setting bean property 'mongoOperations'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'mongoTemplate' available
+[2018-11-29 14:25:22] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+[2018-11-29 14:25:22] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[2018-11-29 14:25:23] ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userRepository in com.samples.service.mongo.impl.UserMongoDBServiceImpl required a bean named 'mongoTemplate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean named 'mongoTemplate' in your configuration.
+
+[2018-11-29 14:52:55] INFO  com.sample.springboot.SpringBootSampleApplication - Starting SpringBootSampleApplication on jianglingjundeMacBook-Pro.local with PID 4098 (/Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples)
+[2018-11-29 14:52:55] INFO  com.sample.springboot.SpringBootSampleApplication - The following profiles are active: test
+[2018-11-29 14:52:55] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2018-11-29 14:52:55] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2018-11-29 14:52:56] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.springboot.sample.persist]' package. Please check your configuration.
+[2018-11-29 14:52:56] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.sample.springboot]' package. Please check your configuration.
+[2018-11-29 14:52:56] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:52:56] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:52:56] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64ms. Found 1 repository interfaces.
+[2018-11-29 14:52:56] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:52:56] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:52:56] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sample.springboot.repository.mongo.UserRepository.
+[2018-11-29 14:52:56] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+[2018-11-29 14:52:57] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$123ec14f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:52:57] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3e8cafcc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:52:57] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.sample.springboot.config.RedisConfig$$EnhancerBySpringCGLIB$$e41419fa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:52:57] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2018-11-29 14:52:57] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2018-11-29 14:52:57] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[2018-11-29 14:52:57] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+[2018-11-29 14:52:57] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/jianglingjun/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2018-11-29 14:52:58] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2018-11-29 14:52:58] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2034 ms
+[2018-11-29 14:52:58] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-11-29 14:52:58] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+[2018-11-29 14:52:58] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+[2018-11-29 14:52:58] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'CORSFilter' to: [/*]
+[2018-11-29 14:52:58] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+[2018-11-29 14:52:58] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'com.sample.springboot.filters.CORSFilter' to urls: [/*]
+[2018-11-29 14:52:58] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidStatFilter' to urls: [/*]
+[2018-11-29 14:52:58] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'ExecuteTimeFilter' to urls: [/*]
+[2018-11-29 14:52:58] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+[2018-11-29 14:52:58] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kafkaMessageAroundAop': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sample.springboot.persist.kafkaMessage.KafkaMessageMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+[2018-11-29 14:52:58] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+[2018-11-29 14:52:58] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[2018-11-29 14:52:58] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kafkaMessageAroundAop': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sample.springboot.persist.kafkaMessage.KafkaMessageMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:324)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1378)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:575)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:846)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:863)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.sample.springboot.SpringBootSampleApplication.main(SpringBootSampleApplication.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sample.springboot.persist.kafkaMessage.KafkaMessageMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1646)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1166)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:518)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:496)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:630)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:180)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:321)
+	... 22 common frames omitted
+[2018-11-29 14:53:25] INFO  com.sample.springboot.SpringBootSampleApplication - Starting SpringBootSampleApplication on jianglingjundeMacBook-Pro.local with PID 4104 (/Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples)
+[2018-11-29 14:53:25] INFO  com.sample.springboot.SpringBootSampleApplication - The following profiles are active: test
+[2018-11-29 14:53:25] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2018-11-29 14:53:25] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2018-11-29 14:53:26] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:53:26] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:53:26] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 71ms. Found 1 repository interfaces.
+[2018-11-29 14:53:26] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:53:26] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:53:26] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sample.springboot.repository.mongo.UserRepository.
+[2018-11-29 14:53:26] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+[2018-11-29 14:53:26] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$14145875] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:53:26] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$406246f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:53:27] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.sample.springboot.config.RedisConfig$$EnhancerBySpringCGLIB$$e5e9b120] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:53:27] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2018-11-29 14:53:27] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2018-11-29 14:53:27] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[2018-11-29 14:53:27] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+[2018-11-29 14:53:27] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/jianglingjun/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2018-11-29 14:53:27] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2018-11-29 14:53:27] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1892 ms
+[2018-11-29 14:53:28] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-11-29 14:53:28] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+[2018-11-29 14:53:28] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+[2018-11-29 14:53:28] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'CORSFilter' to: [/*]
+[2018-11-29 14:53:28] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+[2018-11-29 14:53:28] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'com.sample.springboot.filters.CORSFilter' to urls: [/*]
+[2018-11-29 14:53:28] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidStatFilter' to urls: [/*]
+[2018-11-29 14:53:28] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'ExecuteTimeFilter' to urls: [/*]
+[2018-11-29 14:53:28] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+[2018-11-29 14:53:28] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMongoDBServiceImpl': Unsatisfied dependency expressed through field 'userRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository': Cannot resolve reference to bean 'mongoTemplate' while setting bean property 'mongoOperations'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'mongoTemplate' available
+[2018-11-29 14:53:28] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+[2018-11-29 14:53:28] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[2018-11-29 14:53:28] ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userRepository in com.sample.springboot.service.mongo.impl.UserMongoDBServiceImpl required a bean named 'mongoTemplate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean named 'mongoTemplate' in your configuration.
+
+[2018-11-29 14:55:40] INFO  com.sample.springboot.SpringBootSampleApplication - Starting SpringBootSampleApplication on jianglingjundeMacBook-Pro.local with PID 4116 (/Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples)
+[2018-11-29 14:55:40] INFO  com.sample.springboot.SpringBootSampleApplication - The following profiles are active: test
+[2018-11-29 14:55:41] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2018-11-29 14:55:41] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2018-11-29 14:55:41] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:55:41] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:55:41] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69ms. Found 1 repository interfaces.
+[2018-11-29 14:55:42] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:55:42] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:55:42] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sample.springboot.repository.mongo.UserRepository.
+[2018-11-29 14:55:42] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+[2018-11-29 14:55:42] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$254bcc40] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:55:42] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5199babd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:55:42] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.sample.springboot.config.RedisConfig$$EnhancerBySpringCGLIB$$f72124eb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:55:42] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2018-11-29 14:55:43] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2018-11-29 14:55:43] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[2018-11-29 14:55:43] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+[2018-11-29 14:55:43] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/jianglingjun/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2018-11-29 14:55:43] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2018-11-29 14:55:43] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1931 ms
+[2018-11-29 14:55:43] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-11-29 14:55:43] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+[2018-11-29 14:55:43] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+[2018-11-29 14:55:43] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'CORSFilter' to: [/*]
+[2018-11-29 14:55:43] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+[2018-11-29 14:55:43] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'com.sample.springboot.filters.CORSFilter' to urls: [/*]
+[2018-11-29 14:55:43] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidStatFilter' to urls: [/*]
+[2018-11-29 14:55:43] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'ExecuteTimeFilter' to urls: [/*]
+[2018-11-29 14:55:43] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+[2018-11-29 14:55:44] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMongoDBServiceImpl': Unsatisfied dependency expressed through field 'userRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository': Cannot resolve reference to bean 'mongoTemplate' while setting bean property 'mongoOperations'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'mongoTemplate' available
+[2018-11-29 14:55:44] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+[2018-11-29 14:55:44] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[2018-11-29 14:55:44] ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userRepository in com.sample.springboot.service.mongo.impl.UserMongoDBServiceImpl required a bean named 'mongoTemplate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean named 'mongoTemplate' in your configuration.
+
+[2018-11-29 14:56:56] INFO  com.sample.springboot.SpringBootSampleApplication - Starting SpringBootSampleApplication on jianglingjundeMacBook-Pro.local with PID 4130 (/Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples)
+[2018-11-29 14:56:56] INFO  com.sample.springboot.SpringBootSampleApplication - The following profiles are active: test
+[2018-11-29 14:56:56] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2018-11-29 14:56:56] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2018-11-29 14:56:57] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:56:57] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:56:57] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 92ms. Found 1 repository interfaces.
+[2018-11-29 14:56:58] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 14:56:58] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 14:56:58] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sample.springboot.repository.mongo.UserRepository.
+[2018-11-29 14:56:58] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+[2018-11-29 14:56:58] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$1c84a0a4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:56:58] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$48d28f21] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:56:59] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.sample.springboot.config.RedisConfig$$EnhancerBySpringCGLIB$$ee59f94f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 14:56:59] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2018-11-29 14:56:59] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2018-11-29 14:56:59] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[2018-11-29 14:56:59] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+[2018-11-29 14:56:59] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/jianglingjun/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2018-11-29 14:56:59] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2018-11-29 14:56:59] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2629 ms
+[2018-11-29 14:57:00] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[192.168.33.120:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2018-11-29 14:57:00] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1208}] to 192.168.33.120:27017
+[2018-11-29 14:57:00] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=192.168.33.120:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 0]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4898954}
+[2018-11-29 14:57:00] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-11-29 14:57:00] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+[2018-11-29 14:57:00] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+[2018-11-29 14:57:00] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'CORSFilter' to: [/*]
+[2018-11-29 14:57:00] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+[2018-11-29 14:57:00] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'com.sample.springboot.filters.CORSFilter' to urls: [/*]
+[2018-11-29 14:57:00] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidStatFilter' to urls: [/*]
+[2018-11-29 14:57:00] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'ExecuteTimeFilter' to urls: [/*]
+[2018-11-29 14:57:00] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+[2018-11-29 14:57:01] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2018-11-29 14:57:02] INFO  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: e65c2195-83f8-4817-8eab-dc4e0adfccba
+
+[2018-11-29 14:57:02] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2ce4baad, org.springframework.security.web.context.SecurityContextPersistenceFilter@3bb55e24, org.springframework.security.web.header.HeaderWriterFilter@43090e44, org.springframework.security.web.csrf.CsrfFilter@7769b175, org.springframework.security.web.authentication.logout.LogoutFilter@47d5cde1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@245eb314, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@24d383e0, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@46d92c62, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1943e008, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3bbae113, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@30b8fe03, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@105cbea4, org.springframework.security.web.session.SessionManagementFilter@4b3f73da, org.springframework.security.web.access.ExceptionTranslationFilter@4722992d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b3a8bc0]
+[2018-11-29 14:57:02] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[2018-11-29 14:57:02] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+[2018-11-29 14:57:02] INFO  org.apache.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [127.0.0.1:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = springboot-group
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+[2018-11-29 14:57:02] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 2.0.0
+[2018-11-29 14:57:02] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a8361b734732
+[2018-11-29 14:57:02] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 14:57:02] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 14:57:03] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 14:57:03] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 14:57:03] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 14:57:04] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 14:57:05] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 14:57:06] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 14:57:07] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 14:57:08] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 14:57:09] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 15:00:28] INFO  com.sample.springboot.SpringBootSampleApplication - Starting SpringBootSampleApplication on jianglingjundeMacBook-Pro.local with PID 4295 (/Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample/target/classes started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples)
+[2018-11-29 15:00:28] INFO  com.sample.springboot.SpringBootSampleApplication - The following profiles are active: test
+[2018-11-29 15:00:28] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2018-11-29 15:00:28] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2018-11-29 15:00:29] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 15:00:29] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 15:00:29] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68ms. Found 1 repository interfaces.
+[2018-11-29 15:00:29] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-11-29 15:00:29] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-11-29 15:00:29] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sample.springboot.repository.mongo.UserRepository.
+[2018-11-29 15:00:29] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+[2018-11-29 15:00:29] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$52835410] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 15:00:29] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7ed1428d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 15:00:30] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.sample.springboot.config.RedisConfig$$EnhancerBySpringCGLIB$$2458acbb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-29 15:00:30] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2018-11-29 15:00:30] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2018-11-29 15:00:30] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[2018-11-29 15:00:30] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+[2018-11-29 15:00:30] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/jianglingjun/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+[2018-11-29 15:00:30] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2018-11-29 15:00:30] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1866 ms
+[2018-11-29 15:00:30] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[192.168.33.120:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2018-11-29 15:00:30] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1209}] to 192.168.33.120:27017
+[2018-11-29 15:00:30] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=192.168.33.120:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 0]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4515264}
+[2018-11-29 15:00:31] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-11-29 15:00:31] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+[2018-11-29 15:00:31] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+[2018-11-29 15:00:31] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'CORSFilter' to: [/*]
+[2018-11-29 15:00:31] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+[2018-11-29 15:00:31] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'com.sample.springboot.filters.CORSFilter' to urls: [/*]
+[2018-11-29 15:00:31] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidStatFilter' to urls: [/*]
+[2018-11-29 15:00:31] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'ExecuteTimeFilter' to urls: [/*]
+[2018-11-29 15:00:31] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+[2018-11-29 15:00:31] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2018-11-29 15:00:32] INFO  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 40ffd3e6-5559-40ed-a150-50d5a1c6abd3
+
+[2018-11-29 15:00:32] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a87e192, org.springframework.security.web.context.SecurityContextPersistenceFilter@3657b97b, org.springframework.security.web.header.HeaderWriterFilter@10c71f85, org.springframework.security.web.csrf.CsrfFilter@a1c96f2, org.springframework.security.web.authentication.logout.LogoutFilter@75b4d889, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@472273df, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1ba2408d, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@15d698d5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4e0addfd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22c92354, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47b565fc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c349448, org.springframework.security.web.session.SessionManagementFilter@56eaa8a7, org.springframework.security.web.access.ExceptionTranslationFilter@46288413, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35b235b0]
+[2018-11-29 15:00:32] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[2018-11-29 15:00:32] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+[2018-11-29 15:00:33] INFO  org.apache.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [127.0.0.1:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = springboot-group
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+[2018-11-29 15:00:33] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 2.0.0
+[2018-11-29 15:00:33] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a8361b734732
+[2018-11-29 15:00:33] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 15:00:33] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 15:00:33] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 15:00:33] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 15:00:34] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 15:00:34] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
+[2018-11-29 15:00:36] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=springboot-group] Connection to node -1 could not be established. Broker may not be available.
