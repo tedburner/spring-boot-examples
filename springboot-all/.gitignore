@@ -23,5 +23,3 @@
 /dist/
 /nbdist/
 /.nb-gradle/
-
-config.properties
