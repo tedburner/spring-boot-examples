@@ -17,7 +17,7 @@ import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
  * @Date: 2018/7/10 18:14
  * @Description:
  */
-@Configuration
+//@Configuration
 @PropertySource(value = "classpath:mongo/mongo.properties")
 public class MongoDBConfig{
 
@@ -35,9 +35,6 @@ public class MongoDBConfig{
 
     @Value("${mongo.port}")
     private String port;
-
-    @Autowired
-    private Environment env;
 
     @Bean
     public MongoDbFactory mongoDbFactory() {

@@ -17,24 +17,24 @@ import java.util.regex.Pattern;
  * @date: 2018-11-30 14:34
  * @description:
  */
-public class ShardedJedisPool extends Pool<ShardedJedis> {
+public class KitShardedJedisPool extends Pool<ShardedJedis> {
 
-    public ShardedJedisPool(final GenericObjectPoolConfig poolConfig, List<JedisShardInfo> shards) {
+    public KitShardedJedisPool(final GenericObjectPoolConfig poolConfig, List<JedisShardInfo> shards) {
         this(poolConfig, shards, Hashing.MURMUR_HASH);
     }
 
-    public ShardedJedisPool(final GenericObjectPoolConfig poolConfig, List<JedisShardInfo> shards,
-                            Hashing algo) {
+    public KitShardedJedisPool(final GenericObjectPoolConfig poolConfig, List<JedisShardInfo> shards,
+                               Hashing algo) {
         this(poolConfig, shards, algo, null);
     }
 
-    public ShardedJedisPool(final GenericObjectPoolConfig poolConfig, List<JedisShardInfo> shards,
-                            Pattern keyTagPattern) {
+    public KitShardedJedisPool(final GenericObjectPoolConfig poolConfig, List<JedisShardInfo> shards,
+                               Pattern keyTagPattern) {
         this(poolConfig, shards, Hashing.MURMUR_HASH, keyTagPattern);
     }
 
-    public ShardedJedisPool(final GenericObjectPoolConfig poolConfig, List<JedisShardInfo> shards,
-                            Hashing algo, Pattern keyTagPattern) {
+    public KitShardedJedisPool(final GenericObjectPoolConfig poolConfig, List<JedisShardInfo> shards,
+                               Hashing algo, Pattern keyTagPattern) {
         super(poolConfig, new ShardedJedisFactory(shards, algo, keyTagPattern));
     }
 

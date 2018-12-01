@@ -1,6 +1,7 @@
 package com.sample.springboot.config;
 
-import com.kit.common.redis.ShardedJedisPool;
+import com.kit.common.redis.KitShardedJedisPool;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -18,10 +19,10 @@ import java.util.List;
  * @date: 2018/8/20 10:05
  * @description:
  */
+@Slf4j
 @Configuration
 @PropertySource(value = "classpath:redis/redis.properties")
-@EnableCaching
-public class RedisConfig {
+public class RedisConfig extends CachingConfigurerSupport {
 
     @Value("${redis.pool.max-idle}")
     private int maxIdle;
@@ -71,16 +72,16 @@ public class RedisConfig {
 
 
     @Bean
-    public ShardedJedisPool shardedJedisPool() {
+    public KitShardedJedisPool shardedJedisPool() {
         JedisShardInfo master = new JedisShardInfo(master_host, port, timeout);
         master.setPassword(master_password);
 
         JedisShardInfo slave = new JedisShardInfo(slave_host, port, timeout);
         slave.setPassword(slave_password);
 
-        //初始化 ShardedJedisPool
+        log.info("初始化 ShardedJedisPool");
         List<JedisShardInfo> jedisShardInfoList = Arrays.asList(master, slave);
-        return new ShardedJedisPool(jedisPoolConfig(), jedisShardInfoList);
+        return new KitShardedJedisPool(jedisPoolConfig(), jedisShardInfoList);
     }
 
 }

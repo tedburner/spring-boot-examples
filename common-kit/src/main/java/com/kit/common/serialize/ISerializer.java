@@ -1,7 +1,5 @@
 package com.kit.common.serialize;
 
-import com.sun.xml.internal.ws.encoding.soap.SerializationException;
-
 /**
  * @author: Lucifer
  * @date: 2018-11-30 11:36

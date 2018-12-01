@@ -1,0 +1,377 @@
+[2018-12-01 13:44:08] INFO  com.sample.springboot.RedisTests - Starting RedisTests on jianglingjundeMacBook-Pro.local with PID 1913 (started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample)
+[2018-12-01 13:44:08] INFO  com.sample.springboot.RedisTests - The following profiles are active: test
+[2018-12-01 13:44:09] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-12-01 13:44:09] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 13:44:10] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 539ms. Found 1 repository interfaces.
+[2018-12-01 13:44:10] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-12-01 13:44:10] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 13:44:10] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sample.springboot.repository.mongo.UserRepository.
+[2018-12-01 13:44:10] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26ms. Found 0 repository interfaces.
+[2018-12-01 13:44:11] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$7968d64] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 13:44:11] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$33e47be1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 13:44:12] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2018-12-01 13:44:12] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:67)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	... 3 common frames omitted
+[2018-12-01 13:44:14] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[2018-12-01 13:44:16] INFO  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: ae98ea40-514b-4fad-9989-ab4cebd36e4b
+
+[2018-12-01 13:44:16] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@57927bc9, org.springframework.security.web.context.SecurityContextPersistenceFilter@43d6262c, org.springframework.security.web.header.HeaderWriterFilter@197d5a87, org.springframework.security.web.csrf.CsrfFilter@5af40e45, org.springframework.security.web.authentication.logout.LogoutFilter@57b130f6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@98722ef, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@41bd6a0f, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@323efafe, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2adc1e84, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38cf4497, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a2035e1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@32dbca45, org.springframework.security.web.session.SessionManagementFilter@616f81b5, org.springframework.security.web.access.ExceptionTranslationFilter@638d2ce3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@31f1b268]
+[2018-12-01 13:44:16] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[2018-12-01 13:44:17] INFO  com.sample.springboot.RedisTests - Started RedisTests in 9.492 seconds (JVM running for 11.606)
+[2018-12-01 13:44:17] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[2018-12-01 13:52:03] INFO  com.sample.springboot.RedisTests - Starting RedisTests on jianglingjundeMacBook-Pro.local with PID 1974 (started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample)
+[2018-12-01 13:52:03] INFO  com.sample.springboot.RedisTests - The following profiles are active: test
+[2018-12-01 13:52:05] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-12-01 13:52:05] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 13:52:06] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 893ms. Found 1 repository interfaces.
+[2018-12-01 13:52:06] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-12-01 13:52:06] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 13:52:06] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sample.springboot.repository.mongo.UserRepository.
+[2018-12-01 13:52:06] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41ms. Found 0 repository interfaces.
+[2018-12-01 13:52:07] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$f259aa5b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 13:52:08] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1ea798d8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 13:52:09] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2018-12-01 13:52:09] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:67)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	... 3 common frames omitted
+[2018-12-01 13:52:14] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[2018-12-01 13:52:17] INFO  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 89c3a74f-a9be-4a56-90ff-29679b660b24
+
+[2018-12-01 13:52:18] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@527d5e48, org.springframework.security.web.context.SecurityContextPersistenceFilter@35d88a54, org.springframework.security.web.header.HeaderWriterFilter@58b3eb1, org.springframework.security.web.csrf.CsrfFilter@2d3eecda, org.springframework.security.web.authentication.logout.LogoutFilter@11170228, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3af39e7b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4b00d59, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@407b41e6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7a34c1f6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3d4818e8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@335972a5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3291d9c2, org.springframework.security.web.session.SessionManagementFilter@78743dd8, org.springframework.security.web.access.ExceptionTranslationFilter@47d9c01, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@688d2a5d]
+[2018-12-01 13:52:18] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[2018-12-01 13:52:18] INFO  com.sample.springboot.RedisTests - Started RedisTests in 16.73 seconds (JVM running for 18.383)
+[2018-12-01 13:52:19] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[2018-12-01 13:54:52] INFO  com.sample.springboot.RedisTests - Starting RedisTests on jianglingjundeMacBook-Pro.local with PID 2023 (started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample)
+[2018-12-01 13:54:52] INFO  com.sample.springboot.RedisTests - The following profiles are active: test
+[2018-12-01 13:54:53] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-12-01 13:54:53] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 13:54:54] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 536ms. Found 1 repository interfaces.
+[2018-12-01 13:54:54] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-12-01 13:54:54] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 13:54:54] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sample.springboot.repository.mongo.UserRepository.
+[2018-12-01 13:54:54] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25ms. Found 0 repository interfaces.
+[2018-12-01 13:54:55] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$4c7e5bf8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 13:54:55] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$78cc4a75] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 13:54:56] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2018-12-01 13:54:56] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:67)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	... 3 common frames omitted
+[2018-12-01 13:54:58] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[2018-12-01 13:55:01] INFO  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 53d31ab5-ce2d-40c0-8501-943bd501e675
+
+[2018-12-01 13:55:01] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2cf88901, org.springframework.security.web.context.SecurityContextPersistenceFilter@e895e3e, org.springframework.security.web.header.HeaderWriterFilter@2d172c7, org.springframework.security.web.csrf.CsrfFilter@335972a5, org.springframework.security.web.authentication.logout.LogoutFilter@76eadc5a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1b6cad77, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@74bfdd66, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4780341, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1868ed54, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@70805849, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2567c091, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c910acd, org.springframework.security.web.session.SessionManagementFilter@8ce3f27, org.springframework.security.web.access.ExceptionTranslationFilter@4a5b38e6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@65a4b9d6]
+[2018-12-01 13:55:01] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[2018-12-01 13:55:02] INFO  com.sample.springboot.RedisTests - Started RedisTests in 10.734 seconds (JVM running for 12.696)
+[2018-12-01 13:55:02] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:10:40] INFO  com.sample.springboot.RedisTests - Starting RedisTests on jianglingjundeMacBook-Pro.local with PID 2165 (started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample)
+[2018-12-01 14:10:40] INFO  com.sample.springboot.RedisTests - The following profiles are active: test
+[2018-12-01 14:10:41] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-12-01 14:10:41] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 14:10:42] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 427ms. Found 1 repository interfaces.
+[2018-12-01 14:10:42] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[2018-12-01 14:10:42] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 14:10:42] INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sample.springboot.repository.mongo.UserRepository.
+[2018-12-01 14:10:42] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22ms. Found 0 repository interfaces.
+[2018-12-01 14:10:43] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$4c7e5bf8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:10:43] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$78cc4a75] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:10:43] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2018-12-01 14:10:43] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:67)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	... 3 common frames omitted
+[2018-12-01 14:10:45] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:10:47] INFO  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 1f399133-69e2-471a-a5d5-7ef6569c6055
+
+[2018-12-01 14:10:47] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2cf88901, org.springframework.security.web.context.SecurityContextPersistenceFilter@e895e3e, org.springframework.security.web.header.HeaderWriterFilter@2d172c7, org.springframework.security.web.csrf.CsrfFilter@335972a5, org.springframework.security.web.authentication.logout.LogoutFilter@76eadc5a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1b6cad77, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@74bfdd66, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4780341, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1868ed54, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@70805849, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2567c091, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c910acd, org.springframework.security.web.session.SessionManagementFilter@8ce3f27, org.springframework.security.web.access.ExceptionTranslationFilter@4a5b38e6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@65a4b9d6]
+[2018-12-01 14:10:47] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[2018-12-01 14:10:48] INFO  com.sample.springboot.RedisTests - Started RedisTests in 8.73 seconds (JVM running for 10.11)
+[2018-12-01 14:10:48] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:14:57] INFO  com.sample.springboot.RedisTests - Starting RedisTests on jianglingjundeMacBook-Pro.local with PID 2392 (started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample)
+[2018-12-01 14:14:57] INFO  com.sample.springboot.RedisTests - The following profiles are active: test
+[2018-12-01 14:14:59] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 14:14:59] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 493ms. Found 1 repository interfaces.
+[2018-12-01 14:15:00] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$2c4333fd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:15:01] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5891227a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:15:01] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2018-12-01 14:15:01] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:67)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	... 3 common frames omitted
+[2018-12-01 14:15:03] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:15:05] INFO  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 81954653-7864-4d89-b39a-94a52ec4d75f
+
+[2018-12-01 14:15:05] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@579f3c8e, org.springframework.security.web.context.SecurityContextPersistenceFilter@5909ae90, org.springframework.security.web.header.HeaderWriterFilter@5f2b9da8, org.springframework.security.web.csrf.CsrfFilter@1de12397, org.springframework.security.web.authentication.logout.LogoutFilter@1aaf46e6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6200b644, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6533629, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4eb1943b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6a902015, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@fe08eaf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a7a6d34, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e2824b1, org.springframework.security.web.session.SessionManagementFilter@4fea5ee0, org.springframework.security.web.access.ExceptionTranslationFilter@2e93108a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@768f4b42]
+[2018-12-01 14:15:05] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[2018-12-01 14:15:06] INFO  com.sample.springboot.RedisTests - Started RedisTests in 9.469 seconds (JVM running for 11.674)
+[2018-12-01 14:15:06] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:19:05] INFO  com.sample.springboot.RedisTests - Starting RedisTests on jianglingjundeMacBook-Pro.local with PID 2550 (started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample)
+[2018-12-01 14:19:05] INFO  com.sample.springboot.RedisTests - The following profiles are active: test
+[2018-12-01 14:19:07] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 14:19:07] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 421ms. Found 1 repository interfaces.
+[2018-12-01 14:19:08] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$3dffd773] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:19:08] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6a4dc5f0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:19:09] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2018-12-01 14:19:09] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:67)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	... 3 common frames omitted
+[2018-12-01 14:19:10] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:19:12] INFO  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 08631426-197b-4ace-8a0b-4cbf8f5eb7fe
+
+[2018-12-01 14:19:12] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39dda56f, org.springframework.security.web.context.SecurityContextPersistenceFilter@1aaf46e6, org.springframework.security.web.header.HeaderWriterFilter@6533629, org.springframework.security.web.csrf.CsrfFilter@2e93108a, org.springframework.security.web.authentication.logout.LogoutFilter@3a72e2e8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@37f71c05, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@e0847a9, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@60844992, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@19ec5357, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23df7fad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39acd1f1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ee456c7, org.springframework.security.web.session.SessionManagementFilter@1b444b5, org.springframework.security.web.access.ExceptionTranslationFilter@5a7a6d34, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@521a506c]
+[2018-12-01 14:19:12] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[2018-12-01 14:19:12] INFO  com.sample.springboot.RedisTests - Started RedisTests in 8.025 seconds (JVM running for 9.342)
+[2018-12-01 14:19:13] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:22:20] INFO  com.sample.springboot.RedisTests - Starting RedisTests on jianglingjundeMacBook-Pro.local with PID 2574 (started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample)
+[2018-12-01 14:22:20] INFO  com.sample.springboot.RedisTests - The following profiles are active: test
+[2018-12-01 14:22:22] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 14:22:23] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 374ms. Found 1 repository interfaces.
+[2018-12-01 14:22:23] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$289a4650] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:22:24] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$54e834cd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:22:24] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2018-12-01 14:22:24] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:67)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	... 3 common frames omitted
+[2018-12-01 14:22:26] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:22:27] INFO  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 83f1ce06-4062-4d51-bc6f-0b1466edbcbe
+
+[2018-12-01 14:22:27] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a117dc2, org.springframework.security.web.context.SecurityContextPersistenceFilter@2e93108a, org.springframework.security.web.header.HeaderWriterFilter@1171ba7e, org.springframework.security.web.csrf.CsrfFilter@553fbe94, org.springframework.security.web.authentication.logout.LogoutFilter@5a7a6d34, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@63b4b9c6, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7b1c501d, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1d444652, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5f3f57ff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32f308c6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6fd9dbe6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@669c2b07, org.springframework.security.web.session.SessionManagementFilter@7b3c2ae0, org.springframework.security.web.access.ExceptionTranslationFilter@61c4cebd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@33430fc]
+[2018-12-01 14:22:28] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[2018-12-01 14:22:28] INFO  com.sample.springboot.RedisTests - Started RedisTests in 9.352 seconds (JVM running for 12.051)
+[2018-12-01 14:22:28] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:28:35] INFO  com.sample.springboot.RedisTests - Starting RedisTests on jianglingjundeMacBook-Pro.local with PID 2642 (started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample)
+[2018-12-01 14:28:35] INFO  com.sample.springboot.RedisTests - The following profiles are active: test
+[2018-12-01 14:28:36] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 14:28:37] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 436ms. Found 1 repository interfaces.
+[2018-12-01 14:28:39] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$7e23c2d4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:28:39] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$aa71b151] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:28:40] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2018-12-01 14:28:40] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:67)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	... 3 common frames omitted
+[2018-12-01 14:28:43] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:28:46] INFO  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: cc8111be-719a-4f17-b057-ccec8985196a
+
+[2018-12-01 14:28:46] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3cf8a235, org.springframework.security.web.context.SecurityContextPersistenceFilter@6efd0a6e, org.springframework.security.web.header.HeaderWriterFilter@6b2e9db2, org.springframework.security.web.csrf.CsrfFilter@63814bbe, org.springframework.security.web.authentication.logout.LogoutFilter@1cc93da4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@78d6c244, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@39e3ea78, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6e3b2dd3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@60ae7cf2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@30228de7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21a5b599, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@238ad211, org.springframework.security.web.session.SessionManagementFilter@1a34a51e, org.springframework.security.web.access.ExceptionTranslationFilter@59f3426f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3ea84e01]
+[2018-12-01 14:28:47] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[2018-12-01 14:28:47] INFO  com.sample.springboot.RedisTests - Started RedisTests in 13.01 seconds (JVM running for 14.403)
+[2018-12-01 14:28:48] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:29:17] INFO  com.sample.springboot.RedisTests - Starting RedisTests on jianglingjundeMacBook-Pro.local with PID 2646 (started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample)
+[2018-12-01 14:29:17] INFO  com.sample.springboot.RedisTests - The following profiles are active: test
+[2018-12-01 14:29:18] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 14:29:19] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 372ms. Found 1 repository interfaces.
+[2018-12-01 14:29:19] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$dabb2592] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:29:20] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$709140f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:29:20] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2018-12-01 14:29:20] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:67)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	... 3 common frames omitted
+[2018-12-01 14:29:22] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:29:23] INFO  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: e82254a1-3a59-4c84-8760-47248d1df783
+
+[2018-12-01 14:29:23] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@23ec2bdc, org.springframework.security.web.context.SecurityContextPersistenceFilter@120411ec, org.springframework.security.web.header.HeaderWriterFilter@e7b0bec, org.springframework.security.web.csrf.CsrfFilter@780129bc, org.springframework.security.web.authentication.logout.LogoutFilter@7db162f2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@75a226ea, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6b091a92, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@631944d4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@78d6c244, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6b2e9db2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e159116, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d132bb6, org.springframework.security.web.session.SessionManagementFilter@7d90644f, org.springframework.security.web.access.ExceptionTranslationFilter@67ceeffd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@709d6de5]
+[2018-12-01 14:29:24] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[2018-12-01 14:29:24] INFO  com.sample.springboot.RedisTests - Started RedisTests in 7.43 seconds (JVM running for 8.828)
+[2018-12-01 14:29:24] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:31:09] INFO  com.sample.springboot.UserTests - Starting UserTests on jianglingjundeMacBook-Pro.local with PID 2669 (started by jianglingjun in /Users/jianglingjun/Document/Projects/Java/spring-boot-examples/spring-boot-sample)
+[2018-12-01 14:31:09] INFO  com.sample.springboot.UserTests - The following profiles are active: test
+[2018-12-01 14:31:10] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2018-12-01 14:31:10] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 374ms. Found 1 repository interfaces.
+[2018-12-01 14:31:11] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$1023b867] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:31:11] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3c71a6e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-12-01 14:31:11] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2018-12-01 14:31:12] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:67)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	... 3 common frames omitted
+[2018-12-01 14:31:13] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[2018-12-01 14:31:14] INFO  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 586ce3ae-2089-4fd1-9d98-2b8b069cac03
+
+[2018-12-01 14:31:15] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c08c787, org.springframework.security.web.context.SecurityContextPersistenceFilter@3cbfdf5c, org.springframework.security.web.header.HeaderWriterFilter@286a4c52, org.springframework.security.web.csrf.CsrfFilter@667a467f, org.springframework.security.web.authentication.logout.LogoutFilter@e7b0bec, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@376498da, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@77d0dbba, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@67f591c2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@a047bdb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11180750, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7f4f1536, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@284c4f02, org.springframework.security.web.session.SessionManagementFilter@780129bc, org.springframework.security.web.access.ExceptionTranslationFilter@3a70575, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@15cee630]
+[2018-12-01 14:31:15] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[2018-12-01 14:31:15] INFO  com.sample.springboot.UserTests - Started UserTests in 7.604 seconds (JVM running for 8.874)
+[2018-12-01 14:31:15] ERROR org.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@14cd1699] to prepare test instance [com.sample.springboot.UserTests@5342eec5]
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.sample.springboot.UserTests': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sample.springboot.service.common.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1378)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:396)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:44)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sample.springboot.service.common.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1646)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1166)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 28 common frames omitted
+[2018-12-01 14:31:15] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

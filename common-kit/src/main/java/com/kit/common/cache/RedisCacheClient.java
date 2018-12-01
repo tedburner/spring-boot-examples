@@ -1,21 +1,15 @@
 package com.kit.common.cache;
 
 import com.kit.common.redis.ShardedJedis;
-import com.kit.common.redis.ShardedJedisPool;
+import com.kit.common.redis.KitShardedJedisPool;
 import com.kit.common.serialize.HessianSerializer;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.exceptions.JedisException;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author: Lucifer
@@ -27,14 +21,14 @@ public class RedisCacheClient implements CacheClient {
 
     private static Log log = LogFactory.getLog(RedisCacheClient.class);
 
-    private ShardedJedisPool shardedJedisPool;
+    private KitShardedJedisPool kitShardedJedisPool;
 
     private HessianSerializer serialize;
 
 
     @Override
     public <T> String set(String field, String key, T value) {
-        ShardedJedis shardedJedis = shardedJedisPool.getResource();
+        ShardedJedis shardedJedis = kitShardedJedisPool.getResource();
         try {
             if (log.isDebugEnabled()) {
                 log.debug("set key: " + key(field, key));
@@ -55,7 +49,7 @@ public class RedisCacheClient implements CacheClient {
 
     @Override
     public <T> T get(String field, String key) {
-        ShardedJedis shardedJedis = shardedJedisPool.getResource();
+        ShardedJedis shardedJedis = kitShardedJedisPool.getResource();
         try {
             if (log.isDebugEnabled()) {
                 log.debug("get key: " + key(field, key));
