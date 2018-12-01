@@ -44,6 +44,17 @@ public class RedisCacheClient implements CacheClient {
 
     @Override
     public <T> String set(String field, String key, T value, int expireTime) {
+        ShardedJedis shardedJedis = kitShardedJedisPool.getResource();
+        try {
+            if (log.isDebugEnabled()) {
+                log.debug("set key: " + key(field, key));
+            }
+            return shardedJedis.set(rawKey(field, key), rawValue(value));
+        } catch (Exception e) {
+            log.error("redis set error key: " + key(field, key), e);
+        } finally {
+            shardedJedis.close();
+        }
         return null;
     }
 

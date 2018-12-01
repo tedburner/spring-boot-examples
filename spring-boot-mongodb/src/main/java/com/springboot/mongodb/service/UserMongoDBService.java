@@ -1,7 +1,8 @@
-package com.sample.springboot.service.mongo;
+package com.springboot.mongodb.service;
 
-import com.sample.springboot.domain.DTO.PageDTO;
-import com.sample.springboot.domain.DO.mongo.User;
+
+import com.springboot.mongodb.domain.PageDTO;
+import com.springboot.mongodb.domain.User;
 
 import java.util.List;
 

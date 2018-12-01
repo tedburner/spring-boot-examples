@@ -1,9 +1,9 @@
-package com.sample.springboot.service.mongo.impl;
+package com.springboot.mongodb.service.impl;
 
-import com.sample.springboot.domain.DO.mongo.User;
-import com.sample.springboot.domain.DTO.PageDTO;
-import com.sample.springboot.repository.mongo.UserRepository;
-import com.sample.springboot.service.mongo.UserMongoDBService;
+import com.springboot.mongodb.domain.PageDTO;
+import com.springboot.mongodb.domain.User;
+import com.springboot.mongodb.repository.mongo.UserRepository;
+import com.springboot.mongodb.service.UserMongoDBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 
 /**
  * @author: Lucifer

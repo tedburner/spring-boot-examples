@@ -1,4 +1,4 @@
-package com.sample.springboot.domain.DO.mongo;
+package com.springboot.mongodb.domain;
 
 import lombok.Data;
 

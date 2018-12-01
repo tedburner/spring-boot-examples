@@ -1,4 +1,4 @@
-package com.sample.springboot.config;
+package com.springboot.mongodb.config;
 
 import com.mongodb.MongoClientURI;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
  * @Date: 2018/7/10 18:14
  * @Description:
  */
-//@Configuration
+@Configuration
 @PropertySource(value = "classpath:mongo/mongo.properties")
 public class MongoDBConfig{
 
@@ -36,7 +36,7 @@ public class MongoDBConfig{
     @Value("${mongo.port}")
     private String port;
 
-    @Bean
+    //@Bean
     public MongoDbFactory mongoDbFactory() {
         String uriStr = "mongodb://" + userName + ":" + password + "@" + uri + ":" + port + "/" + databaseName;
 
@@ -45,7 +45,7 @@ public class MongoDBConfig{
         return mongoDbFactory;
     }
 
-    @Bean
+    //@Bean
     public MongoTemplate mongoTemplate(){
         return new MongoTemplate(mongoDbFactory());
     }
