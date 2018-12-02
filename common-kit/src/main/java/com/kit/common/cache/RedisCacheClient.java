@@ -5,6 +5,7 @@ import com.kit.common.redis.KitShardedJedisPool;
 import com.kit.common.serialize.HessianSerializer;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.exceptions.JedisException;
 
@@ -21,14 +22,22 @@ public class RedisCacheClient implements CacheClient {
 
     private static Log log = LogFactory.getLog(RedisCacheClient.class);
 
-    private KitShardedJedisPool kitShardedJedisPool;
+    @Autowired
+    private KitShardedJedisPool shardedJedisPool;
 
     private HessianSerializer serialize;
 
+    public HessianSerializer getSerialize() {
+        return serialize;
+    }
+
+    public void setSerialize(HessianSerializer serialize) {
+        this.serialize = serialize;
+    }
 
     @Override
     public <T> String set(String field, String key, T value) {
-        ShardedJedis shardedJedis = kitShardedJedisPool.getResource();
+        ShardedJedis shardedJedis = shardedJedisPool.getResource();
         try {
             if (log.isDebugEnabled()) {
                 log.debug("set key: " + key(field, key));
@@ -44,14 +53,14 @@ public class RedisCacheClient implements CacheClient {
 
     @Override
     public <T> String set(String field, String key, T value, int expireTime) {
-        ShardedJedis shardedJedis = kitShardedJedisPool.getResource();
+        ShardedJedis shardedJedis = shardedJedisPool.getResource();
         try {
             if (log.isDebugEnabled()) {
                 log.debug("set key: " + key(field, key));
             }
-            return shardedJedis.set(rawKey(field, key), rawValue(value));
-        } catch (Exception e) {
-            log.error("redis set error key: " + key(field, key), e);
+            return shardedJedis.setex(rawKey(field, key), expireTime, rawValue(value));
+        } catch (Exception ex) {
+            log.error("edis set error key:" + key(field, key), ex);
         } finally {
             shardedJedis.close();
         }
@@ -60,7 +69,7 @@ public class RedisCacheClient implements CacheClient {
 
     @Override
     public <T> T get(String field, String key) {
-        ShardedJedis shardedJedis = kitShardedJedisPool.getResource();
+        ShardedJedis shardedJedis = shardedJedisPool.getResource();
         try {
             if (log.isDebugEnabled()) {
                 log.debug("get key: " + key(field, key));
