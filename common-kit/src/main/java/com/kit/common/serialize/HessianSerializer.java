@@ -1,67 +1,77 @@
 package com.kit.common.serialize;
 
+import com.caucho.hessian.io.HessianInput;
+import com.caucho.hessian.io.HessianOutput;
+import org.springframework.stereotype.Component;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 
 /**
  * @author: Lucifer
  * @date: 2018-11-30 11:37
  * @description:
  */
+@Component
 public class HessianSerializer implements ISerializer<Object> {
 
+
+    /**
+     *
+     */
     @Override
-    public byte[] serialize(Object o) {
-        ObjectOutputStream oos = null;
-        ByteArrayOutputStream baos = null;
+    public byte[] serialize(Object object) {
+        ByteArrayOutputStream byteArrayOutputStream = null;
+        HessianOutput hessianOutput = null;
         try {
-            baos = new ByteArrayOutputStream();
-            oos = new ObjectOutputStream(baos);
-            oos.writeObject(o);
-
-            byte[] bytes =  baos.toByteArray();
-            return bytes;
-
-        }catch (IOException e){
+            byteArrayOutputStream = new ByteArrayOutputStream();
+            // Hessian的序列化输出
+            hessianOutput = new HessianOutput(byteArrayOutputStream);
+            hessianOutput.writeObject(object);
+            return byteArrayOutputStream.toByteArray();
+        } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
-                if (baos != null){
-                    baos.close();
-                }
-                if (oos != null){
-                    oos.close();
-                }
-            }catch (Exception ex){
-                ex.printStackTrace();
+                byteArrayOutputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                hessianOutput.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
-
         return null;
     }
+
 
     @Override
     public Object deserialize(byte[] bytes) {
-        ByteArrayInputStream bais = null;
-        ObjectInputStream ois = null;
-        try{
-            bais = new ByteArrayInputStream(bytes);
-            ois = new ObjectInputStream(bais);
-            return ois.readObject();
-        }catch(Exception e){
+        ByteArrayInputStream byteArrayInputStream = null;
+        HessianInput hessianInput = null;
+        try {
+            byteArrayInputStream = new ByteArrayInputStream(bytes);
+            // Hessian的反序列化读取对象
+            hessianInput = new HessianInput(byteArrayInputStream);
+            return (Object) hessianInput.readObject();
+        } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
-
-            } catch (Exception e2) {
-                e2.printStackTrace();
+                byteArrayInputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                hessianInput.close();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
         return null;
     }
-
 
 }

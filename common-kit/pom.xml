@@ -101,6 +101,20 @@
             <artifactId>hessian</artifactId>
             <version>4.0.38</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.alipay.sofa/hessian -->
+        <!--<dependency>-->
+            <!--<groupId>com.alipay.sofa</groupId>-->
+            <!--<artifactId>hessian</artifactId>-->
+            <!--<version>3.3.3</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.7</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>

@@ -24,16 +24,8 @@ public class RedisCacheClient implements CacheClient {
 
     @Autowired
     private KitShardedJedisPool shardedJedisPool;
-
+    @Autowired
     private HessianSerializer serialize;
-
-    public HessianSerializer getSerialize() {
-        return serialize;
-    }
-
-    public void setSerialize(HessianSerializer serialize) {
-        this.serialize = serialize;
-    }
 
     @Override
     public <T> String set(String field, String key, T value) {
