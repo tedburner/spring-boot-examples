@@ -1,7 +1,7 @@
 package com.sample.springboot.service.okhttp.impl;
 
 import com.sample.springboot.service.okhttp.OkHttpService;
-import com.sample.springboot.utils.okhttp.HttpException;
+import com.sample.springboot.util.okhttp.HttpException;
 import okhttp3.Call;
 import okhttp3.HttpUrl;
 import okhttp3.MediaType;

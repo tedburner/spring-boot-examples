@@ -2,7 +2,7 @@ package com.sample.springboot.controller;
 
 import com.sample.springboot.domain.DO.CityDO;
 import com.sample.springboot.service.common.CityService;
-import com.sample.springboot.utils.http.NewResponseModel;
+import com.kit.common.util.http.NewResponseModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

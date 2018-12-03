@@ -1,7 +1,7 @@
 package com.sample.springboot.controller;
 
 import com.sample.springboot.service.image.ImageUploadService;
-import com.sample.springboot.utils.http.NewResponseModel;
+import com.kit.common.util.http.NewResponseModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

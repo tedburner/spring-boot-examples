@@ -8,7 +8,7 @@ import com.sample.springboot.service.factory.city.CityProcessor;
 import com.sample.springboot.service.factory.test.TestFactory;
 import com.sample.springboot.service.kafka.ProducerService;
 import com.sample.springboot.service.kafka.SMSService;
-import com.sample.springboot.utils.common.gson.FormatUtils;
+import com.kit.common.util.common.gson.FormatUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

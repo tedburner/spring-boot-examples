@@ -122,14 +122,12 @@ public interface CacheClient {
     <M, N> String hmset(String namespace, String key, Map<M, N> hash);
 
     /**
-     * 设置指定key的存活时间
+     * 设置过期时间
      *
      * @param field
      * @param key
      * @param expireTime
      * @return
-     * @throws UnsupportedEncodingException
-     * @throws NoSuchAlgorithmException
      */
     <T> Long expire(String field, String key, int expireTime);
 
@@ -162,39 +160,12 @@ public interface CacheClient {
     byte[] getRaw(String field, String key);
 
     /**
-     * 获取字符串
-     *
-     * @param field
-     * @param key
-     * @return
-     */
-    String getLiteralVal(String field, String key);
-
-    /**
-     * key是否存在
-     *
-     * @param field
-     * @param key
-     * @return
-     */
-    boolean existsKey(String field, String key);
-
-    /**
-     * 设置过期时间
-     *
-     * @param field
-     * @param key
-     * @param expireTime
-     * @return
-     */
-    Long expireKey(String field, String key, int expireTime);
-
-    /**
-     * 批量获取多个key
+     * 批量获取多个key ShardedJedis 原生的不支持mget 需要重写 mget
+     * https://github.com/xetorthio/jedis/issues/149
      *
      * @param keys
      * @return
      */
-    <T> List<T> mget(String field, List<String> keys);
+    //<T> List<T> mget(String field, List<String> keys);
 
 }

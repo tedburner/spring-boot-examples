@@ -1,7 +1,7 @@
 package com.sample.springboot.controller;
 
 import com.sample.springboot.service.common.ProvinceService;
-import com.sample.springboot.utils.http.NewResponseModel;
+import com.kit.common.util.http.NewResponseModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

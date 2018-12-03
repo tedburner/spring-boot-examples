@@ -18,7 +18,7 @@ public class HessianSerializer implements ISerializer<Object> {
 
 
     /**
-     *
+     * 序列化
      */
     @Override
     public byte[] serialize(Object object) {
@@ -47,7 +47,9 @@ public class HessianSerializer implements ISerializer<Object> {
         return null;
     }
 
-
+    /**
+     * 反序列化
+     */
     @Override
     public Object deserialize(byte[] bytes) {
         ByteArrayInputStream byteArrayInputStream = null;

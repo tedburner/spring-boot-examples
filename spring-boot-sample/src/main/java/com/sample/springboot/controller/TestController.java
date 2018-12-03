@@ -4,7 +4,7 @@ import com.sample.springboot.domain.DO.UserDO;
 import com.sample.springboot.domain.DTO.SimpleDTO;
 import com.sample.springboot.service.common.DemoService;
 import com.sample.springboot.service.common.UserService;
-import com.sample.springboot.utils.http.NewResponseModel;
+import com.kit.common.util.http.NewResponseModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.validation.annotation.Validated;

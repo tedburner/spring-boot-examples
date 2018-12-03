@@ -1,7 +1,7 @@
 package com.sample.springboot.service.image.Qiniu;
 
 import com.sample.springboot.common.constants.Constants;
-import com.sample.springboot.utils.common.MD5Utils;
+import com.kit.common.util.common.MD5Utils;
 import com.qiniu.common.Zone;
 import com.qiniu.http.Response;
 import com.qiniu.storage.Configuration;

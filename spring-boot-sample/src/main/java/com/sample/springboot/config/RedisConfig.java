@@ -1,6 +1,5 @@
 package com.sample.springboot.config;
 
-import com.kit.common.redis.KitShardedJedisPool;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
@@ -9,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import redis.clients.jedis.JedisPoolConfig;
 import redis.clients.jedis.JedisShardInfo;
+import redis.clients.jedis.ShardedJedisPool;
 
 import java.util.Arrays;
 import java.util.List;
@@ -71,7 +71,7 @@ public class RedisConfig extends CachingConfigurerSupport {
 
 
     @Bean
-    public KitShardedJedisPool shardedJedisPool() {
+    public ShardedJedisPool shardedJedisPool() {
         JedisShardInfo master = new JedisShardInfo(master_host, port, timeout);
         master.setPassword(master_password);
 
@@ -80,7 +80,7 @@ public class RedisConfig extends CachingConfigurerSupport {
 
         log.info("初始化 ShardedJedisPool");
         List<JedisShardInfo> jedisShardInfoList = Arrays.asList(master, slave);
-        return new KitShardedJedisPool(jedisPoolConfig(), jedisShardInfoList);
+        return new ShardedJedisPool(jedisPoolConfig(), jedisShardInfoList);
     }
 
 }

@@ -1,6 +1,6 @@
 package com.sample.springboot.service.okhttp;
 
-import com.sample.springboot.utils.okhttp.HttpException;
+import com.sample.springboot.util.okhttp.HttpException;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

@@ -3,9 +3,9 @@ package com.sample.springboot.service.common.impl;
 import com.sample.springboot.domain.DO.UserDO;
 import com.sample.springboot.persist.UserMapper;
 import com.sample.springboot.service.common.UserService;
-import com.sample.springboot.utils.thread.task.TaskFunction;
-import com.sample.springboot.utils.thread.task.TaskRequest;
-import com.sample.springboot.utils.thread.threadpool.FastThreadPool;
+import com.kit.common.util.thread.task.TaskFunction;
+import com.kit.common.util.thread.task.TaskRequest;
+import com.kit.common.util.thread.threadpool.FastThreadPool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
