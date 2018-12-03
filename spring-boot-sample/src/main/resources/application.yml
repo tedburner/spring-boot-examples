@@ -1,0 +1,68 @@
+#端口
+server:
+  port: 8080
+
+spring:
+  datasource:
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionProperties=druid.stat.mergeSql: true;druid.stat.slowSqlMillis=500
+  jpa:
+    show-sql: true
+  activemq:
+    broker-url:
+  ## 配置正式和测试库，分别是production/test
+  profiles:
+    active: @filters.env@
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: springboot-group
+      enable-auto-commit: true
+    producer:
+      batch-size: 65536
+      buffer-memory: 524288
+#  # 邮件
+#  mail:
+#    host: smtp.163.com
+#    username: XXXX@163.com
+#    password:
+#    default-encoding: UTF-8
+
+## kafka主题
+kafka:
+  topic: test
+  SMS-Topic: SMS-Topic
+
+# 日志
+log:
+  level: INFO
+
+# mybatis
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# pagehelper 分页插件配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: ount=countSql
+
+# 七牛 域名过期
+qiniu:
+  public:
+    bucket: test-web
+    domain: p1gixpzpk.bkt.clouddn.com
