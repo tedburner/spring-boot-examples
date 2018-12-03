@@ -31,12 +31,12 @@ java -jar  target/项目名称-版本号.jar --spring.profiles.active=test/produ
 代码已经整合到 master 上面
 
 ## Redis
-
 项目整合了Redis，使用spring boot2.0。springboot2.0之后Redis
 配置和之前的有点区别。
 
-### Redis 和 memcached
+实现 Redis 分片，使用 Redis ShardedJedisPool 实现 Redis 的分片。[详情](/common-kit/src/main/java/com/kit/common/cache)
 
+### Redis 和 memcached
 - MemCached 是多线程，Redis使用单线程的I/O复用模型。而在
 100k以上的数据中，Memcached性能要高于Redis，虽然Redis最
 近也在存储大数据的性能上进行优化，但是比起Memcached，还是稍有逊色。
@@ -52,28 +52,22 @@ list、hash、set等数据结构的存储
 整合MemCached —— [Spring Boot 2.0(八)：Spring Boot 集成 Memcached](http://www.ityouknow.com/springboot/2018/09/01/spring-boot-memcached.html)
 
 ## docker
-
 docker部署代码在docker分支上面。master 分支支持插件直接构建镜像，docker支持dockerfile构建镜像。
 
 ## 七牛云
-
 整合了七牛云，使用七牛云的 OSS，存储图片文件等功能。
 
 ## 测试环境/正式环境
-
 使用profiles实现了环境分开
 
 ## MongoDB
-
 整合了 MongoDB，使用 Spring 的jpa进行数据库的操作，基本满足正常
 项目需求。
 
 ## elasticsearch
-
 在分支 elasticsearch 上，整合中。。。。
 
 ## jib
-
 jib是谷歌的一个容器工具，在构建容器镜像的时候，不需要写dockerfile，直接使用jib
 工具就可以直接构建了
 - [官网GitHub](https://github.com/GoogleContainerTools/jib)
