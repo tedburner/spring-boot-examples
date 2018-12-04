@@ -52,7 +52,9 @@ list、hash、set等数据结构的存储
 整合MemCached —— [Spring Boot 2.0(八)：Spring Boot 集成 Memcached](http://www.ityouknow.com/springboot/2018/09/01/spring-boot-memcached.html)
 
 ## docker
-docker部署代码在docker分支上面。master 分支支持插件直接构建镜像，docker支持dockerfile构建镜像。
+构建 docker 镜像。
+- [pom.xml 直接构建](/spring-boot-sample)
+- [Dockerfile 构建镜像](/spring-boot-docker)
 
 ## 七牛云
 整合了七牛云，使用七牛云的 OSS，存储图片文件等功能。

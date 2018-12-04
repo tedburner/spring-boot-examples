@@ -23,6 +23,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<skipTests>true</skipTests>
+		<sharing.sphere.version>3.0.0</sharing.sphere.version>
 	</properties>
 
 	<dependencies>
@@ -46,6 +47,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!--当当网 sharding-sphere-->
+		<dependency>
+			<groupId>io.shardingsphere</groupId>
+			<artifactId>sharding-jdbc-core</artifactId>
+			<version>${sharing.sphere.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.shardingsphere</groupId>
+			<artifactId>sharding-core</artifactId>
+			<version>${sharing.sphere.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

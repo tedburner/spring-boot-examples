@@ -49,13 +49,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!--当当网 sharding-sphere-->
-		<dependency>
-			<groupId>io.shardingsphere</groupId>
-			<artifactId>sharding-core</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
