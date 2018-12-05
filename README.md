@@ -7,6 +7,8 @@ Spring Boot项目。配置了druid+mybatis+redis。
 在idea中使用mybatis，推荐一个插件—— Free Mybatis plugin，
 感觉挺好用的（声明：不是本人开发的插件，只是使用中感觉不错）。
 
+- [Redis](##Redis)
+
 ## 打成jar包
 ```bash
 cd 项目跟目录（和pom.xml同级）
