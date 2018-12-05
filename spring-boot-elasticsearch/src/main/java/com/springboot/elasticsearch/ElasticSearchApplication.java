@@ -1,12 +1,12 @@
-package com.springboot.shardingsphere;
+package com.springboot.elasticsearch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootShardingSphereApplication {
+public class ElasticSearchApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootShardingSphereApplication.class, args);
+        SpringApplication.run(ElasticSearchApplication.class, args);
     }
 }
