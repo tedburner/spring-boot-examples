@@ -33,7 +33,6 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<skipTests>true</skipTests>
-		<protostuff.v>1.1.3</protostuff.v>
 	</properties>
 
 	<dependencies>
