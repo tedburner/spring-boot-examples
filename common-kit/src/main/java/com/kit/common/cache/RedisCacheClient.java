@@ -1,7 +1,6 @@
 package com.kit.common.cache;
 
 import com.kit.common.serialize.HessianSerializer;
-import com.kit.common.util.common.ListUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,20 +13,26 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * @author: Lucifer
  * @date: 2018-11-30 14:08
  * @description:
  */
-@Component
 public class RedisCacheClient implements CacheClient {
 
     private static Log log = LogFactory.getLog(RedisCacheClient.class);
 
-    @Autowired
     private ShardedJedisPool shardedJedisPool;
+
+    public ShardedJedisPool getShardedJedisPool() {
+        return shardedJedisPool;
+    }
+
+    public void setShardedJedisPool(ShardedJedisPool shardedJedisPool) {
+        this.shardedJedisPool = shardedJedisPool;
+    }
+
     @Autowired
     private HessianSerializer serializer;
 

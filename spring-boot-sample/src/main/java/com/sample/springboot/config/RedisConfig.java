@@ -19,7 +19,7 @@ import java.util.List;
  * @description:
  */
 @Slf4j
-@Configuration
+//@Configuration
 @PropertySource(value = "classpath:redis/redis.properties")
 public class RedisConfig extends CachingConfigurerSupport {
 

@@ -80,9 +80,12 @@ public class FastThreadPool {
      */
     @PostConstruct
     public void initialize() {
-        workQueue = new ArrayBlockingQueue(queueSize); //基于数组结构的有界阻塞队列，按FIFO排序任务
-        threadFactory = new NamedThreadFactory("Parallel-Processor", null, true);//创建线程的工厂，通过自定义的线程工厂可以给每个新建的线程设置一个具有识别度的线程名
-        handler = new ThreadPoolExecutor.CallerRunsPolicy(); //用调用者所在的线程来执行任务
+        //基于数组结构的有界阻塞队列，按FIFO排序任务
+        workQueue = new ArrayBlockingQueue(queueSize);
+        //创建线程的工厂，通过自定义的线程工厂可以给每个新建的线程设置一个具有识别度的线程名
+        threadFactory = new NamedThreadFactory("Parallel-Processor", null, true);
+        //用调用者所在的线程来执行任务
+        handler = new ThreadPoolExecutor.CallerRunsPolicy();
         threadPoolExecutor = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, TimeUnit.SECONDS, workQueue, threadFactory, handler);
         service = MoreExecutors.listeningDecorator(threadPoolExecutor);
     }
@@ -133,7 +136,8 @@ public class FastThreadPool {
                     logger.error("thread pool process future task failed:", e);
                     throw new RuntimeException(e);
                 } finally {
-                    latch.countDown();//计数器减一
+                    //计数器减一
+                    latch.countDown();
                 }
             });
             futureList.add(futureTaskResult);
@@ -141,7 +145,7 @@ public class FastThreadPool {
         ListenableFuture<List<V>> finalFuture =
                 taskRequest.getIgnoreError() ? Futures.successfulAsList(futureList) : Futures.allAsList(futureList);
         if (taskRequest.getCallback() != null) {
-            Futures.addCallback(finalFuture, taskRequest.getCallback());
+            Futures.addCallback(finalFuture, taskRequest.getCallback(), threadPoolExecutor);
         }
         try {
             latch.await(threadProcessTimeout, TimeUnit.MILLISECONDS);

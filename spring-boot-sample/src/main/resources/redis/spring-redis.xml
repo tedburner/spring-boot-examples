@@ -19,7 +19,7 @@
         <property name="maxWaitMillis" value="1500"/>
     </bean>
 
-    <bean id="shardedJedisPool" class="com.kit.common.redis.KitShardedJedisPool">
+    <bean id="shardedJedisPool" class="redis.clients.jedis.ShardedJedisPool">
         <constructor-arg index="0" ref="jedisPoolConfig"/>
         <constructor-arg index="1">
             <list>
@@ -35,5 +35,9 @@
                 </bean>
             </list>
         </constructor-arg>
+    </bean>
+
+    <bean id="redisCacheClient" class="com.kit.common.cache.RedisCacheClient">
+        <property name="shardedJedisPool" ref="shardedJedisPool"/>
     </bean>
 </beans>

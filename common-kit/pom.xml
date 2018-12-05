@@ -95,25 +95,21 @@
         </dependency>
 
         <!--google-->
-        <dependency>
-            <groupId>com.google.zxing</groupId>
-            <artifactId>core</artifactId>
-            <version>3.2.1</version>
-        </dependency>
+        <!--二维码-->
+        <!--<dependency>-->
+            <!--<groupId>com.google.zxing</groupId>-->
+            <!--<artifactId>core</artifactId>-->
+            <!--<version>3.2.1</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>23.5-jre</version>
+            <version>26.0-jre</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.protobuf</groupId>
-            <artifactId>protobuf-java</artifactId>
-            <version>3.4.0</version>
         </dependency>
 
         <!--日志-->
@@ -143,13 +139,6 @@
             <artifactId>hessian</artifactId>
             <version>4.0.38</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.alipay.sofa/hessian -->
-        <!--<dependency>-->
-            <!--<groupId>com.alipay.sofa</groupId>-->
-            <!--<artifactId>hessian</artifactId>-->
-            <!--<version>3.3.3</version>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.HandlerExceptionResolver;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 /**
  * @author: Lucifer
@@ -15,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 
 @ControllerAdvice
-public class ErrorException {
+public class ErrorException extends ResponseEntityExceptionHandler {
 
     /**
      * 应用到所有@RequestMapping注解方法，在其执行之前初始化数据绑定器
