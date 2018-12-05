@@ -1,4 +1,4 @@
-package com.springboot.shardingsphere;
+package com.springboot.sharingsphere;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringBootShardingSphereApplicationTests {
+public class SharingSphereApplicationTests {
 
     @Test
     public void contextLoads() {
