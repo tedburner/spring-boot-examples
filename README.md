@@ -7,9 +7,21 @@ Spring Boot项目。配置了druid+mybatis+redis。
 在idea中使用mybatis，推荐一个插件—— Free Mybatis plugin，
 感觉挺好用的（声明：不是本人开发的插件，只是使用中感觉不错）。
 
-[TOC]
+- [项目打包](#项目打包)
+- [Redis](#redis)
+- [Mq](#mq)
+- [Docker](#docker)
+- [七牛云](#七牛云)
+- [项目环境分离](#测试环境/正式环境)
+- [MongoDB](#mongodb)
+- [elasticsearch](#elasticsearch)
+- [Elastic Job](#elastic-job)
+- [sharing sphere](#sharing-sphere)
 
-## 打成jar包
+
+
+## 项目打包
+### 打成jar包
 ```bash
 cd 项目跟目录（和pom.xml同级）
 mvn clean package
@@ -20,16 +32,17 @@ mvn clean package  -Dmaven.test.skip=true
 mvn clean package -Pproduction
 ```
 
-## 启动jar
+### 启动jar
 
 ```bash
 java -jar  target/项目名称-版本号.jar --spring.profiles.active=test/production
 ```
 
-## RabbitMq
+## MQ
+### RabbitMq
 项目整合了RabbitMq。代码在rabbitmq分支上面
 
-## kafka
+### kafka
 代码已经整合到 master 上面
 
 ## Redis
@@ -68,14 +81,22 @@ list、hash、set等数据结构的存储
 整合了 MongoDB，使用 Spring 的jpa进行数据库的操作，基本满足正常
 项目需求。
 
+[地址](spring-boot-mongodb)
+
 ## elasticsearch
-在分支 elasticsearch 上，整合中。。。。
+项目 [地址](spring-boot-elasticsearch)。
+
+## Elastic Job
+项目[地址](spring-boot-elasticjob)
+
+## sharing sphere
+[地址](spring-boot-sharding-sphere)
 
 ## jib
 jib是谷歌的一个容器工具，在构建容器镜像的时候，不需要写dockerfile，直接使用jib
 工具就可以直接构建了
 - [官网GitHub](https://github.com/GoogleContainerTools/jib)
 
-# 感谢
 
+# 感谢
 - [Druid](https://github.com/alibaba/druid/wiki)
