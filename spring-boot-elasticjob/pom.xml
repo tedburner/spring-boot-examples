@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.springboot</groupId>
-	<artifactId>sharding-sphere</artifactId>
+	<artifactId>elasticjob</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>sharding-sphere</name>
-	<description>sharding-sphere demo</description>
+	<name>spring-boot-elasticjob</name>
+	<description>elasticjob</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -23,7 +23,6 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<skipTests>true</skipTests>
-		<sharing.sphere.version>3.0.0</sharing.sphere.version>
 	</properties>
 
 	<dependencies>
@@ -47,18 +46,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!--当当网 sharding-sphere-->
-		<dependency>
-			<groupId>io.shardingsphere</groupId>
-			<artifactId>sharding-jdbc-core</artifactId>
-			<version>${sharing.sphere.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.shardingsphere</groupId>
-			<artifactId>sharding-core</artifactId>
-			<version>${sharing.sphere.version}</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>

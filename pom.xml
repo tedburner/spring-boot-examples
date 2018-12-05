@@ -16,6 +16,8 @@
 		<module>spring-boot-sample</module>
 		<module>spring-boot-mongodb</module>
 		<module>spring-boot-docker</module>
+		<module>spring-boot-elasticjob</module>
+		<module>spring-boot-elasticsearch</module>
 		<module>spring-boot-sharding-sphere</module>
 	</modules>
 
@@ -47,13 +49,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-
-		<!--当当网 sharding-sphere-->
-		<dependency>
-			<groupId>io.shardingsphere</groupId>
-			<artifactId>sharding-core</artifactId>
-			<version>3.0.0</version>
 		</dependency>
 
 	</dependencies>

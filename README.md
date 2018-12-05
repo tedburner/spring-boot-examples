@@ -7,6 +7,8 @@ Spring Boot项目。配置了druid+mybatis+redis。
 在idea中使用mybatis，推荐一个插件—— Free Mybatis plugin，
 感觉挺好用的（声明：不是本人开发的插件，只是使用中感觉不错）。
 
+[TOC]
+
 ## 打成jar包
 ```bash
 cd 项目跟目录（和pom.xml同级）
@@ -52,7 +54,9 @@ list、hash、set等数据结构的存储
 整合MemCached —— [Spring Boot 2.0(八)：Spring Boot 集成 Memcached](http://www.ityouknow.com/springboot/2018/09/01/spring-boot-memcached.html)
 
 ## docker
-docker部署代码在docker分支上面。master 分支支持插件直接构建镜像，docker支持dockerfile构建镜像。
+构建 docker 镜像。
+- [pom.xml 直接构建](/spring-boot-sample)
+- [Dockerfile 构建镜像](/spring-boot-docker)
 
 ## 七牛云
 整合了七牛云，使用七牛云的 OSS，存储图片文件等功能。
