@@ -50,7 +50,7 @@ public class RedisCacheClient implements CacheClient {
     }
 
     @Override
-    public <T> String set(String field, String key, T value, int expireTime) {
+    public <T> String setex(String field, String key, T value, int expireTime) {
         ShardedJedis shardedJedis = shardedJedisPool.getResource();
         try {
 
@@ -252,6 +252,7 @@ public class RedisCacheClient implements CacheClient {
         }
         return new byte[0];
     }
+
 
 //    @Override
 //    public <T> List<T> mget(String field, List<String> keys) {

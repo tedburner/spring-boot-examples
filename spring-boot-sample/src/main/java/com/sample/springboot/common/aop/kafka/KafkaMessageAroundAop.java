@@ -46,7 +46,7 @@ public class KafkaMessageAroundAop {
     private KafkaMessageMapper kafkaMessageMapper;
 
 
-    @Pointcut("@annotation(com.sample.springboot.common.annotation.KafkaMessageAnnotation)")
+    @Pointcut("@annotation(com.sample.springboot.common.annotation.kafka.KafkaMessageAnnotation)")
     public void messageSend() {
         System.out.println("Pointcut");
     }
