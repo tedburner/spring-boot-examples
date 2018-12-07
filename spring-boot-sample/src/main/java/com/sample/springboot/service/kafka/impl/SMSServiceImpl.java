@@ -1,6 +1,6 @@
 package com.sample.springboot.service.kafka.impl;
 
-import com.sample.springboot.common.annotation.KafkaMessageAnnotation;
+import com.sample.springboot.common.annotation.kafka.KafkaMessageAnnotation;
 import com.sample.springboot.domain.DTO.message.SMSMessageDTO;
 import com.sample.springboot.service.kafka.ProducerService;
 import com.sample.springboot.service.kafka.SMSService;

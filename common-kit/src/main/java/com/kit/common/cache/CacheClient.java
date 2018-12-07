@@ -26,9 +26,10 @@ public interface CacheClient {
      * @param field
      * @param key
      * @param value
+     * @param expireTime 秒级
      * @return
      */
-    <T> String set(String field, String key, T value, int expireTime);
+    <T> String setex(String field, String key, T value, int expireTime);
 
     /**
      * 获取指定key的value
@@ -158,6 +159,16 @@ public interface CacheClient {
      * @return
      */
     byte[] getRaw(String field, String key);
+
+
+    /**
+     * Redis执行 lua 脚本
+     *
+     * @param script Lua 脚本
+     * @param key    redis key
+     * @param value  redis value
+     */
+    //Object eval(String script, String key, String value);
 
     /**
      * 批量获取多个key ShardedJedis 原生的不支持mget 需要重写 mget

@@ -1,4 +1,4 @@
-package com.sample.springboot.common.annotation;
+package com.sample.springboot.common.annotation.kafka;
 
 import java.lang.annotation.*;
 
