@@ -301,7 +301,7 @@ public class RedisCacheClient implements CacheClient {
         if (key == null || "".equals(key)) {
             return null;
         }
-        return (namespace + "_" + key).getBytes();
+        return serializer.serialize((namespace + "_" + key));
     }
 
     /**
