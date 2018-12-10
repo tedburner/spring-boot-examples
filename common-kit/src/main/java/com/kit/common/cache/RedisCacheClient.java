@@ -1,10 +1,9 @@
 package com.kit.common.cache;
 
-import com.kit.common.serialize.HessianSerializer;
+import com.kit.common.serializer.HessianSerializer;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import redis.clients.jedis.ShardedJedis;
 import redis.clients.jedis.ShardedJedisPool;
 import redis.clients.jedis.exceptions.JedisException;

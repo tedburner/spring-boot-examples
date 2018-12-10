@@ -1,9 +1,8 @@
 package com.sample.springboot;
 
-import com.kit.common.serialize.HessianSerializer;
-import com.kit.common.serialize.ISerializer;
+import com.kit.common.serializer.HessianSerializer;
+import com.kit.common.serializer.ISerializer;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author: Lucifer

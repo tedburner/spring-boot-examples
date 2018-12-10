@@ -1,4 +1,4 @@
-package com.kit.common.serialize;
+package com.kit.common.serializer;
 
 import com.caucho.hessian.io.HessianInput;
 import com.caucho.hessian.io.HessianOutput;

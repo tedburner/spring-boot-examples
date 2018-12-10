@@ -1,4 +1,4 @@
-package com.kit.common.serialize;
+package com.kit.common.serializer;
 
 /**
  * @author: Lucifer
