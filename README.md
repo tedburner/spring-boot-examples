@@ -17,6 +17,7 @@ Spring Boot项目。配置了druid+mybatis+redis。
 - [elasticsearch](#elasticsearch)
 - [Elastic Job](#elastic-job)
 - [sharing sphere](#sharing-sphere)
+- [canal](#canal)
 
 
 
@@ -91,6 +92,9 @@ list、hash、set等数据结构的存储
 
 ## sharing sphere
 [地址](spring-boot-sharding-sphere)
+
+## 阿里canal
+[canal](spring-boot-canal)
 
 ## jib
 jib是谷歌的一个容器工具，在构建容器镜像的时候，不需要写dockerfile，直接使用jib
