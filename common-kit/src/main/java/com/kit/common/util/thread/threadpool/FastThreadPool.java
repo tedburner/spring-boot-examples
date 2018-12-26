@@ -9,6 +9,7 @@ import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.common.util.concurrent.MoreExecutors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -21,7 +22,7 @@ import java.util.concurrent.*;
  * @author Lucifer
  * @create 2017-10-23
  **/
-@Service("fastThreadPool")
+@Component
 public class FastThreadPool {
 
     private static Logger logger = LoggerFactory.getLogger(FastThreadPool.class);
@@ -34,10 +35,10 @@ public class FastThreadPool {
     public static final int DEFAULT_KEEP_ALIVE_TIME = 60;
 
     public static final int DEFAULT_QUEUE_SIZE = 256;
-
-    public static final long DEFAULT_THREAD_PROCESS_TIME_OUT = 60000L;//60s
-
-    public static final long DEFAULT_FUTURE_GET_TIME_OUT = 20000L; //20s
+    //60s
+    public static final long DEFAULT_THREAD_PROCESS_TIME_OUT = 60000L;
+    //20s
+    public static final long DEFAULT_FUTURE_GET_TIME_OUT = 20000L;
 
     /**
      * 线程池维护线程的最少数量
@@ -86,9 +87,11 @@ public class FastThreadPool {
         threadFactory = new NamedThreadFactory("Parallel-Processor", null, true);
         //用调用者所在的线程来执行任务
         handler = new ThreadPoolExecutor.CallerRunsPolicy();
-        threadPoolExecutor = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, TimeUnit.SECONDS, workQueue, threadFactory, handler);
+        threadPoolExecutor = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime,
+                TimeUnit.SECONDS, workQueue, threadFactory, handler);
         service = MoreExecutors.listeningDecorator(threadPoolExecutor);
     }
+
 
     @PreDestroy
     public void stop() {
@@ -109,8 +112,8 @@ public class FastThreadPool {
     /**
      * 提交并发请求
      *
-     * @param taskRequest
-     * @param
+     * @param taskRequest          请求
+     * @param threadProcessTimeout 线程处理时间
      */
     public <V> List<V> execute(final TaskRequest taskRequest, long threadProcessTimeout) {
         if (logger.isDebugEnabled()) {
