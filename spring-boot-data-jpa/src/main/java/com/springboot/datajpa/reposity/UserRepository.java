@@ -18,6 +18,6 @@ import static org.hibernate.jpa.QueryHints.HINT_FETCH_SIZE;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     @QueryHints(value = @QueryHint(name = HINT_FETCH_SIZE, value = "" + Integer.MIN_VALUE))
-    @Query(value = "select u from User u")
-    Stream<User> findAllUser();
+    @Query(value = "select u from User u ")
+    Stream<User> streamAll();
 }

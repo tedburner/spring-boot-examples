@@ -8,9 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author: Arthas
@@ -39,19 +42,24 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findUserAll() {
-        Page<User> userList ;
+        Page<User> userList;
         List<User> resultList = Lists.newArrayList();
         int page = 0;
         do {
-            userList= userRepository.findAll(new PageRequest(page, PAGE_SIZE));
-            resultList.addAll(userList.getContent());
-        }while (userList.hasNext());
+            userList = userRepository.findAll(new PageRequest(page, PAGE_SIZE));
+            page++;
+        } while (userList.hasNext());
         return resultList;
     }
 
     @Override
+    @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
     public List<User> findUserStream() {
-        return userRepository.findAllUser()
-                .collect(Collectors.toList());
+        try (Stream<User> stream = userRepository.streamAll()) {
+            return stream.collect(Collectors.toList());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

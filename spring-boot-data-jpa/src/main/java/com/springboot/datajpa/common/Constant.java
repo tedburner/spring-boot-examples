@@ -7,5 +7,4 @@ package com.springboot.datajpa.common;
  */
 public class Constant {
 
-    public static final int HINT_FETCH_SIZE = 1000;
 }
