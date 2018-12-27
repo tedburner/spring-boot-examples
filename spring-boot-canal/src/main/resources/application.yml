@@ -5,7 +5,6 @@ spring:
     url: jdbc:mysql://192.168.33.120:3306/production?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: Mysql@123456
-    type: com.zaxxer.hikari.HikariDataSource
     hikari:
       minimum-idle: 5
       maximum-pool-size: 15
@@ -15,3 +14,14 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
       connection-test-query: SELECT 1
+  # Redis 配置
+  redis:
+    host: 192.168.33.120
+    password: redis123456
+    port: 6379
+    database: 0
+    lettuce:
+      pool:
+        max-idle: 8
+        min-idle: 0
+        max-active: 8
