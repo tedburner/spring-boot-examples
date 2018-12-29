@@ -52,10 +52,22 @@ public class RedisCacheClient implements CacheClient {
     public <T> String setex(String field, String key, T value, int expireTime) {
         ShardedJedis shardedJedis = shardedJedisPool.getResource();
         try {
-
             return shardedJedis.setex(rawKey(field, key), expireTime, rawValue(value));
         } catch (Exception ex) {
             log.error("edis set error key:" + key(field, key), ex);
+        } finally {
+            shardedJedis.close();
+        }
+        return null;
+    }
+
+    @Override
+    public <T> String setnx(String key, T value, int expireTime) {
+        ShardedJedis shardedJedis = shardedJedisPool.getResource();
+        try {
+            return shardedJedis.set(key, String.valueOf(value), "NX", "EX", expireTime);
+        } catch (Exception ex) {
+            log.error("edis set error key:" + key, ex);
         } finally {
             shardedJedis.close();
         }
@@ -252,30 +264,6 @@ public class RedisCacheClient implements CacheClient {
         return new byte[0];
     }
 
-
-//    @Override
-//    public <T> List<T> mget(String field, List<String> keys) {
-//        ShardedJedis shardedJedis = shardedJedisPool.getResource();
-//        try {
-//            if (ListUtils.isEmpty(keys)) {
-//                return new ArrayList<>();
-//            }
-//            List<byte[]> rawkeys = keys.stream()
-//                    .map(key -> rawKey(field, key))
-//                    .collect(Collectors.toList());
-//
-//            List<byte[]> result = shardedJedis.mget(rawkeys.toArray(new byte[rawkeys.size()][]));
-//
-//            return result.stream()
-//                    .map(rawData -> (T) serializer.deserialize(rawData))
-//                    .collect(Collectors.toList());
-//        } catch (Exception e) {
-//            log.error("redis mget error. key : " + keys.size(), e);
-//        } finally {
-//            shardedJedis.close();
-//        }
-//        return null;
-//    }
 
     /**
      * 拼接key

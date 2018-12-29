@@ -88,7 +88,7 @@ public class LockAspect {
             String randomValue = UUID.randomUUID().toString();
             try {
                 log.info("redis loc key : {}", lockKey.toString());
-                if (cacheClient.setNx(lockKey.toString(), randomValue, lockExpireTime) > 0L) {
+                if (cacheClient.setnx(lockKey.toString(), randomValue, lockExpireTime) != null) {
                     if (log.isInfoEnabled()) {
                         log.info("无法获得锁,方法名:{},参数为:{}", joinPoint.getSignature(), args);
                     }
