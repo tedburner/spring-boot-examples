@@ -19,6 +19,8 @@
 		<module>spring-boot-elasticjob</module>
 		<module>spring-boot-canal</module>
 		<module>spring-boot-elasticsearch</module>
+		<module>spring-boot-data-jpa</module>
+		<module>spring-boot-webflux</module>
 		<module>spring-boot-sharding-sphere</module>
 	</modules>
 
