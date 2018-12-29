@@ -1,8 +1,8 @@
 package com.springboot.memcached.runner;
 
-import com.springboot.memcached.config.MemcacheSource;
 import net.spy.memcached.MemcachedClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,15 +17,18 @@ import java.net.InetSocketAddress;
 @Component
 public class MemcachedRunner implements CommandLineRunner {
 
-    @Autowired
-    private MemcacheSource memcacheSource;
+    @Value("${memcache.host}")
+    private String host;
+
+    @Value("${memcache.port}")
+    private int port;
 
     private MemcachedClient client = null;
 
     @Override
     public void run(String... args) throws Exception {
         try {
-            client = new MemcachedClient(new InetSocketAddress(memcacheSource.getHost(), memcacheSource.getPort()));
+            client = new MemcachedClient(new InetSocketAddress(host, port));
         } catch (Exception e) {
             e.printStackTrace();
         }
