@@ -24,6 +24,7 @@
 		<module>spring-boot-sample</module>
 		<module>spring-boot-sharding-sphere</module>
 		<module>spring-boot-webflux</module>
+		<module>spring-boot-websocket</module>
 	</modules>
 
 	<parent>
