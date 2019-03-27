@@ -38,7 +38,7 @@ public class OkHttpServiceImpl implements OkHttpService {
     }
 
     @Override
-    public byte[] GET(String baseUrl, Map<String, String> queryParams) throws HttpException, IOException {
+    public byte[] GET(String baseUrl, Map<String, String> queryParams) throws IOException {
         //拼装param
         HttpUrl.Builder urlBuilder = HttpUrl.parse(baseUrl).newBuilder();
         for (Map.Entry<String, String> item : queryParams.entrySet()) {
