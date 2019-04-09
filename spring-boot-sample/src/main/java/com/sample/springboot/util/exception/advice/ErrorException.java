@@ -1,6 +1,6 @@
-package com.kit.common.util.exception.advice;
+package com.sample.springboot.util.exception.advice;
 
-import com.kit.common.util.exception.ApplicationException;
+import com.sample.springboot.util.exception.ApplicationException;
 import com.kit.common.util.http.NewResponseModel;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ControllerAdvice;
