@@ -1,4 +1,4 @@
-package com.kit.common.util.exception.domain;
+package com.sample.springboot.util.exception.domain;
 
 import java.io.Serializable;
 

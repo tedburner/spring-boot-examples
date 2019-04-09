@@ -1,6 +1,6 @@
-package com.kit.common.util.exception;
+package com.sample.springboot.util.exception;
 
-import com.kit.common.util.exception.domain.Error;
+import com.sample.springboot.util.exception.domain.Error;
 
 /**
  * @author: Lucifer
