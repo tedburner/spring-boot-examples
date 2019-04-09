@@ -26,7 +26,8 @@
 		<module>spring-boot-sharding-sphere</module>
 		<module>spring-boot-webflux</module>
 		<module>spring-boot-websocket</module>
-	</modules>
+        <module>spring-boot-rocketmq</module>
+    </modules>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
