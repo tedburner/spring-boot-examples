@@ -19,7 +19,7 @@ import java.util.Optional;
 public class TestPushClient {
 
 
-    @KafkaListener(topics = "${kafka.topic}")
+    //@KafkaListener(topics = "${kafka.topic}")
     public void SMSPushClient(ConsumerRecord<?, ?> record) {
         //判断是否NULL
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());

@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Component
-@ConfigurationProperties(prefix = "aliyun")
-@PropertySource(value = "classpath:config.properties", encoding = "utf-8")
+//@ConfigurationProperties(prefix = "aliyun")
+//@PropertySource(value = "classpath:config.properties", encoding = "utf-8")
 public class AliyunProperties {
 
     private String accessKeyID;

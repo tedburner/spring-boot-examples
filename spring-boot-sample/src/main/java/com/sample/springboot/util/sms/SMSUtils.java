@@ -29,11 +29,11 @@ public class SMSUtils {
     //产品域名,开发者无需替换
     static final String domain = "dysmsapi.aliyuncs.com";
 
-    @Value("${aliyun.AccessKeyID}")
+    //@Value("${aliyun.AccessKeyID}")
     private String accessKeyId;
-    @Value("${aliyun.AccessKeySecret}")
+    //@Value("${aliyun.AccessKeySecret}")
     private String accessKeySecret;
-    @Value("${aliyun.SignName}")
+    //@Value("${aliyun.SignName}")
     private String signName;
 
     public SendSmsResponse sendSMS(SMSMessageDTO messageDTO) throws ClientException {

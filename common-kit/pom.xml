@@ -94,14 +94,6 @@
             <version>3.2.2</version>
         </dependency>
 
-        <!--google-->
-        <!--二维码-->
-        <!--<dependency>-->
-            <!--<groupId>com.google.zxing</groupId>-->
-            <!--<artifactId>core</artifactId>-->
-            <!--<version>3.2.1</version>-->
-        <!--</dependency>-->
-
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
@@ -145,6 +137,13 @@
             <artifactId>jackson-databind</artifactId>
             <version> 2.9.8</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

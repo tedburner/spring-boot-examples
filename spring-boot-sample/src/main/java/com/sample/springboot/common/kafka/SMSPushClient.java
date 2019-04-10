@@ -28,7 +28,7 @@ public class SMSPushClient {
     @Autowired
     private KafkaMessageService kafkaMessageService;
 
-    @KafkaListener(topics = "${kafka.SMS-Topic}")
+    //@KafkaListener(topics = "${kafka.SMS-Topic}")
     public void SMSPushClient(ConsumerRecord<?, ?> record) {
         log.info("start consumer sms message");
         //判断是否NULL
