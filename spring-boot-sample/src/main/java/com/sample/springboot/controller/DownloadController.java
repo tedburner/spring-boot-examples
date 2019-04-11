@@ -36,7 +36,7 @@ public class DownloadController {
             simpleDTO.setBirth("1995-09-08");
             simpleDTOS.add(simpleDTO);
         }
-        ExcelExportUtils.exportCsv(response, "信息导出", title, pageDTO, _param -> {
+        ExcelExportUtils.exportCsv(response, "信息导出", title, simpleDTOS, _param -> {
             StringBuffer stringBuffer = new StringBuffer();
 
             if (ListUtils.isNotEmpty(simpleDTOS)) {

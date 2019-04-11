@@ -37,7 +37,7 @@ public final class ExcelExportUtils {
 
         try {
             Writer writer = response.getWriter();
-            writer.write(new String(new byte[]{(byte) 0xEF, (byte) 0xBB, (byte) 0xBF}));
+            //writer.write(new String(new byte[]{(byte) 0xEF, (byte) 0xBB, (byte) 0xBF}));
             writer.append(title).append("\n");
 
             String charSequence = function.apply(t);
