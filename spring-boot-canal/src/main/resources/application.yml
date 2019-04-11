@@ -16,7 +16,7 @@ spring:
       connection-test-query: SELECT 1
   # Redis 配置
   redis:
-    host: 192.168.33.120
+    host: 118.25.108.65
     password: redis123456
     port: 6379
     database: 0
