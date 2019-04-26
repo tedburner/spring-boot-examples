@@ -38,4 +38,8 @@ public class MyBatisUtils {
         }
         return false;
     }
+
+    public static boolean isNotEmpty(Object obj) {
+        return !isEmpty(obj);
+    }
 }

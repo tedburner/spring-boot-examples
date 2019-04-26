@@ -24,7 +24,7 @@
         select
         <include refid="Base_Column_List"/>
         from user
-        <if test="@com.kit.common.util.mybatis.MyBatisUtils@isEmpty(id)">
+        <if test="@com.kit.common.util.mybatis.MyBatisUtils@isNotEmpty(id)">
             WHERE id = #{id}
         </if>
         LIMIT 1
