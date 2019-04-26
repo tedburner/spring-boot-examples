@@ -1,6 +1,7 @@
 package com.sample.springboot.persist;
 
 import com.sample.springboot.domain.DO.UserDO;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -16,5 +17,13 @@ public interface UserMapper {
     void update(UserDO userDO);
 
     List<UserDO> selectUser();
+
+    /**
+     * 根据用户表id查询用户信息
+     *
+     * @param id
+     * @return
+     */
+    UserDO selectById(@Param("id") Long id);
 
 }

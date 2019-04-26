@@ -19,4 +19,9 @@ public class UserTests extends SpringBootSampleTests{
     public void findUserTest(){
         System.out.println(userService.findUser());
     }
+
+    @Test
+    public void findByIdTest(){
+        System.out.println(userService.findById(1L));
+    }
 }

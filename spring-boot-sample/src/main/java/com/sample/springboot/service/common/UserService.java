@@ -1,6 +1,7 @@
 package com.sample.springboot.service.common;
 
 import com.sample.springboot.domain.DO.UserDO;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,4 +16,9 @@ public interface UserService {
     void addUser(UserDO userDO);
 
     void update(UserDO userDO);
+
+    /**
+     * 根据用户id查询
+     * */
+    UserDO findById( Long id);
 }

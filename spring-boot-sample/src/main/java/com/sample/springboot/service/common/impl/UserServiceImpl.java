@@ -47,4 +47,9 @@ public class UserServiceImpl implements UserService {
     public void update(UserDO userDO) {
         userMapper.update(userDO);
     }
+
+    @Override
+    public UserDO findById(Long id) {
+        return userMapper.selectById(id);
+    }
 }

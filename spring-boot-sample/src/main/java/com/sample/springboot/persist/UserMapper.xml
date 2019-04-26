@@ -18,7 +18,16 @@
         select
         <include refid="Base_Column_List"/>
         from user
+    </select>
 
+    <select id="selectById" resultType="com.sample.springboot.domain.DO.UserDO">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        <if test="@com.kit.common.util.mybatis.MyBatisUtils@isEmpty(id)">
+            WHERE id = #{id}
+        </if>
+        LIMIT 1
     </select>
 
     <update id="update">
