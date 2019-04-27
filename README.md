@@ -18,7 +18,7 @@ Spring Boot项目。配置了druid+mybatis+redis。
 - [Elastic Job](#elastic-job)
 - [sharing sphere](#sharing-sphere)
 - [canal](#canal)
-- [Reactive](#reactive)
+- [Reactive(Spring WebFlux)](#reactive)
 
 
 
@@ -74,9 +74,6 @@ list、hash、set等数据结构的存储
 - [pom.xml 直接构建](/spring-boot-sample)
 - [Dockerfile 构建镜像](/spring-boot-docker)
 
-## 七牛云
-整合了七牛云，使用七牛云的 OSS，存储图片文件等功能。
-
 ## 测试环境/正式环境
 使用profiles实现了环境分开
 
@@ -106,6 +103,8 @@ jib是谷歌的一个容器工具，在构建容器镜像的时候，不需要�
 工具就可以直接构建了
 - [官网GitHub](https://github.com/GoogleContainerTools/jib)
 
+## 七牛云
+整合了七牛云，使用七牛云的 OSS，存储图片文件等功能。
 
 # 感谢
 - [Druid](https://github.com/alibaba/druid/wiki)
