@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
  * @description: WebFlux Handler
  */
 @Component
-public class GreetingHandler {
+public class HelloHandler {
 
     public Mono<ServerResponse> hello(ServerRequest request) {
         return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN)
