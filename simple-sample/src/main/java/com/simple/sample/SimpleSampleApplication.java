@@ -1,16 +1,13 @@
-package com.example.docker;
+package com.simple.sample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * @author : Arthas
- * docker 容器化
- */
 @SpringBootApplication
-public class SpringBootDockerApplication {
+public class SimpleSampleApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDockerApplication.class, args);
+        SpringApplication.run(SimpleSampleApplication.class, args);
     }
+
 }

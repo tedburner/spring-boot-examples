@@ -13,8 +13,27 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/hello/")
 public class HelloDockerController {
 
+    ThreadLocal<String> threadLocal = new ThreadLocal();
+
     @GetMapping(value = "say")
     public String sayHello() {
-        return "Hell boy, Welcome here";
+
+        try {
+            System.out.println("ThreadLocal写入数据");
+            threadLocal.set("测试ThreadLocal");
+            Thread.sleep(20000);
+            System.out.println(threadLocal.get());
+        } catch (Exception e) {
+
+        }
+        return threadLocal.get();
     }
+
+
+    @GetMapping(value = "gc")
+    public void gc() {
+        System.out.println("JVM GC");
+        System.gc();
+    }
+
 }

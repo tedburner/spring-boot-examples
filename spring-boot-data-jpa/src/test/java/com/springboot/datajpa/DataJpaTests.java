@@ -22,7 +22,7 @@ public class DataJpaTests {
     private UserService userService;
 
     @Test
-    public void save() {
+    public void saveTest() {
         int sum = 1000;
         for (int k = 0; k<1000;k++) {
             List<User> userList = new ArrayList<>(sum+1);
@@ -53,6 +53,22 @@ public class DataJpaTests {
     @Test
     public void findStreamAll() {
         System.out.println(userService.findUserStream());
+    }
+
+    @Test
+    public void addTest() {
+        User user = new User();
+        user.setName("第号人的名字");
+        user.setAge(25);
+        user.setPassword(String.valueOf( 20181226));
+        Long car = 330781199601230992L ;
+        user.setCard(String.valueOf(car));
+        Long phone = 13500000000L ;
+        user.setPhone(String.valueOf(phone));
+        LocalDateTime now = LocalDateTime.now();
+        user.setCreateTime(now);
+        user.setUpdateTime(now);
+        userService.save(user);
     }
 
 }
