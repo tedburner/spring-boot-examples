@@ -1,4 +1,4 @@
-package com.kit.common.util.common;
+package com.kit.common.util.common.copy;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * @author: Lucifer
  * @date: 2018/8/20 10:05
- * @description:
+ * @description: 基于cglib 的BeanCopier
  */
 public class BeanCopierUtils {
 
