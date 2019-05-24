@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -53,6 +54,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User findUserById(Long id) {
+        Optional<User> userOptional = userRepository.findById(id);
+        if (!userOptional.isPresent()) {
+            return null;
+        }
+        return userOptional.get();
+    }
+
+    @Override
     @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
     public List<User> findUserStream() {
         try (Stream<User> stream = userRepository.streamAll()) {
@@ -61,5 +71,10 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public void updateUserName(Long id, String name) {
+        userRepository.update(id, name);
     }
 }

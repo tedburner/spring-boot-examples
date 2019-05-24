@@ -24,8 +24,8 @@ public class DataJpaTests {
     @Test
     public void saveTest() {
         int sum = 1000;
-        for (int k = 0; k<1000;k++) {
-            List<User> userList = new ArrayList<>(sum+1);
+        for (int k = 0; k < 1000; k++) {
+            List<User> userList = new ArrayList<>(sum + 1);
             for (int i = 0; i < sum; i++) {
                 log.info("添加第" + i);
                 User user = new User();
@@ -60,15 +60,26 @@ public class DataJpaTests {
         User user = new User();
         user.setName("第号人的名字");
         user.setAge(25);
-        user.setPassword(String.valueOf( 20181226));
-        Long car = 330781199601230992L ;
+        user.setPassword(String.valueOf(20181226));
+        Long car = 330781199601230992L;
         user.setCard(String.valueOf(car));
-        Long phone = 13500000000L ;
+        Long phone = 13500000000L;
         user.setPhone(String.valueOf(phone));
         LocalDateTime now = LocalDateTime.now();
         user.setCreateTime(now);
         user.setUpdateTime(now);
         userService.save(user);
+    }
+
+    @Test
+    public void updateNameTest() {
+        User u = userService.findUserById(1L);
+        System.out.println(u);
+
+        userService.updateUserName(u.getId(), "张三");
+
+        User u1 = userService.findUserById(1L);
+        System.out.println(u1);
     }
 
 }
