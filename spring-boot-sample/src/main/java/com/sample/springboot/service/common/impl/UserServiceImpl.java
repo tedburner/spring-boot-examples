@@ -6,8 +6,10 @@ import com.sample.springboot.service.common.UserService;
 import com.kit.common.util.thread.task.TaskFunction;
 import com.kit.common.util.thread.task.TaskRequest;
 import com.kit.common.util.thread.threadpool.FastThreadPool;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -51,5 +53,27 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDO findById(Long id) {
         return userMapper.selectById(id);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void update() {
+
+        try {
+            UserDO userDO = userMapper.selectById(1L);
+            System.out.println("修改前: " + userDO);
+            userDO.setName("孙肖宇");
+            userMapper.update(userDO);
+
+            Thread.sleep(1000L);
+            UserDO updated = userMapper.selectById(1L);
+            System.out.println("修改后： " + updated);
+
+            Thread.sleep(2000L);
+
+        } catch (InterruptedException e) {
+
+        }
+
     }
 }

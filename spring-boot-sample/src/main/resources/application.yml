@@ -49,10 +49,10 @@ kafka:
 log:
   level: INFO
 
-# mybatis
-mybatis:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# mybatis 控制台打印SQL日志
+#mybatis:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # pagehelper 分页插件配置
 pagehelper:

@@ -24,4 +24,9 @@ public class UserTests extends SpringBootSampleTests{
     public void findByIdTest(){
         System.out.println(userService.findById(1L));
     }
+
+    @Test
+    public void updateTest(){
+       userService.update();
+    }
 }
