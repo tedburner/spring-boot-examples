@@ -27,6 +27,7 @@
         <module>spring-boot-sample</module>
         <module>spring-boot-webflux</module>
         <module>spring-boot-websocket</module>
+        <module>spring-boot-postgres</module>
     </modules>
 
     <parent>
