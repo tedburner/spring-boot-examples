@@ -19,7 +19,7 @@ Spring Boot项目。配置了druid+mybatis+redis。
 - [sharing sphere](#sharing-sphere)
 - [canal](#canal)
 - [Reactive(Spring WebFlux)](#reactive)
-- [PostGresSQL](#PostGresSQL)
+- [PostgresSQL](#PostgresSQL)
 
 
 
@@ -99,8 +99,8 @@ list、hash、set等数据结构的存储
 ## Reactive
 [Reactive](spring-boot-webflux)
 
-## PostGresSQL
-[PostGresSQL](spring-boot-postgres)
+## PostgresSQL
+[PostgresSQL](spring-boot-postgres)
 
 ## jib
 jib是谷歌的一个容器工具，在构建容器镜像的时候，不需要写dockerfile，直接使用jib
