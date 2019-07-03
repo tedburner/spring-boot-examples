@@ -37,4 +37,12 @@ public interface UserService {
      * 测试同一事务先修改，在查询问题
      */
     void update();
+
+    /**
+     * 根据名字查询用户信息
+     *
+     * @param name
+     * @return 用户信息
+     */
+    UserDO findUserByName(String name);
 }

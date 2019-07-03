@@ -76,4 +76,10 @@ public class UserServiceImpl implements UserService {
         }
 
     }
+
+    @Override
+    public UserDO findUserByName(String name) {
+
+        return userMapper.selectByName(name).orElseThrow(() -> new RuntimeException("未找到该用户信息"));
+    }
 }

@@ -29,4 +29,9 @@ public class UserTests extends SpringBootSampleTests{
     public void updateTest(){
        userService.update();
     }
+
+    @Test
+    public void findUserByNameTest(){
+        userService.findUserByName("测试1");
+    }
 }

@@ -30,6 +30,14 @@
         LIMIT 1
     </select>
 
+    <select id="selectByName" resultType="com.sample.springboot.domain.DO.UserDO">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        WHERE name = #{name}
+        LIMIT 1
+    </select>
+
     <update id="update">
         update user
         <set>

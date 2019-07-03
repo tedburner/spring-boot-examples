@@ -4,7 +4,7 @@
     <!--导入配置信息-->
     <springProperty scope="context" name="log.level" source="log.level"/>
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
-    <property name="LOG_PATH" value="${HOME}/logs"/>
+    <property name="LOG_PATH" value="/usr/logs"/>
 
     <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
