@@ -43,7 +43,9 @@ public class WebSocketServer {
     public void onOpen(Session session, @PathParam("sid") String sid) {
         this.session = session;
         webSocketServerSet.add(this);
-        log.info("有新窗口开始监听:" + sid + ",当前在线人数为" + getOnlineCount());
+        //新增一个在线用户
+        addOnlineCount();
+        log.info("有用户【{}】开始监听 ,当前在线人数为：{}", sid, getOnlineCount());
         this.sid = sid;
         try {
             sendMessage("连接成功");
@@ -60,7 +62,7 @@ public class WebSocketServer {
     public void onClose() {
         webSocketServerSet.remove(this);
         subOnlineCount();
-        log.info("有一连接关闭！当前在线人数为" + getOnlineCount());
+        log.info("用户【{}】连接关闭！当前在线人数为:{}", this.sid, getOnlineCount());
 
     }
 
@@ -72,8 +74,9 @@ public class WebSocketServer {
      */
     @OnMessage
     public void onMessage(String message, Session session) {
-        log.info("收到来自窗口" + sid + "的信息:" + message);
-        //群发消息
+        log.info("收到来自用户【{}】的信息:{}", sid, message);
+        //想当前的用户群发消息
+        log.info("向在线的所有用户发送消息：{}", message);
         for (WebSocketServer item : webSocketServerSet) {
             try {
                 item.sendMessage(message);
@@ -105,7 +108,7 @@ public class WebSocketServer {
      * 群发自定义消息
      */
     public static void sendInfo(String message, @PathParam("sid") String sid) throws IOException {
-        log.info("推送消息到窗口" + sid + "，推送内容:" + message);
+        log.info("推送消息到用户【{}】，推送内容:{}", sid, message);
         for (WebSocketServer item : webSocketServerSet) {
             try {
                 //这里可以设定只推送给这个sid的，为null则全部推送

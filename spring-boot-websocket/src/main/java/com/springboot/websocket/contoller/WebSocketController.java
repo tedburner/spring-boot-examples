@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * @author: Arthas
  * @date: 2019-03-27 22:43
- * @description:
+ * @description: 不需要走这边的接口，直接接听websocket的url
  */
 @RestController
 public class WebSocketController {
