@@ -16,7 +16,6 @@ import java.io.IOException;
  * @description:
  */
 @RestController
-@RequestMapping
 public class WebSocketController {
 
 
@@ -27,8 +26,9 @@ public class WebSocketController {
         return mav;
     }
 
-    //推送数据接口
-    @ResponseBody
+    /**
+     * 推送数据接口
+     */
     @RequestMapping("/socket/push/{cid}")
     public Object pushToWeb(@PathVariable String cid, String message) {
         try {

@@ -3,6 +3,10 @@ package com.springboot.websocket;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author : Arthas
+ * @description: WebSocket Demo
+ */
 @SpringBootApplication
 public class WebsocketApplication {
 
