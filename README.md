@@ -91,7 +91,7 @@ list、hash、set等数据结构的存储
 项目[地址](spring-boot-elasticjob)
 
 ## sharing sphere
-[地址](spring-boot-sharding-sphere)
+[地址](https://github.com/tedburner/sharding-sphere)
 
 ## 阿里canal
 [canal](spring-boot-canal)
