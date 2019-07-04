@@ -12,6 +12,7 @@ import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author: Arthas
@@ -26,7 +27,7 @@ public class WebSocketServer {
     /**
      * 静态变量，用来记录当前在线连接数
      */
-    private static int onlineCount = 0;
+    private static AtomicInteger onlineCount = new AtomicInteger(0);
     /**
      * concurrent包的线程安全set，用来存放每个客户端对应的WebSocket对象
      */
@@ -124,20 +125,20 @@ public class WebSocketServer {
     }
 
     public static synchronized int getOnlineCount() {
-        return onlineCount;
+        return onlineCount.get();
     }
 
     /**
      * 在线数加1
      */
     public static synchronized void addOnlineCount() {
-        WebSocketServer.onlineCount++;
+        WebSocketServer.onlineCount.incrementAndGet();
     }
 
     /**
      * 在线数减一
      */
     public static synchronized void subOnlineCount() {
-        WebSocketServer.onlineCount--;
+        WebSocketServer.onlineCount.decrementAndGet();
     }
 }
