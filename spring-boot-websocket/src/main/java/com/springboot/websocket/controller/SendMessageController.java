@@ -2,6 +2,7 @@ package com.springboot.websocket.controller;
 
 import com.springboot.websocket.param.Person;
 import com.springboot.websocket.server.WebSocketEndpoint;
+import com.springboot.websocket.server.WebSocketServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,8 @@ public class SendMessageController {
 
     @Autowired
     private WebSocketEndpoint webSocketEndpoint;
+    @Autowired
+    private WebSocketServer webSocketServer;
 
     @GetMapping(value = "/msg/{sid}")
     public String sendMsg(@PathVariable("sid") String sid) {
@@ -28,6 +31,13 @@ public class SendMessageController {
         person.setName("Jack");
         person.setAge("18");
         webSocketEndpoint.sendMessage(sid, person);
+        return "发送成功";
+    }
+
+    @GetMapping(value = "/ws01/{sid}")
+    public String sendMsg01(@PathVariable("sid") String sid) {
+
+        webSocketServer.sendMessage(sid, "用户" + sid + ", 您的账号异地登录了");
         return "发送成功";
     }
 }

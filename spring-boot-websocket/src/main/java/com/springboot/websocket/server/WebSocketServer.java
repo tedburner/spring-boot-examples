@@ -1,6 +1,7 @@
 package com.springboot.websocket.server;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
 import javax.websocket.OnClose;
@@ -62,10 +63,10 @@ public class WebSocketServer {
      */
     @OnClose
     public void onClose(Session session) {
-
-        SESSION_MAP.remove(session.getId());
+        String sid = getUidBySession(session);
+        SESSION_MAP.remove(sid);
         subOnlineCount();
-        log.info("用户【{}】连接关闭！当前在线人数为:{}", session.getId(), getOnlineCount());
+        log.info("用户【{}】连接关闭！当前在线人数为:{}", sid, getOnlineCount());
 
     }
 
@@ -77,7 +78,8 @@ public class WebSocketServer {
      */
     @OnMessage
     public void onMessage(String message, Session session) {
-        log.info("收到来自用户【{}】的信息:{}", session.getId(), message);
+        String sid = getUidBySession(session);
+        log.info("收到来自用户【{}】的信息:{}", sid, message);
         //想当前的用户群发消息
         log.info("向在线的所有用户发送消息：{}", message);
         for (Session item : SESSION_MAP.values()) {
@@ -106,6 +108,7 @@ public class WebSocketServer {
     public void sendMessage(String sid, String message) {
         try {
             Session session = SESSION_MAP.get(sid);
+            log.info("向用户【{}】发送信息：{}", sid, message);
             session.getBasicRemote().sendText(message);
         } catch (Exception e) {
             e.printStackTrace();
@@ -116,14 +119,15 @@ public class WebSocketServer {
     /**
      * 群发自定义消息
      */
-    public static void sendInfo(String message, @PathParam("sid") String sid) throws IOException {
+    public void sendInfo(String message, @PathParam("sid") String sid) {
         log.info("推送消息到用户【{}】，推送内容:{}", sid, message);
         for (Session session : SESSION_MAP.values()) {
+            String uid = getUidBySession(session);
             try {
                 //这里可以设定只推送给这个sid的，为null则全部推送
                 if (sid == null) {
                     session.getBasicRemote().sendText(message);
-                } else if (session.getId().equals(sid)) {
+                } else if (uid.equals(sid)) {
                     session.getBasicRemote().sendText(message);
                 }
             } catch (IOException e) {
@@ -148,5 +152,20 @@ public class WebSocketServer {
      */
     public static synchronized void subOnlineCount() {
         WebSocketServer.onlineCount.decrementAndGet();
+    }
+
+    /**
+     * 根据WebSocketSession获取请求路径，进而获取uid
+     *
+     * @param session
+     * @return
+     */
+    private String getUidBySession(Session session) {
+        String path = session.getRequestURI().getPath();
+        int index = StringUtils.lastIndexOf(path, "/");
+        if (index < 0) {
+            throw new RuntimeException("websocket请求路径非法");
+        }
+        return StringUtils.substring(path, index + 1);
     }
 }

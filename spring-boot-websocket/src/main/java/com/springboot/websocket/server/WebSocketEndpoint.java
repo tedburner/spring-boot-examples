@@ -70,8 +70,8 @@ public class WebSocketEndpoint {
      */
     @OnClose
     public void onClose(Session session) {
-        String sid = session.getId();
-        log.info("用户：{}，关闭连接", sid);
+        String sid = getUidBySession(session);
+        log.info("用户：【{}】，关闭连接", sid);
         SESSION_MAP.remove(sid);
         subOnlineCount();
         log.info("用户【{}】连接关闭！当前在线人数为:{}", sid, getOnlineCount());
@@ -116,6 +116,7 @@ public class WebSocketEndpoint {
     public void sendMessage(String sid, Person message) {
         try {
             Session session = SESSION_MAP.get(sid);
+            log.info("向用户【{}】发送消息！{}", sid, message.toString());
             session.getBasicRemote().sendObject(message);
         } catch (Exception e) {
             e.printStackTrace();
@@ -128,6 +129,7 @@ public class WebSocketEndpoint {
     public void sendMessage(String sid, String message) {
         try {
             Session session = SESSION_MAP.get(sid);
+            log.info("向用户【{}】发送消息！{}", sid, message);
             session.getBasicRemote().sendText(message);
         } catch (Exception e) {
             e.printStackTrace();
@@ -153,7 +155,6 @@ public class WebSocketEndpoint {
 //            }
 //        }
 //    }
-
     public static synchronized int getOnlineCount() {
         return onlineCount.get();
     }
@@ -178,8 +179,8 @@ public class WebSocketEndpoint {
      * @param session
      * @return
      */
-    private String getUidBySession(WebSocketSession session) {
-        String path = session.getUri().getPath();
+    private String getUidBySession(Session session) {
+        String path = session.getRequestURI().getPath();
         int index = StringUtils.lastIndexOf(path, "/");
         if (index < 0) {
             throw new RuntimeException("websocket请求路径非法");
