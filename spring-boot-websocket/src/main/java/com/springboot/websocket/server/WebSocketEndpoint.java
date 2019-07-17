@@ -1,7 +1,13 @@
 package com.springboot.websocket.server;
 
+import com.springboot.websocket.coder.MessageDecoder;
+import com.springboot.websocket.coder.MessageEncoder;
+import com.springboot.websocket.param.Person;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
+import org.springframework.web.socket.TextMessage;
+import org.springframework.web.socket.WebSocketSession;
 
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
@@ -13,7 +19,6 @@ import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -23,8 +28,10 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Slf4j
 @Component
-@ServerEndpoint(value = "/websocket/{sid}")
-public class WebSocketServer {
+@ServerEndpoint(value = "/ws/{sid}",
+        decoders = {MessageDecoder.class},
+        encoders = {MessageEncoder.class})
+public class WebSocketEndpoint {
 
     /**
      * 静态变量，用来记录当前在线连接数
@@ -34,6 +41,7 @@ public class WebSocketServer {
      * concurrent包的线程安全set，用来存放每个客户端对应的WebSocket对象
      */
     private static Map<String, Session> SESSION_MAP = new ConcurrentHashMap<>();
+
 
     /**
      * 建立连接
@@ -62,10 +70,11 @@ public class WebSocketServer {
      */
     @OnClose
     public void onClose(Session session) {
-
-        SESSION_MAP.remove(session.getId());
+        String sid = session.getId();
+        log.info("用户：{}，关闭连接", sid);
+        SESSION_MAP.remove(sid);
         subOnlineCount();
-        log.info("用户【{}】连接关闭！当前在线人数为:{}", session.getId(), getOnlineCount());
+        log.info("用户【{}】连接关闭！当前在线人数为:{}", sid, getOnlineCount());
 
     }
 
@@ -76,17 +85,18 @@ public class WebSocketServer {
      * @param session
      */
     @OnMessage
-    public void onMessage(String message, Session session) {
-        log.info("收到来自用户【{}】的信息:{}", session.getId(), message);
+    public Person onMessage(Person message, Session session) {
+        String sid = session.getId();
+        log.info("收到来自用户【{}】的信息:{}", sid, message);
         //想当前的用户群发消息
-        log.info("向在线的所有用户发送消息：{}", message);
-        for (Session item : SESSION_MAP.values()) {
-            try {
-                item.getBasicRemote().sendText(message);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        log.info("向用户发送消息：{}", message);
+        try {
+            session.getBasicRemote().sendObject(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+
         }
+        return message;
     }
 
     /**
@@ -103,6 +113,18 @@ public class WebSocketServer {
     /**
      * 实现服务器主动推送
      */
+    public void sendMessage(String sid, Person message) {
+        try {
+            Session session = SESSION_MAP.get(sid);
+            session.getBasicRemote().sendObject(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 实现服务器主动推送
+     */
     public void sendMessage(String sid, String message) {
         try {
             Session session = SESSION_MAP.get(sid);
@@ -110,27 +132,27 @@ public class WebSocketServer {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     /**
      * 群发自定义消息
      */
-    public static void sendInfo(String message, @PathParam("sid") String sid) throws IOException {
-        log.info("推送消息到用户【{}】，推送内容:{}", sid, message);
-        for (Session session : SESSION_MAP.values()) {
-            try {
-                //这里可以设定只推送给这个sid的，为null则全部推送
-                if (sid == null) {
-                    session.getBasicRemote().sendText(message);
-                } else if (session.getId().equals(sid)) {
-                    session.getBasicRemote().sendText(message);
-                }
-            } catch (IOException e) {
-                continue;
-            }
-        }
-    }
+//    public void sendInfo(String message, String sid) throws IOException {
+//        log.info("推送消息到用户【{}】，推送内容:{}", sid, message);
+//        for (Session session : SESSION_MAP.values()) {
+//            String uid = session.getId();
+//            try {
+//                //这里可以设定只推送给这个sid的，为null则全部推送
+//                if (sid == null) {
+//                    session.sendMessage(new TextMessage(message));
+//                } else if (uid.equals(sid)) {
+//                    session.sendMessage(new TextMessage(message));
+//                }
+//            } catch (IOException e) {
+//                continue;
+//            }
+//        }
+//    }
 
     public static synchronized int getOnlineCount() {
         return onlineCount.get();
@@ -140,13 +162,28 @@ public class WebSocketServer {
      * 在线数加1
      */
     public static synchronized void addOnlineCount() {
-        WebSocketServer.onlineCount.incrementAndGet();
+        WebSocketEndpoint.onlineCount.incrementAndGet();
     }
 
     /**
      * 在线数减一
      */
     public static synchronized void subOnlineCount() {
-        WebSocketServer.onlineCount.decrementAndGet();
+        WebSocketEndpoint.onlineCount.decrementAndGet();
+    }
+
+    /**
+     * 根据WebSocketSession获取请求路径，进而获取uid
+     *
+     * @param session
+     * @return
+     */
+    private String getUidBySession(WebSocketSession session) {
+        String path = session.getUri().getPath();
+        int index = StringUtils.lastIndexOf(path, "/");
+        if (index < 0) {
+            throw new RuntimeException("websocket请求路径非法");
+        }
+        return StringUtils.substring(path, index + 1);
     }
 }
