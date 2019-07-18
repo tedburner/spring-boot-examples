@@ -28,9 +28,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Slf4j
 @Component
-@ServerEndpoint(value = "/ws/{sid}",
-        decoders = {MessageDecoder.class},
-        encoders = {MessageEncoder.class})
+//@ServerEndpoint(value = "/ws/{sid}",
+//        decoders = {MessageDecoder.class},
+//        encoders = {MessageEncoder.class})
 public class WebSocketEndpoint {
 
     /**
