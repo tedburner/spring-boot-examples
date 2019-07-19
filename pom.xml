@@ -22,6 +22,7 @@
         <module>spring-boot-elasticjob</module>
         <module>spring-boot-elasticsearch</module>
         <module>spring-boot-kafka</module>
+        <module>spring-boot-rabbitmq</module>
         <module>spring-boot-memcached</module>
         <module>spring-boot-mongodb</module>
         <module>spring-boot-sample</module>
