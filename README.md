@@ -43,7 +43,7 @@ java -jar  target/项目名称-版本号.jar --spring.profiles.active=test/produ
 
 ## MQ
 ### RabbitMq
-未完成，待续。。。。
+[RabbitMQ整合](/spring-boot-rabbitmq)
 
 ### kafka
 代码已经整合到 master 上面     
