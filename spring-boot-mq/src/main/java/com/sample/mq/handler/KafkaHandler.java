@@ -2,6 +2,7 @@ package com.sample.mq.handler;
 
 import com.sample.mq.constant.MqConstants;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +18,8 @@ public class KafkaHandler {
 
 
     @KafkaListener(topics = MqConstants.KAFKA_TOPIC_TEST)
-    public void handleKafka(){
-
+    public void handleKafka(ConsumerRecord<String, String> record){
+        log.info("kafka processMessage start");
+        log.info("processMessage, topic = {}, msg = {}", record.topic(), record.value());
     }
 }

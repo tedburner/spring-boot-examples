@@ -1,5 +1,6 @@
 package com.sample.mq.domain;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.Date;
@@ -11,8 +12,8 @@ import java.util.Date;
  * @description:
  */
 @Data
+@Builder
 public class Message {
-
     private Long id;
 
     private String msg;
