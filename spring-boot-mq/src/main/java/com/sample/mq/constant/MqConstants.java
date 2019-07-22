@@ -11,4 +11,7 @@ public class MqConstants {
 
     public static final String QUEUE_TEST = "test.exchange";
 
+
+    public static final String KAFKA_TOPIC_TEST = "topic.test";
+
 }

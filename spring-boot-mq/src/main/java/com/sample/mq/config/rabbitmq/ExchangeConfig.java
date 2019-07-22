@@ -1,6 +1,6 @@
 package com.sample.mq.config.rabbitmq;
 
-import com.sample.rabbitmq.constant.MqConstants;
+import com.sample.mq.constant.MqConstants;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

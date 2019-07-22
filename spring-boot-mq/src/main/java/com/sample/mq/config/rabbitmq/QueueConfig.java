@@ -1,9 +1,9 @@
 package com.sample.mq.config.rabbitmq;
 
-import com.sample.rabbitmq.constant.MqConstants;
-import org.springframework.amqp.core.Queue;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+        import com.sample.mq.constant.MqConstants;
+        import org.springframework.amqp.core.Queue;
+        import org.springframework.context.annotation.Bean;
+        import org.springframework.context.annotation.Configuration;
 
 /**
  * @author: Arthas

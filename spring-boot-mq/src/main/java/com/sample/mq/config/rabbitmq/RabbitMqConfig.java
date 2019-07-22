@@ -1,6 +1,6 @@
 package com.sample.mq.config.rabbitmq;
 
-import com.sample.rabbitmq.constant.MqConstants;
+import com.sample.mq.constant.MqConstants;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.beans.factory.annotation.Autowired;

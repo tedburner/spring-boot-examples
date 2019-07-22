@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-public class MqHandler {
+public class RabbitMqHandler {
 
 
     @RabbitListener(queues = {MqConstants.QUEUE_TEST})

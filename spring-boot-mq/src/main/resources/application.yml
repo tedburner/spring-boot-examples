@@ -7,8 +7,18 @@ spring:
     username: admin
     password: admin
     virtual-host: /
-    publisher-confirms: true  #Éú²úÕß¿ªÆôconfirm£¬È·ÈÏÏûÏ¢ÊÇ·ñµ½´ïbroker£¬Ö»ÒªÕıÈ·µ½´ïexchange¼´¿É
-    publisher-returns: true  #È·ÈÏÏûÏ¢ÊÇ·ñÕıÈ·µ½´ïqueue
+    publisher-confirms: true
+    publisher-returns: true
     template:
-      mandatory: true  #Í¶µİÊ§°ÜÇ¿ÖÆ½«ÏûÏ¢·µ»Ø¸øÉú²úÕß
+      mandatory: true
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: kafka-group  # æŒ‡å®šæ¶ˆè´¹è€… group id
+      enable-auto-commit: true
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer   # æŒ‡å®šæ¶ˆæ¯keyå’Œæ¶ˆæ¯ä½“çš„ç¼–ç æ ¼å¼
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      batch-size: 65536
+      buffer-memory: 524288
 
