@@ -1,4 +1,4 @@
-package com.sample.rabbitmq.controller;
+package com.sample.mq.controller;
 
 import com.sample.rabbitmq.constant.MqConstants;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 /**
  * @author: Arthas

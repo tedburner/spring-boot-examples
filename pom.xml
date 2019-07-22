@@ -13,6 +13,7 @@
 
     <modules>
         <module>common-kit</module>
+        <module>spring-boot-mq</module>
         <module>spring-boot-canal</module>
         <module>spring-boot-cqrs</module>
         <module>spring-boot-akka</module>
@@ -21,8 +22,6 @@
         <module>spring-boot-ehcache</module>
         <module>spring-boot-elasticjob</module>
         <module>spring-boot-elasticsearch</module>
-        <module>spring-boot-kafka</module>
-        <module>spring-boot-rabbitmq</module>
         <module>spring-boot-memcached</module>
         <module>spring-boot-mongodb</module>
         <module>spring-boot-sample</module>

@@ -1,4 +1,4 @@
-package com.sample.rabbitmq.constant;
+package com.sample.mq.constant;
 
 /**
  * @author: Arthas

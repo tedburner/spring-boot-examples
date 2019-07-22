@@ -1,7 +1,7 @@
-package com.sample.rabbitmq.handler;
+package com.sample.mq.handler;
 
 import com.rabbitmq.client.Channel;
-import com.sample.rabbitmq.constant.MqConstants;
+import com.sample.mq.constant.MqConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
