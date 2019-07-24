@@ -22,21 +22,39 @@ public class QueueConfig {
         return new Queue(MqConstants.QUEUE_TEST, false, false, true);
     }
 
+
+    /**
+     * 设置消息过期死信队列
+     */
+    @Bean
+    public Queue delayMsgExpireQueue() {
+        Map<String, Object> args = new HashMap<>(2);
+        args.put("x-dead-letter-exchange", MqConstants.EXCHANGE_MSG_EXPIRE_PROCESS);
+        args.put("x-dead-letter-routing-key", MqConstants.QUEUE_MSG_EXPIRE_PROCESS);
+        return new Queue(MqConstants.QUEUE_MSG_EXPIRE, true, false, false, args);
+    }
+
+    /**设置消息过期实际处理队列*/
+    @Bean
+    public Queue processMsgExpireQueue() {
+        return new Queue(MqConstants.QUEUE_MSG_EXPIRE_PROCESS, false, false, true);
+    }
+
     /**
      * 延迟队列设置
      */
     @Bean
-    public Queue delayTestDemo() {
+    public Queue delayQueueExpire() {
         Map<String, Object> params = new HashMap<>(4);
         // 消息到时候发送到该指定exchange
-        params.put("x-dead-letter-exchange", MqConstants.EXCHANGE_TEST_DEMO_PROCESS);
+        params.put("x-dead-letter-exchange", MqConstants.EXCHANGE_QUEUE_EXPIRE_PROCESS);
         // 发送到该exchange指定的路由
-        params.put("x-dead-letter-routing-key", MqConstants.QUEUE_TEST_DEMO_PROCESS);
+        params.put("x-dead-letter-routing-key", MqConstants.QUEUE_QUEUE_EXPIRE_PROCESS);
         // 消息的延迟时间
-        params.put("x-message-ttl", MqConstants.TEST_DEMO_TIMEOUT);
+        params.put("x-message-ttl", MqConstants.QUEUE_EXPIRE_TIMEOUT);
         //控制 queue 被自动删除前可以处于未使用状态的时间,20s
 //        params.put("x-expires", 20 * 1000);
-        return new Queue(MqConstants.QUEUE_TEST_DEMO_DELAY, true, false, false, params);
+        return new Queue(MqConstants.QUEUE_QUEUE_EXPIRE_DELAY, true, false, false, params);
     }
 
     /**
@@ -45,9 +63,9 @@ public class QueueConfig {
      * @return
      */
     @Bean
-    public Queue processTestDemo() {
+    public Queue processQueueExpire() {
         return QueueBuilder
-                .durable(MqConstants.QUEUE_TEST_DEMO_PROCESS)
+                .durable(MqConstants.QUEUE_QUEUE_EXPIRE_PROCESS)
                 .build();
     }
 }

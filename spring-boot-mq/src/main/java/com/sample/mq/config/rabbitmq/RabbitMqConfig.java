@@ -27,14 +27,15 @@ public class RabbitMqConfig {
                 .with(MqConstants.QUEUE_TEST);
     }
 
+
     /**
      * 绑定消息延迟队列和交换机
      */
     @Bean
     public Binding dlxTestDemoBinding() {
-        return BindingBuilder.bind(queueConfig.delayTestDemo())
-                .to(exchangeConfig.delayTestDemoExchange())
-                .with(MqConstants.QUEUE_TEST_DEMO_DELAY);
+        return BindingBuilder.bind(queueConfig.delayQueueExpire())
+                .to(exchangeConfig.delayQueueExpireExchange())
+                .with(MqConstants.QUEUE_QUEUE_EXPIRE_DELAY);
     }
 
     /**
@@ -44,8 +45,33 @@ public class RabbitMqConfig {
      */
     @Bean
     public Binding processTestDemoBinding() {
-        return BindingBuilder.bind(queueConfig.processTestDemo())
-                .to(exchangeConfig.processTestDemoExchange())
-                .with(MqConstants.QUEUE_TEST_DEMO_PROCESS);
+        return BindingBuilder.bind(queueConfig.processQueueExpire())
+                .to(exchangeConfig.processQueueExpireExchange())
+                .with(MqConstants.QUEUE_QUEUE_EXPIRE_PROCESS);
     }
+
+
+    /**
+     * 绑定消息延迟队列和交换机
+     */
+    @Bean
+    public Binding dlxMsgExpireBinding() {
+        return BindingBuilder.bind(queueConfig.delayMsgExpireQueue())
+                .to(exchangeConfig.delayMsgExpireExchange())
+                .with(MqConstants.QUEUE_MSG_EXPIRE);
+    }
+
+    /**
+     * 消息过期绑定
+     *
+     * @return
+     */
+    @Bean
+    public Binding processMsgExpireBinding() {
+        return BindingBuilder.bind(queueConfig.processMsgExpireQueue())
+                .to(exchangeConfig.processMsgExpireExchange())
+                .with(MqConstants.QUEUE_MSG_EXPIRE_PROCESS);
+    }
+
+
 }
