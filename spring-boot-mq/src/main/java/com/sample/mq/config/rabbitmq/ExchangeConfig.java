@@ -18,19 +18,36 @@ public class ExchangeConfig {
         return new DirectExchange(MqConstants.EXCHANGE_TEST);
     }
 
+
+    /**
+     * 消息过期设置延迟队列
+     */
+    @Bean
+    public DirectExchange delayMsgExpireExchange() {
+        return new DirectExchange(MqConstants.EXCHANGE_MSG_EXPIRE);
+    }
+
+    /**
+     * 消息过期设置实际处理队列
+     */
+    @Bean
+    public DirectExchange processMsgExpireExchange() {
+        return new DirectExchange(MqConstants.EXCHANGE_MSG_EXPIRE_PROCESS);
+    }
+
     /**
      * 测试延迟队列的延迟队列交换机
      */
     @Bean
-    public DirectExchange delayTestDemoExchange() {
-        return new DirectExchange(MqConstants.EXCHANGE_TEST_DEMO_DELAY);
+    public DirectExchange delayQueueExpireExchange() {
+        return new DirectExchange(MqConstants.EXCHANGE_QUEUE_EXPIRE_DELAY);
     }
 
     /**
      * 测试延迟队列的实际处理队列交换机
      */
     @Bean
-    public DirectExchange processTestDemoExchange() {
-        return new DirectExchange(MqConstants.EXCHANGE_TEST_DEMO_PROCESS);
+    public DirectExchange processQueueExpireExchange() {
+        return new DirectExchange(MqConstants.EXCHANGE_QUEUE_EXPIRE_PROCESS);
     }
 }

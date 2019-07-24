@@ -16,14 +16,20 @@ public class MqConstants {
 
 
     /** 测试延迟exchange */
-    public static final String EXCHANGE_TEST_DEMO_DELAY = "test.demo.delay";
+    public static final String EXCHANGE_QUEUE_EXPIRE_DELAY = "queue.expire.delay";
     /**测试延迟处理队列*/
-    public static final String QUEUE_TEST_DEMO_DELAY = "test.demo.delay";
+    public static final String QUEUE_QUEUE_EXPIRE_DELAY = "queue.expire.delay";
     /**测试延迟实际处理exchange*/
-    public static final String EXCHANGE_TEST_DEMO_PROCESS = "test.demo.process";
+    public static final String EXCHANGE_QUEUE_EXPIRE_PROCESS = "queue.expire.process";
     /**测试实际处理queue*/
-    public static final String QUEUE_TEST_DEMO_PROCESS = "test.demo.process";
+    public static final String QUEUE_QUEUE_EXPIRE_PROCESS = "queue.expire.process";
     /** 测试延时时间 10s */
-    public static final int TEST_DEMO_TIMEOUT = 10 * 1000;
+    public static final int QUEUE_EXPIRE_TIMEOUT = 10 * 1000;
+
+    /**消息过期测试*/
+    public static final String EXCHANGE_MSG_EXPIRE = "delay.expire.exchange";
+    public static final String QUEUE_MSG_EXPIRE = "delay.expire.queue";
+    public static final String EXCHANGE_MSG_EXPIRE_PROCESS = "process.expire.exchange";
+    public static final String QUEUE_MSG_EXPIRE_PROCESS = "process.expire.queue";
 
 }
