@@ -1,6 +1,6 @@
 # RabbitMq
 ## 关于延迟队列
-在RabbitMQ中，可以设置2中延迟队列，一种是对队列设置过期时间；另外一种
+在RabbitMQ中，可以设置2种延迟队列，一种是对队列设置过期时间；另外一种
 是对消息设置过期时间
 ### Per-Queue Message TTL
 通过在 queue.declare 中设置 x-message-ttl 参数，可以控制被 publish 
