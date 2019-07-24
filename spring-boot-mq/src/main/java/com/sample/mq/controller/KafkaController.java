@@ -23,7 +23,7 @@ import java.util.Date;
 @RequestMapping(value = "/kafka")
 public class KafkaController {
 
-    @Autowired
+    //@Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
     @GetMapping(value = "/send")

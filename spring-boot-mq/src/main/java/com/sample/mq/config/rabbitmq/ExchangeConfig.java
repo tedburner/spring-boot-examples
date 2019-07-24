@@ -17,4 +17,20 @@ public class ExchangeConfig {
     public DirectExchange testExchange() {
         return new DirectExchange(MqConstants.EXCHANGE_TEST);
     }
+
+    /**
+     * 测试延迟队列的延迟队列交换机
+     */
+    @Bean
+    public DirectExchange delayTestDemoExchange() {
+        return new DirectExchange(MqConstants.EXCHANGE_TEST_DEMO_DELAY);
+    }
+
+    /**
+     * 测试延迟队列的实际处理队列交换机
+     */
+    @Bean
+    public DirectExchange processTestDemoExchange() {
+        return new DirectExchange(MqConstants.EXCHANGE_TEST_DEMO_PROCESS);
+    }
 }

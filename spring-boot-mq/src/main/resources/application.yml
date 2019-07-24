@@ -11,14 +11,14 @@ spring:
     publisher-returns: true
     template:
       mandatory: true
-  kafka:
-    bootstrap-servers: 127.0.0.1:9092
-    consumer:
-      group-id: kafka-group  # 指定消费者 group id
-      enable-auto-commit: true
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer   # 指定消息key和消息体的编码格式
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    producer:
-      batch-size: 65536
-      buffer-memory: 524288
+#  kafka:
+#    bootstrap-servers: 127.0.0.1:9092
+#    consumer:
+#      group-id: kafka-group  # 指定消费者 group id
+#      enable-auto-commit: true
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer   # 指定消息key和消息体的编码格式
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#    producer:
+#      batch-size: 65536
+#      buffer-memory: 524288
 

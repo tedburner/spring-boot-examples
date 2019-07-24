@@ -26,4 +26,26 @@ public class RabbitMqConfig {
                 .to(exchangeConfig.testExchange())
                 .with(MqConstants.QUEUE_TEST);
     }
+
+    /**
+     * 绑定消息延迟队列和交换机
+     */
+    @Bean
+    public Binding dlxTestDemoBinding() {
+        return BindingBuilder.bind(queueConfig.delayTestDemo())
+                .to(exchangeConfig.delayTestDemoExchange())
+                .with(MqConstants.QUEUE_TEST_DEMO_DELAY);
+    }
+
+    /**
+     * 绑定实际队列和交换器
+     *
+     * @return
+     */
+    @Bean
+    public Binding processTestDemoBinding() {
+        return BindingBuilder.bind(queueConfig.processTestDemo())
+                .to(exchangeConfig.processTestDemoExchange())
+                .with(MqConstants.QUEUE_TEST_DEMO_PROCESS);
+    }
 }

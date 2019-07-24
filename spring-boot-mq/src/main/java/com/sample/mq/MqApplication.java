@@ -9,7 +9,7 @@ import org.springframework.kafka.annotation.EnableKafka;
  * @description: MQ 和spring boot 整合项目
  */
 
-@EnableKafka
+//@EnableKafka
 @SpringBootApplication
 public class MqApplication {
 

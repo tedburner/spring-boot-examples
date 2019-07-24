@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 public class KafkaHandler {
 
 
-    @KafkaListener(topics = MqConstants.KAFKA_TOPIC_TEST)
+   // @KafkaListener(topics = MqConstants.KAFKA_TOPIC_TEST)
     public void handleKafka(ConsumerRecord<String, String> record){
         log.info("kafka processMessage start");
         log.info("processMessage, topic = {}, msg = {}", record.topic(), record.value());
