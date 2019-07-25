@@ -1,6 +1,6 @@
 package com.springboot.websocket.controller;
 
-import com.springboot.websocket.param.Person;
+import com.springboot.websocket.coder.Person;
 import com.springboot.websocket.server.WebSocketEndpoint;
 import com.springboot.websocket.server.WebSocketServer;
 import org.springframework.beans.factory.annotation.Autowired;

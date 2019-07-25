@@ -2,12 +2,10 @@ package com.springboot.websocket.server;
 
 import com.springboot.websocket.coder.MessageDecoder;
 import com.springboot.websocket.coder.MessageEncoder;
-import com.springboot.websocket.param.Person;
+import com.springboot.websocket.coder.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
-import org.springframework.web.socket.TextMessage;
-import org.springframework.web.socket.WebSocketSession;
 
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
@@ -16,7 +14,6 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
-import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -28,9 +25,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Slf4j
 @Component
-//@ServerEndpoint(value = "/ws/{sid}",
-//        decoders = {MessageDecoder.class},
-//        encoders = {MessageEncoder.class})
+@ServerEndpoint(value = "/ws/{sid}",
+        decoders = {MessageDecoder.class},
+        encoders = {MessageEncoder.class})
 public class WebSocketEndpoint {
 
     /**

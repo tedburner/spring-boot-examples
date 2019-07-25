@@ -1,10 +1,10 @@
-package com.springboot.websocket.param;
+package com.springboot.websocket.coder;
 
 import lombok.Data;
 
 /**
  * @author: lingjun.jlj
- * @date: 2019/7/17 14:39
+ * @date: 2019/7/25 14:49
  * @version：1.0.0
  * @description:
  */
