@@ -1,7 +1,6 @@
 package com.springboot.websocket.coder;
 
 import com.alibaba.fastjson.JSONObject;
-import com.springboot.websocket.param.Person;
 
 import javax.websocket.EncodeException;
 import javax.websocket.Encoder;

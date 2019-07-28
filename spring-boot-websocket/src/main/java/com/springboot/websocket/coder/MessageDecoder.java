@@ -1,7 +1,6 @@
 package com.springboot.websocket.coder;
 
 import com.alibaba.fastjson.JSON;
-import com.springboot.websocket.param.Person;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.websocket.DecodeException;

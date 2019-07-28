@@ -13,6 +13,7 @@
 
     <modules>
         <module>common-kit</module>
+        <module>simple-sample</module>
         <module>spring-boot-mq</module>
         <module>spring-boot-canal</module>
         <module>spring-boot-cqrs</module>
