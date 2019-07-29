@@ -1,4 +1,4 @@
-package com.springboot.ehcache.domain;
+package com.sample.cache.domain;
 
 import lombok.Data;
 

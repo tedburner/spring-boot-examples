@@ -1,8 +1,8 @@
-package com.springboot.ehcache.service.impl;
+package com.sample.cache.service.impl;
 
-import com.springboot.ehcache.domain.User;
-import com.springboot.ehcache.reposity.UserRepository;
-import com.springboot.ehcache.service.CacheService;
+import com.sample.cache.domain.User;
+import com.sample.cache.reposity.UserRepository;
+import com.sample.cache.service.CacheService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;

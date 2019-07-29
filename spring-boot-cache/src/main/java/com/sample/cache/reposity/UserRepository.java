@@ -1,6 +1,6 @@
-package com.springboot.ehcache.reposity;
+package com.sample.cache.reposity;
 
-import com.springboot.ehcache.domain.User;
+import com.sample.cache.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

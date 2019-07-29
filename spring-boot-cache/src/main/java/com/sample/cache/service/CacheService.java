@@ -1,6 +1,6 @@
-package com.springboot.ehcache.service;
+package com.sample.cache.service;
 
-import com.springboot.ehcache.domain.User;
+import com.sample.cache.domain.User;
 
 /**
  * @author: Arthas
@@ -14,6 +14,7 @@ public interface CacheService {
      * 通过用户ID查询用户信息
      *
      * @param id
+     * @return
      */
     User findUserById(Long id);
 }
