@@ -1,13 +1,11 @@
 package com.sample.springboot.util.exception.advice;
 
-import com.sample.springboot.util.exception.ApplicationException;
 import com.kit.common.util.http.NewResponseModel;
+import com.sample.springboot.util.exception.ApplicationException;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.HandlerExceptionResolver;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 /**
@@ -16,7 +14,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
  * @description: 全局捕获异常，只要是RequestMapping注解上的异常都可以捕获
  */
 
-@ControllerAdvice
+@RestControllerAdvice
 public class ErrorException extends ResponseEntityExceptionHandler {
 
     /**
@@ -35,7 +33,6 @@ public class ErrorException extends ResponseEntityExceptionHandler {
      * @param ex
      * @return
      */
-    @ResponseBody
     @ExceptionHandler(value = Exception.class)
     public NewResponseModel errorHandler(Exception ex) {
         NewResponseModel responseModel = NewResponseModel.Fail();
@@ -49,7 +46,6 @@ public class ErrorException extends ResponseEntityExceptionHandler {
      * @param exception
      * @return
      */
-    @ResponseBody
     @ExceptionHandler(value = ApplicationException.class)
     public NewResponseModel myErrorHandler(ApplicationException exception) {
         NewResponseModel responseModel = new NewResponseModel();

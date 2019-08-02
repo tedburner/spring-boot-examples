@@ -45,7 +45,7 @@ public class CityServiceImpl implements CityService {
      * 参数： value缓存名、 key缓存键值、 condition满足缓存条件、 unless否决缓存条件、 allEntries是否移除所有数据（设置为true时会移除所有缓存）
      */
     @Override
-    @Cacheable(value = "city", key = "'cityId_'+#id")
+    //@Cacheable(value = "city", key = "'cityId_'+#id")
     public CityDO getCityById(Long id) {
         return cityMapper.selectById(id);
     }
@@ -59,10 +59,10 @@ public class CityServiceImpl implements CityService {
                 province.setName("福建省");
                 provinceMapper.addProvince(province);
 
-                CityDO builder = CityDO.CityDOBuilder.aCityDO()
-                        .withProvinceId(province.getId())
-                        .withName("厦门市")
-                        .withDescription("？？？")
+                CityDO builder = CityDO.builder()
+                        .provinceId(province.getId())
+                        .name("厦门市")
+                        .description("？？？")
                         .build();
                 cityMapper.addCity(builder);
 

@@ -3,7 +3,7 @@
 <mapper namespace="com.sample.springboot.persist.CityMapper">
 
     <sql id="Base_Column_List">
-        id, provinceId, name, description,status,createTime,updateTime
+        id, provinceId, name, description, status, createTime, updateTime
     </sql>
 
     <insert id="addCity" parameterType="com.sample.springboot.domain.DO.CityDO"
