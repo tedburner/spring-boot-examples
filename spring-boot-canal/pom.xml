@@ -2,17 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.1.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
     <groupId>com.springboot.canal</groupId>
     <artifactId>canal</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-boot-canal</name>
+    <name>canal</name>
     <description>Spring Boot Canal</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
 
     <properties>
         <java.version>1.8</java.version>
@@ -44,13 +45,6 @@
             <artifactId>jedis</artifactId>
         </dependency>
 
-        <!--阿里canal-->
-        <dependency>
-            <groupId>com.alibaba.otter</groupId>
-            <artifactId>canal.client</artifactId>
-            <version>1.1.0</version>
-        </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -63,6 +57,13 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
+        </dependency>
+
+        <!--阿里canal-->
+        <dependency>
+            <groupId>com.alibaba.otter</groupId>
+            <artifactId>canal.client</artifactId>
+            <version>1.1.3</version>
         </dependency>
 
     </dependencies>

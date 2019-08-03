@@ -50,12 +50,6 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <!--memcached客户端-->
         <dependency>
             <groupId>net.spy</groupId>

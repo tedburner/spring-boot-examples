@@ -11,7 +11,7 @@
 	<groupId>com.springboot</groupId>
 	<artifactId>webflux</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-webflux</name>
+	<name>webflux</name>
 	<description>Spring Boot WebFlux</description>
 
 	<properties>

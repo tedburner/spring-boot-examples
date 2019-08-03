@@ -11,7 +11,7 @@
 	<groupId>com.springboot</groupId>
 	<artifactId>data-jpa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-data-jpa</name>
+	<name>data-jpa</name>
 	<description>Spring Boot Data JPA</description>
 
 	<properties>
