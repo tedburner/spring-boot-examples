@@ -1,17 +1,16 @@
-package com.simple.sample.service.impl;
+package com.simple.sample.service.di.impl;
 
-import com.simple.sample.service.AService;
-import com.simple.sample.service.CService;
+import com.simple.sample.service.di.AService;
+import com.simple.sample.service.di.CService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
 /**
  * @author: lingjun.jlj
  * @date: 2019/5/15 14:04
  * @description:
  */
-@Service
+//@Service
 public class CServiceImpl implements CService {
 
     private final AService aService;

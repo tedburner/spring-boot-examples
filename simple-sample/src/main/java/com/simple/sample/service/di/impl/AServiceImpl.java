@@ -1,16 +1,15 @@
-package com.simple.sample.service.impl;
+package com.simple.sample.service.di.impl;
 
-import com.simple.sample.service.AService;
-import com.simple.sample.service.BService;
+import com.simple.sample.service.di.AService;
+import com.simple.sample.service.di.BService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * @author: lingjun.jlj
  * @date: 2019/5/15 14:03
  * @description:
  */
-@Service
+//@Service
 public class AServiceImpl implements AService {
 
     private final BService bService;

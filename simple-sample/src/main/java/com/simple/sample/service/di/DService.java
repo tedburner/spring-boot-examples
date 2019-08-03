@@ -1,4 +1,4 @@
-package com.simple.sample.service;
+package com.simple.sample.service.di;
 
 /**
  * @author: lingjun.jlj

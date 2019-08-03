@@ -1,14 +1,13 @@
-package com.simple.sample.service.impl;
+package com.simple.sample.service.di.impl;
 
-import com.simple.sample.service.DService;
-import org.springframework.stereotype.Service;
+import com.simple.sample.service.di.DService;
 
 /**
  * @author: lingjun.jlj
  * @date: 2019/5/15 14:03
  * @description:
  */
-@Service
+//@Service
 public class DServiceImpl implements DService {
 
 
