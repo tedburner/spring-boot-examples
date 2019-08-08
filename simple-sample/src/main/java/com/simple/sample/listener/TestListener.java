@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author: Arthas
  * @date: 2019-08-05 23:02
- * @description:
+ * @description: 实现事件的监听
  */
 @Component
 public class TestListener implements ApplicationListener {

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author: Arthas
  * @date: 2019-08-05 22:55
- * @description:
+ * @description: 定义事件
  */
 public class TestEvent extends ApplicationEvent {
 
