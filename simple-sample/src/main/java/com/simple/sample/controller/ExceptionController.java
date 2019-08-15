@@ -15,12 +15,12 @@ public class ExceptionController {
 
     @RequestMapping("/ex1")
     public Object throwBaseException() throws Exception {
-        throw new BaseException("This is BaseException.");
+        throw new BaseException(1000, "This is BaseException.");
     }
 
     @RequestMapping("/ex2")
     public Object throwParamException() throws Exception {
-        throw new ParamException("This is ParamException.");
+        throw new ParamException(2000, "This is ParamException.");
     }
 
     @RequestMapping("/ex3")

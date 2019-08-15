@@ -42,10 +42,6 @@ public class NewResponseModel<T> implements Serializable {
         return new NewResponseModel<>(ResponseCodeEnum.Fail.getCode(), ResponseCodeEnum.Fail.getMessage());
     }
 
-    public static <T> NewResponseModel ServerError() {
-        return new NewResponseModel<T>(ResponseCodeEnum.SERVER_ERROR.getCode(), ResponseCodeEnum.SERVER_ERROR.getMessage());
-    }
-
     public static <T> NewResponseModel LoginError() {
         return new NewResponseModel<T>(ResponseCodeEnum.LOGIN_FAIL.getCode(), ResponseCodeEnum.LOGIN_FAIL.getMessage());
     }

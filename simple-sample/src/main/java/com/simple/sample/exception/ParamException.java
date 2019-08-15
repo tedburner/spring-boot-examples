@@ -7,7 +7,17 @@ package com.simple.sample.exception;
  */
 public class ParamException extends BaseException {
 
+    private Integer code;
+
     public ParamException(String message) {
         super(message);
+    }
+
+    public ParamException(Integer code, String message) {
+        super(code, message);
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
     }
 }
