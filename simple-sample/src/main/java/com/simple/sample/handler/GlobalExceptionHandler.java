@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @author: lingjun.jlj
  * @date: 2019/8/15 10:43
- * @description:
+ * @description: 全局异常捕获
  */
 @Slf4j
 @RestControllerAdvice
@@ -27,7 +27,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(value = Exception.class)
-    public Object defaultErrorHandler(HttpServletRequest req, Exception e) throws Exception {
+    public Object defaultErrorHandler(HttpServletRequest req, Exception e) {
         log.error("---DefaultException Handler---Host {} invokes url {} ERROR: {}", req.getRemoteHost(), req.getRequestURL(), e.getMessage());
         return e.getMessage();
     }
