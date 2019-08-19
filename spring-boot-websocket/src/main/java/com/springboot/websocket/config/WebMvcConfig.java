@@ -19,5 +19,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
                 .setViewName("/ws01");
         registry.addViewController("/ws02")
                 .setViewName("/ws02");
+        registry.addViewController("/ws")
+                .setViewName("/ws");
     }
 }
