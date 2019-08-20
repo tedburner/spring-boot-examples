@@ -19,9 +19,9 @@ import org.springframework.context.annotation.ImportResource;
 //@EnableKafka
 @ServletComponentScan
 @SpringBootApplication
-@MapperScan("com.sample.springboot.persist")
-@ComponentScan(basePackages = {"com.kit.common", "com.sample.springboot"})
-@ImportResource("classpath:redis/spring-redis.xml")
+@MapperScan("com.springboot.sample.persist")
+@ComponentScan(basePackages = {"com.kit.common", "com.springboot.sample"})
+//@ImportResource("classpath:redis/spring-redis.xml")
 public class SpringBootSampleApplication {
 
     public static void main(String[] args) {

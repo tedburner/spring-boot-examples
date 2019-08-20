@@ -26,8 +26,8 @@ import java.util.UUID;
  * @description:
  */
 @Slf4j
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class LockAspect {
 
     @Autowired

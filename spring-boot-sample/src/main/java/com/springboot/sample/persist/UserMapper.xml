@@ -3,7 +3,7 @@
 <mapper namespace="com.springboot.sample.persist.UserMapper">
 
     <sql id="Base_Column_List">
-        id, name,password,card, age,phone, status, createTime, updateTime
+        id, name,password,card, age,phone, status, create_time, update_time
     </sql>
 
     <insert id="addUser" parameterType="com.springboot.sample.domain.DO.UserDO"

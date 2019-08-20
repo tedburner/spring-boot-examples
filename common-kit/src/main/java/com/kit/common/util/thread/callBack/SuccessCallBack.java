@@ -8,6 +8,6 @@ import com.google.common.util.concurrent.FutureCallback;
  **/
 public interface SuccessCallBack<V> extends FutureCallback<V> {
 
-    default void onFailure(Throwable throwable) {
+    default void onSuccess(Throwable throwable) {
     }
 }
