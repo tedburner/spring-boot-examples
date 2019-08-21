@@ -1,10 +1,11 @@
 package com.springboot.sample.persist;
 
-import com.springboot.sample.domain.DO.UserDO;
-import org.apache.ibatis.annotations.Param;
+        import com.springboot.sample.domain.DO.UserDO;
+        import org.apache.ibatis.annotations.Param;
+        import org.apache.ibatis.annotations.Select;
 
-import java.util.List;
-import java.util.Optional;
+        import java.util.List;
+        import java.util.Optional;
 
 /**
  * @author Lucifer
@@ -33,7 +34,15 @@ public interface UserMapper {
      * @param name
      * @return 返回Optional类型用户信息
      */
-//    @Select("select * from user where name = #{name} limit 1")
+    @Select("select * from user where name = #{name} limit 1")
     Optional<UserDO> selectByName(String name);
+
+    /**
+     * 模糊查询用户信息
+     *
+     * @param name
+     * @return
+     */
+    List<UserDO> selectLikeName(String name);
 
 }

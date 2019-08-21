@@ -44,4 +44,12 @@ public interface UserService {
      * @return 用户信息
      */
     UserDO findUserByName(String name);
+
+    /**
+     * 根据名字查询用户信息
+     *
+     * @param name
+     * @return 用户信息
+     */
+    List<UserDO> findUserLikeName(String name);
 }

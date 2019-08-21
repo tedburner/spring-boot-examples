@@ -30,12 +30,11 @@
         LIMIT 1
     </select>
 
-    <select id="selectByName" resultType="com.springboot.sample.domain.DO.UserDO">
+    <select id="selectLikeName" resultType="com.springboot.sample.domain.DO.UserDO">
         select
         <include refid="Base_Column_List"/>
         from user
-        WHERE name = #{name}
-        LIMIT 1
+        WHERE name LIKE concat('%', #{name}, '%')
     </select>
 
     <update id="update">

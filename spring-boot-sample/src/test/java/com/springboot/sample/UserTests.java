@@ -34,4 +34,9 @@ public class UserTests extends SpringBootSampleTests{
     public void findUserByNameTest(){
         userService.findUserByName("测试1");
     }
+
+    @Test
+    public void findUserLikeNameTest(){
+        userService.findUserLikeName("测试131");
+    }
 }

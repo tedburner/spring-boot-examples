@@ -1,11 +1,13 @@
 package com.springboot.sample.service.common.impl;
 
+import com.kit.common.util.common.ListUtils;
 import com.springboot.sample.domain.DO.UserDO;
 import com.springboot.sample.persist.UserMapper;
 import com.springboot.sample.service.common.UserService;
 import com.kit.common.util.thread.task.TaskFunction;
 import com.kit.common.util.thread.task.TaskRequest;
 import com.kit.common.util.thread.threadpool.FastThreadPool;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +20,7 @@ import java.util.List;
  * @author Lucifer
  * @data 2018/4/2
  */
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -80,5 +83,21 @@ public class UserServiceImpl implements UserService {
     public UserDO findUserByName(String name) {
 
         return userMapper.selectByName(name).orElseThrow(() -> new RuntimeException("未找到该用户信息"));
+    }
+
+    @Override
+    public List<UserDO> findUserLikeName(String name) {
+        //返回的数组不是null，而是一个 size=0 的数组
+        List<UserDO> userList = userMapper.selectLikeName(name);
+        if (userList == null) {
+            log.info("查询的数组为 null");
+        }
+        if (userList.size() == 0) {
+            log.info("查询的数组为空");
+        }
+        if (ListUtils.isEmpty(userList)) {
+            log.info("查询的数组为空");
+        }
+        return userMapper.selectLikeName(name);
     }
 }
