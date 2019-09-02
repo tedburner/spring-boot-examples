@@ -4,7 +4,7 @@ spring:
     url: jdbc:mysql://118.25.108.65:3306/production?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: Mysql@123456
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     initialSize: 5
     minIdle: 5
     maxActive: 20
