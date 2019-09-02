@@ -1,8 +1,8 @@
-README.md
+
 /target/
 
-### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
+log4j.properties
