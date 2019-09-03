@@ -50,4 +50,10 @@ public class ExchangeConfig {
     public DirectExchange processQueueExpireExchange() {
         return new DirectExchange(MqConstants.EXCHANGE_QUEUE_EXPIRE_PROCESS);
     }
+
+    /**优先级队列交换器*/
+    @Bean
+    public DirectExchange priorityExchange(){
+        return new DirectExchange(MqConstants.EXCHANGE_PRIORITY);
+    }
 }

@@ -34,7 +34,9 @@ public class QueueConfig {
         return new Queue(MqConstants.QUEUE_MSG_EXPIRE, true, false, false, args);
     }
 
-    /**设置消息过期实际处理队列*/
+    /**
+     * 设置消息过期实际处理队列
+     */
     @Bean
     public Queue processMsgExpireQueue() {
         return new Queue(MqConstants.QUEUE_MSG_EXPIRE_PROCESS, false, false, true);
@@ -67,5 +69,15 @@ public class QueueConfig {
         return QueueBuilder
                 .durable(MqConstants.QUEUE_QUEUE_EXPIRE_PROCESS)
                 .build();
+    }
+
+    /**
+     * 优先级队列
+     */
+    @Bean
+    public Queue priorityQueue() {
+        Map<String, Object> params = new HashMap<>(4);
+        params.put("x-max-priority", 10);
+        return new Queue(MqConstants.QUEUE_PRIORITY, true, false, false, params);
     }
 }

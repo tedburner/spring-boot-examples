@@ -1,6 +1,5 @@
 package com.sample.mq.controller;
 
-import com.rabbitmq.client.AMQP;
 import com.sample.mq.constant.MqConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.AmqpException;
@@ -61,6 +60,17 @@ public class RabbitMqController {
         String message = "你好，今天是" + LocalDate.now();
         rabbitTemplate.convertAndSend(MqConstants.EXCHANGE_QUEUE_EXPIRE_DELAY, MqConstants.QUEUE_QUEUE_EXPIRE_DELAY, message);
         log.info("向延迟队列【{}】发送了一条消息", MqConstants.QUEUE_QUEUE_EXPIRE_DELAY);
+        return "发送成功！";
+    }
+
+    @GetMapping(value = "/priority/{priority}")
+    public String sendDelayMsg(@PathVariable("priority") Integer priority) {
+        String message = "这是一条优先级为" + priority + "的消息";
+        rabbitTemplate.convertAndSend(MqConstants.EXCHANGE_PRIORITY, MqConstants.QUEUE_PRIORITY, message, properties -> {
+            properties.getMessageProperties().setPriority(priority);
+            return properties;
+        });
+        log.info("向优先级队列【{}】发送了一条消息", MqConstants.QUEUE_PRIORITY);
         return "发送成功！";
     }
 }

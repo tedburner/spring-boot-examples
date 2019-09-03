@@ -74,4 +74,15 @@ public class RabbitMqConfig {
     }
 
 
+    /**
+     * 队列优先级
+     */
+    @Bean
+    public Binding priorityBinding() {
+        return BindingBuilder.bind(queueConfig.priorityQueue())
+                .to(exchangeConfig.priorityExchange())
+                .with(MqConstants.QUEUE_PRIORITY);
+    }
+
+
 }

@@ -26,10 +26,15 @@ public class MqConstants {
     /** 测试延时时间 10s */
     public static final int QUEUE_EXPIRE_TIMEOUT = 10 * 1000;
 
-    /**消息过期测试*/
+    /**测试设置消息本身过期*/
     public static final String EXCHANGE_MSG_EXPIRE = "delay.expire.exchange";
     public static final String QUEUE_MSG_EXPIRE = "delay.expire.queue";
     public static final String EXCHANGE_MSG_EXPIRE_PROCESS = "process.expire.exchange";
     public static final String QUEUE_MSG_EXPIRE_PROCESS = "process.expire.queue";
+
+    /**测试消息优先级队列*/
+    public static final String EXCHANGE_PRIORITY = "priority.exchange";
+    public static final String QUEUE_PRIORITY = "priority.queue";
+
 
 }
