@@ -34,7 +34,7 @@ public class SendMessageController {
         return "发送成功";
     }
 
-    @GetMapping(value = "/ws01/{sid}")
+    @GetMapping(value = "/ws/{sid}")
     public String sendMsg01(@PathVariable("sid") String sid) {
 
         webSocketServer.sendMessage(sid, "用户" + sid + ", 您的账号异地登录了");

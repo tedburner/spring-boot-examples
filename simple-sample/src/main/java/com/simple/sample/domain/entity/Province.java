@@ -1,7 +1,6 @@
 package com.simple.sample.domain.entity;
 
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -13,27 +12,19 @@ import java.util.Date;
 
 /**
  * @author: Arthas
- * @date: 2019-08-03 22:44
+ * @date: 2019/9/19 22:14
  * @description:
  */
 @Data
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "province")
+public class Province {
 
     @Id
     @GeneratedValue(generator = "idGenerator")
     private Long id;
 
     private String name;
-
-    private Integer age;
-
-    private String password;
-
-    private String card;
-
-    private String phone;
 
     private Integer status;
 
@@ -42,5 +33,4 @@ public class User {
 
     @LastModifiedDate
     private Date updateTime;
-
 }
