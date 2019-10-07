@@ -85,7 +85,7 @@ list、hash、set等数据结构的存储
 [地址](spring-boot-mongodb)
 
 ## elasticsearch
-项目 [地址](spring-boot-elasticsearch)。
+项目 [地址](spring-boot-elasticsearch)
 
 ## Elastic Job
 项目[地址](spring-boot-elasticjob)
