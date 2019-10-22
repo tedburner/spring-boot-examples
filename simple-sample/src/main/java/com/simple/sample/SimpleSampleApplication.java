@@ -2,13 +2,13 @@ package com.simple.sample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
  * @author: Arthas
  * @description: spring boot 简单项目实例
  */
-@EnableWebSecurity
+@EnableJpaAuditing
 @SpringBootApplication
 public class SimpleSampleApplication {
 

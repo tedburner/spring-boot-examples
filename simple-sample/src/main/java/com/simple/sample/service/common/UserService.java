@@ -25,4 +25,11 @@ public interface UserService {
      * @return
      */
     User findById(Long id);
+
+    /**
+     * 需要批量插入用户数据
+     *
+     * @param num 需要插入的用户量
+     */
+    void batchSave(Integer num);
 }

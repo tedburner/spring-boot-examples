@@ -33,4 +33,19 @@ public class UserServiceImpl implements UserService {
         }
         throw new RuntimeException("用户不存在");
     }
+
+    @Override
+    public void batchSave(Integer num) {
+        Long cardId = 330781199509082000L;
+        Long phone = 15888982123L;
+        for (int i = 0; i < num; i++) {
+            User user = new User();
+            user.setName("test" + i);
+            user.setPassword("password" + i);
+            user.setAge(i);
+            user.setCard(String.valueOf(cardId + i));
+            user.setPhone(String.valueOf(phone + i));
+            userRepository.save(user);
+        }
+    }
 }

@@ -28,4 +28,11 @@ public class UserController {
         responseModel.setData(userService.findAll());
         return responseModel;
     }
+
+    @GetMapping(value = "/batch/add")
+    public NewResponseModel batchAdd(Integer num) {
+        NewResponseModel responseModel = NewResponseModel.Success();
+        userService.batchSave(num);
+        return responseModel;
+    }
 }
