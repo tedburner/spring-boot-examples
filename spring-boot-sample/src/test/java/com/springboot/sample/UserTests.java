@@ -48,13 +48,14 @@ public class UserTests extends SpringBootSampleTests {
     @Test
     public void replaceTest(){
         UserDO userDO = new UserDO();
-        userDO.setName("蒋灵俊");
-        userDO.setAge(24);
-        userDO.setPassword("1234561");
+        userDO.setId(1105L);
+        userDO.setName("康发明");
+        userDO.setAge(23);
+        userDO.setPassword("512");
         userDO.setCard("330781199509082330");
         userDO.setPhone("17826852173");
         userDO.setProvinceId(2L);
-        userDO.setCityId(1L);
+        userDO.setCityId(3L);
         userService.save(userDO);
     }
 }

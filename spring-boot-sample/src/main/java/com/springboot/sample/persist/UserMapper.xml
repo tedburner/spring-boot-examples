@@ -59,11 +59,12 @@
         where id = #{id}
     </update>
 
-    <insert id="replaceUser" parameterType="com.springboot.sample.domain.DO.UserDO">
+    <insert id="replaceUser" parameterType="com.springboot.sample.domain.DO.UserDO"
+        useGeneratedKeys="true">
         replace into user
-        (name,password,card,age,phone)
+        (id, name, password, card, age, phone,  province_id, city_id)
         VALUE
-        (#{name},#{password},#{card},#{age},#{phone})
+        (#{id}, #{name},#{password},#{card},#{age},#{phone}, #{provinceId}, #{cityId})
     </insert>
 
 </mapper>
