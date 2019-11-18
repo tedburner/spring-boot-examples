@@ -55,9 +55,15 @@
             <if test="phone != null">
                 phone = #{phone},
             </if>
-
         </set>
         where id = #{id}
     </update>
+
+    <insert id="replaceUser" parameterType="com.springboot.sample.domain.DO.UserDO">
+        replace into user
+        (name,password,card,age,phone)
+        VALUE
+        (#{name},#{password},#{card},#{age},#{phone})
+    </insert>
 
 </mapper>

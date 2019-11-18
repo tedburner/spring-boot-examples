@@ -1,11 +1,11 @@
 package com.springboot.sample.persist;
 
-        import com.springboot.sample.domain.DO.UserDO;
-        import org.apache.ibatis.annotations.Param;
-        import org.apache.ibatis.annotations.Select;
+import com.springboot.sample.domain.DO.UserDO;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
-        import java.util.List;
-        import java.util.Optional;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * @author Lucifer
@@ -19,6 +19,13 @@ public interface UserMapper {
     void update(UserDO userDO);
 
     List<UserDO> selectUser();
+
+    /**
+     * 使用replace into 如果数据存在，则更新，否则插入新的一条数据
+     *
+     * @param userDO
+     */
+    void replaceUser(UserDO userDO);
 
     /**
      * 根据用户表id查询用户信息

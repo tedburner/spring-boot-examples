@@ -52,4 +52,12 @@ public interface UserService {
      * @return 用户信息
      */
     List<UserDO> findUserLikeName(String name);
+
+
+    /**
+     * 添加修改数据
+     *
+     * @param userDO
+     */
+    void save(UserDO userDO);
 }

@@ -100,4 +100,9 @@ public class UserServiceImpl implements UserService {
         }
         return userMapper.selectLikeName(name);
     }
+
+    @Override
+    public void save(UserDO userDO) {
+        userMapper.replaceUser(userDO);
+    }
 }
