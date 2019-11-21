@@ -45,6 +45,7 @@ rocketmq:
     groupName: FeePlatGroup
     # 服务地址
     namesrvAddr: 118.25.108.65:9876
+    #namesrvAddr: 127.0.0.1:9876
     # 接收该 Topic 下所有 Tag
     topics: FeePlatTopic~*;
     consumeThreadMin: 20
