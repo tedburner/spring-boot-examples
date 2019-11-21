@@ -1,3 +1,4 @@
+
 spring:
   application:
     name: rabbitmq-server
@@ -21,4 +22,40 @@ spring:
 #    producer:
 #      batch-size: 65536
 #      buffer-memory: 524288
+rocketmq:
+  # 生产者配置
+  producer:
+    producerGroup: Producer
+    isOnOff: on
+    # 发送同一类消息的设置为同一个group，保证唯一
+    groupName: FeePlatGroup
+    # 服务地址
+    namesrvAddr: 10.1.1.207:9876
+    # 消息最大长度 默认1024*4(4M)
+    maxMessageSize: 4096
+    # 发送消息超时时间,默认3000
+    sendMsgTimeout: 3000
+    # 发送消息失败重试次数，默认2
+    retryTimesWhenSendFailed: 2
+  # 消费者配置
+  consumer:
+    PushConsumer: PushConsumer
+    isOnOff: on
+    # 官方建议：确保同一组中的每个消费者订阅相同的主题。
+    groupName: FeePlatGroup
+    # 服务地址
+    namesrvAddr: 118.25.108.65:9876
+    # 接收该 Topic 下所有 Tag
+    topics: FeePlatTopic~*;
+    consumeThreadMin: 20
+    consumeThreadMax: 64
+    # 设置一次消费消息的条数，默认为1条
+    consumeMessageBatchMaxSize: 1
 
+# 配置 Group  Topic  Tag
+fee-plat:
+  fee-plat-group: FeePlatGroup
+  fee-plat-topic: FeePlatTopic
+  fee-account-tag: FeeAccountTag
+server:
+  port: 8090
