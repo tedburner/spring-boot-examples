@@ -47,7 +47,10 @@ java -jar  target/项目名称-版本号.jar --spring.profiles.active=test/produ
 
 ### kafka
 代码已经整合到 master 上面     
-除了sample上之外，还在[kafka moudle](/spring-boot-mq)上
+除了sample上之外，还在[kafka moudle](/spring-boot-mq)
+
+### RocketMQ
+[RocketMq 和Spring Boot整合](/spring-boot-mq)
 
 ## Redis
 项目整合了Redis，使用spring boot2.0。springboot2.0之后Redis
