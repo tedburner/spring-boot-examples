@@ -3,7 +3,7 @@ spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Hongkong&useSSL=false
     username: root
-    password: 123456
+    password: mysql123456
     driver-class-name: com.mysql.cj.jdbc.Driver
     initialSize: 5
     minIdle: 5

@@ -24,7 +24,9 @@ public class QueueConfig {
 
 
     /**
-     * 设置消息过期死信队列
+     * 设置消息过期死信队列，注意：每次修改队列时间，需要删除旧的队列信息
+     *
+     * @return
      */
     @Bean
     public Queue delayMsgExpireQueue() {
@@ -36,6 +38,8 @@ public class QueueConfig {
 
     /**
      * 设置消息过期实际处理队列
+     *
+     * @return
      */
     @Bean
     public Queue processMsgExpireQueue() {
@@ -44,6 +48,8 @@ public class QueueConfig {
 
     /**
      * 延迟队列设置
+     *
+     * @return
      */
     @Bean
     public Queue delayQueueExpire() {
@@ -73,6 +79,8 @@ public class QueueConfig {
 
     /**
      * 优先级队列
+     *
+     * @return
      */
     @Bean
     public Queue priorityQueue() {

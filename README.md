@@ -44,6 +44,9 @@ java -jar  target/项目名称-版本号.jar --spring.profiles.active=test/produ
 ## MQ
 ### RabbitMq
 [RabbitMQ整合](/spring-boot-mq)
+- 实现普通队列
+- 通过死信队列实现了延迟队列
+- 优先级队列
 
 ### kafka
 代码已经整合到 master 上面     

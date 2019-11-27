@@ -21,6 +21,8 @@ public class ExchangeConfig {
 
     /**
      * 消息过期设置延迟队列
+     *
+     * @return
      */
     @Bean
     public DirectExchange delayMsgExpireExchange() {
@@ -29,6 +31,8 @@ public class ExchangeConfig {
 
     /**
      * 消息过期设置实际处理队列
+     *
+     * @return
      */
     @Bean
     public DirectExchange processMsgExpireExchange() {
@@ -37,6 +41,8 @@ public class ExchangeConfig {
 
     /**
      * 测试延迟队列的延迟队列交换机
+     *
+     * @return
      */
     @Bean
     public DirectExchange delayQueueExpireExchange() {
@@ -45,15 +51,21 @@ public class ExchangeConfig {
 
     /**
      * 测试延迟队列的实际处理队列交换机
+     *
+     * @return
      */
     @Bean
     public DirectExchange processQueueExpireExchange() {
         return new DirectExchange(MqConstants.EXCHANGE_QUEUE_EXPIRE_PROCESS);
     }
 
-    /**优先级队列交换器*/
+    /**
+     * 优先级队列交换器
+     *
+     * @return
+     */
     @Bean
-    public DirectExchange priorityExchange(){
+    public DirectExchange priorityExchange() {
         return new DirectExchange(MqConstants.EXCHANGE_PRIORITY);
     }
 }

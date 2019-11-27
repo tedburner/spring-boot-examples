@@ -30,6 +30,8 @@ public class RabbitMqConfig {
 
     /**
      * 绑定消息延迟队列和交换机
+     *
+     * @return
      */
     @Bean
     public Binding dlxTestDemoBinding() {
@@ -53,6 +55,8 @@ public class RabbitMqConfig {
 
     /**
      * 绑定消息延迟队列和交换机
+     *
+     * @return
      */
     @Bean
     public Binding dlxMsgExpireBinding() {
@@ -76,6 +80,8 @@ public class RabbitMqConfig {
 
     /**
      * 队列优先级
+     *
+     * @return
      */
     @Bean
     public Binding priorityBinding() {
