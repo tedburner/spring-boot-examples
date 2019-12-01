@@ -16,24 +16,24 @@ import java.net.InetSocketAddress;
 @Component
 public class MemcachedRunner implements CommandLineRunner {
 
-    @Value("${memcache.host}")
-    private String host;
+//    @Value("${memcache.host}")
+//    private String host;
+//
+//    @Value("${memcache.port}")
+//    private int port;
 
-    @Value("${memcache.port}")
-    private int port;
-
-    private MemcachedClient client = null;
+//    private MemcachedClient client = null;
 
     @Override
     public void run(String... args) throws Exception {
-        try {
-            client = new MemcachedClient(new InetSocketAddress(host, port));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            client = new MemcachedClient(new InetSocketAddress(host, port));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
-    public MemcachedClient getClient() {
-        return client;
-    }
+//    public MemcachedClient getClient() {
+//        return client;
+//    }
 }
