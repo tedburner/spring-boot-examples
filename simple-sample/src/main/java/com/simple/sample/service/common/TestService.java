@@ -1,7 +1,5 @@
 package com.simple.sample.service.common;
 
-import java.util.concurrent.CountDownLatch;
-
 /**
  * @author: lingjun.jlj
  * @date: 2019/11/27 09:35

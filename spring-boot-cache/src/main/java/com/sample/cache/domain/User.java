@@ -1,7 +1,11 @@
 package com.sample.cache.domain;
 
 import lombok.Data;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,8 +40,9 @@ public class User implements Serializable {
 
     private Integer status;
 
+    @CreatedDate
     private LocalDateTime createTime;
 
-
+    @LastModifiedDate
     private LocalDateTime updateTime;
 }

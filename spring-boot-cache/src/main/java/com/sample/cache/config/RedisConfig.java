@@ -22,16 +22,16 @@ import java.lang.reflect.Method;
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
 
-    @Value("${spring.redis.host}")
-    private String masterHost;
-    @Value("${spring.redis.port}")
-    private String masterPort;
-    @Value("${spring.redis.password}")
-    private String masterPassword;
-    @Value("${spring.redis.sentinel.master}")
-    private String master;
-    @Value("${spring.redis.sentinel.nodes}")
-    private String redisNodes;
+//    @Value("${spring.redis.host}")
+//    private String masterHost;
+//    @Value("${spring.redis.port}")
+//    private String masterPort;
+//    @Value("${spring.redis.password}")
+//    private String masterPassword;
+//    @Value("${spring.redis.sentinel.master}")
+//    private String master;
+//    @Value("${spring.redis.sentinel.nodes}")
+//    private String redisNodes;
 
     @Bean
     @Override
@@ -55,19 +55,19 @@ public class RedisConfig extends CachingConfigurerSupport {
      *
      * @return
      */
-    @Bean
-    public RedisSentinelConfiguration redisSentinelConfiguration() {
-        RedisSentinelConfiguration configuration = new RedisSentinelConfiguration();
-        String[] hosts = redisNodes.split(",");
-        for (String host : hosts) {
-            String[] item = host.split(":");
-            String ip = item[0];
-            String port = item[1];
-            configuration.addSentinel(new RedisNode(ip, Integer.valueOf(port)));
-        }
-        configuration.setMaster(master);
-        return configuration;
-    }
+//    @Bean
+//    public RedisSentinelConfiguration redisSentinelConfiguration() {
+//        RedisSentinelConfiguration configuration = new RedisSentinelConfiguration();
+//        String[] hosts = redisNodes.split(",");
+//        for (String host : hosts) {
+//            String[] item = host.split(":");
+//            String ip = item[0];
+//            String port = item[1];
+//            configuration.addSentinel(new RedisNode(ip, Integer.valueOf(port)));
+//        }
+//        configuration.setMaster(master);
+//        return configuration;
+//    }
 
 //    @Bean
 //    public JedisConnectionFactory jedisConnectionFactory() {
