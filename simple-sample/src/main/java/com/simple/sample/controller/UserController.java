@@ -19,8 +19,12 @@ import java.util.List;
 @RequestMapping(value = "/user")
 public class UserController {
 
+    private final UserService userService;
+
     @Autowired
-    private UserService userService;
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping(value = "/list/all")
     public NewResponseModel<List<User>> getAllUser() {

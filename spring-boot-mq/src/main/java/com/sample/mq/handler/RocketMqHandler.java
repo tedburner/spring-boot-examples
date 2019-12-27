@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RocketMQMessageListener(topic = "${mq.rocketmq.topic}", consumerGroup = "my-group")
-public class RocketMqConsumerHandler implements RocketMQListener<String> {
+public class RocketMqHandler implements RocketMQListener<String> {
 
 
     @Override
