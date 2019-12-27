@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Future;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -31,39 +32,34 @@ import java.util.concurrent.TimeUnit;
 public class FastThreadPool {
 
     private static Logger logger = LoggerFactory.getLogger(FastThreadPool.class);
-
-
-    public static final int DEFAULT_MIN_THREAD_COUNT = 16;
-
-    public static final int DEFAULT_MAX_THREAD_COUNT = 64;
-
-    public static final int DEFAULT_KEEP_ALIVE_TIME = 60;
-
-    public static final int DEFAULT_QUEUE_SIZE = 256;
-    //60s
+    /**
+     * 60s
+     */
     public static final long DEFAULT_THREAD_PROCESS_TIME_OUT = 60000L;
-    //20s
+    /**
+     * 20s
+     */
     public static final long DEFAULT_FUTURE_GET_TIME_OUT = 20000L;
 
     /**
      * 线程池维护线程的最少数量
      */
-    private int corePoolSize = DEFAULT_MIN_THREAD_COUNT;
+    private static final int CORE_POOL_SIZE = 16;
 
     /**
      * 线程池维护线程的最大数量
      */
-    private int maximumPoolSize = DEFAULT_MAX_THREAD_COUNT;
+    private static final int MAXIMUM_POOL_SIZE = 64;
 
     /**
      * 线程池维护线程所允许的空闲时间
      */
-    private int keepAliveTime = DEFAULT_KEEP_ALIVE_TIME;
+    private static final int KEEP_ALIVE_TIME = 60;
 
     /**
      * 线程池所使用的缓冲队列的最大数量,用于创建有界的缓冲队列
      */
-    private int queueSize = DEFAULT_QUEUE_SIZE;
+    private static final int QUEUE_SIZE = 256;
 
     /**
      * 线程池所使用的缓冲队列
@@ -87,12 +83,12 @@ public class FastThreadPool {
     @PostConstruct
     public void initialize() {
         //基于数组结构的有界阻塞队列，按FIFO排序任务
-        workQueue = new ArrayBlockingQueue(queueSize);
+        workQueue = new ArrayBlockingQueue(QUEUE_SIZE);
         //创建线程的工厂，通过自定义的线程工厂可以给每个新建的线程设置一个具有识别度的线程名
         threadFactory = new NamedThreadFactory("Parallel-Processor", null, true);
         //用调用者所在的线程来执行任务
         handler = new ThreadPoolExecutor.CallerRunsPolicy();
-        threadPoolExecutor = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime,
+        threadPoolExecutor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE_TIME,
                 TimeUnit.SECONDS, workQueue, threadFactory, handler);
         service = MoreExecutors.listeningDecorator(threadPoolExecutor);
     }
@@ -124,11 +120,14 @@ public class FastThreadPool {
         if (logger.isDebugEnabled()) {
             logger.debug("Try to parallel process Parallel process task count :" + taskRequest.getTaskCount());
         }
+        //使用CountDownLatch，等待所有线程执行完后，一起返回所有数据
         final CountDownLatch latch = new CountDownLatch(taskRequest.getTaskCount());
 
         List<ListenableFuture<V>> futureList = new ArrayList(taskRequest.getTaskCount());
+        //循环执行方法
         for (int i = 0; i < taskRequest.getTaskCount(); i++) {
             final int index = i;
+            //执行具体的方法
             ListenableFuture<V> futureTaskResult = service.submit(() -> {
                 V result = null;
                 try {
@@ -155,6 +154,7 @@ public class FastThreadPool {
         if (taskRequest.getCallback() != null) {
             Futures.addCallback(finalFuture, taskRequest.getCallback(), threadPoolExecutor);
         }
+        //等待所有线程执行完后，在继续后面的操作，并设置超时时间
         try {
             latch.await(threadProcessTimeout, TimeUnit.MILLISECONDS);
         } catch (InterruptedException e) {
