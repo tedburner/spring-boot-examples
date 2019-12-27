@@ -4,7 +4,7 @@ spring:
   application:
     name: mq-server
   rabbitmq:
-    host: localhost
+    host: 192.168.60.37
     port: 5672
     username: admin
     password: admin

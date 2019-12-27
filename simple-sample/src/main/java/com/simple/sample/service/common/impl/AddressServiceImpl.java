@@ -16,10 +16,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class AddressServiceImpl implements AddressService {
 
+    private final ProvinceRepository provinceRepository;
+    private final CityRepository cityRepository;
+
     @Autowired
-    private ProvinceRepository provinceRepository;
-    @Autowired
-    private CityRepository cityRepository;
+    public AddressServiceImpl(ProvinceRepository provinceRepository, CityRepository cityRepository) {
+        this.provinceRepository = provinceRepository;
+        this.cityRepository = cityRepository;
+    }
 
     @Override
     public void addProvince(String name) {

@@ -15,10 +15,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMqConfig {
 
+    private final ExchangeConfig exchangeConfig;
+    private final QueueConfig queueConfig;
+
     @Autowired
-    private ExchangeConfig exchangeConfig;
-    @Autowired
-    private QueueConfig queueConfig;
+    public RabbitMqConfig(ExchangeConfig exchangeConfig, QueueConfig queueConfig) {
+        this.exchangeConfig = exchangeConfig;
+        this.queueConfig = queueConfig;
+    }
 
     @Bean
     public Binding testBinding() {

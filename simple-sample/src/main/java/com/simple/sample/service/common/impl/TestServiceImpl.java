@@ -3,10 +3,7 @@ package com.simple.sample.service.common.impl;
 import com.simple.sample.service.common.AsyncMethodService;
 import com.simple.sample.service.common.TestService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.aop.framework.AopContext;
-import org.springframework.aop.framework.AopProxy;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.CountDownLatch;
@@ -20,8 +17,12 @@ import java.util.concurrent.CountDownLatch;
 @Service
 public class TestServiceImpl implements TestService {
 
+    private final AsyncMethodService asyncMethodService;
+
     @Autowired
-    private AsyncMethodService asyncMethodService;
+    public TestServiceImpl(AsyncMethodService asyncMethodService) {
+        this.asyncMethodService = asyncMethodService;
+    }
 
 
     @Override

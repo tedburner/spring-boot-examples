@@ -15,8 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/test")
 public class TestController {
 
+    private final TestService testService;
+
     @Autowired
-    private TestService testService;
+    public TestController(TestService testService) {
+        this.testService = testService;
+    }
 
     @GetMapping(value = "/say")
     public String sayHello() {

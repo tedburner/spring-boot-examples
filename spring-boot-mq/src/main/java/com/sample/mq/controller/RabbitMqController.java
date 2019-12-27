@@ -3,7 +3,6 @@ package com.sample.mq.controller;
 import com.sample.mq.constant.MqConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.AmqpException;
-import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessagePostProcessor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -27,15 +26,19 @@ import java.util.Date;
 @RequestMapping(value = "/mq")
 public class RabbitMqController {
 
+    private final RabbitTemplate rabbitTemplate;
+
     @Autowired
-    private RabbitTemplate rabbitTemplate;
-    @Autowired
-    private AmqpTemplate amqpTemplate;
+    public RabbitMqController(RabbitTemplate rabbitTemplate) {
+        this.rabbitTemplate = rabbitTemplate;
+    }
+
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @GetMapping(value = "/sendMsg")
     public String sendMsg() {
-        String message = "你好，今天是" + LocalDate.now();
+        String message = "你好，今天是" + LocalDate.now() + "。 今天是晴天，宝宝，我想你了，真的好想你！";
+        log.info("向RabbitMQ 发送一条消息，内容：{}", message);
         rabbitTemplate.convertAndSend(MqConstants.EXCHANGE_TEST, MqConstants.QUEUE_TEST, message);
         return "发送成功！";
     }

@@ -26,12 +26,17 @@ import java.math.BigDecimal;
 @Service
 public class TransactionServiceImpl implements TransactionService {
 
+    private final UserRepository userRepository;
+    private final AccountRepository accountRepository;
+    private final AccountAmountLogRepository accountAmountLogRepository;
+
     @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private AccountRepository accountRepository;
-    @Autowired
-    private AccountAmountLogRepository accountAmountLogRepository;
+    public TransactionServiceImpl(UserRepository userRepository, AccountRepository accountRepository,
+                                  AccountAmountLogRepository accountAmountLogRepository) {
+        this.userRepository = userRepository;
+        this.accountRepository = accountRepository;
+        this.accountAmountLogRepository = accountAmountLogRepository;
+    }
 
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRES_NEW,
             isolation = Isolation.READ_UNCOMMITTED)
@@ -84,7 +89,7 @@ public class TransactionServiceImpl implements TransactionService {
         throw new RuntimeException("操作出现异常");
     }
 
-    private void delayOperation(){
+    private void delayOperation() {
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {

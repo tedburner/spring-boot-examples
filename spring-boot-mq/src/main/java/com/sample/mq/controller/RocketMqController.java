@@ -20,8 +20,12 @@ public class RocketMqController {
     @Value("${mq.rocketmq.topic}")
     private String topic;
 
+    private final RocketMQTemplate rocketMQTemplate;
+
     @Autowired
-    private RocketMQTemplate rocketMQTemplate;
+    public RocketMqController(RocketMQTemplate rocketMQTemplate) {
+        this.rocketMQTemplate = rocketMQTemplate;
+    }
 
     @GetMapping(value = "/send")
     public String send() {
