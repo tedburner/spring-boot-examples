@@ -35,6 +35,19 @@ mvn clean package  -Dmaven.test.skip=true
 mvn clean package -Pproduction
 ```
 
+### 打包时跳过测试
+```bash
+     <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-surefire-plugin</artifactId>
+         <version>2.18.1</version>
+         <configuration>
+        <!--true跳过测试-->
+               <skipTests>true</skipTests>
+         </configuration>
+      </plugin>
+```
+
 ### 启动jar
 
 ```bash
