@@ -88,4 +88,9 @@ public class QueueConfig {
         params.put("x-max-priority", 10);
         return new Queue(MqConstants.QUEUE_PRIORITY, true, false, false, params);
     }
+
+    @Bean
+    public Queue videoSynthesis() {
+        return new Queue(MqConstants.VIDEO_SYNTHESIS, true, false, false);
+    }
 }

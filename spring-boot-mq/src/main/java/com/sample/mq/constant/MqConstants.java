@@ -35,5 +35,7 @@ public class MqConstants {
     public static final String EXCHANGE_PRIORITY = "priority.exchange";
     public static final String QUEUE_PRIORITY = "priority.queue";
 
+    public static final String VIDEO_SYNTHESIS = "task_queue";
+
 
 }
