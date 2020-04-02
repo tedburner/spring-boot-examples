@@ -1,9 +1,12 @@
 package com.simple.sample.service.common.impl;
 
+import com.simple.sample.aspect.annotation.AroundCase;
+import com.simple.sample.domain.dto.UserDTO;
 import com.simple.sample.service.common.AsyncMethodService;
 import com.simple.sample.service.common.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.CountDownLatch;
@@ -24,6 +27,8 @@ public class TestServiceImpl implements TestService {
         this.asyncMethodService = asyncMethodService;
     }
 
+    @Value("${number}")
+    private String number;
 
     @Override
     public void sayHello() {
@@ -41,5 +46,12 @@ public class TestServiceImpl implements TestService {
             e.printStackTrace();
         }
         log.info("主线程打印信息...");
+    }
+
+    @Override
+//    @PreAuthorize(value = "userDTO.getCardNo()")
+    @AroundCase(name = "蒋先森", value = "宋洋洋", parm = "userDTO.getCardNo()")
+    public void aspectCase(UserDTO userDTO) {
+        System.out.println("测试Aop 获取各种属性的方法");
     }
 }

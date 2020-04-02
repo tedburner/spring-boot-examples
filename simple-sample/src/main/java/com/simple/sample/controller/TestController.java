@@ -1,5 +1,6 @@
 package com.simple.sample.controller;
 
+import com.simple.sample.domain.dto.UserDTO;
 import com.simple.sample.service.common.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +32,17 @@ public class TestController {
     @GetMapping(value = "/say/async")
     public String asyncSayHello() {
         testService.sayWaitHello();
+        return "成功";
+    }
+
+    @GetMapping(value = "/aop")
+    public String aopTest() {
+        UserDTO userDTO = new UserDTO();
+        userDTO.setId(1);
+        userDTO.setUsername("张三");
+        userDTO.setPassword("密码");
+        userDTO.setCardNo("330781187609092330");
+        testService.aspectCase(userDTO);
         return "成功";
     }
 }
