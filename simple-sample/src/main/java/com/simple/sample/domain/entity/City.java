@@ -3,8 +3,11 @@ package com.simple.sample.domain.entity;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -18,6 +21,7 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "city")
+@EntityListeners(AuditingEntityListener.class)
 public class City {
 
     @Id
@@ -30,6 +34,7 @@ public class City {
 
     private String description;
 
+    @Column(insertable = false, columnDefinition = "int default 1")
     private Integer status;
 
     @CreatedDate

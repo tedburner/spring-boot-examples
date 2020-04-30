@@ -2,9 +2,11 @@ package com.simple.sample.domain.entity;
 
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -19,6 +21,7 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "account_amount_log")
+@EntityListeners(AuditingEntityListener.class)
 public class AccountAmountLog {
 
     @Id
@@ -29,7 +32,8 @@ public class AccountAmountLog {
 
     private BigDecimal amount;
 
-    private String status;
+    @Column(insertable = false, columnDefinition = "int default 1")
+    private Integer status;
 
     @CreatedDate
     private Date createTime;

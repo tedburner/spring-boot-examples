@@ -33,14 +33,6 @@ public interface TransactionService {
     void saveAccount(Long userId, BigDecimal amount);
 
     /**
-     * 添加消费流水
-     *
-     * @param userId
-     * @param amount
-     */
-    void saveAccountAmountLog(Long userId, BigDecimal amount);
-
-    /**
      * 扣除用户金额
      *
      * @param userId

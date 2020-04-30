@@ -1,7 +1,6 @@
 package com.simple.sample.domain.entity;
 
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -39,7 +38,7 @@ public class User {
 
     private String phone;
 
-    @Column(insertable = false)
+    @Column(insertable = false, columnDefinition = "int default 1")
     private Integer status;
 
     @CreatedDate

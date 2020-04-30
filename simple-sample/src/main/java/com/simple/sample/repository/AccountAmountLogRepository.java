@@ -1,6 +1,5 @@
 package com.simple.sample.repository;
 
-import com.simple.sample.domain.entity.Account;
 import com.simple.sample.domain.entity.AccountAmountLog;
 import org.springframework.data.jpa.repository.JpaRepository;
 
