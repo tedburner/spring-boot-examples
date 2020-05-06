@@ -11,7 +11,6 @@
                            http://www.dangdang.com/schema/ddframe/job/job.xsd">
 
     <!--配置作业注册中心 -->
-    <!--配置作业注册中心 -->
     <reg:zookeeper id="regCenter" server-lists="${zookeeper.zkNode}"
                    namespace="elastic-job"
                    base-sleep-time-milliseconds="1000"

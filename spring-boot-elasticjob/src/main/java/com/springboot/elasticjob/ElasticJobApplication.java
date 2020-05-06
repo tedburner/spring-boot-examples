@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 
 /**
- * @author : Lucifer
+ * @author : lingjun.jlj
  * @description: ElasticJob 分布式任务
  *
  * 推荐crontab 工具 http://cron.qqe2.com/
