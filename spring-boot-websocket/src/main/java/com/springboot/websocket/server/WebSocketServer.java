@@ -41,7 +41,7 @@ public class WebSocketServer {
     @OnOpen
     public void onOpen(Session session, @PathParam("sid") String sid) {
         if (SESSION_MAP.containsKey(sid)) {
-            System.out.println("用户：" + sid + "已经在别处登录了");
+            log.info("用户:{} 已经在别处登录了", sid);
             sendMessage(sid, "您的账号已在其他地方登录!");
         }
 
