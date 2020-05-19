@@ -6,8 +6,8 @@ import org.apache.commons.pool2.impl.DefaultPooledObject;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisShardInfo;
-import redis.clients.util.Hashing;
-import redis.clients.util.Pool;
+import redis.clients.jedis.util.Hashing;
+import redis.clients.jedis.util.Pool;
 
 import java.util.List;
 import java.util.regex.Pattern;

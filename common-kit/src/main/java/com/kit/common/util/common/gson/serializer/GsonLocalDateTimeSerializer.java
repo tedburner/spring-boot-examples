@@ -23,12 +23,14 @@ public class GsonLocalDateTimeSerializer implements JsonSerializer<LocalDateTime
     public GsonLocalDateTimeSerializer() {
     }
 
+    @Override
     public LocalDateTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         Long timeStamp = jsonElement.getAsJsonPrimitive().getAsLong();
         Instant instant = Instant.ofEpochMilli(timeStamp);
         return LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
     }
 
+    @Override
     public JsonElement serialize(LocalDateTime localDateTime, Type type, JsonSerializationContext jsonSerializationContext) {
         Long timeStamp = localDateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
         return new JsonPrimitive(timeStamp);

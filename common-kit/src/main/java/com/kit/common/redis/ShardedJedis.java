@@ -1,26 +1,32 @@
 package com.kit.common.redis;
 
-import redis.clients.jedis.BinaryClient;
 import redis.clients.jedis.BinaryShardedJedis;
 import redis.clients.jedis.BitPosParams;
 import redis.clients.jedis.GeoCoordinate;
 import redis.clients.jedis.GeoRadiusResponse;
 import redis.clients.jedis.GeoUnit;
 import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisCommands;
 import redis.clients.jedis.JedisShardInfo;
+import redis.clients.jedis.ListPosition;
 import redis.clients.jedis.ScanParams;
 import redis.clients.jedis.ScanResult;
 import redis.clients.jedis.SortingParams;
+import redis.clients.jedis.StreamConsumersInfo;
+import redis.clients.jedis.StreamEntry;
+import redis.clients.jedis.StreamEntryID;
+import redis.clients.jedis.StreamGroupInfo;
+import redis.clients.jedis.StreamInfo;
+import redis.clients.jedis.StreamPendingEntry;
 import redis.clients.jedis.Tuple;
-import redis.clients.jedis.params.geo.GeoRadiusParam;
-import redis.clients.jedis.params.sortedset.ZAddParams;
-import redis.clients.jedis.params.sortedset.ZIncrByParams;
-import redis.clients.util.Hashing;
-import redis.clients.util.Pool;
+import redis.clients.jedis.commands.JedisCommands;
+import redis.clients.jedis.params.GeoRadiusParam;
+import redis.clients.jedis.params.SetParams;
+import redis.clients.jedis.params.ZAddParams;
+import redis.clients.jedis.params.ZIncrByParams;
+import redis.clients.jedis.util.Hashing;
+import redis.clients.jedis.util.Pool;
 
 import java.io.Closeable;
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -53,10 +59,6 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands, C
         super(shards);
     }
 
-    public ShardedJedis(List<JedisShardInfo> shards, Hashing algo) {
-        super(shards, algo);
-    }
-
     public ShardedJedis(List<JedisShardInfo> shards, Pattern keyTagPattern) {
         super(shards, keyTagPattern);
     }
@@ -77,12 +79,6 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands, C
                 }
             }
 
-            if (broken) {
-                dataSource.returnBrokenResource(this);
-            } else {
-                dataSource.returnResource(this);
-            }
-
         } else {
             disconnect();
         }
@@ -95,15 +91,8 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands, C
     }
 
     @Override
-    public String set(String key, String value, String nxxx, String expx, long time) {
-        Jedis jedis = getShard(key);
-        return jedis.set(key, value, nxxx, expx, time);
-    }
-
-    @Override
-    public String set(String key, String value, String nxxx) {
-        Jedis jedis = getShard(key);
-        return jedis.set(key, value, nxxx);
+    public String set(String s, String s1, SetParams setParams) {
+        return null;
     }
 
     @Override
@@ -131,7 +120,27 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands, C
     }
 
     @Override
+    public byte[] dump(String s) {
+        return new byte[0];
+    }
+
+    @Override
+    public String restore(String s, int i, byte[] bytes) {
+        return null;
+    }
+
+    @Override
+    public String restoreReplace(String s, int i, byte[] bytes) {
+        return null;
+    }
+
+    @Override
     public Long expire(String key, int seconds) {
+        return null;
+    }
+
+    @Override
+    public Long pexpire(String s, long l) {
         return null;
     }
 
@@ -152,6 +161,11 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands, C
 
     @Override
     public Long pttl(String key) {
+        return null;
+    }
+
+    @Override
+    public Long touch(String s) {
         return null;
     }
 
@@ -237,6 +251,11 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands, C
 
     @Override
     public Long hset(String key, String field, String value) {
+        return null;
+    }
+
+    @Override
+    public Long hset(String s, Map<String, String> map) {
         return null;
     }
 
@@ -476,6 +495,26 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands, C
     }
 
     @Override
+    public Tuple zpopmax(String s) {
+        return null;
+    }
+
+    @Override
+    public Set<Tuple> zpopmax(String s, int i) {
+        return null;
+    }
+
+    @Override
+    public Tuple zpopmin(String s) {
+        return null;
+    }
+
+    @Override
+    public Set<Tuple> zpopmin(String s, int i) {
+        return null;
+    }
+
+    @Override
     public List<String> sort(String key) {
         return null;
     }
@@ -621,9 +660,10 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands, C
     }
 
     @Override
-    public Long linsert(String key, BinaryClient.LIST_POSITION where, String pivot, String value) {
+    public Long linsert(String s, ListPosition listPosition, String s1, String s2) {
         return null;
     }
+
 
     @Override
     public Long lpushx(String key, String... string) {
@@ -636,17 +676,7 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands, C
     }
 
     @Override
-    public List<String> blpop(String arg) {
-        return null;
-    }
-
-    @Override
     public List<String> blpop(int timeout, String key) {
-        return null;
-    }
-
-    @Override
-    public List<String> brpop(String arg) {
         return null;
     }
 
@@ -657,6 +687,11 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands, C
 
     @Override
     public Long del(String key) {
+        return null;
+    }
+
+    @Override
+    public Long unlink(String s) {
         return null;
     }
 
@@ -687,21 +722,6 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands, C
 
     @Override
     public Long bitpos(String key, boolean value, BitPosParams params) {
-        return null;
-    }
-
-    @Override
-    public ScanResult<Map.Entry<String, String>> hscan(String key, int cursor) {
-        return null;
-    }
-
-    @Override
-    public ScanResult<String> sscan(String key, int cursor) {
-        return null;
-    }
-
-    @Override
-    public ScanResult<Tuple> zscan(String key, int cursor) {
         return null;
     }
 
@@ -781,7 +801,17 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands, C
     }
 
     @Override
+    public List<GeoRadiusResponse> georadiusReadonly(String s, double v, double v1, double v2, GeoUnit geoUnit) {
+        return null;
+    }
+
+    @Override
     public List<GeoRadiusResponse> georadius(String key, double longitude, double latitude, double radius, GeoUnit unit, GeoRadiusParam param) {
+        return null;
+    }
+
+    @Override
+    public List<GeoRadiusResponse> georadiusReadonly(String s, double v, double v1, double v2, GeoUnit geoUnit, GeoRadiusParam geoRadiusParam) {
         return null;
     }
 
@@ -791,12 +821,117 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands, C
     }
 
     @Override
+    public List<GeoRadiusResponse> georadiusByMemberReadonly(String s, String s1, double v, GeoUnit geoUnit) {
+        return null;
+    }
+
+    @Override
     public List<GeoRadiusResponse> georadiusByMember(String key, String member, double radius, GeoUnit unit, GeoRadiusParam param) {
         return null;
     }
 
     @Override
+    public List<GeoRadiusResponse> georadiusByMemberReadonly(String s, String s1, double v, GeoUnit geoUnit, GeoRadiusParam geoRadiusParam) {
+        return null;
+    }
+
+    @Override
     public List<Long> bitfield(String key, String... arguments) {
+        return null;
+    }
+
+    @Override
+    public List<Long> bitfieldReadonly(String s, String... strings) {
+        return null;
+    }
+
+    @Override
+    public Long hstrlen(String s, String s1) {
+        return null;
+    }
+
+    @Override
+    public StreamEntryID xadd(String s, StreamEntryID streamEntryID, Map<String, String> map) {
+        return null;
+    }
+
+    @Override
+    public StreamEntryID xadd(String s, StreamEntryID streamEntryID, Map<String, String> map, long l, boolean b) {
+        return null;
+    }
+
+    @Override
+    public Long xlen(String s) {
+        return null;
+    }
+
+    @Override
+    public List<StreamEntry> xrange(String s, StreamEntryID streamEntryID, StreamEntryID streamEntryID1, int i) {
+        return null;
+    }
+
+    @Override
+    public List<StreamEntry> xrevrange(String s, StreamEntryID streamEntryID, StreamEntryID streamEntryID1, int i) {
+        return null;
+    }
+
+    @Override
+    public long xack(String s, String s1, StreamEntryID... streamEntryIDS) {
+        return 0;
+    }
+
+    @Override
+    public String xgroupCreate(String s, String s1, StreamEntryID streamEntryID, boolean b) {
+        return null;
+    }
+
+    @Override
+    public String xgroupSetID(String s, String s1, StreamEntryID streamEntryID) {
+        return null;
+    }
+
+    @Override
+    public long xgroupDestroy(String s, String s1) {
+        return 0;
+    }
+
+    @Override
+    public Long xgroupDelConsumer(String s, String s1, String s2) {
+        return null;
+    }
+
+    @Override
+    public List<StreamPendingEntry> xpending(String s, String s1, StreamEntryID streamEntryID, StreamEntryID streamEntryID1, int i, String s2) {
+        return null;
+    }
+
+    @Override
+    public long xdel(String s, StreamEntryID... streamEntryIDS) {
+        return 0;
+    }
+
+    @Override
+    public long xtrim(String s, long l, boolean b) {
+        return 0;
+    }
+
+    @Override
+    public List<StreamEntry> xclaim(String s, String s1, String s2, long l, long l1, int i, boolean b, StreamEntryID... streamEntryIDS) {
+        return null;
+    }
+
+    @Override
+    public StreamInfo xinfoStream(String s) {
+        return null;
+    }
+
+    @Override
+    public List<StreamGroupInfo> xinfoGroup(String s) {
+        return null;
+    }
+
+    @Override
+    public List<StreamConsumersInfo> xinfoConsumers(String s, String s1) {
         return null;
     }
 

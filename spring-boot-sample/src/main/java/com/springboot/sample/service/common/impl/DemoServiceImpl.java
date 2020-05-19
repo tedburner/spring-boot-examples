@@ -1,7 +1,7 @@
 package com.springboot.sample.service.common.impl;
 
 import com.springboot.sample.domain.DO.CityDO;
-import com.springboot.sample.domain.DTO.message.SMSMessageDTO;
+import com.springboot.sample.domain.DTO.message.SmsMessageDTO;
 import com.springboot.sample.service.common.DemoService;
 import com.springboot.sample.service.factory.city.CityFactory;
 import com.springboot.sample.service.factory.city.CityProcessor;
@@ -55,7 +55,7 @@ public class DemoServiceImpl implements DemoService {
 
     @Override
     public void sendMessage() {
-        SMSMessageDTO messageDTO = new SMSMessageDTO();
+        SmsMessageDTO messageDTO = new SmsMessageDTO();
         messageDTO.setPhone("17826852173");
         messageDTO.setTemplateCode("SMS_150743936");
         Map<String, Object> param = new HashMap<>();

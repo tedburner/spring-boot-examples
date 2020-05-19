@@ -1,10 +1,5 @@
 package com.springboot.sample.domain.DTO.message;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.io.Serializable;
 
 /**
@@ -12,7 +7,7 @@ import java.io.Serializable;
  * @date: 2018/11/12 19:34
  * @description:
  */
-public class SMSMessageDTO implements Serializable {
+public class SmsMessageDTO implements Serializable {
 
     /**
      * 接收人手机号码

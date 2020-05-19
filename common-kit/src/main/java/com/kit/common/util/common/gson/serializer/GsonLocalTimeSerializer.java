@@ -21,10 +21,12 @@ public class GsonLocalTimeSerializer implements JsonSerializer<LocalTime>, JsonD
     public GsonLocalTimeSerializer() {
     }
 
+    @Override
     public LocalTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         return LocalTime.parse(jsonElement.getAsJsonPrimitive().getAsString());
     }
 
+    @Override
     public JsonElement serialize(LocalTime localTime, Type type, JsonSerializationContext jsonSerializationContext) {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm");
         String dateTimeStr = localTime.format(format);

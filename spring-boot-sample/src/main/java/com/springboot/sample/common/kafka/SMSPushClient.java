@@ -1,7 +1,7 @@
 package com.springboot.sample.common.kafka;
 
 import com.springboot.sample.common.enums.kafka.KafkaMessageStatusEnum;
-import com.springboot.sample.domain.DTO.message.SMSMessageDTO;
+import com.springboot.sample.domain.DTO.message.SmsMessageDTO;
 import com.springboot.sample.service.kafka.KafkaMessageService;
 import com.kit.common.util.common.gson.FormatUtils;
 import com.springboot.sample.util.sms.SMSUtils;
@@ -34,7 +34,7 @@ public class SMSPushClient {
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());
         if (kafkaMessage.isPresent()) {
             log.info("start consumer topic SMS-Topic");
-            SMSMessageDTO messageDTO = FormatUtils.str2obj((String) kafkaMessage.get(), new TypeToken<SMSMessageDTO>() {
+            SmsMessageDTO messageDTO = FormatUtils.str2obj((String) kafkaMessage.get(), new TypeToken<SmsMessageDTO>() {
             }.getType());
             log.info("message : " + messageDTO);
             try {

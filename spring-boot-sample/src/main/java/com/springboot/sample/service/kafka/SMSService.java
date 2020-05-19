@@ -1,6 +1,6 @@
 package com.springboot.sample.service.kafka;
 
-import com.springboot.sample.domain.DTO.message.SMSMessageDTO;
+import com.springboot.sample.domain.DTO.message.SmsMessageDTO;
 
 /**
  * @author: Lucifer
@@ -12,5 +12,5 @@ public interface SMSService {
     /**
      * kafka发送短信
      */
-    void sendSMS(SMSMessageDTO message);
+    void sendSMS(SmsMessageDTO message);
 }

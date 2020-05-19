@@ -18,7 +18,6 @@ import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Future;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -33,11 +32,11 @@ public class FastThreadPool {
 
     private static Logger logger = LoggerFactory.getLogger(FastThreadPool.class);
     /**
-     * 60s
+     * 默认线程处理超时时间 60s
      */
     public static final long DEFAULT_THREAD_PROCESS_TIME_OUT = 60000L;
     /**
-     * 20s
+     * 默认Future获取时间 20s
      */
     public static final long DEFAULT_FUTURE_GET_TIME_OUT = 20000L;
 
@@ -78,7 +77,7 @@ public class FastThreadPool {
     private ListeningExecutorService service;
 
     /**
-     * @PostConstruct 在spring容器初始化时执行该方法
+     * @PostConstruct 在spring容器初始化时，初始化创建一个线程池
      */
     @PostConstruct
     public void initialize() {
@@ -94,6 +93,9 @@ public class FastThreadPool {
     }
 
 
+    /**
+     * 销毁线程池
+     */
     @PreDestroy
     public void stop() {
         service.shutdownNow();
@@ -104,10 +106,10 @@ public class FastThreadPool {
      * 提交并发请求
      *
      * @param taskRequest
+     * @return
      */
     public <V> List<V> execute(final TaskRequest taskRequest) {
-        long threadProcessTimeout = DEFAULT_THREAD_PROCESS_TIME_OUT;
-        return execute(taskRequest, threadProcessTimeout);
+        return execute(taskRequest, DEFAULT_THREAD_PROCESS_TIME_OUT);
     }
 
     /**
@@ -115,17 +117,19 @@ public class FastThreadPool {
      *
      * @param taskRequest          请求
      * @param threadProcessTimeout 线程处理时间
+     * @return
      */
     public <V> List<V> execute(final TaskRequest taskRequest, long threadProcessTimeout) {
         if (logger.isDebugEnabled()) {
             logger.debug("Try to parallel process Parallel process task count :" + taskRequest.getTaskCount());
         }
+        int taskCount = taskRequest.getTaskCount();
         //使用CountDownLatch，等待所有线程执行完后，一起返回所有数据
-        final CountDownLatch latch = new CountDownLatch(taskRequest.getTaskCount());
+        final CountDownLatch latch = new CountDownLatch(taskCount);
 
-        List<ListenableFuture<V>> futureList = new ArrayList(taskRequest.getTaskCount());
+        List<ListenableFuture<V>> futureList = new ArrayList(taskCount);
         //循环执行方法
-        for (int i = 0; i < taskRequest.getTaskCount(); i++) {
+        for (int i = 0; i < taskCount; i++) {
             final int index = i;
             //执行具体的方法
             ListenableFuture<V> futureTaskResult = service.submit(() -> {

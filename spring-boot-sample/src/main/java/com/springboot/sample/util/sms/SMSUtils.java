@@ -9,7 +9,7 @@ import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
-import com.springboot.sample.domain.DTO.message.SMSMessageDTO;
+import com.springboot.sample.domain.DTO.message.SmsMessageDTO;
 import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
@@ -35,7 +35,7 @@ public class SMSUtils {
     //@Value("${aliyun.SignName}")
     private String signName;
 
-    public SendSmsResponse sendSMS(SMSMessageDTO messageDTO) throws ClientException {
+    public SendSmsResponse sendSMS(SmsMessageDTO messageDTO) throws ClientException {
 
 
         //可自助调整超时时间

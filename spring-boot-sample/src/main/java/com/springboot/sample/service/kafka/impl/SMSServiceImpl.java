@@ -1,7 +1,7 @@
 package com.springboot.sample.service.kafka.impl;
 
 import com.springboot.sample.common.annotation.kafka.KafkaMessageAnnotation;
-import com.springboot.sample.domain.DTO.message.SMSMessageDTO;
+import com.springboot.sample.domain.DTO.message.SmsMessageDTO;
 import com.springboot.sample.service.kafka.ProducerService;
 import com.springboot.sample.service.kafka.SMSService;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +26,7 @@ public class SMSServiceImpl implements SMSService {
 
     @Override
     @KafkaMessageAnnotation
-    public void sendSMS(SMSMessageDTO message) {
+    public void sendSMS(SmsMessageDTO message) {
         log.info("注解反射后的实体类：" + message);
         producerService.sendMessage(topic, message);
     }

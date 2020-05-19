@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -26,11 +27,15 @@ import java.util.Optional;
 @Service
 public class UserMongoDBServiceImpl implements UserMongoDBService {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+
+    private final MongoTemplate mongoTemplate;
 
     @Autowired
-    private MongoTemplate mongoTemplate;
+    public UserMongoDBServiceImpl(UserRepository userRepository, MongoTemplate mongoTemplate) {
+        this.userRepository = userRepository;
+        this.mongoTemplate = mongoTemplate;
+    }
 
     @Override
     public void save(User user) {
@@ -65,6 +70,7 @@ public class UserMongoDBServiceImpl implements UserMongoDBService {
         return userList;
     }
 
+    @Override
     public User findUserById(String id) {
         Optional<User> user = userRepository.findById(id);
         return user.get();
@@ -72,9 +78,8 @@ public class UserMongoDBServiceImpl implements UserMongoDBService {
 
     @Override
     public List<User> findUserByPage(PageDTO pageDTO) {
-        //Sort sort = new Sort(Sort.Direction.DESC, "time");
-
-        Pageable pageable = new PageRequest(pageDTO.getStart(), pageDTO.getSize());
+        Sort sort = Sort.by(Sort.Direction.DESC, "time");
+        Pageable pageable = PageRequest.of(pageDTO.getStart(), pageDTO.getSize(), sort);
         Page<User> userPage = userRepository.findAll(pageable);
         return userPage.getContent();
     }

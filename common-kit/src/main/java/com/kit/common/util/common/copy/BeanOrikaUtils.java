@@ -6,7 +6,7 @@ import ma.glasnost.orika.impl.DefaultMapperFactory;
 /**
  * @author: lingjun.jlj
  * @date: 2019/5/21 18:53
- * @description: 基于orika 的 拷贝方法
+ * @description: 基于 orika 的 拷贝方法
  */
 public class BeanOrikaUtils {
 

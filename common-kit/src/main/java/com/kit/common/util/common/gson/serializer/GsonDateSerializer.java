@@ -21,10 +21,12 @@ public class GsonDateSerializer implements JsonSerializer<Date>, JsonDeserialize
     public GsonDateSerializer() {
     }
 
+    @Override
     public JsonElement serialize(Date date, Type type, JsonSerializationContext context) {
         return new JsonPrimitive(date.getTime());
     }
 
+    @Override
     public Date deserialize(JsonElement element, Type type, JsonDeserializationContext context) throws JsonParseException {
         return new Date(element.getAsJsonPrimitive().getAsLong());
     }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import redis.clients.jedis.ShardedJedis;
 import redis.clients.jedis.ShardedJedisPool;
 import redis.clients.jedis.exceptions.JedisException;
+import redis.clients.jedis.params.SetParams;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,7 +55,7 @@ public class RedisCacheClient implements CacheClient {
         try {
             return shardedJedis.setex(rawKey(field, key), expireTime, rawValue(value));
         } catch (Exception ex) {
-            log.error("edis set error key:" + key(field, key), ex);
+            log.error("redis set error key:" + key(field, key), ex);
         } finally {
             shardedJedis.close();
         }
@@ -65,9 +66,12 @@ public class RedisCacheClient implements CacheClient {
     public <T> String setnx(String key, T value, int expireTime) {
         ShardedJedis shardedJedis = shardedJedisPool.getResource();
         try {
-            return shardedJedis.set(key, String.valueOf(value), "NX", "EX", expireTime);
+            SetParams params = new SetParams()
+                    .nx()
+                    .px(expireTime);
+            return shardedJedis.set(key, String.valueOf(value), params);
         } catch (Exception ex) {
-            log.error("edis set error key:" + key, ex);
+            log.error("redis set error key:" + key, ex);
         } finally {
             shardedJedis.close();
         }
