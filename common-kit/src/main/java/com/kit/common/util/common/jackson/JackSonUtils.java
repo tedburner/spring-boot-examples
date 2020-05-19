@@ -1,7 +1,13 @@
 package com.kit.common.util.common.jackson;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.json.JsonReadFeature;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
@@ -46,6 +52,13 @@ public class JackSonUtils {
      * 解决java8时间冲突问题
      */
     private static final ObjectMapper objectMapper = (new ObjectMapper())
+            .setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY)
+            //序列化结果中不包含null值
+            .setSerializationInclusion(JsonInclude.Include.NON_NULL)
+            //允许：默认false_不解析含有结束语控制字符
+            .enable(JsonReadFeature.ALLOW_UNESCAPED_CONTROL_CHARS.mappedFeature())
+            //主要是这行配置，意思是在遇到未知字段时是否失败，默认为true，也就是遇到未知字段时会报错
+            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
             .registerModule(new ParameterNamesModule())
             .registerModule(new Jdk8Module())
             .registerModule(new JavaTimeModule())
@@ -121,5 +134,8 @@ public class JackSonUtils {
         };
         List<UserDTO> list1 = JackSonUtils.str2obj(listJson, type);
         System.out.println("json 转换成 List 数据：" + list1);
+
+        String str = "{\"id\":\"1\",\"name\":\"张三\",\"date\":1589877644094,\"localDateTime\":\"1589877644098\",\"localDate\":[2020,5,19],\"localTime\":[16,40,44,98000000],\"password\":\"123456\"}";
+        System.out.println("json 数据中有多余字段的 字符串转换成 Object 数据：" + JackSonUtils.str2obj(str, UserDTO.class));
     }
 }
