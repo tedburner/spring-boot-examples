@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 /**
- * @author: Arthas
+ * @author: lingjun.jlj
  * @date: 2019-05-16 22:45
  * @description:
  */

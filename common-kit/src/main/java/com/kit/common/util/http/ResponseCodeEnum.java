@@ -1,7 +1,7 @@
 package com.kit.common.util.http;
 
 /**
- * @author lingjun.jlj
+ * @author: lingjun.jlj
  * @create 2017-11-23
  **/
 public enum ResponseCodeEnum {

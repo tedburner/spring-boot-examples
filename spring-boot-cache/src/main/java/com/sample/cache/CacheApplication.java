@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 
 /**
- * @author: Arthas
+ * @author: lingjun.jlj
  * @description: 关于各种缓存的集成
  */
 @EnableCaching

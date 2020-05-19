@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * CQRS 读写分离
  *
- * @author: Arthas
+ * @author: lingjun.jlj
  */
 @SpringBootApplication
 public class CqrsApplication {

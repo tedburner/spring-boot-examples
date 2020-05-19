@@ -6,7 +6,7 @@ import com.simple.sample.domain.entity.User;
 import java.math.BigDecimal;
 
 /**
- * @author: Arthas
+ * @author: lingjun.jlj
  * @date: 2019/9/19 22:04
  * @description: 事务隔离级别演示
  */

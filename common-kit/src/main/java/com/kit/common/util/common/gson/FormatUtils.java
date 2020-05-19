@@ -1,5 +1,7 @@
 package com.kit.common.util.common.gson;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.kit.common.test.UserDTO;
 import com.kit.common.util.common.StringUtils;
@@ -11,10 +13,6 @@ import com.kit.common.util.common.gson.adapter.StringAdapter;
 import com.kit.common.util.common.gson.serializer.GsonDateSerializer;
 import com.kit.common.util.common.gson.serializer.GsonLocalDateSerializer;
 import com.kit.common.util.common.gson.serializer.GsonLocalDateTimeSerializer;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonIOException;
-import com.google.gson.JsonSyntaxException;
 import com.kit.common.util.common.gson.serializer.GsonLocalTimeSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +22,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author lingjun.jlj
@@ -32,8 +32,11 @@ import java.util.Date;
  * @Description:
  */
 public class FormatUtils {
-
     private static Logger log = LoggerFactory.getLogger(FormatUtils.class);
+
+    /**
+     * 解决java8时间以及别的一些冲突问题
+     */
     private static final Gson gson = (new GsonBuilder())
             .registerTypeAdapter(Date.class, new GsonDateSerializer())
             .registerTypeAdapter(LocalDateTime.class, new GsonLocalDateTimeSerializer())
@@ -49,15 +52,28 @@ public class FormatUtils {
     public FormatUtils() {
     }
 
-    public static <T> String obj2str(T obj) throws JsonIOException {
+    /**
+     * 对象转化成json
+     *
+     * @param obj 对象
+     * @return json
+     */
+    public static <T> String obj2str(T obj) {
         return gson.toJson(obj);
     }
 
-    public static <T> T str2obj(String str, Type t) throws JsonSyntaxException {
+    /**
+     * json 字符串转换成对象
+     *
+     * @param str  json 字符串
+     * @param type 转换类型
+     * @return
+     */
+    public static <T> T str2obj(String str, Type type) {
         try {
-            return StringUtils.isEmpty(str) ? null : gson.fromJson(str, t);
+            return StringUtils.isEmpty(str) ? null : gson.fromJson(str, type);
         } catch (Exception var3) {
-            log.error("str2obj error, str=" + str, var3);
+            log.error("gson str2obj error, str=" + str, var3);
             return null;
         }
     }
@@ -73,8 +89,19 @@ public class FormatUtils {
         String json = FormatUtils.obj2str(userDTO);
         System.out.println("Object 转换成 json 数据：" + json);
 
-        Type type = new TypeToken<UserDTO>() {}.getType();
+        Type type = new TypeToken<UserDTO>() {
+        }.getType();
         UserDTO dto = FormatUtils.str2obj(json, type);
         System.out.println("json 转换成 Object 数据：" + dto);
+
+        List<UserDTO> list = new ArrayList<>();
+        list.add(userDTO);
+        String listJson = FormatUtils.obj2str(list);
+        System.out.println("List 转换成 json 数据：" + listJson);
+
+        Type listType = new TypeToken<List<UserDTO>>() {
+        }.getType();
+        List<UserDTO> list1 = FormatUtils.str2obj(listJson, listType);
+        System.out.println("json 转换成 List 数据：" + list1);
     }
 }

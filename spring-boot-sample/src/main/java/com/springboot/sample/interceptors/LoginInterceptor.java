@@ -1,6 +1,6 @@
 package com.springboot.sample.interceptors;
 
-import com.alibaba.fastjson.JSON;
+import com.kit.common.util.common.gson.FormatUtils;
 import com.springboot.sample.common.annotation.Anonymous;
 import com.kit.common.util.http.NewResponseModel;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author lingjun.jlj
+ * @author: lingjun.jlj
  * @data 2018/5/8
  * @Description: 登入拦截
  */
@@ -33,7 +33,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
             //判断是否存在token
             if (null == "token") {
                 NewResponseModel responseModel = NewResponseModel.LoginError();
-                response.getOutputStream().write(JSON.toJSONString(responseModel).getBytes());
+                response.getOutputStream().write(FormatUtils.obj2str(responseModel).getBytes());
                 response.setContentType("application/json;charset=UTF-8");
                 response.setHeader("Access-Control-Allow-Origin", "*");
                 response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

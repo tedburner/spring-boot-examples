@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 
 /**
- * @author lingjun.jlj
+ * @author: lingjun.jlj
  * @create 2017-09-22
  **/
 

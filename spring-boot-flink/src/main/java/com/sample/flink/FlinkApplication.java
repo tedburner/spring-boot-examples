@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 搭建基于Flink 的流式计算平台
- * @author: arthas
+ * @author: lingjun.jlj
  * */
 @SpringBootApplication
 public class FlinkApplication {

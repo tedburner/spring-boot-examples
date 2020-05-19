@@ -6,7 +6,7 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ImportResource;
 
 /**
- * @author : Arthas
+ * @author : lingjun.jlj
  * @description: WebSocket Demo
  */
 @EnableCaching

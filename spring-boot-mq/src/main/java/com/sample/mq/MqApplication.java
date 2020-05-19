@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.kafka.annotation.EnableKafka;
 
 /**
- * @author: Arthas
+ * @author: lingjun.jlj
  * @description: MQ 和spring boot 整合项目
  */
 

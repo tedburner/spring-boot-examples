@@ -1,6 +1,6 @@
 package com.springboot.sample.service.kafka.impl;
 
-import com.alibaba.fastjson.JSON;
+import com.kit.common.util.common.gson.FormatUtils;
 import com.springboot.sample.service.kafka.ProducerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -24,7 +24,7 @@ public class ProducerServiceImpl implements ProducerService {
     @Override
     public void sendMessage(String topic, Object msgBody) {
         log.info("kafka produce a message, topic = " + topic + " message =  " + msgBody);
-        String jsonString = JSON.toJSONString(msgBody);
+        String jsonString = FormatUtils.obj2str(msgBody);
         kafkaTemplate.send(topic, jsonString);
     }
 }

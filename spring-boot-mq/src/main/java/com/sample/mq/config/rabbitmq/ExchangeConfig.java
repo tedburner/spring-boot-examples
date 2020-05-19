@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author: Arthas
+ * @author: lingjun.jlj
  * @date: 2019-07-19 23:05
  * @description: 转换机配置
  */

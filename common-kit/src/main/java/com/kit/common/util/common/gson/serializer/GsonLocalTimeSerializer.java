@@ -13,7 +13,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * @author lingjun.jlj
+ * @author: lingjun.jlj
  * @data 2018/5/3
  * @Description:
  */

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author lingjun.jlj
+ * @author: lingjun.jlj
  * @data 2018/5/4
  * @Description: http 拦截器
  */

@@ -1,7 +1,7 @@
 package com.sample.mq.constant;
 
 /**
- * @author: Arthas
+ * @author: lingjun.jlj
  * @date: 2019-07-19 23:04
  * @description: RabbitMQ 常量
  */

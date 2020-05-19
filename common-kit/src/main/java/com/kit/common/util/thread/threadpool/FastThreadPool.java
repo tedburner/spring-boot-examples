@@ -24,7 +24,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author lingjun.jlj
+ * @author: lingjun.jlj
  * @create 2017-10-23
  **/
 @Component
