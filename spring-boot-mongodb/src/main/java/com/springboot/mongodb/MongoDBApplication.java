@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 /**
- * @author : Lucifer
+ * @author : lingjun.jlj
  * @description: MongoDB 启动类
  * */
 @EnableMongoRepositories

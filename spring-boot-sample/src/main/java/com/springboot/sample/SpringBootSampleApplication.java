@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ImportResource;
 
 
 /**
- * @author : Lucifer
+ * @author : lingjun.jlj
  * @description: 启动类
  * <p>
  * 使用@ServletComponentScan 注解后，Servlet、Filter、Listener 可以直接通过 @WebServlet、@WebFilter、@WebListener 注解自动注册，无需其他代码

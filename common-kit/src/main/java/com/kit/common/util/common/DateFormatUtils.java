@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @date 2017/12/2
  * 时间转换工具类
  */

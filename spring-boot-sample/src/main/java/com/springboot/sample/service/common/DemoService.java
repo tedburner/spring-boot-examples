@@ -1,7 +1,7 @@
 package com.springboot.sample.service.common;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @data 2018/4/28
  * @Description:
  */

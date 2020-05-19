@@ -3,7 +3,7 @@ package com.springboot.sample.domain.DTO.message;
 import lombok.Data;
 
 /**
- * @author: Lucifer
+ * @author: lingjun.jlj
  * @date: 2018/11/13 09:42
  * @description:
  */

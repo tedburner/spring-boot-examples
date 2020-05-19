@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import java.util.UUID;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @data 2018/4/23
  * @Description:
  */

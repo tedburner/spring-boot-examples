@@ -3,7 +3,7 @@ package com.kit.common.util.thread.callback;
 import com.google.common.util.concurrent.FutureCallback;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @create 2017-10-23
  **/
 public interface FailureCallBack<V> extends FutureCallback<V> {

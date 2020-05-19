@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @data 2018/5/8
  * @Description: 【Controller访问控制，游客模式访问】
  */

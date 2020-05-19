@@ -13,7 +13,7 @@ import java.lang.reflect.Type;
 import java.math.BigDecimal;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @data 2018/5/3
  * @Description:
  */
@@ -21,6 +21,7 @@ public class BigDecimalDefaultAdapter implements JsonSerializer<BigDecimal>, Jso
     public BigDecimalDefaultAdapter() {
     }
 
+    @Override
     public BigDecimal deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         try {
             if (json.getAsString().equals("") || json.getAsString().equals("null")) {
@@ -37,6 +38,7 @@ public class BigDecimalDefaultAdapter implements JsonSerializer<BigDecimal>, Jso
         }
     }
 
+    @Override
     public JsonElement serialize(BigDecimal src, Type typeOfSrc, JsonSerializationContext context) {
         return new JsonPrimitive(src);
     }

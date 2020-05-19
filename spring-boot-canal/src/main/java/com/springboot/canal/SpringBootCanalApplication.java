@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author : Lucifer
+ * @author : lingjun.jlj
  * @desciption: canal 订阅
  * */
 @SpringBootApplication

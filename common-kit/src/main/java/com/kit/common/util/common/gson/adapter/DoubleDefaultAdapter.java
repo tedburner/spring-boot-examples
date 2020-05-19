@@ -12,7 +12,7 @@ import com.google.gson.JsonSyntaxException;
 import java.lang.reflect.Type;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @data 2018/5/3
  * @Description:
  */
@@ -20,6 +20,7 @@ public class DoubleDefaultAdapter implements JsonSerializer<Double>, JsonDeseria
     public DoubleDefaultAdapter() {
     }
 
+    @Override
     public Double deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         try {
             if (json.getAsString().equals("") || json.getAsString().equals("null")) {
@@ -36,6 +37,7 @@ public class DoubleDefaultAdapter implements JsonSerializer<Double>, JsonDeseria
         }
     }
 
+    @Override
     public JsonElement serialize(Double src, Type typeOfSrc, JsonSerializationContext context) {
         return new JsonPrimitive(src);
     }

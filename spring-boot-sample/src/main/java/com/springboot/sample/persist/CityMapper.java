@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @create 2017-09-22
  **/
 

@@ -1,7 +1,7 @@
 package com.springboot.sample.common.constants;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @data 2018/5/4
  * @Description: 常量池
  */

@@ -1,7 +1,7 @@
 package com.simple.sample.util.http;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @create 2017-11-23
  **/
 public enum ResponseCodeEnum {

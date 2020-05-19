@@ -5,7 +5,7 @@ import com.springboot.sample.domain.DO.UserDO;
 import java.util.List;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @data 2018/4/2
  */
 public interface UserService {

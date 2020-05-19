@@ -19,7 +19,7 @@ import java.util.Enumeration;
 import java.util.Map;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @create 2017-11-30
  * @descrip 过滤器
  **/

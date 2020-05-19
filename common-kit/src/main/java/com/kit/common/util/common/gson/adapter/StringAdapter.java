@@ -8,7 +8,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @data 2018/5/3
  * @Description:
  */
@@ -17,6 +17,7 @@ public class StringAdapter extends TypeAdapter<String> {
     public StringAdapter() {
     }
 
+    @Override
     public String read(JsonReader reader) throws IOException {
         if (reader.peek() == JsonToken.NULL) {
             reader.nextNull();
@@ -26,6 +27,7 @@ public class StringAdapter extends TypeAdapter<String> {
         }
     }
 
+    @Override
     public void write(JsonWriter writer, String value) throws IOException {
         if (value == null) {
             writer.value("");

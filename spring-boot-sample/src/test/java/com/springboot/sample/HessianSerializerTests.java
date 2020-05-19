@@ -5,7 +5,7 @@ import com.kit.common.serializer.ISerializer;
 import org.junit.Test;
 
 /**
- * @author: Lucifer
+ * @author: lingjun.jlj
  * @date: 2018-12-03 10:42
  * @description:
  */

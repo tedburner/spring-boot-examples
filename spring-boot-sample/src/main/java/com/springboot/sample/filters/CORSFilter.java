@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author: Lucifer
+ * @author: lingjun.jlj
  * @date: 2018/7/26 17:49
  * @description: 跨域问题
  */

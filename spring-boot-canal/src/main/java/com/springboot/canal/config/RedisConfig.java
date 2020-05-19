@@ -8,7 +8,7 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 /**
- * @author: Lucifer
+ * @author: lingjun.jlj
  * @date: 2018-12-16 17:27
  * @description:
  */

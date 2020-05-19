@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebInitParam;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @create 2017-09-22
  **/
 @WebFilter(filterName = "druidStatFilter", urlPatterns = "/*",

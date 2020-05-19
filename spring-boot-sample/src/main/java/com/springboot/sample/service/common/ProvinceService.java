@@ -3,7 +3,7 @@ package com.springboot.sample.service.common;
 import com.springboot.sample.domain.DO.ProvinceDO;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @create 2017-12-04
  **/
 public interface ProvinceService {

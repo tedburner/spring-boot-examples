@@ -1,7 +1,7 @@
 package com.kit.common.util.common;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @date 2018-01-03
  **/
 public class ParamUtils {

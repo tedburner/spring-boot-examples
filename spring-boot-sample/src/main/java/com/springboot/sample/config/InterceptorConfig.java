@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 /**
- * @author: Lucifer
+ * @author: lingjun.jlj
  * @date: 2018/7/26 17:56
  * @description: 拦截器配置
  */

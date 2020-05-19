@@ -1,7 +1,7 @@
 package com.kit.common.serializer;
 
 /**
- * @author: Lucifer
+ * @author: lingjun.jlj
  * @date: 2018-11-30 11:36
  * @description: 序列化
  */

@@ -1,5 +1,7 @@
 package com.kit.common.util.common.gson;
 
+import com.google.gson.reflect.TypeToken;
+import com.kit.common.test.UserDTO;
 import com.kit.common.util.common.StringUtils;
 import com.kit.common.util.common.gson.adapter.BigDecimalDefaultAdapter;
 import com.kit.common.util.common.gson.adapter.DoubleDefaultAdapter;
@@ -25,7 +27,7 @@ import java.time.LocalTime;
 import java.util.Date;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @data 2018/5/3
  * @Description:
  */
@@ -58,5 +60,21 @@ public class FormatUtils {
             log.error("str2obj error, str=" + str, var3);
             return null;
         }
+    }
+
+    public static void main(String[] args) {
+        UserDTO userDTO = new UserDTO();
+        userDTO.setId(1L);
+        userDTO.setName("张三");
+        userDTO.setDate(new Date());
+        userDTO.setLocalDate(LocalDate.now());
+        userDTO.setLocalTime(LocalTime.now());
+        userDTO.setLocalDateTime(LocalDateTime.now());
+        String json = FormatUtils.obj2str(userDTO);
+        System.out.println("Object 转换成 json 数据：" + json);
+
+        Type type = new TypeToken<UserDTO>() {}.getType();
+        UserDTO dto = FormatUtils.str2obj(json, type);
+        System.out.println("json 转换成 Object 数据：" + dto);
     }
 }

@@ -5,7 +5,7 @@ import com.springboot.sample.common.enums.SimpleEnum;
 import org.springframework.stereotype.Service;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @data 2018/4/28
  * @Description:
  */

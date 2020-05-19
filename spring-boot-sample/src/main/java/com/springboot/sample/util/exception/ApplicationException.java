@@ -3,7 +3,7 @@ package com.springboot.sample.util.exception;
 import com.springboot.sample.util.exception.domain.Error;
 
 /**
- * @author: Lucifer
+ * @author: lingjun.jlj
  * @date: 2018/8/15 15:21
  * @description: 自定义错误异常
  */

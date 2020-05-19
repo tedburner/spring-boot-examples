@@ -4,7 +4,7 @@ import com.springboot.sample.service.kafka.KafkaExecuteService;
 import org.springframework.stereotype.Service;
 
 /**
- * @author: Lucifer
+ * @author: lingjun.jlj
  * @date: 2018/11/13 10:08
  * @description: 消费实现类
  */

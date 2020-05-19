@@ -4,7 +4,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
 /**
- * @author Lucifer
+ * @author lingjun.jlj
  * @create 2017-11-30
  * @Description: 切面test
  **/

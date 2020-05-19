@@ -3,7 +3,7 @@ package com.springboot.sample.domain.DTO.message;
 import java.io.Serializable;
 
 /**
- * @author: Lucifer
+ * @author: lingjun.jlj
  * @date: 2018/11/12 19:34
  * @description:
  */
