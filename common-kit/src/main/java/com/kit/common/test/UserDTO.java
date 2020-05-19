@@ -1,5 +1,6 @@
 package com.kit.common.test;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -10,7 +11,7 @@ import java.util.Date;
  * @date: 2020/5/19 14:53
  * @description:
  */
-public class UserDTO {
+public class UserDTO implements Serializable {
 
     private Long id;
 

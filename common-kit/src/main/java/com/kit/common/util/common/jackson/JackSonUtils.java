@@ -1,7 +1,7 @@
 package com.kit.common.util.common.jackson;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
@@ -10,6 +10,8 @@ import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 import com.kit.common.test.UserDTO;
 import com.kit.common.util.common.StringUtils;
 import com.kit.common.util.common.gson.FormatUtils;
+import com.kit.common.util.common.jackson.serializer.JacksonLocalDateTimeDeserializer;
+import com.kit.common.util.common.jackson.serializer.JacksonLocalDateTimeSerializer;
 import com.kit.common.util.common.jackson.serializer.JacksonLongDeserializer;
 import com.kit.common.util.common.jackson.serializer.JacksonLongSerializer;
 import org.slf4j.Logger;
@@ -31,10 +33,14 @@ public class JackSonUtils {
 
     private static Logger log = LoggerFactory.getLogger(FormatUtils.class);
 
-    /**自定义序列化程序*/
+    /**
+     * 自定义序列化程序
+     */
     private static final SimpleModule module = (new SimpleModule())
             .addSerializer(Long.class, new JacksonLongSerializer())
-            .addDeserializer(Long.class, new JacksonLongDeserializer());
+            .addDeserializer(Long.class, new JacksonLongDeserializer())
+            .addSerializer(LocalDateTime.class, new JacksonLocalDateTimeSerializer())
+            .addDeserializer(LocalDateTime.class, new JacksonLocalDateTimeDeserializer());
 
     /**
      * 解决java8时间冲突问题
@@ -79,13 +85,13 @@ public class JackSonUtils {
     /**
      * json 字符串转换成对象
      *
-     * @param str  json 字符串
-     * @param type 转换类型
+     * @param str           json 字符串
+     * @param typeReference 转换类型
      * @return
      */
-    public static <T> T str2obj(String str, JavaType type) {
+    public static <T> T str2obj(String str, TypeReference<T> typeReference) {
         try {
-            return StringUtils.isEmpty(str) ? null : objectMapper.readValue(str, type);
+            return StringUtils.isEmpty(str) ? null : objectMapper.readValue(str, typeReference);
         } catch (JsonProcessingException e) {
             log.error("jackson str2obj error, str={}, e={}", str, e.getMessage());
             return null;
@@ -111,8 +117,8 @@ public class JackSonUtils {
         String listJson = JackSonUtils.obj2str(list);
         System.out.println("List 转换成 json 数据：" + listJson);
 
-        JavaType type = objectMapper.getTypeFactory()
-                .constructType(List.class, UserDTO.class);
+        TypeReference<List<UserDTO>> type = new TypeReference<List<UserDTO>>() {
+        };
         List<UserDTO> list1 = JackSonUtils.str2obj(listJson, type);
         System.out.println("json 转换成 List 数据：" + list1);
     }
