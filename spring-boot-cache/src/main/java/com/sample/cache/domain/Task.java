@@ -2,6 +2,8 @@ package com.sample.cache.domain;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author: lingjun.jlj
  * @date: 2019/7/31 10:26
@@ -9,7 +11,7 @@ import lombok.Data;
  * @description:
  */
 @Data
-public class Task {
+public class Task implements Serializable {
 
     /**
      * 任务id

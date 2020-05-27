@@ -1,16 +1,17 @@
 package com.sample.cache.config;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.annotation.CachingConfigurerSupport;
-import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.cache.interceptor.KeyGenerator;
+import com.sample.cache.constant.CacheConstants;
+import com.sample.cache.listener.RedisSubscriberListener;
+import com.sample.cache.listener.TestSubscriberListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.connection.RedisNode;
-import org.springframework.data.redis.connection.RedisSentinelConfiguration;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
-
-import java.lang.reflect.Method;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.listener.PatternTopic;
+import org.springframework.data.redis.listener.RedisMessageListenerContainer;
+import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * @author: lingjun.jlj
@@ -19,65 +20,44 @@ import java.lang.reflect.Method;
  * @description:
  */
 @Configuration
-@EnableCaching
-public class RedisConfig extends CachingConfigurerSupport {
-
-//    @Value("${spring.redis.host}")
-//    private String masterHost;
-//    @Value("${spring.redis.port}")
-//    private String masterPort;
-//    @Value("${spring.redis.password}")
-//    private String masterPassword;
-//    @Value("${spring.redis.sentinel.master}")
-//    private String master;
-//    @Value("${spring.redis.sentinel.nodes}")
-//    private String redisNodes;
+public class RedisConfig {
 
     @Bean
-    @Override
-    public KeyGenerator keyGenerator() {
-        return new KeyGenerator() {
-            @Override
-            public Object generate(Object target, Method method, Object... params) {
-                StringBuilder sb = new StringBuilder();
-                sb.append(target.getClass().getName());
-                sb.append(method.getName());
-                for (Object obj : params) {
-                    sb.append(obj.toString());
-                }
-                return sb.toString();
-            }
-        };
+    public StringRedisTemplate stringRedisTemplate(LettuceConnectionFactory lettuceConnectionFactory) {
+        StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
+        stringRedisTemplate.setKeySerializer(new StringRedisSerializer());
+        stringRedisTemplate.setValueSerializer(new StringRedisSerializer());
+        stringRedisTemplate.setHashKeySerializer(new StringRedisSerializer());
+        stringRedisTemplate.setHashValueSerializer(new StringRedisSerializer());
+        stringRedisTemplate.setConnectionFactory(lettuceConnectionFactory);
+        return stringRedisTemplate;
     }
 
-    /**
-     * Redis 哨兵配置
-     *
-     * @return
-     */
-//    @Bean
-//    public RedisSentinelConfiguration redisSentinelConfiguration() {
-//        RedisSentinelConfiguration configuration = new RedisSentinelConfiguration();
-//        String[] hosts = redisNodes.split(",");
-//        for (String host : hosts) {
-//            String[] item = host.split(":");
-//            String ip = item[0];
-//            String port = item[1];
-//            configuration.addSentinel(new RedisNode(ip, Integer.valueOf(port)));
-//        }
-//        configuration.setMaster(master);
-//        return configuration;
-//    }
+    @Bean
+    public MessageListenerAdapter redisListenerAdapter(RedisSubscriberListener listener) {
+        MessageListenerAdapter adapter = new MessageListenerAdapter(listener);
+        adapter.setSerializer(new StringRedisSerializer());
+        adapter.afterPropertiesSet();
+        return adapter;
+    }
 
-//    @Bean
-//    public JedisConnectionFactory jedisConnectionFactory() {
-////构造方法中注入RedisSentinelConfiguration对象
-//        JedisConnectionFactory factory = new JedisConnectionFactory(redisSentinelConfiguration());
-//        factory.(host);
-//        factory.setPort(port);
-//        factory.setTimeout(timeout);
-//        factory.setPassword(password);
-//        factory.setDatabase(database);
-//        return factory;
-//    }
+    @Bean
+    public MessageListenerAdapter testListenerAdapter(TestSubscriberListener listener) {
+        MessageListenerAdapter adapter = new MessageListenerAdapter(listener);
+        adapter.setSerializer(new StringRedisSerializer());
+        adapter.afterPropertiesSet();
+        return adapter;
+    }
+
+    @Bean
+    public RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory,
+                                                   MessageListenerAdapter redisListenerAdapter,
+                                                   MessageListenerAdapter testListenerAdapter) {
+        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+        container.setConnectionFactory(connectionFactory);
+        //指定监听的对象
+        container.addMessageListener(redisListenerAdapter, new PatternTopic(CacheConstants.REDIS_PUB_SUB_CHANNEL));
+        container.addMessageListener(testListenerAdapter, new PatternTopic(CacheConstants.REDIS_TEST_CHANNEL));
+        return container;
+    }
 }
