@@ -1,6 +1,7 @@
 package com.sample.cache.controller;
 
-import com.alibaba.fastjson.JSON;
+
+import com.kit.common.util.common.gson.FormatUtils;
 import com.sample.cache.constant.CacheConstants;
 import com.sample.cache.domain.Task;
 import com.sample.cache.domain.User;
@@ -35,7 +36,7 @@ public class CacheController {
     @GetMapping(value = "/test/{id}")
     public String cache(@PathVariable("id") Long id) {
         User user = cacheService.findUserById(id);
-        log.info("查询日志消息：{}", JSON.toJSONString(user));
+        log.info("查询日志消息：{}", FormatUtils.obj2str(user));
         return "查询成功";
     }
 
@@ -45,14 +46,14 @@ public class CacheController {
         task.setId("1");
         task.setDesc("Redis订阅发布");
         task.setTime(System.currentTimeMillis());
-        stringRedisTemplate.convertAndSend(CacheConstants.REDIS_PUB_SUB_CHANNEL, JSON.toJSONString(task));
+        stringRedisTemplate.convertAndSend(CacheConstants.REDIS_PUB_SUB_CHANNEL, FormatUtils.obj2str(task));
         log.info("通道号{}发布成功", CacheConstants.REDIS_PUB_SUB_CHANNEL);
 
         Task task1 = new Task();
         task1.setId("2");
         task1.setDesc("Redis订阅发布测试多订阅通道");
         task1.setTime(System.currentTimeMillis());
-        stringRedisTemplate.convertAndSend(CacheConstants.REDIS_TEST_CHANNEL, JSON.toJSONString(task1));
+        stringRedisTemplate.convertAndSend(CacheConstants.REDIS_TEST_CHANNEL, FormatUtils.obj2str(task1));
         log.info("通道号{}发布成功", CacheConstants.REDIS_TEST_CHANNEL);
         return "查询成功";
     }

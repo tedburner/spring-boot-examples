@@ -1,6 +1,6 @@
 package com.springboot.websocket.coder;
 
-import com.alibaba.fastjson.JSONObject;
+import com.kit.common.util.common.gson.FormatUtils;
 
 import javax.websocket.EncodeException;
 import javax.websocket.Encoder;
@@ -17,7 +17,7 @@ public class MessageEncoder implements Encoder.Text<Person> {
 
     @Override
     public String encode(Person person) throws EncodeException {
-        String message = JSONObject.toJSONString(person);
+        String message = FormatUtils.obj2str(person);
         return message;
     }
 

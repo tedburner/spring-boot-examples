@@ -1,10 +1,9 @@
 package com.sample.mq.controller;
 
-import com.alibaba.fastjson.JSON;
+import com.kit.common.util.common.gson.FormatUtils;
 import com.sample.mq.constant.MqConstants;
 import com.sample.mq.domain.Message;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +32,7 @@ public class KafkaController {
                 .id(System.currentTimeMillis())
                 .msg("今天是" + new Date() + " 天气真不错！！！")
                 .build();
-        kafkaTemplate.send(MqConstants.KAFKA_TOPIC_TEST, JSON.toJSONString(message));
+        kafkaTemplate.send(MqConstants.KAFKA_TOPIC_TEST, FormatUtils.obj2str(message));
 
     }
 }

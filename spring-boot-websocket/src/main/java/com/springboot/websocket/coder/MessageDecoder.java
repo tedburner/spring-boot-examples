@@ -1,10 +1,13 @@
 package com.springboot.websocket.coder;
 
-import com.alibaba.fastjson.JSON;
+import com.google.gson.reflect.TypeToken;
+import com.kit.common.test.UserDTO;
+import com.kit.common.util.common.gson.FormatUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.websocket.DecodeException;
 import javax.websocket.EndpointConfig;
+import java.lang.reflect.Type;
 
 /**
  * @author: lingjun.jlj
@@ -18,7 +21,9 @@ public class MessageDecoder implements javax.websocket.Decoder.Text<Person> {
     @Override
     public Person decode(String s) throws DecodeException {
         System.out.println("接收到的参数是：" + s);
-        Person person = JSON.parseObject(s, Person.class);
+        Type type = new TypeToken<Person>() {
+        }.getType();
+        Person person = FormatUtils.str2obj(s, type);
         return person;
     }
 
