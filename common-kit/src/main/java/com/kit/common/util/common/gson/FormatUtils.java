@@ -35,7 +35,7 @@ public class FormatUtils {
     private static Logger log = LoggerFactory.getLogger(FormatUtils.class);
 
     /**
-     * 解决java8时间以及别的一些冲突问题
+     * 重写序列化，解决java8时间以及别的一些冲突问题
      */
     private static final Gson gson = (new GsonBuilder())
             .registerTypeAdapter(Date.class, new GsonDateSerializer())
@@ -66,14 +66,14 @@ public class FormatUtils {
      * json 字符串转换成对象
      *
      * @param str  json 字符串
-     * @param type 转换类型
+     * @param type 转换类型 Type type = new TypeToken<t>() {}.getType();
      * @return
      */
     public static <T> T str2obj(String str, Type type) {
         try {
             return StringUtils.isEmpty(str) ? null : gson.fromJson(str, type);
-        } catch (Exception var3) {
-            log.error("gson str2obj error, str=" + str, var3);
+        } catch (Exception e) {
+            log.error("gson str2obj error, str=" + str, e);
             return null;
         }
     }

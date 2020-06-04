@@ -99,7 +99,7 @@ public class JackSonUtils {
      * json 字符串转换成对象
      *
      * @param str           json 字符串
-     * @param typeReference 转换类型
+     * @param typeReference 转换类型 TypeReference<T> type = new TypeReference<T>() {};
      * @return
      */
     public static <T> T str2obj(String str, TypeReference<T> typeReference) {

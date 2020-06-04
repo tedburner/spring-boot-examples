@@ -22,6 +22,12 @@ public final class GsonUtils {
         return !isGoodJson(json);
     }
 
+    /**
+     * 判断字符串是否是一个合格的json
+     *
+     * @param json json字符串
+     * @return true是；false 否
+     */
     public static boolean isGoodJson(String json) {
         if (StringUtils.isBlank(json)) {
             return false;
