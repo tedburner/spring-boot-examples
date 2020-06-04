@@ -50,7 +50,7 @@ public class TestServiceImpl implements TestService {
 
     @Override
 //    @PreAuthorize(value = "userDTO.getCardNo()")
-    @AroundCase(name = "蒋先森", value = "宋洋洋", parm = "userDTO.getCardNo()")
+    @AroundCase(name = "蒋先森", value = "张三", parm = "userDTO.getCardNo()")
     public void aspectCase(UserDTO userDTO) {
         System.out.println("测试Aop 获取各种属性的方法");
     }
