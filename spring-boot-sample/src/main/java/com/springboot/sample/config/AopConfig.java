@@ -10,7 +10,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @Description: 开启AOP
  */
 @Configuration
-@ComponentScan("com.sample.springboot.common.aop")
+@ComponentScan("com.springboot.sample.common.aop")
 @EnableAspectJAutoProxy //开启AspectJ
 public class AopConfig {
 }
