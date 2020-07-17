@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <rocketmq.version>2.0.4</rocketmq.version>
+        <rocketmq.version>2.1.0</rocketmq.version>
         <common.kit.version>1.0.0-RELEASE</common.kit.version>
     </properties>
 

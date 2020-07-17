@@ -33,4 +33,11 @@ public class RocketMqController {
         System.out.printf("syncSend1 to topic %s sendResult=%s %n", topic, sendResult);
         return "发送成功";
     }
+
+    @GetMapping(value = "send/transaction/msg")
+    public String sendTransactionMsg() {
+        String tag = "tag";
+
+        return "发送消息事务成功";
+    }
 }

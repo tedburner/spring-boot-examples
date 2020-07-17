@@ -37,5 +37,9 @@ public class MqConstants {
 
     public static final String VIDEO_SYNTHESIS = "task_queue";
 
+    /**RocketMQ 队列常量*/
+    public static final String ROCKETMQ_TRANSACTION_MSG_TOPIC = "transaction_topic";
+    public static final String ROCKETMQ_TRANSACTION_PRODUCER_GROUP = "transaction_group";
+
 
 }
