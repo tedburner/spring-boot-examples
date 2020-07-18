@@ -2,6 +2,7 @@ package com.springboot.websocket.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
@@ -11,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @description:
  */
 @Configuration
-public class WebMvcConfig extends WebMvcConfigurerAdapter {
+public class WebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
@@ -19,5 +20,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
                 .setViewName("/ws");
         registry.addViewController("/ws1")
                 .setViewName("/ws1");
+        registry.addViewController("/index")
+                .setViewName("/index");
     }
 }
