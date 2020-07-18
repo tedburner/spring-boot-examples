@@ -30,9 +30,7 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class RocketMqServiceImpl implements RocketMqService {
 
-    private String producerGroup = "trac_producer_group";
-
-    private TransactionMQProducer producer = new TransactionMQProducer(MqConstants.ROCKETMQ_TRANSACTION_PRODUCER_GROUP);
+    private final TransactionMQProducer producer = new TransactionMQProducer(MqConstants.ROCKETMQ_TRANSACTION_PRODUCER_GROUP);
 
     ExecutorService executorService = new ThreadPoolExecutor(2, 5, 100, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(2000), new ThreadFactory() {
         @Override
