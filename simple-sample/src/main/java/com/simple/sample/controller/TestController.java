@@ -4,6 +4,7 @@ import com.simple.sample.domain.dto.UserDTO;
 import com.simple.sample.service.common.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -43,6 +44,12 @@ public class TestController {
         userDTO.setPassword("密码");
         userDTO.setCardNo("330781187609092330");
         testService.aspectCase(userDTO);
+        return "成功";
+    }
+
+    @GetMapping(value = "/synchronized/{name}")
+    public String synchronizedTest(@PathVariable(value = "name") String name) {
+        testService.testSynchronizedChar(name);
         return "成功";
     }
 }

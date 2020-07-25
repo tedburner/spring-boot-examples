@@ -26,4 +26,11 @@ public interface TestService {
      * @param userDTO
      */
     void aspectCase(UserDTO userDTO);
+
+    /**
+     * 测试synchronized能否锁住字符串
+     *
+     * @param str
+     */
+    void testSynchronizedChar(String str);
 }

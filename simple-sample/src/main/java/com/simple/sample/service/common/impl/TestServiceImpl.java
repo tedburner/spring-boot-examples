@@ -52,6 +52,22 @@ public class TestServiceImpl implements TestService {
 //    @PreAuthorize(value = "userDTO.getCardNo()")
     @AroundCase(name = "蒋先森", value = "张三", parm = "userDTO.getCardNo()")
     public void aspectCase(UserDTO userDTO) {
-        System.out.println("测试Aop 获取各种属性的方法");
+        log.info("测试Aop 获取各种属性的方法");
+    }
+
+    @Override
+    public void testSynchronizedChar(String str) {
+        log.info("{}的：{}", str, str.getBytes());
+        //通过将字符串放入字符串常量池，来实现锁住同一个字符串，但是如果数据量大的情况下，可能会出现OOM
+        synchronized (str.intern()) {
+            log.info("{} 获取了锁", str);
+            try {
+                log.info("{} is doing something ...", str);
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        log.info("{} 释放了锁", str);
     }
 }
