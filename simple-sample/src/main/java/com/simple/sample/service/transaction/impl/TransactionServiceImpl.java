@@ -8,6 +8,7 @@ import com.simple.sample.repository.UserRepository;
 import com.simple.sample.service.transaction.AccountAmountLogService;
 import com.simple.sample.service.transaction.TransactionService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;

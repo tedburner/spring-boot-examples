@@ -1,8 +1,9 @@
 package com.springboot.elasticjob.job;
 
-import com.dangdang.ddframe.job.api.ShardingContext;
-import com.dangdang.ddframe.job.api.simple.SimpleJob;
+
 import org.apache.commons.lang3.time.DateFormatUtils;
+import org.apache.shardingsphere.elasticjob.api.ShardingContext;
+import org.apache.shardingsphere.elasticjob.simple.job.SimpleJob;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;

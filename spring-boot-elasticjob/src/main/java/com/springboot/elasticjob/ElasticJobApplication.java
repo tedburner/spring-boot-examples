@@ -12,7 +12,6 @@ import org.springframework.context.annotation.ImportResource;
  * 推荐crontab 工具 http://cron.qqe2.com/
  * */
 @SpringBootApplication
-@ImportResource("classpath:elasticjob.xml")
 public class ElasticJobApplication {
 
 	public static void main(String[] args) {
