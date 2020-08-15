@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.springboot</groupId>
-    <artifactId>elasticjob</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
-    <name>elasticjob</name>
-    <description>elastic job 分布式定时器</description>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.1.RELEASE</version>
-        <relativePath/>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <groupId>com.springboot</groupId>
+    <artifactId>job</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>job</name>
+    <description>Demo project for Job</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,6 +20,7 @@
         <java.version>1.8</java.version>
         <skipTests>true</skipTests>
         <elastic.job.version>3.0.0-alpha</elastic.job.version>
+        <xxl.job.version>2.1.1</xxl.job.version>
     </properties>
 
     <dependencies>
@@ -50,9 +47,21 @@
         </dependency>
 
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.shardingsphere.elasticjob</groupId>
             <artifactId>elasticjob-lite-spring-boot-starter</artifactId>
             <version>${elastic.job.version}</version>
+        </dependency>
+
+        <!-- XXL-JOB 相关依赖 -->
+        <dependency>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
+            <version>${xxl.job.version}</version>
         </dependency>
     </dependencies>
 
@@ -64,6 +73,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
