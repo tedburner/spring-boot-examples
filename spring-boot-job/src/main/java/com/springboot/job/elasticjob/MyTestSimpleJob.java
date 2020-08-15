@@ -1,4 +1,4 @@
-package com.springboot.elasticjob.job;
+package com.springboot.job.elasticjob;
 
 
 import org.apache.commons.lang3.time.DateFormatUtils;
