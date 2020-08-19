@@ -1,4 +1,4 @@
-package com.springboot.elasticjob;
+package com.springboot.job;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,10 +7,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ElasticJobApplicationTests {
+class JobApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
