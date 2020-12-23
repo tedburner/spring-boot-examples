@@ -15,7 +15,7 @@ import org.springframework.context.annotation.ImportResource;
  * <p>
  * 使用@ServletComponentScan 注解后，Servlet、Filter、Listener 可以直接通过 @WebServlet、@WebFilter、@WebListener 注解自动注册，无需其他代码
  */
-@EnableCaching
+//@EnableCaching
 //@EnableKafka
 @ServletComponentScan
 @SpringBootApplication
