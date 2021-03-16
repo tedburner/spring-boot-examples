@@ -95,6 +95,13 @@
 <!--            <artifactId>aliyun-log-log4j-appender</artifactId>-->
 <!--            <version>0.1.11</version>-->
 <!--        </dependency>-->
+
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>8.1.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
