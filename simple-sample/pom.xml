@@ -102,6 +102,13 @@
             <version>8.1.0</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>com.springboot</groupId>
+            <artifactId>sample-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
     <build>
