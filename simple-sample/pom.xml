@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <redisson.version>3.14.1</redisson.version>
     </properties>
 
     <dependencies>
@@ -61,8 +62,8 @@
         <!--redisson redis 分布式锁-->
         <dependency>
             <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
-            <version>3.9.1</version>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+            <version>${redisson.version}</version>
         </dependency>
 
         <dependency>
@@ -94,6 +95,20 @@
 <!--            <artifactId>aliyun-log-log4j-appender</artifactId>-->
 <!--            <version>0.1.11</version>-->
 <!--        </dependency>-->
+
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>8.1.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.springboot</groupId>
+            <artifactId>sample-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
     <build>

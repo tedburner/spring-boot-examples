@@ -1,5 +1,8 @@
 package com.simple.sample;
 
+import com.springboot.sample.starter.service.MonitorService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -14,10 +17,19 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableAspectJAutoProxy(exposeProxy = true)
 @EnableJpaAuditing
 @SpringBootApplication
-public class SimpleSampleApplication {
+public class SimpleSampleApplication implements CommandLineRunner {
+
+    @Autowired
+    private MonitorService monitorService;
+
 
     public static void main(String[] args) {
         SpringApplication.run(SimpleSampleApplication.class, args);
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        monitorService.subscribe("abc", data -> System.out.println("receive data:" + data));
     }
 
 }
