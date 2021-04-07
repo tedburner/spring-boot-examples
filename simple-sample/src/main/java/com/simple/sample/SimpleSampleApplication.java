@@ -1,5 +1,6 @@
 package com.simple.sample;
 
+import com.springboot.sample.starter.annotation.EnableSampleServer;
 import com.springboot.sample.starter.service.MonitorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -14,9 +15,10 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * @description: spring boot 简单项目实例
  */
 @EnableAsync
-@EnableAspectJAutoProxy(exposeProxy = true)
+@EnableSampleServer
 @EnableJpaAuditing
 @SpringBootApplication
+@EnableAspectJAutoProxy(exposeProxy = true)
 public class SimpleSampleApplication implements CommandLineRunner {
 
     @Autowired
