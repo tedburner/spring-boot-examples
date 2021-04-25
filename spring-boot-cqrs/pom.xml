@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <axon.version>4.5</axon.version>
     </properties>
 
     <dependencies>
@@ -42,6 +43,17 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.axonframework</groupId>
+            <artifactId>axon-spring-boot-starter</artifactId>
+            <version>${axon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.axonframework</groupId>
+            <artifactId>axon-test</artifactId>
+            <version>${axon.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
