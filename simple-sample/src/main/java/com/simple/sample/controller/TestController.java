@@ -1,5 +1,7 @@
 package com.simple.sample.controller;
 
+import com.simple.sample.aspect.annotation.AroundCase;
+import com.simple.sample.aspect.annotation.RedisLock;
 import com.simple.sample.domain.dto.UserDTO;
 import com.simple.sample.service.common.TestService;
 import com.simple.sample.service.say.SayService;
@@ -44,7 +46,8 @@ public class TestController {
     }
 
     @GetMapping(value = "/aop")
-    public String aopTest() {
+    @RedisLock(key = "#id")
+    public String aopTest(String id) {
         UserDTO userDTO = new UserDTO();
         userDTO.setId(1);
         userDTO.setUsername("张三");
