@@ -1,6 +1,6 @@
 package com.simple.sample.controller;
 
-import com.simple.sample.aspect.annotation.AroundCase;
+import com.simple.sample.aspect.annotation.RateLimit;
 import com.simple.sample.aspect.annotation.RedisLock;
 import com.simple.sample.domain.dto.UserDTO;
 import com.simple.sample.service.common.TestService;
@@ -67,5 +67,11 @@ public class TestController {
     public void test() {
         log.info("====================");
         sayServiceList.forEach(SayService::say);
+    }
+
+    @GetMapping(value = "/flow")
+    @RateLimit
+    public String rateLimit() {
+        return "成功！";
     }
 }
