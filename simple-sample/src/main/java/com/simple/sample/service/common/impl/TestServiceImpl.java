@@ -2,13 +2,16 @@ package com.simple.sample.service.common.impl;
 
 import com.simple.sample.aspect.annotation.AroundCase;
 import com.simple.sample.domain.dto.UserDTO;
+import com.simple.sample.domain.entity.Account;
 import com.simple.sample.service.common.AsyncMethodService;
 import com.simple.sample.service.common.TestService;
+import com.simple.sample.util.http.NewResponseModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -69,5 +72,17 @@ public class TestServiceImpl implements TestService {
             }
         }
         log.info("{} 释放了锁", str);
+    }
+
+    @Override
+    public NewResponseModel tryCatchException() {
+        try {
+            Account account = null;
+            BigDecimal amount = account.getAmount();
+            return NewResponseModel.Success();
+        }catch (Exception e){
+            log.info("捕捉异常");
+            return NewResponseModel.ParamError();
+        }
     }
 }

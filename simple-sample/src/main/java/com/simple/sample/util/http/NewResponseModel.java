@@ -23,15 +23,11 @@ public class NewResponseModel<T> implements Serializable {
     }
 
     public static <T> NewResponseModel<T> ParamError(String info) {
-        return new NewResponseModel<T>(ResponseCodeEnum.PARAMETER_ERROR.getCode(), info);
+        return new NewResponseModel<T>(ResponseCodeEnum.PARAM_ERROR.getCode(), info);
     }
 
     public static <T> NewResponseModel<T> ParamError() {
-        return new NewResponseModel<T>(ResponseCodeEnum.PARAMETER_ERROR.getCode(), ResponseCodeEnum.PARAMETER_ERROR.getMessage());
-    }
-
-    public static <T> NewResponseModel<T> NoPerMission(String info) {
-        return new NewResponseModel<T>(ResponseCodeEnum.PERMISSION_DEND.getCode(), info);
+        return new NewResponseModel<T>(ResponseCodeEnum.PARAM_ERROR.getCode(), ResponseCodeEnum.PARAM_ERROR.getMessage());
     }
 
     public static <T> NewResponseModel<T> Fail(String info) {
@@ -40,10 +36,6 @@ public class NewResponseModel<T> implements Serializable {
 
     public static <T> NewResponseModel<T> Fail() {
         return new NewResponseModel<>(ResponseCodeEnum.Fail.getCode(), ResponseCodeEnum.Fail.getMessage());
-    }
-
-    public static <T> NewResponseModel LoginError() {
-        return new NewResponseModel<T>(ResponseCodeEnum.LOGIN_FAIL.getCode(), ResponseCodeEnum.LOGIN_FAIL.getMessage());
     }
 
     public NewResponseModel() {

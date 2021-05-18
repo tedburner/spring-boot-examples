@@ -1,7 +1,7 @@
 package com.simple.sample.service.common;
 
-import com.simple.sample.domain.bo.UserInfoBO;
 import com.simple.sample.domain.dto.UserDTO;
+import com.simple.sample.util.http.NewResponseModel;
 
 /**
  * @author: lingjun.jlj
@@ -33,4 +33,9 @@ public interface TestService {
      * @param str
      */
     void testSynchronizedChar(String str);
+
+    /**
+     * 捕捉异常
+     */
+    NewResponseModel tryCatchException();
 }

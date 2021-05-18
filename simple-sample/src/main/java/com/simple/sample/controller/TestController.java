@@ -5,6 +5,7 @@ import com.simple.sample.aspect.annotation.RedisLock;
 import com.simple.sample.domain.dto.UserDTO;
 import com.simple.sample.service.common.TestService;
 import com.simple.sample.service.say.SayService;
+import com.simple.sample.util.http.NewResponseModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -73,5 +74,10 @@ public class TestController {
     @RateLimit
     public String rateLimit() {
         return "成功！";
+    }
+
+    @GetMapping(value = "catch")
+    public NewResponseModel catchException() {
+        return testService.tryCatchException();
     }
 }
