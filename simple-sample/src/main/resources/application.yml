@@ -34,9 +34,9 @@ spring:
     jedis:
       pool:
         max-active: 8
-
 demo:
   monitor:
     server-url: https://www.demo-monitor.com
     username: samzeng
     password: 123456
+number: 123456
