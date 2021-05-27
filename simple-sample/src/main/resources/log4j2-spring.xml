@@ -50,6 +50,12 @@
             <AppenderRef ref="Console"/>
         </Logger>
 
+        <!-- 将业务所在的包填写进去,并用在控制台和文件中输出 -->
+        <logger name="com.simple.sample" level="INFO" additivity="false">
+            <appender-ref ref="Console" />
+            <appender-ref ref="FILE" />
+        </logger>
+
         <root level="info">
             <appender-ref ref="Console"/>
             <appender-ref ref="FILE"/>
