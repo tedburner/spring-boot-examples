@@ -3,11 +3,12 @@ package com.kit.common.util.common.jackson;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.json.JsonReadFeature;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
@@ -35,7 +36,7 @@ import java.util.List;
  * @date: 2020/5/19 15:05
  * @description: jackson使用工具
  */
-public class JackSonUtils {
+public class JacksonUtils {
 
     private static Logger log = LoggerFactory.getLogger(FormatUtils.class);
 
@@ -111,6 +112,76 @@ public class JackSonUtils {
         }
     }
 
+
+    /**
+     * 反序列化json 为 集合
+     *
+     * @param src   json
+     * @param clazz 对象
+     * @param <T>   对象类型
+     * @return 反序列化后的对象
+     */
+    public static <T> List<T> toArray(String src, Class<T> clazz) {
+        if (src == null || clazz == null) {
+            return null;
+        }
+        try {
+            JavaType javaType = objectMapper.getTypeFactory().constructCollectionType(List.class, clazz);
+            return objectMapper.readValue(src, javaType);
+        } catch (JsonProcessingException e) {
+            log.error("parse json[{}] to array error", src, e);
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 从json串中获取某个节点的值：子json
+     *
+     * @param src json
+     * @return 子json
+     */
+    public static String childJson(String src, String node) {
+        try {
+            JsonNode jsonNode = objectMapper.readTree(src);
+            return jsonNode.get(node).toString();
+        } catch (Exception e) {
+            log.error("parse json[{}] node[{}], error", src, node, e);
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 从json串中获取某个节点的值：json的节点的值
+     *
+     * @param src json
+     * @return string
+     */
+    public static String childStr(String src, String node) {
+        try {
+            JsonNode jsonNode = objectMapper.readTree(src);
+            return jsonNode.get(node).asText();
+        } catch (Exception e) {
+            log.error("get json[{}] node[{}], error", src, node, e);
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 从json串中获取某个节点的值：json的节点的值
+     *
+     * @param src json
+     * @return int
+     */
+    public static int childInt(String src, String node) {
+        try {
+            JsonNode jsonNode = objectMapper.readTree(src);
+            return jsonNode.get(node).asInt();
+        } catch (Exception e) {
+            log.error("get json[{}] node[{}], error", src, node, e);
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void main(String[] args) {
         UserDTO userDTO = new UserDTO();
         userDTO.setId(1L);
@@ -119,23 +190,23 @@ public class JackSonUtils {
         userDTO.setLocalDate(LocalDate.now());
         userDTO.setLocalTime(LocalTime.now());
         userDTO.setLocalDateTime(LocalDateTime.now());
-        String json = JackSonUtils.obj2str(userDTO);
+        String json = JacksonUtils.obj2str(userDTO);
         System.out.println("Object 转换成 json 数据：" + json);
 
-        UserDTO dto = JackSonUtils.str2obj(json, UserDTO.class);
+        UserDTO dto = JacksonUtils.str2obj(json, UserDTO.class);
         System.out.println("json 转换成 Object 数据：" + dto);
 
         List<UserDTO> list = new ArrayList<>();
         list.add(userDTO);
-        String listJson = JackSonUtils.obj2str(list);
+        String listJson = JacksonUtils.obj2str(list);
         System.out.println("List 转换成 json 数据：" + listJson);
 
         TypeReference<List<UserDTO>> type = new TypeReference<List<UserDTO>>() {
         };
-        List<UserDTO> list1 = JackSonUtils.str2obj(listJson, type);
+        List<UserDTO> list1 = JacksonUtils.str2obj(listJson, type);
         System.out.println("json 转换成 List 数据：" + list1);
 
         String str = "{\"id\":\"1\",\"name\":\"张三\",\"date\":1589877644094,\"localDateTime\":\"1589877644098\",\"localDate\":[2020,5,19],\"localTime\":[16,40,44,98000000],\"password\":\"123456\"}";
-        System.out.println("json 数据中有多余字段的 字符串转换成 Object 数据：" + JackSonUtils.str2obj(str, UserDTO.class));
+        System.out.println("json 数据中有多余字段的 字符串转换成 Object 数据：" + JacksonUtils.str2obj(str, UserDTO.class));
     }
 }
