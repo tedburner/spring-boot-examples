@@ -25,7 +25,9 @@
         <module>spring-boot-mongodb</module>
         <module>spring-boot-webflux</module>
         <module>spring-boot-data-jpa</module>
+        <module>spring-boot-security</module>
         <module>spring-boot-websocket</module>
+        <module>spring-boot-prometheus</module>
         <module>spring-boot-elasticsearch</module>
         <module>spring-boot-sample-starter</module>
     </modules>

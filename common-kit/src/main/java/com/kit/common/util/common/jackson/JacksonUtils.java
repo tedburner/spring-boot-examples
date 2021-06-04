@@ -208,5 +208,9 @@ public class JacksonUtils {
 
         String str = "{\"id\":\"1\",\"name\":\"张三\",\"date\":1589877644094,\"localDateTime\":\"1589877644098\",\"localDate\":[2020,5,19],\"localTime\":[16,40,44,98000000],\"password\":\"123456\"}";
         System.out.println("json 数据中有多余字段的 字符串转换成 Object 数据：" + JacksonUtils.str2obj(str, UserDTO.class));
+
+        // child
+        String name = JacksonUtils.childStr(json, "name");
+        System.out.println(name);
     }
 }
