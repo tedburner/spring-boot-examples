@@ -17,4 +17,10 @@ public class GlobalConstants {
     public static final String COMMA_SEPARATOR_CHAR = "，";
     public static final String COMMA_POUND_SIGN_CHAR = "#";
     public static final String COMMA_SEMICOLON_CHAR = ":";
+
+    /**定时任务*/
+        /**每隔5秒执行一次*/
+//    public static final String TASK_DEFAULT_CRON = "0/5 * * * * ?";
+                /**每隔5分钟执行一次*/
+    public static final String TASK_DEFAULT_CRON = "0 0/5 * * * ?";
 }

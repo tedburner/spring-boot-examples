@@ -36,6 +36,8 @@ public interface TestService {
 
     /**
      * 捕捉异常
+     *
+     * @return
      */
     NewResponseModel tryCatchException();
 }

@@ -21,8 +21,6 @@ Spring Boot项目。配置了druid+mybatis+redis。
 - [Reactive(Spring WebFlux)](#reactive)
 - [PostgresSQL](#PostgresSQL)
 
-
-
 ## 项目打包
 ### 打成jar包
 ```bash
