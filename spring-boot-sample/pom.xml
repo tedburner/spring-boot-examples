@@ -25,7 +25,7 @@
         <skipTests>true</skipTests>
         <protostuff.v>1.1.3</protostuff.v>
         <docker.image.prefix>springboot</docker.image.prefix>
-        <redisson.version>3.14.1</redisson.version>
+        <redisson.version>3.16.3</redisson.version>
     </properties>
 
     <dependencies>
@@ -109,13 +109,6 @@
             <artifactId>mybatis-typehandlers-jsr310</artifactId>
             <version>1.0.1</version>
         </dependency>
-
-        <!-- MySQL 连接驱动依赖 -->
-        <!--<dependency>-->
-        <!--<groupId>mysql</groupId>-->
-        <!--<artifactId>mysql-connector-java</artifactId>-->
-        <!--<version>8.0.11</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
