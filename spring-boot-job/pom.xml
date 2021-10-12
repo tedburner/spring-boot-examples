@@ -20,7 +20,7 @@
         <java.version>1.8</java.version>
         <skipTests>true</skipTests>
         <elastic.job.version>3.0.0-alpha</elastic.job.version>
-        <xxl.job.version>2.1.1</xxl.job.version>
+        <xxl.job.version>2.3.0</xxl.job.version>
     </properties>
 
     <dependencies>
