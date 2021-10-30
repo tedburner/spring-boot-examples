@@ -15,12 +15,12 @@
     <description>Demo project for Job</description>
 
     <properties>
+        <skipTests>true</skipTests>
+        <java.version>1.8</java.version>
+        <xxl.job.version>2.3.0</xxl.job.version>
+        <elastic.job.version>3.0.0-alpha</elastic.job.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <skipTests>true</skipTests>
-        <elastic.job.version>3.0.0-alpha</elastic.job.version>
-        <xxl.job.version>2.1.1</xxl.job.version>
     </properties>
 
     <dependencies>
