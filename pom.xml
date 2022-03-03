@@ -26,6 +26,7 @@
         <module>spring-boot-security</module>
         <module>spring-boot-websocket</module>
         <module>spring-boot-prometheus</module>
+        <module>spring-boot-mybatis-plus</module>
         <module>spring-boot-elasticsearch</module>
         <module>spring-boot-sample-starter</module>
     </modules>
