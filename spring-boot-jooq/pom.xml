@@ -8,13 +8,13 @@
         <version>2.3.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.springboot</groupId>
-    <artifactId>mybatis-plus</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>jooq</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mybatis-plus</name>
-    <description>spring-boot-mybatis-plus</description>
+    <name>jooq</name>
+
+    <description>spring-boot-jooq</description>
     <properties>
-        <mybatis-plus.version>3.5.1</mybatis-plus.version>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
@@ -22,7 +22,26 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jooq</artifactId>
+        </dependency>
+        <!--jooq 需要的meta和生成代码的codegen包
+           这里注意查看spring-boot-starter-jooq 中的jooq是什么版本-->
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-meta</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-codegen</artifactId>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -32,16 +51,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatis-plus.version}</version>
         </dependency>
     </dependencies>
 
@@ -59,16 +68,25 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen-maven</artifactId>
+                <configuration>
+                    <jdbc>
+                        <driver>com.mysql.cj.jdbc.Driver</driver>
+                        <url>jdbc:mysql://127.0.0.1:3306/test?serverTimezone=Hongkong</url>
+                        <user>root</user>
+                        <password>123456</password>
+                    </jdbc>
+                    <generator>
+                        <target>
+                            <packageName>com.example.jooq</packageName>
+                            <directory>/src/main/java</directory>
+                        </target>
+                    </generator>
+                </configuration>
+            </plugin>
         </plugins>
-        <!--添加配置，为了找到Java下面的mapper的xml文件-->
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-        </resources>
     </build>
 
 </project>

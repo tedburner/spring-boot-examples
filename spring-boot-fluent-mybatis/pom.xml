@@ -8,14 +8,14 @@
         <version>2.3.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.springboot</groupId>
-    <artifactId>mybatis-plus</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>fluent-mybatis</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mybatis-plus</name>
-    <description>spring-boot-mybatis-plus</description>
+    <name>fluent-mybatis</name>
+    <description>spring-boot-fluent-mybatis</description>
     <properties>
-        <mybatis-plus.version>3.5.1</mybatis-plus.version>
         <java.version>1.8</java.version>
+        <fluent-mybatis.version>1.9.4.1</fluent-mybatis.version>
     </properties>
     <dependencies>
         <dependency>
@@ -39,9 +39,20 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatis-plus.version}</version>
+            <groupId>com.github.atool</groupId>
+            <artifactId>fluent-mybatis</artifactId>
+            <version>${fluent-mybatis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.atool</groupId>
+            <artifactId>fluent-mybatis-processor</artifactId>
+            <scope>provided</scope>
+            <version>${fluent-mybatis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.2.2</version>
         </dependency>
     </dependencies>
 
@@ -60,15 +71,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <!--添加配置，为了找到Java下面的mapper的xml文件-->
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-        </resources>
     </build>
 
 </project>

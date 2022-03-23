@@ -16,6 +16,7 @@
         <module>simple-sample</module>
         <module>spring-boot-mq</module>
         <module>spring-boot-job</module>
+        <module>spring-boot-jooq</module>
         <module>spring-boot-canal</module>
         <module>spring-boot-flink</module>
         <module>spring-boot-cache</module>
@@ -28,6 +29,7 @@
         <module>spring-boot-prometheus</module>
         <module>spring-boot-mybatis-plus</module>
         <module>spring-boot-elasticsearch</module>
+        <module>spring-boot-fluent-mybatis</module>
         <module>spring-boot-sample-starter</module>
     </modules>
 
