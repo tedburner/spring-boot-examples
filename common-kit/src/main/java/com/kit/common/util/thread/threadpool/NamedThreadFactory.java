@@ -9,13 +9,21 @@ import java.util.concurrent.atomic.AtomicInteger;
  **/
 public class NamedThreadFactory implements ThreadFactory {
 
-    /**thread name前缀*/
+    /**
+     * thread name前缀
+     */
     private String prefix;
-    /**ThreadGroup*/
+    /**
+     * ThreadGroup
+     */
     private ThreadGroup group;
-    /**是否是守护进程*/
+    /**
+     * 是否是守护进程
+     */
     private boolean isDaemon;
-    /**thread 编号*/
+    /**
+     * thread 编号
+     */
     private AtomicInteger tNo;
 
     public NamedThreadFactory(String prefix) {
@@ -35,8 +43,8 @@ public class NamedThreadFactory implements ThreadFactory {
     }
 
     @Override
-    public Thread newThread(Runnable r) {
-        Thread t = new Thread(group, r, prefix + "-Thread-" + tNo.getAndIncrement());
+    public Thread newThread(Runnable runnable) {
+        Thread t = new Thread(group, runnable, prefix + "-Thread-" + tNo.getAndIncrement());
         t.setDaemon(isDaemon);
         if (t.getPriority() != Thread.NORM_PRIORITY) {
             t.setPriority(Thread.NORM_PRIORITY);
