@@ -19,8 +19,10 @@
     </parent>
 
     <properties>
-        <hessian.version>4.0.65</hessian.version>
         <java.version>1.8</java.version>
+        <orika.version>1.5.4</orika.version>
+        <guava.version>31.1-jre</guava.version>
+        <hessian.version>4.0.65</hessian.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -48,7 +50,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>30.0-jre</version>
+            <version>${guava.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -97,7 +99,7 @@
         <dependency>
             <groupId>ma.glasnost.orika</groupId>
             <artifactId>orika-core</artifactId>
-            <version>1.5.4</version>
+            <version>${orika.version}</version>
         </dependency>
     </dependencies>
 
