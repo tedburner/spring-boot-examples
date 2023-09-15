@@ -16,6 +16,7 @@
         <module>simple-sample</module>
         <module>spring-boot-mq</module>
         <module>spring-boot-job</module>
+        <module>spring-boot-ddd</module>
         <module>spring-boot-jooq</module>
         <module>spring-boot-canal</module>
         <module>spring-boot-flink</module>
