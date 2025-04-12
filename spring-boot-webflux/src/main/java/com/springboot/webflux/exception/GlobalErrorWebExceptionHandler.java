@@ -1,6 +1,6 @@
 package com.springboot.webflux.exception;
 
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
+import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler;
 import org.springframework.boot.web.reactive.error.ErrorAttributes;
 import org.springframework.context.ApplicationContext;
@@ -10,11 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.codec.ServerCodecConfigurer;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.BodyInserters;
-import org.springframework.web.reactive.function.server.RequestPredicates;
-import org.springframework.web.reactive.function.server.RouterFunction;
-import org.springframework.web.reactive.function.server.RouterFunctions;
-import org.springframework.web.reactive.function.server.ServerRequest;
-import org.springframework.web.reactive.function.server.ServerResponse;
+import org.springframework.web.reactive.function.server.*;
 import reactor.core.publisher.Mono;
 
 import java.util.Map;
@@ -28,9 +24,10 @@ import java.util.Map;
 @Component
 public class GlobalErrorWebExceptionHandler extends AbstractErrorWebExceptionHandler {
 
-    public GlobalErrorWebExceptionHandler(GlobalErrorAttributes g, ApplicationContext applicationContext,
+    public GlobalErrorWebExceptionHandler(GlobalErrorAttributes g,
+                                          ApplicationContext applicationContext,
                                           ServerCodecConfigurer serverCodecConfigurer) {
-        super(g, new ResourceProperties(), applicationContext);
+        super(g, new WebProperties.Resources(), applicationContext);
         super.setMessageWriters(serverCodecConfigurer.getWriters());
         super.setMessageReaders(serverCodecConfigurer.getReaders());
     }
