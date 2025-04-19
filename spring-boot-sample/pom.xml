@@ -23,7 +23,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
         <skipTests>true</skipTests>
-        <protostuff.v>1.1.3</protostuff.v>
+        <protostuff.version>1.1.3</protostuff.version>
         <docker.image.prefix>springboot</docker.image.prefix>
         <redisson.version>3.16.3</redisson.version>
     </properties>
@@ -110,9 +110,9 @@
             <version>1.0.1</version>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.33</version>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.4.0</version>
         </dependency>
 
         <!-- Druid 数据连接池依赖 -->
@@ -131,17 +131,17 @@
         <dependency>
             <groupId>com.dyuproject.protostuff</groupId>
             <artifactId>protostuff-api</artifactId>
-            <version>${protostuff.v}</version>
+            <version>${protostuff.version}</version>
         </dependency>
         <dependency>
             <groupId>com.dyuproject.protostuff</groupId>
             <artifactId>protostuff-core</artifactId>
-            <version>${protostuff.v}</version>
+            <version>${protostuff.version}</version>
         </dependency>
         <dependency>
             <groupId>com.dyuproject.protostuff</groupId>
             <artifactId>protostuff-runtime</artifactId>
-            <version>${protostuff.v}</version>
+            <version>${protostuff.version}</version>
         </dependency>
 
         <dependency>
@@ -160,7 +160,7 @@
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
-            <version>5.1.2</version>
+            <version>6.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.github.pagehelper</groupId>
@@ -191,7 +191,7 @@
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
-            <version>4.0.1</version>
+            <version>4.12.0</version>
         </dependency>
 
         <!--阿里云短信-->

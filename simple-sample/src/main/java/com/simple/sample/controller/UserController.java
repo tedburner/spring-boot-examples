@@ -28,15 +28,11 @@ public class UserController {
 
     @GetMapping(value = "/list/all")
     public NewResponseModel<List<User>> getAllUser() {
-        NewResponseModel responseModel = NewResponseModel.Success();
-        responseModel.setData(userService.findAll());
-        return responseModel;
+        return NewResponseModel.Success(userService.findAll());
     }
 
     @GetMapping(value = "/batch/add")
     public NewResponseModel batchAdd(Integer num) {
-        NewResponseModel responseModel = NewResponseModel.Success();
-        userService.batchSave(num);
-        return responseModel;
+        return NewResponseModel.Success(num);
     }
 }

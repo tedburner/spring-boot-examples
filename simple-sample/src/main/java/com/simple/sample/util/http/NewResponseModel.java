@@ -22,6 +22,13 @@ public class NewResponseModel<T> implements Serializable {
         return new NewResponseModel<>(ResponseCodeEnum.Success.getCode(), ResponseCodeEnum.Success.getMessage());
     }
 
+    public static <T> NewResponseModel<T> Success(T data) {
+        NewResponseModel<T> response = new NewResponseModel<>(ResponseCodeEnum.Success.getCode(),
+                ResponseCodeEnum.Success.getMessage());
+        response.setData(data);
+        return response;
+    }
+
     public static <T> NewResponseModel<T> ParamError(String info) {
         return new NewResponseModel<T>(ResponseCodeEnum.PARAM_ERROR.getCode(), info);
     }
