@@ -2,7 +2,6 @@ package com.simple.sample;
 
 import com.springboot.sample.starter.annotation.EnableSampleServer;
 import com.springboot.sample.starter.service.MonitorService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,8 +25,11 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 public class
 SimpleSampleApplication implements CommandLineRunner {
 
-    @Autowired
-    private MonitorService monitorService;
+    private final MonitorService monitorService;
+
+    public SimpleSampleApplication(MonitorService monitorService) {
+        this.monitorService = monitorService;
+    }
 
 
     public static void main(String[] args) {

@@ -86,13 +86,7 @@
             <artifactId>protobuf-java</artifactId>
             <version>${protobuf.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.minio</groupId>
-            <artifactId>minio</artifactId>
-            <version>8.1.0</version>
-        </dependency>
-
-
+<!--         测试注解引入配置-->
         <dependency>
             <groupId>com.springboot</groupId>
             <artifactId>sample-starter</artifactId>

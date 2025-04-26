@@ -11,7 +11,6 @@ Spring Boot项目。配置了druid+mybatis+redis。
 - [Redis](#redis)
 - [Mq](#mq)
 - [Docker](#docker)
-- [七牛云](#七牛云)
 - [项目环境分离](#测试环境/正式环境)
 - [MongoDB](#mongodb)
 - [elasticsearch](#elasticsearch)
@@ -123,9 +122,6 @@ list、hash、set等数据结构的存储
 jib是谷歌的一个容器工具，在构建容器镜像的时候，不需要写dockerfile，直接使用jib
 工具就可以直接构建了
 - [官网GitHub](https://github.com/GoogleContainerTools/jib)
-
-## 七牛云
-整合了七牛云，使用七牛云的 OSS，存储图片文件等功能。
 
 # 感谢
 - [Druid](https://github.com/alibaba/druid/wiki)
