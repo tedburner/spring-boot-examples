@@ -1,0 +1,14 @@
+server:
+  port: 8100
+spring:
+  application:
+    name: spring-ai-knowledge-vector
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: deepseek-r1:8b
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
