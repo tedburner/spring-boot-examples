@@ -6,7 +6,7 @@ Spring Boot项目。配置了druid+mybatis+redis。
 
 在idea中使用mybatis，推荐一个插件—— Free Mybatis plugin，
 感觉挺好用的（声明：不是本人开发的插件，只是使用中感觉不错）。
-
+- [Spring AI 如何接入大模型](#Spring Ai)
 - [项目打包](#项目打包)
 - [Redis](#redis)
 - [Mq](#mq)
@@ -122,6 +122,12 @@ list、hash、set等数据结构的存储
 jib是谷歌的一个容器工具，在构建容器镜像的时候，不需要写dockerfile，直接使用jib
 工具就可以直接构建了
 - [官网GitHub](https://github.com/GoogleContainerTools/jib)
+
+## Spring Ai
+[Spring AI](spring-ai) 项目是使用Spring AI 框架实现如何快速接入大模型，在如今这大模型时代，用户可以快速的接入大模型开发项目。
+包含项目如下：
+* [x] [Spring AI 向量化服务](spring-ai/spring-ai-vector)
+* [x] [Spring AI 实现MCP](spring-ai/spring-ai-mcp)
 
 # 感谢
 - [Druid](https://github.com/alibaba/druid/wiki)

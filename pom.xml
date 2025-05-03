@@ -12,6 +12,7 @@
     <description>Spring Boot Sample</description>
 
     <modules>
+        <module>spring-ai</module>
         <module>common-kit</module>
         <module>simple-sample</module>
         <module>spring-boot-mq</module>
@@ -32,6 +33,8 @@
         <module>spring-boot-elasticsearch</module>
         <module>spring-boot-fluent-mybatis</module>
         <module>spring-boot-sample-starter</module>
+        <module>spring-ai/spring-ai-mcp</module>
+        <module>spring-ai/spring-ai-vector</module>
     </modules>
 
     <parent>
