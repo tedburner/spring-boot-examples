@@ -8,7 +8,7 @@
         <version>3.4.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.knowledge</groupId>
+    <groupId>com.ai</groupId>
     <artifactId>spring-ai-vector</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-ai-vector</name>

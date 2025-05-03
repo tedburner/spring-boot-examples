@@ -1,10 +1,10 @@
-package com.example.springaimcp;
+package com.ai.knowledge.vector;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringAiMcpApplicationTests {
+class SpringAiVectorApplicationTests {
 
     @Test
     void contextLoads() {

@@ -2,4 +2,4 @@
  * @author lingjun.jlj
  * @date 2025/5/2 18:04
  */
-package com.knowledge.vector.domain;
+package com.ai.knowledge.vector.domain;
