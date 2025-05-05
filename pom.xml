@@ -18,7 +18,6 @@
         <module>spring-boot-mq</module>
         <module>spring-boot-job</module>
         <module>spring-boot-jooq</module>
-        <module>spring-boot-canal</module>
         <module>spring-boot-flink</module>
         <module>spring-boot-cache</module>
         <module>spring-boot-docker</module>
