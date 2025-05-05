@@ -3,7 +3,7 @@ package com.example.fluent.mybatis;
 import cn.org.atool.generator.FileGenerator;
 import cn.org.atool.generator.annotation.Table;
 import cn.org.atool.generator.annotation.Tables;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author: lingjun.jlj

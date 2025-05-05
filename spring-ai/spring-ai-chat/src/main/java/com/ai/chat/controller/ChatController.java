@@ -52,7 +52,7 @@ public class ChatController {
     }
 
     /**
-     * 流式对话接口
+     * 非流式对话接口
      *
      * @param query 问句
      * @return 结果

@@ -1,5 +1,5 @@
 # SpringBoot
-Spring Boot项目。配置了druid+mybatis+redis。
+Spring Boot项目。配置了 mybatis+redis。
 - 使用了pagehelper的分页插件
 - 日志使用logback。
 - 使用maven实现开发/测试环境多环境
@@ -128,6 +128,3 @@ jib是谷歌的一个容器工具，在构建容器镜像的时候，不需要�
 包含项目如下：
 * [x] [Spring AI 向量化服务](spring-ai/spring-ai-vector)
 * [x] [Spring AI 实现MCP](spring-ai/spring-ai-mcp)
-
-# 感谢
-- [Druid](https://github.com/alibaba/druid/wiki)

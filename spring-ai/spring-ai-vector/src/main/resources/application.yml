@@ -9,6 +9,16 @@ spring:
       chat:
         options:
           model: deepseek-r1:8b
+      embedding:
+        model: nomic-embed-text:latest
+    # 向量数据库配置
+    vectorstore:
+      elasticsearch:
+        index-name: ollama-rag-embedding-index
+        similarity: cosine
+        dimensions: 768
+  elasticsearch:
+    uris: http://127.0.0.1:9200
   main:
     allow-circular-references: true
     allow-bean-definition-overriding: true

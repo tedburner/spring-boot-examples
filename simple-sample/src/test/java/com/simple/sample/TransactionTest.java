@@ -3,11 +3,9 @@ package com.simple.sample;
 import com.simple.sample.service.transaction.AccountAmountLogService;
 import com.simple.sample.service.transaction.TransactionService;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
@@ -18,7 +16,6 @@ import java.math.BigDecimal;
  * @description:
  */
 @Slf4j
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class TransactionTest {
 

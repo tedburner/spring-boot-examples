@@ -13,9 +13,11 @@ docker run --name ollama -d -v D:\Document\docker\ollama:/root/.ollama -p 11434:
 # 查看已安装模型
 docker exec -it ollama ollama list
 
-# 拉取模型
-docker exec -it ollama ollama pull deepseek-r1:8b
+# deepseek-r1:8b
+## 拉取并运行模型
+ollama pull deepseek-r1:8b
+ollama run deepseek-r1:8b
 
-#运行模型
-docker exec -it ollama ollama run deepseek-r1:8b
+ollama pull qwen3:8b
+ollama run qwen3:8b
 ```
