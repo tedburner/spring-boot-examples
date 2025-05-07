@@ -18,7 +18,6 @@ Spring Boot项目。配置了 mybatis+redis。
 - [sharing sphere](#sharing-sphere)
 - [canal](#canal)
 - [Reactive(Spring WebFlux)](#reactive)
-- [PostgresSQL](#PostgresSQL)
 
 ## 项目打包
 ### 打成jar包
@@ -104,19 +103,13 @@ list、hash、set等数据结构的存储
 项目 [地址](spring-boot-elasticsearch)
 
 ## Elastic Job
-项目[地址](spring-boot-elasticjob)
+项目[地址](spring-boot-job)
 
-## sharing sphere
+## sharing sphere 数据库分片
 [地址](https://github.com/tedburner/sharding-sphere)
-
-## 阿里canal
-[canal](spring-boot-canal)
 
 ## Reactive
 [Reactive](spring-boot-webflux)
-
-## PostgresSQL
-[PostgresSQL](spring-boot-postgres)
 
 ## jib
 jib是谷歌的一个容器工具，在构建容器镜像的时候，不需要写dockerfile，直接使用jib
