@@ -15,8 +15,11 @@ spring:
     vectorstore:
       elasticsearch:
         index-name: ollama-rag-embedding-index
+        # cosine、l2_norm 、dot_product
         similarity: cosine
         dimensions: 768
+        # 向量化字段
+        embedding-field-name:
   elasticsearch:
     uris: http://127.0.0.1:9200
   main:
