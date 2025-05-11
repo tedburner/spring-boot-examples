@@ -12,4 +12,11 @@ public interface VectorApplicationService {
      * @param text
      */
     void store(String text);
+
+    /**
+     * 单条文本进行向量存储接口(自动存储)
+     *
+     * @param text
+     */
+    void autoStore(String text);
 }

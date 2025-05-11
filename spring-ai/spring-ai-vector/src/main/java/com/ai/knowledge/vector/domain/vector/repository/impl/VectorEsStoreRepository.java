@@ -8,13 +8,14 @@ import com.ai.knowledge.vector.domain.vector.repository.VectorStoreRepository;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.elasticsearch.ElasticsearchVectorStore;
 import org.springframework.ai.vectorstore.elasticsearch.autoconfigure.ElasticsearchVectorStoreProperties;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,19 +32,30 @@ public class VectorEsStoreRepository implements VectorStoreRepository {
 
     private static final String vectorField = "embedding";
 
-    @Autowired
-    private ElasticsearchClient elasticsearchClient;
-    @Autowired
-    private ElasticsearchVectorStore elasticsearchVectorStore;
-    @Autowired
-    private ElasticsearchVectorStoreProperties options;
+    private final ElasticsearchClient elasticsearchClient;
+    private final ElasticsearchVectorStore elasticsearchVectorStore;
+    private final ElasticsearchVectorStoreProperties options;
+
+    public VectorEsStoreRepository(ElasticsearchClient elasticsearchClient,
+                                   ElasticsearchVectorStore elasticsearchVectorStore,
+                                   ElasticsearchVectorStoreProperties options) {
+        this.elasticsearchClient = elasticsearchClient;
+        this.elasticsearchVectorStore = elasticsearchVectorStore;
+        this.options = options;
+    }
 
     @Override
-    public void store(String text, float[] embedding) {
+    public void store(String text) {
         // 判断构建索引
         createIndexIfNotExists();
         // 构建向量存储对象
-//        elasticsearchVectorStore.doAdd(List.of(Document.of(text, Map.of(vectorField, embedding))));
+        Document document = new Document(text);
+        elasticsearchVectorStore.add(List.of(document));
+    }
+
+    @Override
+    public void store(String text, float[] embedding) {
+        // todo 先构建数据格式，然后自己执行 elasticsearch 进行文本存储
     }
 
     /**

@@ -24,9 +24,19 @@ src/main/java/com/ai/knowledge/vector
 ### bge-m3
 向量纬度：1024
 
-
 ## 向量数据库
 ### chromadb
 ```bash
 docker run -d --name chromadb -p 8001:8000 -v D:\Document\docker\chroma:/chroma/chroma -e IS_PERSISTENT=TRUE -e ANONYMIZED_TELEMETRY=TRUE chromadb/chroma
 ```
+
+### elasticsearch
+
+## spring ai
+### Spring elasticsearch vector store 固定的参数：
+该实体的主要参数是下面几个：
+- id：文档的唯一标识符，用于检索和管理文档。
+- content：文档的内容，通常是文本、图片或其他形式的媒体。
+- metadata：文档的元数据，用于存储额外的信息，如文档的创建时间、作者、标签等。
+- contentType：文档的内容类型，用于指定文档的类型，如文本、图片、音频等。
+- embedding：可在配置文件中自定义向量化字段，如果不配置，则默认使用embedding字段作为向量化存储字段。

@@ -30,7 +30,11 @@ public class VectorApplicationServiceImpl implements VectorApplicationService {
 
         // 构建向量存储对象
         vectorEsStoreRepository.store(text, embedding);
+    }
 
-
+    @Override
+    public void autoStore(String text) {
+        // 调用 spring ai 框架自行进行存储
+        vectorEsStoreRepository.store(text);
     }
 }
