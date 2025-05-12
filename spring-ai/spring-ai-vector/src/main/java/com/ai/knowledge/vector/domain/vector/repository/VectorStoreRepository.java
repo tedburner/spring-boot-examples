@@ -1,5 +1,9 @@
 package com.ai.knowledge.vector.domain.vector.repository;
 
+import org.springframework.ai.document.Document;
+
+import java.util.List;
+
 /**
  * @author lingjun.jlj
  * @date 2025/5/11 10:36
@@ -24,4 +28,14 @@ public interface VectorStoreRepository {
      * @param embedding 向量化内容
      */
     void store(String text, float[] embedding);
+
+    /**
+     * 向量检索
+     *
+     * @param text      检索文本
+     * @param topK      检索内容
+     * @param threshold 相似度阈值
+     * @return 向量搜索结果
+     */
+    List<Document> retrieval(String text, Integer topK, double threshold);
 }

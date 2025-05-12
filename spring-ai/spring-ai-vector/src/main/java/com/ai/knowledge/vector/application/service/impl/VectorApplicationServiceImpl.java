@@ -1,12 +1,14 @@
 package com.ai.knowledge.vector.application.service.impl;
 
 import com.ai.knowledge.vector.application.service.VectorApplicationService;
-import com.ai.knowledge.vector.domain.vector.repository.impl.VectorEsStoreRepository;
+import com.ai.knowledge.vector.domain.vector.repository.VectorStoreRepository;
 import com.ai.knowledge.vector.domain.vector.service.EmbeddingTextService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ai.document.Document;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author lingjun.jlj
@@ -15,12 +17,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class VectorApplicationServiceImpl implements VectorApplicationService {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(VectorApplicationServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(VectorApplicationServiceImpl.class);
 
-    @Autowired
-    private EmbeddingTextService embeddingTextService;
-    @Autowired
-    private VectorEsStoreRepository vectorEsStoreRepository;
+    private final EmbeddingTextService embeddingTextService;
+    private final VectorStoreRepository vectorStoreRepository;
+
+    public VectorApplicationServiceImpl(EmbeddingTextService embeddingTextService,
+                                        VectorStoreRepository vectorStoreRepository) {
+        this.embeddingTextService = embeddingTextService;
+        this.vectorStoreRepository = vectorStoreRepository;
+    }
 
     @Override
     public void store(String text) {
@@ -29,12 +35,17 @@ public class VectorApplicationServiceImpl implements VectorApplicationService {
         LOGGER.info("文本向量化成功：{}", embedding.length);
 
         // 构建向量存储对象
-        vectorEsStoreRepository.store(text, embedding);
+        vectorStoreRepository.store(text, embedding);
     }
 
     @Override
     public void autoStore(String text) {
         // 调用 spring ai 框架自行进行存储
-        vectorEsStoreRepository.store(text);
+        vectorStoreRepository.store(text);
+    }
+
+    @Override
+    public List<Document> retrieval(String text, Integer topK, double threshold) {
+        return vectorStoreRepository.retrieval(text, topK, threshold);
     }
 }

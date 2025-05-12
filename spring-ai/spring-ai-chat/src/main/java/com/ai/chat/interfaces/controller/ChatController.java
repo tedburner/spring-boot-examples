@@ -1,4 +1,4 @@
-package com.ai.chat.controller;
+package com.ai.chat.interfaces.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

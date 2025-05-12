@@ -1,0 +1,21 @@
+package com.ai.chat.infrastructure.util;
+
+
+/**
+ * id 生成工具
+ *
+ * @author lingjun.jlj
+ * @date 2025/5/11 10:36
+ */
+public class IdUtil {
+
+
+    /**
+     * 生成id
+     *
+     * @return id
+     */
+    public static String getId() {
+        return String.valueOf(System.currentTimeMillis());
+    }
+}
