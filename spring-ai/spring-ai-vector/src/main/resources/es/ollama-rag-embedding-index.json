@@ -1,0 +1,19 @@
+{
+  "mapping": {
+    "id": {
+      "type": "keyword"
+    },
+    "content": {
+      "type": "keyword"
+    },
+    "embedding": {
+      "type": "dense_vector",
+      "dims": 512,
+      "index": true,
+      "similarity": "cosine"
+    },
+    "metadata": {
+      "type": "object"
+    }
+  }
+}
