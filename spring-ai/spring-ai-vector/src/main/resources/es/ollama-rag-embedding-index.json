@@ -1,19 +1,25 @@
 {
-  "mapping": {
-    "id": {
-      "type": "keyword"
-    },
-    "content": {
-      "type": "keyword"
-    },
-    "embedding": {
-      "type": "dense_vector",
-      "dims": 512,
-      "index": true,
-      "similarity": "cosine"
-    },
-    "metadata": {
-      "type": "object"
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "properties": {
+      "id": {
+        "type": "keyword"
+      },
+      "content": {
+        "type": "keyword"
+      },
+      "embedding": {
+        "type": "dense_vector",
+        "dims": 768,
+        "index": true,
+        "similarity": "cosine"
+      },
+      "metadata": {
+        "type": "object"
+      }
     }
   }
 }

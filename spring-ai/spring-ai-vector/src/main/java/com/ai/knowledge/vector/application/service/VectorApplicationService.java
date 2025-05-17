@@ -11,6 +11,14 @@ import java.util.List;
 public interface VectorApplicationService {
 
     /**
+     * 文本向量化接口
+     *
+     * @param text 文本
+     * @return 向量
+     */
+    List<Float> embedding(String text);
+
+    /**
      * 单条文本进行向量存储接口
      *
      * @param text 文本

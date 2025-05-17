@@ -9,6 +9,7 @@ import org.springframework.ai.document.Document;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 /**
  * @author lingjun.jlj
@@ -26,6 +27,15 @@ public class VectorApplicationServiceImpl implements VectorApplicationService {
                                         VectorStoreRepository vectorStoreRepository) {
         this.embeddingTextService = embeddingTextService;
         this.vectorStoreRepository = vectorStoreRepository;
+    }
+
+    @Override
+    public List<Float> embedding(String text) {
+        final float[] embedding = embeddingTextService.embedding(text);
+        return IntStream.range(0, embedding.length)
+                .mapToObj(i -> embedding[i])
+                .toList();
+
     }
 
     @Override
