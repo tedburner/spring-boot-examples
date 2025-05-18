@@ -1,8 +1,11 @@
 package com.ai.knowledge.vector.application.service.impl;
 
 import com.ai.knowledge.vector.application.service.VectorApplicationService;
+import com.ai.knowledge.vector.domain.vector.entity.VectorStoreResultDTO;
 import com.ai.knowledge.vector.domain.vector.repository.VectorStoreRepository;
 import com.ai.knowledge.vector.domain.vector.service.EmbeddingTextService;
+import com.ai.knowledge.vector.interfaces.assembler.VectorStoreResultAssembler;
+import com.ai.knowledge.vector.interfaces.vo.vector.VectorStoreResultVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.document.Document;
@@ -39,19 +42,21 @@ public class VectorApplicationServiceImpl implements VectorApplicationService {
     }
 
     @Override
-    public void store(String text) {
+    public VectorStoreResultVO store(String text) {
         // 文本进行向量化
         float[] embedding = embeddingTextService.embedding(text);
         LOGGER.info("文本向量化成功：{}", embedding.length);
 
         // 构建向量存储对象
-        vectorStoreRepository.store(text, embedding);
+        final VectorStoreResultDTO result = vectorStoreRepository.store(text, embedding);
+        return VectorStoreResultAssembler.INSTANCE.toVo(result);
     }
 
     @Override
-    public void autoStore(String text) {
+    public VectorStoreResultVO autoStore(String text) {
         // 调用 spring ai 框架自行进行存储
-        vectorStoreRepository.store(text);
+        final VectorStoreResultDTO result = vectorStoreRepository.store(text);
+        return VectorStoreResultAssembler.INSTANCE.toVo(result);
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.ai.knowledge.vector.domain.vector.repository.impl;
 
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch.core.CreateResponse;
+import com.ai.knowledge.vector.domain.vector.entity.VectorStoreResultDTO;
 import com.ai.knowledge.vector.domain.vector.repository.VectorStoreRepository;
 import com.ai.knowledge.vector.infrastructure.util.IdUtil;
 import org.slf4j.Logger;
@@ -45,16 +46,25 @@ public class VectorEsStoreRepositoryImpl implements VectorStoreRepository {
     }
 
     @Override
-    public void store(String text) {
-        // 构建向量存储对象
-        Document document = new Document(text);
-        elasticsearchVectorStore.add(List.of(document));
+    public VectorStoreResultDTO store(String text) {
+        VectorStoreResultDTO result = new VectorStoreResultDTO();
+        try {
+            // 构建向量存储对象
+            Document document = new Document(text);
+            elasticsearchVectorStore.add(List.of(document));
+            result.increaseSuccess();
+        }catch (Exception e){
+            LOGGER.error("向es保存向量数据异常", e);
+            result.increaseFail();
+        }
+        return result;
     }
 
     @Override
-    public void store(String text, float[] embedding) {
+    public VectorStoreResultDTO store(String text, float[] embedding) {
         Map<String, Object> data = Map.of(textField, text,
                 vectorField, embedding);
+        VectorStoreResultDTO result = new VectorStoreResultDTO();
         try {
             // 新增
             CreateResponse createResponse = elasticsearchClient.create(c -> c
@@ -62,10 +72,13 @@ public class VectorEsStoreRepositoryImpl implements VectorStoreRepository {
                     .id(IdUtil.getId()) // id
                     .document(data) // 实体类
             );
+            result.increaseSuccess();
             LOGGER.info("添加成功");
         } catch (IOException e) {
             LOGGER.error("向es保存向量数据异常", e);
+            result.increaseFail();
         }
+        return result;
     }
 
     @Override

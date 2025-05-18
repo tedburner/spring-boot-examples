@@ -1,5 +1,6 @@
 package com.ai.knowledge.vector.domain.vector.repository;
 
+import com.ai.knowledge.vector.domain.vector.entity.VectorStoreResultDTO;
 import org.springframework.ai.document.Document;
 
 import java.util.List;
@@ -16,8 +17,9 @@ public interface VectorStoreRepository {
      * spring ai 框架自动进行了文本向量化
      *
      * @param text 文本
+     * @return 存储结果
      */
-    void store(String text);
+    VectorStoreResultDTO store(String text);
 
     /**
      * 单条文本向量化存储
@@ -26,8 +28,9 @@ public interface VectorStoreRepository {
      *
      * @param text      文本
      * @param embedding 向量化内容
+     * @return 存储结果
      */
-    void store(String text, float[] embedding);
+    VectorStoreResultDTO store(String text, float[] embedding);
 
     /**
      * 向量检索

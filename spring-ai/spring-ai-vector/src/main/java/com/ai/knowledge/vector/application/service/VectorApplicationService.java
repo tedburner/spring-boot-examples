@@ -1,5 +1,6 @@
 package com.ai.knowledge.vector.application.service;
 
+import com.ai.knowledge.vector.interfaces.vo.vector.VectorStoreResultVO;
 import org.springframework.ai.document.Document;
 
 import java.util.List;
@@ -22,15 +23,17 @@ public interface VectorApplicationService {
      * 单条文本进行向量存储接口
      *
      * @param text 文本
+     * @return 向量化结果
      */
-    void store(String text);
+    VectorStoreResultVO store(String text);
 
     /**
      * 单条文本进行向量存储接口(自动存储)
      *
      * @param text 文本
+     * @return 向量化结果
      */
-    void autoStore(String text);
+    VectorStoreResultVO autoStore(String text);
 
     /**
      * 向量检索

@@ -1,11 +1,11 @@
 package com.ai.knowledge.vector.interfaces.controller;
 
+import com.ai.common.http.WebResult;
 import com.ai.knowledge.vector.application.service.VectorApplicationService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * @author lingjun.jlj
@@ -28,8 +28,8 @@ public class VectorTextController {
      * @return 向量表示
      */
     @GetMapping("/v1/embedding")
-    public List<Float> embedding(String text) {
-        return vectorApplicationService.embedding(text);
+    public WebResult embedding(@RequestParam("text") String text) {
+        return WebResult.buildSuccess(vectorApplicationService.embedding(text));
     }
 
     /**
@@ -39,7 +39,18 @@ public class VectorTextController {
      * @return 向量表示
      */
     @GetMapping("/v1/store")
-    public void store(String text) {
-        vectorApplicationService.store(text);
+    public WebResult store(@RequestParam("text") String text) {
+        return WebResult.buildSuccess(vectorApplicationService.store(text));
+    }
+
+    /**
+     * 使用框架自动存储
+     *
+     * @param text 文本
+     * @return 向量表示
+     */
+    @GetMapping("/v1/auto/store")
+    public WebResult autoStore(@RequestParam("text") String text) {
+        return WebResult.buildSuccess(vectorApplicationService.autoStore(text));
     }
 }
