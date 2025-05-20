@@ -4,7 +4,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @create 2017-11-30
  * @Description: 切面test
  **/

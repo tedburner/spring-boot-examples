@@ -1,7 +1,7 @@
 package com.sample.mq.service;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2020/7/17 23:31
  * @description:
  */

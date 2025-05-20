@@ -3,7 +3,7 @@ package com.springboot.sample.util.exception.domain;
 import java.io.Serializable;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2018/8/15 15:21
  * @description: 错误常量
  */

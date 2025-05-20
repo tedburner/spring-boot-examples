@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2020/7/17 23:34
  * @description: 实际处理业务的类，可能是本地事务性的方法中处理
  */

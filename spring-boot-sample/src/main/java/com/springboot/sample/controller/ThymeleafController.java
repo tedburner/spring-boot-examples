@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @data 2018/4/23
  * @Description:
  */

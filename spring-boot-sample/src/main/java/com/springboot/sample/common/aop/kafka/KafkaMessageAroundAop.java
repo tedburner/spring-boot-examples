@@ -27,7 +27,7 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @create 2017-11-30
  * @Description: kafka message切面
  **/

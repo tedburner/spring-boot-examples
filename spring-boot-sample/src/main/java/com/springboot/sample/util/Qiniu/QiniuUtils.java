@@ -1,7 +1,7 @@
 package com.springboot.sample.util.Qiniu;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @data 2018/5/7
  * @Description: 七牛云
  */

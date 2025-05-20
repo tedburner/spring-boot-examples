@@ -1,7 +1,7 @@
 package com.springboot.sample.common.enums.kafka;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @Date: 2018/6/11 15:05
  * @Description: kafka message表状态值
  */

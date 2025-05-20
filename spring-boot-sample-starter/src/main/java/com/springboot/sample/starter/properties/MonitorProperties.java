@@ -3,7 +3,7 @@ package com.springboot.sample.starter.properties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2021/3/20 21:42
  * @description:
  */

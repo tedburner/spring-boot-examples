@@ -22,7 +22,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2020/7/17 23:32
  * @description:
  */

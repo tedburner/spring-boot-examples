@@ -1,7 +1,7 @@
 package com.sample.cache.constant;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2020/5/27 21:03
  * @description:
  */

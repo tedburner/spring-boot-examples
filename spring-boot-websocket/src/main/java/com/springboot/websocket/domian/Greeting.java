@@ -1,7 +1,7 @@
 package com.springboot.websocket.domian;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2020/7/18 10:24
  * @description:
  */

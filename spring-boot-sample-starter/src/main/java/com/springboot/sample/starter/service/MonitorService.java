@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.function.Consumer;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2021/3/20 21:46
  * @description: 应用核心类，在自动装配类中创建
  */

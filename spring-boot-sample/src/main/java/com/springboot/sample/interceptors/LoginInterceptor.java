@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @data 2018/5/8
  * @Description: 登入拦截
  */

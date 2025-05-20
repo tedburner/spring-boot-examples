@@ -1,7 +1,7 @@
 package com.kit.common.serializer;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2018-11-30 11:36
  * @description: 序列化
  */

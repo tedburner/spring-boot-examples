@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 大模型对话测试服务
  *
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2025/5/2 18:05
  */
 @SpringBootApplication

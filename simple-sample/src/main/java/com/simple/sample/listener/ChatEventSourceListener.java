@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2023/9/15 19:41
  */
 public class ChatEventSourceListener extends EventSourceListener {

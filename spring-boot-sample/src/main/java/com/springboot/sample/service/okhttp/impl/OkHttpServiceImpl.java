@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @data 2018/5/10
  * @Description:
  */
@@ -76,7 +76,7 @@ public class OkHttpServiceImpl implements OkHttpService {
      * @param request
      * @return
      * @throws IOException
-     * @author lingjun.jlj 2018年5月10日
+     * @author kiturone 2018年5月10日
      */
     @Override
     public Response ReqExecute(Request request) throws IOException {

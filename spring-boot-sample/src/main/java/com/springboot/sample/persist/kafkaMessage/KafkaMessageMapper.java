@@ -4,7 +4,7 @@ import com.springboot.sample.domain.DO.kafkaMessage.KafkaMessageDO;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @create 2017-09-22
  **/
 

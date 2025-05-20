@@ -6,7 +6,7 @@ import org.springframework.ai.document.Document;
 import java.util.List;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2025/5/11 21:13
  */
 public interface VectorApplicationService {

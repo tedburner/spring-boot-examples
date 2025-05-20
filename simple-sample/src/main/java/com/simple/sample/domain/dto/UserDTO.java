@@ -4,7 +4,7 @@ import com.simple.sample.aspect.annotation.FieldCase;
 import lombok.Data;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2020/4/2 20:25
  * @description:
  */

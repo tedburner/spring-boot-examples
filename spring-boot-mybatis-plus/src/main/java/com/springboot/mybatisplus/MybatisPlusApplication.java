@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2022/3/3 21:49
  * @description: mybatis-plus 启动类
  */

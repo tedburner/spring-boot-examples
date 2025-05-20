@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * RAG 向量服务
  *
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2025-05-01 17:38
  */
 @SpringBootApplication

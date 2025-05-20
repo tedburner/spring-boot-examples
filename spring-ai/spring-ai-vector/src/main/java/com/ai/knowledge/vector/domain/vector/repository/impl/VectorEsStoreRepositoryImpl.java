@@ -22,7 +22,7 @@ import java.util.Optional;
 /**
  * 基于 es 的向量存储
  *
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2025/5/11 10:36
  */
 @Repository

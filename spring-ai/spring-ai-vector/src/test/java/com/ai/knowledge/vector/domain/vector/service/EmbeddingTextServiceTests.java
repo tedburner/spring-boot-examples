@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2025/5/5 18:23
  */
 @SpringBootTest

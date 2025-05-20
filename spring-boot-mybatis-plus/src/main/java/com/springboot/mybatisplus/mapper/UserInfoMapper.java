@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.springboot.mybatisplus.domain.UserInfo;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2022/3/3 22:03
  * @description:
  */

@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @data 2018/4/28
  * @Description:
  */

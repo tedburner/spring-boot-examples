@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.Serializable;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @create 2017-11-23
  * https 数据返回包装
  **/

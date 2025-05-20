@@ -13,7 +13,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @description: spring boot 简单项目实例
  */
 @EnableAsync

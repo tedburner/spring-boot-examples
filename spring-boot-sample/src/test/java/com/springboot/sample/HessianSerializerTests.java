@@ -5,7 +5,7 @@ import com.kit.common.serializer.ISerializer;
 import org.junit.Test;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2018-12-03 10:42
  * @description:
  */

@@ -12,7 +12,7 @@ import java.lang.reflect.Type;
 import java.util.Date;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @data 2018/5/3
  * @Description:
  */

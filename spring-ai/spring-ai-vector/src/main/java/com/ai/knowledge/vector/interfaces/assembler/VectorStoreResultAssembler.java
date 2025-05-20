@@ -10,7 +10,7 @@ import org.mapstruct.factory.Mappers;
 /**
  * 文本向量化结果
  *
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2025/5/18 11:08
  */
 @Mapper

@@ -3,7 +3,7 @@ package com.kit.common.util.common;
 import java.math.BigDecimal;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date 2017-12-15
  **/
 public class TranslateUtil {

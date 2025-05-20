@@ -5,7 +5,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/9/20 13:50
  * @description:
  */

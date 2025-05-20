@@ -1,7 +1,7 @@
 package com.springboot.sample.config;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @data 2018/5/7
  * @Description: 跨域问题
  */

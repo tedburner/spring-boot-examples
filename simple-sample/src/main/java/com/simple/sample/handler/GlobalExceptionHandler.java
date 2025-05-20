@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/8/15 10:43
  * @description: 全局异常捕获
  */

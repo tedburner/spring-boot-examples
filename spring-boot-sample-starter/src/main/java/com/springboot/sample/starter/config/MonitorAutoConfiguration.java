@@ -10,7 +10,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2021/3/20 21:45
  * @description: 自动化装配类，初始化 monitor boot starter
  */

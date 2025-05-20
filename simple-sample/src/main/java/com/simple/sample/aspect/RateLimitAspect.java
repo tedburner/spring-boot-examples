@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2021/5/15 12:56
  * @description:
  */

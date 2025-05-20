@@ -3,7 +3,7 @@ package com.sample.cache.service;
 import com.sample.cache.domain.User;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019-01-04 10:31
  * @description:
  */

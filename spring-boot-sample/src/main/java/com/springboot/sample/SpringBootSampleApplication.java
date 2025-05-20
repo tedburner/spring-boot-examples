@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @description: 启动类
  * <p>
  * 使用@ServletComponentScan 注解后，Servlet、Filter、Listener

@@ -3,7 +3,7 @@ package com.springboot.websocket.coder;
 import lombok.Data;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/7/25 14:49
  * @version：1.0.0
  * @description:

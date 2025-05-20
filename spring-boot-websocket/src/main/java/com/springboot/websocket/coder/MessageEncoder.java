@@ -7,7 +7,7 @@ import javax.websocket.Encoder;
 import javax.websocket.EndpointConfig;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/7/17 14:50
  * @version：1.0.0
  * @description: 编码器

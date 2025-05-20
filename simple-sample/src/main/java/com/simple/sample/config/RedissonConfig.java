@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2021/4/19 10:57
  * @description: redisson
  */

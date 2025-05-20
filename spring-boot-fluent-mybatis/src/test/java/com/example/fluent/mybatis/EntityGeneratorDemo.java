@@ -6,7 +6,7 @@ import cn.org.atool.generator.annotation.Tables;
 import org.junit.jupiter.api.Test;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2022/3/22 22:56
  * @description:
  */

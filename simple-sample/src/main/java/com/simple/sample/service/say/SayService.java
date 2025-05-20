@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2020/8/19 12:00
  * @description: Bean 的继承，生命周期
  */

@@ -5,7 +5,7 @@ import com.simple.sample.service.di.BService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/5/15 14:03
  * @description:
  */

@@ -9,7 +9,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2018-11-30 11:37
  * @description:
  */

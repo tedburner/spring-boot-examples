@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2018-12-29 13:46
  * @description:
  */

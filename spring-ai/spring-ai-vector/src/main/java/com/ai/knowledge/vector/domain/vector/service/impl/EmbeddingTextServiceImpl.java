@@ -8,7 +8,7 @@ import org.springframework.ai.ollama.OllamaEmbeddingModel;
 import org.springframework.stereotype.Service;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2025/5/5 17:26
  */
 @Service

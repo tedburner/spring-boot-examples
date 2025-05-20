@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @description: prometheus 监控服务器指标
  * */
 @SpringBootApplication

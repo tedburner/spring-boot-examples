@@ -3,7 +3,7 @@ package com.springboot.sample.service.kafka;
 import com.springboot.sample.domain.DTO.message.SmsMessageDTO;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2018/11/12 19:17
  * @description:
  */

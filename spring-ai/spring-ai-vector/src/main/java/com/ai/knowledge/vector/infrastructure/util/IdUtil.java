@@ -4,7 +4,7 @@ package com.ai.knowledge.vector.infrastructure.util;
 /**
  * id 生成工具
  *
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2025/5/11 10:36
  */
 public class IdUtil {

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 基于langchain 实现的大模型ai对话系统
  *
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2025/5/7 20:00
  */
 @SpringBootApplication

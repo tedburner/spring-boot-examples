@@ -1,7 +1,7 @@
 package com.springboot.sample.service.kafka;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2018/11/13 10:08
  * @description:
  */

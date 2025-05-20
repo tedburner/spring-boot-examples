@@ -1,7 +1,7 @@
 package com.springboot.sample.common.constants;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @data 2018/5/4
  * @Description: 常量池
  */

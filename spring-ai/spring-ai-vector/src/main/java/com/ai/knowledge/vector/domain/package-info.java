@@ -1,5 +1,5 @@
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2025/5/2 18:04
  */
 package com.ai.knowledge.vector.domain;

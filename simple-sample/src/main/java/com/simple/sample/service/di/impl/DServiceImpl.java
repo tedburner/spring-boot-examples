@@ -3,7 +3,7 @@ package com.simple.sample.service.di.impl;
 import com.simple.sample.service.di.DService;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/5/15 14:03
  * @description:
  */

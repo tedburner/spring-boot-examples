@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * ok http 流式接口
  *
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2023/9/15 19:27
  */
 @Component

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/7/22 16:17
  * @version：1.0.0
  * @description:

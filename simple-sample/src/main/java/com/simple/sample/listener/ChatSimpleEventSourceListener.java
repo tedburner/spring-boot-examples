@@ -12,7 +12,7 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 import java.io.IOException;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2023/9/15 19:41
  */
 public class ChatSimpleEventSourceListener extends EventSourceListener {

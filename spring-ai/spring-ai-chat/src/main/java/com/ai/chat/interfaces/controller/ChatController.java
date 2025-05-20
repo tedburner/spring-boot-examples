@@ -18,7 +18,7 @@ import reactor.core.scheduler.Schedulers;
 /**
  * 聊天测试模型
  *
- * @author lingjun.jlj
+ * @author kiturone
  * @date 2025/5/2 18:06
  */
 @RestController

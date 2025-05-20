@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019-07-19 23:05
  * @description: 队列配置
  */

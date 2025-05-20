@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2018-12-05 15:28
  * @description: elastic job 测试定时器
  */

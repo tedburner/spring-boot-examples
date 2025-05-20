@@ -3,7 +3,7 @@ package com.example.jooq.service;
 import com.example.jooq.domain.UserInfo;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2022/3/22 22:23
  * @description:
  */

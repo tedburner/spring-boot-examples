@@ -4,7 +4,7 @@ package com.example.fluent.mybatis.service;
 import com.example.fluent.mybatis.entity.UserEntity;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2022/3/22 22:23
  * @description:
  */
