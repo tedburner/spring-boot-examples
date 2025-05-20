@@ -3,6 +3,8 @@ package com.ai.common.http;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
+import java.util.HashMap;
+
 /**
  * @author kiturone
  * @date 2025/5/18 11:01
@@ -29,6 +31,10 @@ public class WebResult {
 
     public static WebResult buildSuccess(Object data) {
         return new WebResult(SUCCESS_CODE, "success", data);
+    }
+
+    public static WebResult success() {
+        return new WebResult(SUCCESS_CODE, "success", new HashMap<>());
     }
 
     public static WebResult buildFail(Object data) {
