@@ -15,7 +15,7 @@
     <description>spring-ai-vector</description>
     <properties>
         <java.version>17</java.version>
-        <spring-ai.version>1.0.0-RC1</spring-ai.version>
+        <spring-ai.version>1.0.0</spring-ai.version>
         <mapstruct.version>1.6.3</mapstruct.version>
     </properties>
     <dependencies>
@@ -43,10 +43,10 @@
             <artifactId>spring-ai-starter-vector-store-elasticsearch</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.ai</groupId>-->
-<!--            <artifactId>spring-ai-starter-vector-store-chroma</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-pdf-document-reader</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.mapstruct</groupId>
