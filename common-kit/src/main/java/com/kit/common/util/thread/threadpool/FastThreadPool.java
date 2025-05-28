@@ -9,26 +9,20 @@ import com.kit.common.util.thread.task.TaskFunction;
 import com.kit.common.util.thread.task.TaskRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.RejectedExecutionHandler;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @author: kiturone
  * @create 2017-10-23
  **/
 @Component
-public class FastThreadPool {
+public class FastThreadPool implements InitializingBean, DisposableBean {
 
     private static Logger logger = LoggerFactory.getLogger(FastThreadPool.class);
     /**
@@ -76,31 +70,6 @@ public class FastThreadPool {
 
     private ListeningExecutorService service;
 
-    /**
-     * @PostConstruct 在spring容器初始化时，初始化创建一个线程池
-     */
-    @PostConstruct
-    public void initialize() {
-        //基于数组结构的有界阻塞队列，按FIFO排序任务
-        workQueue = new ArrayBlockingQueue(QUEUE_SIZE);
-        //创建线程的工厂，通过自定义的线程工厂可以给每个新建的线程设置一个具有识别度的线程名
-        threadFactory = new NamedThreadFactory("Parallel-Processor", null, true);
-        //用调用者所在的线程来执行任务
-        handler = new ThreadPoolExecutor.CallerRunsPolicy();
-        threadPoolExecutor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE_TIME,
-                TimeUnit.SECONDS, workQueue, threadFactory, handler);
-        service = MoreExecutors.listeningDecorator(threadPoolExecutor);
-    }
-
-
-    /**
-     * 销毁线程池
-     */
-    @PreDestroy
-    public void stop() {
-        service.shutdownNow();
-        workQueue.clear();
-    }
 
     /**
      * 提交并发请求
@@ -177,5 +146,24 @@ public class FastThreadPool {
             throw new RuntimeException("thread pool execute error", e);
         }
         return taskResultList;
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        service.shutdownNow();
+        workQueue.clear();
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        //基于数组结构的有界阻塞队列，按FIFO排序任务
+        workQueue = new ArrayBlockingQueue(QUEUE_SIZE);
+        //创建线程的工厂，通过自定义的线程工厂可以给每个新建的线程设置一个具有识别度的线程名
+        threadFactory = new NamedThreadFactory("Parallel-Processor", null, true);
+        //用调用者所在的线程来执行任务
+        handler = new ThreadPoolExecutor.CallerRunsPolicy();
+        threadPoolExecutor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE_TIME,
+                TimeUnit.SECONDS, workQueue, threadFactory, handler);
+        service = MoreExecutors.listeningDecorator(threadPoolExecutor);
     }
 }
