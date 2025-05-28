@@ -30,8 +30,9 @@
         <module>spring-boot-elasticsearch</module>
         <module>spring-boot-fluent-mybatis</module>
         <module>spring-boot-sample-starter</module>
-        <module>spring-ai/spring-ai-mcp</module>
         <module>spring-ai/spring-ai-vector</module>
+        <module>spring-ai/spring-ai-mcp/spring-ai-mcp-client</module>
+        <module>spring-ai/spring-ai-mcp/spring-ai-mcp-server</module>
     </modules>
 
     <parent>
