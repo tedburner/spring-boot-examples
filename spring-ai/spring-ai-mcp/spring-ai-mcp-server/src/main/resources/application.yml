@@ -1,3 +1,10 @@
-# 应用服务 WEB 访问端口
-server.port=8080
-
+spring:
+  main:
+    web-application-type: none  # 必须禁用web应用类型
+    banner-mode: off           # 禁用banner
+  ai:
+    mcp:
+      server:
+        stdio: true            # 启用stdio模式
+        name: my-weather-server # 服务器名称
+        version: 0.0.1         # 服务器版本
