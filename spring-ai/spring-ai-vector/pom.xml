@@ -70,7 +70,7 @@
         <dependency>
             <groupId>com.ai</groupId>
             <artifactId>spring-ai-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.1</version>
         </dependency>
     </dependencies>
 
