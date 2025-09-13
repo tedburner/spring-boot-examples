@@ -39,6 +39,8 @@
         <module>spring-ai/spring-ai-mcp/spring-ai-mcp-streamable</module>
         <module>spring-ai/spring-ai-mcp/spring-ai-mcp-stdio/spring-ai-mcp-stdio-client</module>
         <module>spring-ai/spring-ai-mcp/spring-ai-mcp-stdio/spring-ai-mcp-stdio-server</module>
+        <module>spring-ai/spring-ai-mcp/spring-ai-mcp-streamable/spring-ai-mcp-streamable-client</module>
+        <module>spring-ai/spring-ai-mcp/spring-ai-mcp-streamable/spring-ai-mcp-streamable-server</module>
     </modules>
 
     <parent>

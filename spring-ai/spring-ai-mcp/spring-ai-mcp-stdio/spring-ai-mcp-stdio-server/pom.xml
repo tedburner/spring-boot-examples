@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.3</version>
+        <version>3.5.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.ai</groupId>
@@ -15,7 +15,7 @@
     <description>spring-ai-mcp-stdio-server</description>
     <properties>
         <java.version>17</java.version>
-        <spring-ai.version>1.0.0</spring-ai.version>
+        <spring-ai.version>1.0.1</spring-ai.version>
     </properties>
     <dependencies>
         <dependency>
@@ -24,9 +24,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-mcp-server</artifactId>
+            <version>${spring-ai.version}</version>
         </dependency>
     </dependencies>
     <dependencyManagement>

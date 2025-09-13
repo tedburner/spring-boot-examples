@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.0</version>
+        <version>3.5.5</version>
         <relativePath/>
     </parent>
     <groupId>com.ai</groupId>
@@ -15,7 +15,7 @@
     <description>spring-ai-chat</description>
     <properties>
         <java.version>17</java.version>
-        <spring-ai.version>1.0.0</spring-ai.version>
+        <spring-ai.version>1.0.1</spring-ai.version>
         <mapstruct.version>1.6.3</mapstruct.version>
     </properties>
     <dependencies>
