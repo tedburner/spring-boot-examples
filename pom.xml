@@ -12,7 +12,6 @@
     <description>Spring Boot Sample</description>
 
     <modules>
-        <module>spring-ai</module>
         <module>common-kit</module>
         <module>spring-boot-sample-starter</module>
         <module>simple-sample</module>
@@ -30,17 +29,6 @@
         <module>spring-boot-mybatis-plus</module>
         <module>spring-boot-elasticsearch</module>
         <module>spring-boot-fluent-mybatis</module>
-        <module>spring-ai/spring-ai-chat</module>
-        <module>spring-ai/spring-ai-common</module>
-        <module>spring-ai/spring-ai-vector</module>
-        <module>spring-ai/spring-ai-openmanus</module>
-        <module>spring-ai/spring-ai-mcp</module>
-        <module>spring-ai/spring-ai-mcp/spring-ai-mcp-stdio</module>
-        <module>spring-ai/spring-ai-mcp/spring-ai-mcp-streamable</module>
-        <module>spring-ai/spring-ai-mcp/spring-ai-mcp-stdio/spring-ai-mcp-stdio-client</module>
-        <module>spring-ai/spring-ai-mcp/spring-ai-mcp-stdio/spring-ai-mcp-stdio-server</module>
-        <module>spring-ai/spring-ai-mcp/spring-ai-mcp-streamable/spring-ai-mcp-streamable-client</module>
-        <module>spring-ai/spring-ai-mcp/spring-ai-mcp-streamable/spring-ai-mcp-streamable-server</module>
     </modules>
 
     <parent>
