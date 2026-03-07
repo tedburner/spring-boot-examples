@@ -28,8 +28,7 @@ spring-boot-examples/
 ├── spring-boot-prometheus     # Prometheus 监控
 ├── spring-boot-jooq           # jOOQ
 ├── spring-boot-mybatis-plus   # MyBatis-Plus
-├── spring-boot-fluent-mybatis # Fluent MyBatis
-└── langchain-example          # LangChain 示例
+└── spring-boot-fluent-mybatis # Fluent MyBatis
 ```
 
 ## 快速开始
@@ -142,8 +141,6 @@ java -jar app.jar --spring.profiles.active=production
 
 **数据库分片**
 - [Sharding-Sphere](https://github.com/tedburner/sharding-sphere)
-
-**LangChain** - [langchain-example/langchain-chat](/langchain-example/langchain-chat)
 
 ## 技术栈
 

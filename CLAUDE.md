@@ -53,7 +53,6 @@ This is a multi-module Maven project containing Spring Boot examples and integra
 - `spring-boot-docker` - Docker image building (Jib/Dockerfile)
 - `spring-boot-prometheus` - Metrics and monitoring
 - `simple-sample` - Minimal example
-- `langchain-example/langchain-chat` - LangChain integration
 
 ### Architecture Patterns
 
