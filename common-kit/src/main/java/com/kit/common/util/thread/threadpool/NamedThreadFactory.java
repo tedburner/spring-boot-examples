@@ -36,8 +36,9 @@ public class NamedThreadFactory implements ThreadFactory {
         if (null != group) {
             this.group = group;
         } else {
-            SecurityManager sm = System.getSecurityManager();
-            group = (sm != null) ? sm.getThreadGroup() : Thread.currentThread().getThreadGroup();
+            // SecurityManager is deprecated for removal in Java 17
+            // Directly use current thread's thread group
+            this.group = Thread.currentThread().getThreadGroup();
         }
         this.isDaemon = isDaemon;
     }

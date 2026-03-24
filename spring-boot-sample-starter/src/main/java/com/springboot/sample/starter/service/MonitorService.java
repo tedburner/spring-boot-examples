@@ -11,6 +11,7 @@ import java.util.function.Consumer;
  * @description: 应用核心类，在自动装配类中创建
  */
 public class MonitorService {
+
     private MonitorProperties properties;
 
     public MonitorService(MonitorProperties properties) {

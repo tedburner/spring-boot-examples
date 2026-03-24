@@ -22,8 +22,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 @EnableJpaAuditing
 @SpringBootApplication
 @EnableAspectJAutoProxy(exposeProxy = true)
-public class
-SimpleSampleApplication implements CommandLineRunner {
+public class SimpleSampleApplication implements CommandLineRunner {
 
     private final MonitorService monitorService;
 

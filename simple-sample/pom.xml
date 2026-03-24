@@ -88,7 +88,7 @@
         </dependency>
 <!--         测试注解引入配置-->
         <dependency>
-            <groupId>com.springboot</groupId>
+            <groupId>com.example</groupId>
             <artifactId>sample-starter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
