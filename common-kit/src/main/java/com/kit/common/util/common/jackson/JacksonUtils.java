@@ -32,7 +32,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2020/5/19 15:05
  * @description: jackson使用工具
  */

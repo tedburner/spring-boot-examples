@@ -5,7 +5,7 @@ import org.springframework.context.SmartLifecycle;
 import org.springframework.stereotype.Component;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2021/4/30 11:21
  * @description: SmartLifecycle测试
  */

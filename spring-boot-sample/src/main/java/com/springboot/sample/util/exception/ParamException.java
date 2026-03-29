@@ -4,7 +4,7 @@ import com.springboot.sample.util.exception.domain.Error;
 import com.kit.common.util.http.ResponseCodeEnum;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2018/8/15 15:21
  * @description: 参数错误异常
  */

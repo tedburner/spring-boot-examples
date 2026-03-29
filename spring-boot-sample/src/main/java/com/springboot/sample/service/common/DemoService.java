@@ -1,7 +1,7 @@
 package com.springboot.sample.service.common;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @data 2018/4/28
  * @Description:
  */

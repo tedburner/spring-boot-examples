@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2021/7/18 18:56
  * @description: 定时任务
  */

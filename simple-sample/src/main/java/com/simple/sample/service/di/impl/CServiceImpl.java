@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/5/15 14:04
  * @description:
  */

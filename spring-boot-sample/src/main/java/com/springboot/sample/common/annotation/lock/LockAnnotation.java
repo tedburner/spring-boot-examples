@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2018-12-07 10:26
  * @description: 用于方法的分布式锁注解
  */

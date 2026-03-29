@@ -1,19 +1,19 @@
 package com.simple.sample.interceptors;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2021/5/15 12:37
  * @description:
  */
 @Component
-public class HttpInterceptor extends HandlerInterceptorAdapter {
+public class HttpInterceptor implements HandlerInterceptor {
 
     /**
      * 在请求处理之前进行调用（Controller方法调用之前）

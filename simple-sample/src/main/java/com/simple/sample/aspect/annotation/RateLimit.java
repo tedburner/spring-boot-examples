@@ -3,7 +3,7 @@ package com.simple.sample.aspect.annotation;
 import java.lang.annotation.*;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2021/5/15 12:55
  * @description:
  */

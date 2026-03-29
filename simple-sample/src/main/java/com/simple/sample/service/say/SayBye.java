@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2020/8/19 12:01
  * @description:
  */

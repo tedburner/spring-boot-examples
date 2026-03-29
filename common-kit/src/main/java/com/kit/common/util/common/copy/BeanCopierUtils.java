@@ -2,7 +2,7 @@ package com.kit.common.util.common.copy;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.cglib.core.Converter;
 
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.concurrent.ConcurrentMap;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2018/8/20 10:05
  * @description: 基于cglib 的BeanCopier
  */
@@ -28,16 +28,15 @@ public class BeanCopierUtils {
      * @param sourceList  源类
      * @param targetClass 目标类
      */
-    public static <T> List<T> copyList(List<Object> sourceList, Class<T> targetClass) {
+    public static <T> List<T> copyList(List<?> sourceList, Class<T> targetClass) {
         if (CollectionUtils.isEmpty(sourceList)) {
             return Lists.newArrayList();
         } else {
             List<T> resultList = Lists.newArrayListWithCapacity(sourceList.size());
-            Iterator iterator = sourceList.iterator();
+            Iterator<?> iterator = sourceList.iterator();
 
             while (iterator.hasNext()) {
                 Object source = iterator.next();
-
                 try {
                     T target = targetClass.newInstance();
                     copy(source, target);
@@ -46,7 +45,6 @@ public class BeanCopierUtils {
                     throw new RuntimeException(var6);
                 }
             }
-
             return resultList;
         }
     }

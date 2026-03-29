@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/11/27 10:19
  * @description:
  */

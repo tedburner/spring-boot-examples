@@ -3,7 +3,7 @@ package com.kit.common.util.mybatis;
 import java.util.Collection;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/4/26 09:30
  * @description: mybatis 判断参数方法
  */

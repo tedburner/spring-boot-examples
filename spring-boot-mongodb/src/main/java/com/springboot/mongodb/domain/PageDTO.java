@@ -3,7 +3,7 @@ package com.springboot.mongodb.domain;
 import lombok.Data;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2018-12-01 15:01
  * @description:
  */

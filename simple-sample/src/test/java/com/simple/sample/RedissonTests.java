@@ -1,22 +1,19 @@
 package com.simple.sample;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.redisson.api.RBucket;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2021/4/19 11:03
  * @description:
  */
 @Slf4j
 @SpringBootTest
-@RunWith(SpringRunner.class)
 public class RedissonTests {
 
     @Autowired

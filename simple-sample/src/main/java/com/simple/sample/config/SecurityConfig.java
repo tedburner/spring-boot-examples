@@ -3,7 +3,7 @@ package com.simple.sample.config;
 import org.springframework.beans.factory.annotation.Configurable;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/10/7 14:20
  * @description:
  */

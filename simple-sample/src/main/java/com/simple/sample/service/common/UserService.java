@@ -5,7 +5,7 @@ import com.simple.sample.domain.entity.User;
 import java.util.List;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019-08-03 22:58
  * @description:
  */

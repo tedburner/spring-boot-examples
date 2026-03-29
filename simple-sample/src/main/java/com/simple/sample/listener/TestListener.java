@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019-08-05 23:02
  * @description: 实现事件的监听
  */

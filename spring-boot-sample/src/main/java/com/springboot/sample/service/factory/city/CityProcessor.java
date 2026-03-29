@@ -3,7 +3,7 @@ package com.springboot.sample.service.factory.city;
 import com.springboot.sample.domain.DO.CityDO;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @data 2018/4/28
  * @Description:
  */

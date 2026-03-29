@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2021/4/28 16:15
  * @description:
  */

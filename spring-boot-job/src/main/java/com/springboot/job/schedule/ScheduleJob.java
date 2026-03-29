@@ -10,7 +10,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2020/8/15 15:39
  * @description: spring schedule 定时任务
  */

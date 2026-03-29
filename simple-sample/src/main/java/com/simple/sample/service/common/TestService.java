@@ -4,7 +4,7 @@ import com.simple.sample.domain.dto.UserDTO;
 import com.simple.sample.util.http.NewResponseModel;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/11/27 09:35
  * @description:
  */

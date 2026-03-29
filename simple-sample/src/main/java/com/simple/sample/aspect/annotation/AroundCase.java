@@ -8,7 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2020/4/2 20:30
  * @description:
  */

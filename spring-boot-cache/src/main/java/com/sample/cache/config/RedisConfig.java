@@ -14,7 +14,7 @@ import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/7/31 10:22
  * @version：1.0.0
  * @description:

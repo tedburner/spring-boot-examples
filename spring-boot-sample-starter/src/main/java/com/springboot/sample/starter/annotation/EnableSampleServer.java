@@ -10,7 +10,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2021/4/7 11:33
  * @description:
  */

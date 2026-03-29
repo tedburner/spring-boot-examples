@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.Serializable;
 
 /**
- * @author lingjun.jlj
+ * @author kiturone
  * @create 2017-11-23
  * https 数据返回包装
  **/
@@ -20,6 +20,13 @@ public class NewResponseModel<T> implements Serializable {
 
     public static <T> NewResponseModel<T> Success() {
         return new NewResponseModel<>(ResponseCodeEnum.Success.getCode(), ResponseCodeEnum.Success.getMessage());
+    }
+
+    public static <T> NewResponseModel<T> Success(T data) {
+        NewResponseModel<T> response = new NewResponseModel<>(ResponseCodeEnum.Success.getCode(),
+                ResponseCodeEnum.Success.getMessage());
+        response.setData(data);
+        return response;
     }
 
     public static <T> NewResponseModel<T> ParamError(String info) {

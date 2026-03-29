@@ -13,11 +13,11 @@
 
     <modules>
         <module>common-kit</module>
+        <module>spring-boot-sample-starter</module>
         <module>simple-sample</module>
         <module>spring-boot-mq</module>
         <module>spring-boot-job</module>
-        <module>spring-boot-canal</module>
-        <module>spring-boot-flink</module>
+        <module>spring-boot-jooq</module>
         <module>spring-boot-cache</module>
         <module>spring-boot-docker</module>
         <module>spring-boot-sample</module>
@@ -26,21 +26,22 @@
         <module>spring-boot-security</module>
         <module>spring-boot-websocket</module>
         <module>spring-boot-prometheus</module>
+        <module>spring-boot-mybatis-plus</module>
         <module>spring-boot-elasticsearch</module>
-        <module>spring-boot-sample-starter</module>
+        <module>spring-boot-fluent-mybatis</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.0.RELEASE</version>
+        <version>2.7.18</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <skipTests>true</skipTests>
     </properties>
 
@@ -52,6 +53,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>

@@ -5,18 +5,18 @@ import com.springboot.sample.common.annotation.Anonymous;
 import com.kit.common.util.http.NewResponseModel;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.HandlerMethod;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @data 2018/5/8
  * @Description: 登入拦截
  */
 @Configuration
-public class LoginInterceptor extends HandlerInterceptorAdapter {
+public class LoginInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
@@ -52,7 +52,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
             throws Exception {
-        super.afterCompletion(request, response, handler, ex);
+        // HandlerInterceptor default implementation is empty
     }
 
 }

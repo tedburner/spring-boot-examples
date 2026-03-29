@@ -5,3 +5,5 @@
 *.ipr
 
 logs
+
+error.log

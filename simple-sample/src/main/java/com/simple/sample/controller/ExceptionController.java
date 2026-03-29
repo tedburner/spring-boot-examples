@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/8/15 10:44
  * @description: 测试全局异常捕捉
  */

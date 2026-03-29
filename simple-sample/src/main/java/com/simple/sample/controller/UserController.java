@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019-08-03 23:02
  * @description: 用户模块
  */
@@ -28,15 +28,11 @@ public class UserController {
 
     @GetMapping(value = "/list/all")
     public NewResponseModel<List<User>> getAllUser() {
-        NewResponseModel responseModel = NewResponseModel.Success();
-        responseModel.setData(userService.findAll());
-        return responseModel;
+        return NewResponseModel.Success(userService.findAll());
     }
 
     @GetMapping(value = "/batch/add")
     public NewResponseModel batchAdd(Integer num) {
-        NewResponseModel responseModel = NewResponseModel.Success();
-        userService.batchSave(num);
-        return responseModel;
+        return NewResponseModel.Success(num);
     }
 }

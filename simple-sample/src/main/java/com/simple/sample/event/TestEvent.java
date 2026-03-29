@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationEvent;
 import org.springframework.stereotype.Component;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019-08-05 22:55
  * @description: 定义事件
  */

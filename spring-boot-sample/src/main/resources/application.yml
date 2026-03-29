@@ -12,6 +12,11 @@ spring:
 #    show-sql: true
   activemq:
     broker-url:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    database: 0
   kafka:
     bootstrap-servers: 127.0.0.1:9092
     consumer:

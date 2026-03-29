@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    
+    <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
+    <property name="LOG_PATH" value="/Users/jianglingjun/logs"/>
+
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern><![CDATA[[%d{yyyy-MM-dd HH:mm:ss}] %-5level %logger - %msg%n]]></pattern>
+        </encoder>
+    </appender>
+
+    <!-- 按照每天生成日志文件 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--<Encoding>GBK</Encoding>-->
+        <File>${LOG_PATH}/spring-boot.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_PATH}/spring-boot.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern><![CDATA[[%d{yyyy-MM-dd HH:mm:ss}] %-5level %logger - %msg%n]]></pattern>
+        </layout>
+    </appender>
+
+    <!-- 按照每天生成日志文件 -->
+    <appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--<Encoding>GBK</Encoding>-->
+        <File>${LOG_PATH}/spring-boot-log.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_PATH}/spring-boot-log.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern><![CDATA[[%d{yyyy-MM-dd HH:mm:ss}] %-5level %logger - %msg%n]]></pattern>
+        </layout>
+    </appender>
+
+    <!-- 按照每天生成日志文件 -->
+    <appender name="PROJECT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--<Encoding>GBK</Encoding>-->
+        <File>${LOG_PATH}/spring-boot-biz.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_PATH}/spring-boot-biz.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern><![CDATA[[%d{yyyy-MM-dd HH:mm:ss}] %-5level %logger - %msg%n]]></pattern>
+        </layout>
+    </appender>
+
+    <!-- 用来设置某一个包或者具体的某一个类的日志打印级别，包名要与实际项目一致 -->
+    <logger name="fileInfoLog" level="info">
+        <appender-ref ref="fileInfoLog"/>
+    </logger>
+
+    <!-- 用来设置某一个包或者具体的某一个类的日志打印级别，包名要与实际项目一致 -->
+    <logger name="com.simple.sample" level="info">
+        <appender-ref ref="PROJECT"/>
+    </logger>
+
+    <root level="info">
+        <appender-ref ref="Console"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>
+

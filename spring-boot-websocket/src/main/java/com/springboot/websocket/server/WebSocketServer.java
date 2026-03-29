@@ -17,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019-03-25 20:27
  * @description:
  */

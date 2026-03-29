@@ -1,7 +1,7 @@
 package com.kit.common.util.common;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @data 2018/5/7
  * @description: 图片base64工具类
  */

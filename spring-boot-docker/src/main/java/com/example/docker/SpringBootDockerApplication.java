@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author : lingjun.jlj
+ * @author : kiturone
  * docker 容器化
  */
 @SpringBootApplication

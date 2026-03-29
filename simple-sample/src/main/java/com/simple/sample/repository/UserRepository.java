@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2018-12-26 16:55
  * @description:
  */

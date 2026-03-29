@@ -4,18 +4,26 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @create 2017-10-23
  **/
 public class NamedThreadFactory implements ThreadFactory {
 
-    /**thread name前缀*/
+    /**
+     * thread name前缀
+     */
     private String prefix;
-    /**ThreadGroup*/
+    /**
+     * ThreadGroup
+     */
     private ThreadGroup group;
-    /**是否是守护进程*/
+    /**
+     * 是否是守护进程
+     */
     private boolean isDaemon;
-    /**thread 编号*/
+    /**
+     * thread 编号
+     */
     private AtomicInteger tNo;
 
     public NamedThreadFactory(String prefix) {
@@ -28,15 +36,16 @@ public class NamedThreadFactory implements ThreadFactory {
         if (null != group) {
             this.group = group;
         } else {
-            SecurityManager sm = System.getSecurityManager();
-            group = (sm != null) ? sm.getThreadGroup() : Thread.currentThread().getThreadGroup();
+            // SecurityManager is deprecated for removal in Java 17
+            // Directly use current thread's thread group
+            this.group = Thread.currentThread().getThreadGroup();
         }
         this.isDaemon = isDaemon;
     }
 
     @Override
-    public Thread newThread(Runnable r) {
-        Thread t = new Thread(group, r, prefix + "-Thread-" + tNo.getAndIncrement());
+    public Thread newThread(Runnable runnable) {
+        Thread t = new Thread(group, runnable, prefix + "-Thread-" + tNo.getAndIncrement());
         t.setDaemon(isDaemon);
         if (t.getPriority() != Thread.NORM_PRIORITY) {
             t.setPriority(Thread.NORM_PRIORITY);

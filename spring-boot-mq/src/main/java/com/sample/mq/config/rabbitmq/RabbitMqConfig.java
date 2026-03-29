@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019-07-19 23:05
  * @description: RabbitMQ 绑定 交换机和队列
  */

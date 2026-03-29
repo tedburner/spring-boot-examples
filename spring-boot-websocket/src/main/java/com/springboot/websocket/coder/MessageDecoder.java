@@ -10,7 +10,7 @@ import javax.websocket.EndpointConfig;
 import java.lang.reflect.Type;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/7/17 14:40
  * @version：1.0.0
  * @description: 解码器

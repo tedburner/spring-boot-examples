@@ -1,6 +1,5 @@
 package com.springboot.sample.common.aop.kafka;
 
-
 import com.dyuproject.protostuff.LinkedBuffer;
 import com.dyuproject.protostuff.ProtostuffIOUtil;
 import com.dyuproject.protostuff.Schema;
@@ -28,7 +27,7 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @create 2017-11-30
  * @Description: kafka message切面
  **/
@@ -52,7 +51,7 @@ public class KafkaMessageAroundAop {
     }
 
     @Around("messageSend()")
-    public Object Around(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         Object[] args = joinPoint.getArgs();
         Object target = joinPoint.getTarget();
 

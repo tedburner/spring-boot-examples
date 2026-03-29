@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 
 /**
- * @author : lingjun.jlj
+ * @author : kiturone
  * @description: WebSocket Demo
  */
 @EnableCaching

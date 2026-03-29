@@ -4,7 +4,7 @@ import com.simple.sample.domain.entity.City;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2019/9/19 22:18
  * @description:
  */

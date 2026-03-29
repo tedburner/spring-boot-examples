@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author: lingjun.jlj
+ * @author: kiturone
  * @date: 2021/4/7 11:34
  * @description: active sample starter server
  * {@link MonitorAutoConfiguration}
