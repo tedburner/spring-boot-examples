@@ -24,7 +24,8 @@ spring:
 #      batch-size: 65536
 #      buffer-memory: 524288
 rocketmq:
-  name-server: 118.25.108.65:9876
+  # 生产环境请设置环境变量 ROCKETMQ_NAME_SERVER
+  name-server: ${ROCKETMQ_NAME_SERVER:127.0.0.1:9876}
   producer:
     group: my-group
     send-message-timeout: 300000
