@@ -19,6 +19,12 @@ cd <module-name> && mvn spring-boot:run
 
 # Run jar with profile
 java -jar target/<module>-0.0.1-SNAPSHOT.jar --spring.profiles.active=test
+
+# Run tests for a specific module
+cd <module-name> && mvn test
+
+# Run specific test
+mvn test -Dtest=YourTestClassName
 ```
 
 ## Project Structure
@@ -79,3 +85,64 @@ This is a multi-module Maven project containing Spring Boot examples and integra
 - **RabbitMQ/Kafka**: Required for messaging modules
 - **Elasticsearch**: Required for ES modules
 - **MongoDB**: Required for MongoDB module
+
+## Testing Guidelines
+
+### Unit Test Coverage Requirements
+
+When adding new functionality to any module, the following unit test coverage is required:
+
+#### 1. Service Layer
+- Test all business logic methods
+- Verify input validation and error handling
+- Mock external dependencies where appropriate
+
+#### 2. Controller Layer
+- Test all API endpoints
+- Verify request/response handling
+- Test authentication and authorization (if applicable)
+
+#### 3. Utility Classes
+- Test all public methods with various input scenarios
+- Verify edge cases and error conditions
+- Test utility-specific configurations if applicable
+
+#### 4. Security Components
+- Test authentication flows
+- Verify authorization rules and permissions
+- Test security filter functionality
+
+#### 5. Configuration Classes
+- Test configuration properties loading
+- Verify conditional bean creation
+
+### Test Structure
+
+**Test Organization:**
+- `src/test/java/` - Unit and integration tests
+- Mirror main source package structure
+- Separate test classes by component (services, controllers, utils, etc.)
+
+**Test Naming Convention:**
+- `{ClassName}Test.java` for unit tests of a specific class
+- `{FeatureName}IntegrationTest.java` for integration tests
+
+**Test Categories:**
+- Unit tests: Fast, isolated tests of individual methods/classes
+- Integration tests: Tests involving multiple components or external systems
+- Mock tests: Tests using mocked dependencies
+
+### Minimum Test Coverage Standards
+
+- **Service Layer**: 80%+ coverage for business logic methods
+- **Utility Classes**: 90%+ coverage for all public methods
+- **Controllers**: Test all endpoints and response scenarios
+- **Security**: Full coverage of authentication and authorization flows
+- **Configuration**: Test all configuration classes for proper initialization
+
+### Running Tests
+
+**Best Practices:**
+- Run unit tests frequently during development (`mvn test`)
+- Use specific test execution when developing (`mvn test -Dtest=TestClass`)
+- Verify test coverage before committing new functionality
