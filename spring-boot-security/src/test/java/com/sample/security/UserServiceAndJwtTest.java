@@ -1,5 +1,11 @@
 package com.sample.security;
 
+/**
+ * @author: kiturone
+ * @date: 2026/04/03 17:27
+ * @description: 用户服务和JWT集成测试
+ */
+
 import com.sample.security.service.impl.UserServiceImpl;
 import com.sample.security.util.JwtUtil;
 import org.junit.jupiter.api.Test;

@@ -1,5 +1,11 @@
 package com.sample.security.entity;
 
+/**
+ * @author: kiturone
+ * @date: 2026/04/03 17:27
+ * @description: 用户实体类，实现Spring Security的UserDetails接口
+ */
+
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

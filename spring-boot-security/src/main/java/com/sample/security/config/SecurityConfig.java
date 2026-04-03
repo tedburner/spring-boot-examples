@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 /**
  * @author: kiturone
- * @date: 2021/6/4 15:18
+ * @date: 2026/04/03 17:27
  * @description: 开启 Web Security
  */
 @EnableWebSecurity

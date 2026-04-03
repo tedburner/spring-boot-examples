@@ -1,148 +1,162 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+本文档为 Claude Code（claude.ai/code）在本项目中工作时提供指导。
 
-## Build & Test Commands
+## 构建与测试命令
 
 ```bash
-# Build all modules
+# 构建所有模块
 mvn clean package
 
-# Build skipping tests
+# 构建并跳过测试
 mvn clean package -Dmaven.test.skip=true
 
-# Build with specific profile
+# 使用指定配置构建
 mvn clean package -Pproduction
 
-# Run a single module
+# 运行单个模块
 cd <module-name> && mvn spring-boot:run
 
-# Run jar with profile
+# 使用配置运行jar包
 java -jar target/<module>-0.0.1-SNAPSHOT.jar --spring.profiles.active=test
 
-# Run tests for a specific module
+# 运行特定模块的测试
 cd <module-name> && mvn test
 
-# Run specific test
+# 运行特定测试类
 mvn test -Dtest=YourTestClassName
 ```
 
-## Project Structure
+## 项目结构
 
-This is a multi-module Maven project containing Spring Boot examples and integrations. Spring Boot 2.7.18 is used across all modules.
+这是一个多模块Maven项目，包含Spring Boot示例和集成功能。Spring Boot版本统一使用2.7.18。
 
-### Module Organization
+### 模块组织
 
-**Core Infrastructure:**
-- `common-kit` - Shared utilities (Redis, Gson, Jackson, Orika bean mapping, Hessian serialization)
-- `spring-boot-sample-starter` - Custom Spring Boot starter example
+**核心基础设施：**
+- `common-kit` - 通用工具包（Redis、Gson、Jackson、Orika bean映射、Hessian序列化）
+- `spring-boot-sample-starter` - 自定义Spring Boot starter示例
 
-**Data & Persistence:**
-- `spring-boot-mongodb` - MongoDB with Spring Data JPA
-- `spring-boot-elasticsearch` - Elasticsearch integration
-- `spring-boot-fluent-mybatis` - Fluent MyBatis example
-- `spring-boot-mybatis-plus` - MyBatis-Plus integration
-- `spring-boot-jooq` - jOOQ integration
-- `spring-boot-cache` - Spring Cache with Redis
+**数据与持久化：**
+- `spring-boot-mongodb` - MongoDB与Spring Data JPA
+- `spring-boot-elasticsearch` - Elasticsearch集成
+- `spring-boot-fluent-mybatis` - Fluent MyBatis示例
+- `spring-boot-mybatis-plus` - MyBatis-Plus集成
+- `spring-boot-jooq` - jOOQ集成
+- `spring-boot-cache` - Spring Cache与Redis
 
-**Messaging & Jobs:**
-- `spring-boot-mq` - RabbitMQ (delay queues, priority queues, message ack), Kafka, RocketMQ
-- `spring-boot-job` - Elastic-Job distributed scheduling
+**消息队列与定时任务：**
+- `spring-boot-mq` - RabbitMQ（延迟队列、优先级队列、消息确认）、Kafka、RocketMQ
+- `spring-boot-job` - Elastic-Job分布式调度
 
-**Web & Security:**
-- `spring-boot-webflux` - Reactive web (note: incompatible with Spring MVC)
-- `spring-boot-security` - Spring Security
-- `spring-boot-websocket` - WebSocket support
-- `spring-boot-sample` - Main sample with controllers, services, mappers, Kafka
+**Web与安全：**
+- `spring-boot-webflux` - 响应式Web（注意：与Spring MVC不兼容）
+- `spring-boot-security` - Spring Security安全认证
+- `spring-boot-websocket` - WebSocket支持
+- `spring-boot-sample` - 主示例项目，包含controllers、services、mappers、Kafka
 
-**Other:**
-- `spring-boot-docker` - Docker image building (Jib/Dockerfile)
-- `spring-boot-prometheus` - Metrics and monitoring
-- `simple-sample` - Minimal example
+**其他：**
+- `spring-boot-docker` - Docker镜像构建（Jib/Dockerfile）
+- `spring-boot-prometheus` - 监控与指标
+- `simple-sample` - 最小示例
 
-### Architecture Patterns
+### 架构模式
 
-**Standard Layering:**
-- `controller/` - REST endpoints
-- `service/` & `service/impl/` - Business logic
-- `persist/` or `mapper/` - Data access (MyBatis mappers)
-- `domain/DO/` & `domain/DTO/` - Data objects
-- `common/` - Constants, enums, annotations, AOP
-- `config/` - Spring configuration classes
-- `util/` - Utilities
-- `filters/` & `interceptors/` - Request processing
+**标准分层结构：**
+- `controller/` - REST接口
+- `service/` 与 `service/impl/` - 业务逻辑
+- `persist/` 或 `mapper/` - 数据访问（MyBatis mappers）
+- `domain/DO/` 与 `domain/DTO/` - 数据对象
+- `common/` - 常量、枚举、注解、AOP
+- `config/` - Spring配置类
+- `util/` - 工具类
+- `filters/` 与 `interceptors/` - 请求处理
 
-### Key Configuration
+### 关键配置
 
-- **Java 17** required across all modules
-- **Logging**: Logback (configured in root)
-- **Multi-env**: Use `-Ptest` or `-Pproduction` profiles; config in `application-test.yml` / `application-production.yml`
-- **Tests**: Skipped by default (`<skipTests>true</skipTests>` in root pom)
+- **Java版本**：所有模块需要Java 17
+- **日志**：Logback（根目录配置）
+- **多环境**：使用 `-Ptest` 或 `-Pproduction` 配置；配置文件位于 `application-test.yml` / `application-production.yml`
+- **测试**：默认跳过（根目录pom中 `<skipTests>true</skipTests>`）
 
-### External Dependencies
+### 外部依赖
 
-- **Redis**: Required for cache, session, and distributed lock examples
-- **RabbitMQ/Kafka**: Required for messaging modules
-- **Elasticsearch**: Required for ES modules
-- **MongoDB**: Required for MongoDB module
+- **Redis**：缓存、会话和分布式锁示例需要
+- **RabbitMQ/Kafka**：消息队列模块需要
+- **Elasticsearch**：ES模块需要
+- **MongoDB**：MongoDB模块需要
 
-## Testing Guidelines
+## 测试指南
 
-### Unit Test Coverage Requirements
+### 单元测试覆盖要求
 
-When adding new functionality to any module, the following unit test coverage is required:
+为任何模块添加新功能时，需要满足以下单元测试覆盖要求：
 
-#### 1. Service Layer
-- Test all business logic methods
-- Verify input validation and error handling
-- Mock external dependencies where appropriate
+#### 1. Service层
+- 测试所有业务逻辑方法
+- 验证输入校验和错误处理
+- 适当模拟外部依赖
 
-#### 2. Controller Layer
-- Test all API endpoints
-- Verify request/response handling
-- Test authentication and authorization (if applicable)
+#### 2. Controller层
+- 测试所有API接口
+- 验证请求/响应处理
+- 测试认证和授权（如适用）
 
-#### 3. Utility Classes
-- Test all public methods with various input scenarios
-- Verify edge cases and error conditions
-- Test utility-specific configurations if applicable
+#### 3. 工具类
+- 使用各种输入场景测试所有公共方法
+- 验证边界条件和错误情况
+- 测试工具类特定配置（如适用）
 
-#### 4. Security Components
-- Test authentication flows
-- Verify authorization rules and permissions
-- Test security filter functionality
+#### 4. 安全组件
+- 测试认证流程
+- 验证授权规则和权限
+- 测试安全过滤器功能
 
-#### 5. Configuration Classes
-- Test configuration properties loading
-- Verify conditional bean creation
+#### 5. 配置类
+- 测试配置属性加载
+- 验证条件化Bean创建
 
-### Test Structure
+### 测试结构
 
-**Test Organization:**
-- `src/test/java/` - Unit and integration tests
-- Mirror main source package structure
-- Separate test classes by component (services, controllers, utils, etc.)
+**测试组织：**
+- `src/test/java/` - 单元测试和集成测试
+- 镜像主源代码包结构
+- 按组件（services、controllers、utils等）分离测试类
 
-**Test Naming Convention:**
-- `{ClassName}Test.java` for unit tests of a specific class
-- `{FeatureName}IntegrationTest.java` for integration tests
+**测试命名规范：**
+- `{ClassName}Test.java` - 针对特定类的单元测试
+- `{FeatureName}IntegrationTest.java` - 集成测试
 
-**Test Categories:**
-- Unit tests: Fast, isolated tests of individual methods/classes
-- Integration tests: Tests involving multiple components or external systems
-- Mock tests: Tests using mocked dependencies
+**测试分类：**
+- 单元测试：快速、隔离的单个方法/类测试
+- 集成测试：涉及多个组件或外部系统的测试
+- Mock测试：使用模拟依赖的测试
 
-### Minimum Test Coverage Standards
+### 最低测试覆盖标准
 
-- **Service Layer**: 80%+ coverage for business logic methods
-- **Utility Classes**: 90%+ coverage for all public methods
-- **Controllers**: Test all endpoints and response scenarios
-- **Security**: Full coverage of authentication and authorization flows
-- **Configuration**: Test all configuration classes for proper initialization
+- **Service层**：业务逻辑方法覆盖率80%+
+- **工具类**：所有公共方法覆盖率90%+
+- **Controllers**：测试所有端点和响应场景
+- **Security**：完整的认证授权流程测试
+- **Configuration**：测试所有配置类的正确初始化
 
-### Running Tests
+### 运行测试
 
-**Best Practices:**
-- Run unit tests frequently during development (`mvn test`)
-- Use specific test execution when developing (`mvn test -Dtest=TestClass`)
-- Verify test coverage before committing new functionality
+**最佳实践：**
+- 开发过程中频繁运行单元测试（`mvn test`）
+- 开发时使用特定测试执行（`mvn test -Dtest=TestClass`）
+- 提交新功能前验证测试覆盖率
+
+## 代码规范
+
+### 文件头注释
+
+创建新的Java文件时，必须添加以下头注释（实际创建时替换日期和时间）：
+
+```java
+/**
+ * @author: kiturone
+ * @date: ${DATE} ${TIME}
+ * @description: 文件描述内容
+ */
+```

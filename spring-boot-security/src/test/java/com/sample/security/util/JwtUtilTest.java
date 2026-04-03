@@ -1,5 +1,11 @@
 package com.sample.security.util;
 
+/**
+ * @author: kiturone
+ * @date: 2026/04/03 17:27
+ * @description: JWT工具类测试
+ */
+
 import com.sample.security.entity.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

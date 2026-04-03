@@ -1,5 +1,11 @@
 package com.sample.security;
 
+/**
+ * @author: kiturone
+ * @date: 2026/04/03 17:27
+ * @description: 安全模块集成测试，验证认证、授权等功能
+ */
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sample.security.controller.AuthController;
 import com.sample.security.entity.User;

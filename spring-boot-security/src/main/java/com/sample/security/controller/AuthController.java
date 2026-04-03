@@ -1,5 +1,11 @@
 package com.sample.security.controller;
 
+/**
+ * @author: kiturone
+ * @date: 2026/04/03 17:27
+ * @description: 认证控制器，提供登录、注册等接口
+ */
+
 import com.sample.security.entity.User;
 import com.sample.security.service.impl.UserServiceImpl;
 import com.sample.security.util.JwtUtil;

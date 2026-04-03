@@ -1,5 +1,11 @@
 package com.sample.security.util;
 
+/**
+ * @author: kiturone
+ * @date: 2026/04/03 17:27
+ * @description: JWT工具类，用于生成和验证JWT令牌
+ */
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

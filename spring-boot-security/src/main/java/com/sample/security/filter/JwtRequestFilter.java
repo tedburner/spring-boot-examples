@@ -1,5 +1,11 @@
 package com.sample.security.filter;
 
+/**
+ * @author: kiturone
+ * @date: 2026/04/03 17:27
+ * @description: JWT请求过滤器，用于验证JWT令牌
+ */
+
 import com.sample.security.service.impl.UserServiceImpl;
 import com.sample.security.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
